@@ -143,7 +143,9 @@ async function main() {
     ok(!/How a lesson runs/.test(story), 'the landing drops the how-a-lesson-runs tutorial');
     ok(!/ATTACK TIME/.test(story), 'the landing drops the ATTACK TIME tutorial');
     ok(!/at the end of Level Nine/.test(story), 'the landing drops the shadow explanation');
-    ok(!/Manual|PDF p|Norris/i.test(story), 'the landing never references a document');
+    ok(/Insurance Training Manual/.test(story) && /Kansas Laws & Insurance/.test(story),
+      'the front page credits both source texts');
+    ok(!/Norris/i.test(story), 'the front page never names the training company');
     ok(/assets\/CAT_young\.jpg/.test(w.document.querySelector('#app').innerHTML), 'landing shows the young CAT art');
     ok(/assets\/MOTHER\.jpg/.test(w.document.querySelector('#app').innerHTML), 'landing shows the goal art');
     ok(w.__CAT__.isGrownUp() === false, 'CAT starts the journey young');

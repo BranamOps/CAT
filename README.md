@@ -21,6 +21,14 @@ switches from `CAT_young.jpg` to `CAT_older.jpg` everywhere she appears.
 
 ![The winding trail through nine lands toward the red car](assets/world.svg)
 
+## Where the questions come from
+
+CAT's 405 questions are written from two texts, both credited on the front page: the **Insurance
+Training Manual** and the **Introductory Guide to Kansas Laws & Insurance**. Three to five questions
+in every lesson come out of the Kansas laws and insurance material; the rest follow the training
+manual's track. Every question is rewritten in CAT's own words, names the concept it tests, and never
+cites a page or a publisher.
+
 ## The rest of the cast
 
 | Character | File | Where you meet them |
@@ -135,7 +143,8 @@ python3 tools/build.py          # rebuild data/*.json and validate the bank
 level, fifteen questions per lesson, four distinct options, a valid answer index, a non-empty
 explanation, a topic label on every question, an answer key within 15–35% per position, and an average
 question difficulty that rises strictly from level to level. It also requires three to five of every
-lesson's questions to carry the Kansas source tag, and rejects any content that names a source document.
+lesson's questions to carry the Kansas source tag, and rejects any content in the bank that names a
+source document — the only place the two texts are named is the front-page credit line.
 
 Each question may carry an optional eighth element, `"kansas"`, marking an idea taken from the Kansas
 laws and insurance material; every other question is treated as `"manual"`. The tag is authoring

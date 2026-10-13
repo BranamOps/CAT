@@ -30,9 +30,9 @@ Target URLs:
 | Keyboard shortcuts (1–4, Enter, Escape) | Done |
 | Exam review persisted across reloads | Done |
 | Journey map art with barn, windmill, pond, gate | Done (lives on the Journey map screen, not the front page) |
-| Front page | Lean: hero + comedic one-liner, goal art, CTA, CAT's story. No map, no nine-level grid. |
+| Front page | Lean: hero + comedic one-liner, source credit, goal art, CTA, CAT's story. No map, no nine-level grid. |
 | Study guide | Accordion: each outline opens directly under its lesson button |
-| Verification: headless DOM + headless Chromium | Passing (167/167 and 39/39) |
+| Verification: headless DOM + headless Chromium | Passing (184/184 and 48/48) |
 
 ## 3. How to verify
 
@@ -40,11 +40,14 @@ Target URLs:
 npm i -D jsdom playwright
 npx playwright install chromium
 
-JSDOM_PATH=./node_modules/jsdom node tools/verify.cjs
-PLAYWRIGHT_PATH=./node_modules/playwright node tools/browser-check.cjs
+node tools/verify.cjs          # resolves the local jsdom; exit 0 only on a full pass
+node tools/browser-check.cjs   # resolves the local playwright
 ```
 
-Expected after the Kansas integration: **`167/167 checks passed.`** then **`39/39 browser checks passed.`**
+The suites default to the installed `jsdom`/`playwright`; set `JSDOM_PATH` / `PLAYWRIGHT_PATH`
+only to point at a copy elsewhere.
+
+Expected after the Kansas integration: **`184/184 checks passed.`** then **`48/48 browser checks passed.`**
 Both suites exit non-zero on failure and print their own `N/N` total, so read the run rather than
 assuming this file. Local play: `python3 -m http.server 4174` (never open `index.html` over `file://`
 — the game fetches its JSON).
@@ -66,10 +69,14 @@ whose size or per-lesson counts do not match.
 3. **Difficulty rises strictly by level.** `TARGET_MEANS = [1.4 … 4.3]`; the authored relative
    difficulty inside a level decides which questions carry the higher value (45 authored questions per
    level now). Level 1 must never exceed 3/5 and Level 9 must contain 5s.
-4. **No question or lesson may reference a source document.** `build.py` rejects any of
-   `manual p`, `pdf p`, `training manual`, `pre-study guide`, `kansas laws`, and `norris`, and
+4. **No question, lesson, feedback line or result may reference a source document.** `build.py` rejects
+   any of `manual p`, `pdf p`, `training manual`, `pre-study guide`, `kansas laws`, and `norris`, and
    `verify.cjs` re-checks the shipped JSON. Questions name the concept they test in the `topic` field
    instead of citing a page; Kansas-sourced questions test the material in CAT's own words.
+   **The single exception is the front-page credit** in `renderStory()` (`.hero-credit`), which titles
+   both books — `Insurance Training Manual` and `Introductory Guide to Kansas Laws & Insurance` — so a
+   player can see what the bank was written from. It names the two titles only; it must never name the
+   training company. `verify.cjs` and `browser-check.cjs` assert both halves of that rule.
 5. **Timers and rules** (in `data/curriculum.json`, consumed by `app.js`): lesson clock 600 s,
    question clock 60 s, pass 80% (8 of 10), ATTACK TIME only after a question times out, chance
    `10% + 10% per level` (10→90), steals a random 0–60 s from the lesson clock. The banner and the
@@ -100,8 +107,8 @@ assets/MOTHER.jpg               the goal and the ending
 assets/world.svg                the illustrated journey map
 tools/level1.py … level9.py     question authoring (source of truth for the bank)
 tools/build.py                  builds + validates data/*.json from the level modules
-tools/verify.cjs                headless-DOM suite (129 checks)
-tools/browser-check.cjs         headless-Chromium suite (34 checks)
+tools/verify.cjs                headless-DOM suite (184 checks)
+tools/browser-check.cjs         headless-Chromium suite (48 checks)
 .github/workflows/static.yml    GitHub Pages deploy on push to main
 ```
 
@@ -110,7 +117,8 @@ tools/browser-check.cjs         headless-Chromium suite (34 checks)
 - **Do not hand-edit `data/*.json`,** and do not "fix" a build failure by weakening `build.py`'s
   validation or `verify.cjs`'s assertions.
 - **Do not reintroduce source-document citations.** Questions carry a `topic` label, not a page
-  reference.
+  reference. The front-page credit line is the one deliberate exception, and it names the two book
+  titles without the publisher.
 - **Do not rename the art files** without updating `app.js` (`ART`) and `tools/verify.cjs`.
 - **Do not use destructive git commands** (reset --hard, clean, force-push, history rewrite).
 

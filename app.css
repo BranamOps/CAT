@@ -165,6 +165,11 @@ a { color: var(--lamp); }
 .hero-copy h1 { margin-bottom: 14px; }
 .hero-lede { font-size: clamp(15.5px, 1.6vw, 18px); color: var(--ink-soft); max-width: 58ch; }
 .hero-note { font-size: 13px; color: var(--ink-dim); max-width: 58ch; }
+.hero-credit {
+  font-size: 12.5px; color: var(--ink-dim); max-width: 58ch; margin-top: 16px;
+  border-top: 1px solid var(--line-soft); padding-top: 12px;
+}
+.hero-credit strong { color: var(--ink-soft); font-weight: 700; }
 
 .feature-grid, .rules-grid, .levels-grid { display: grid; gap: 16px; }
 .feature-grid { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }

@@ -182,6 +182,7 @@
         <div class="hero-copy">
           <h1>CAT's Insurance Journey</h1>
           <p class="hero-lede">Nine lives. Twenty-seven lessons. One alley cat with zero patience for fine print.</p>
+          <p class="hero-credit">CAT's 405 questions are drawn from two texts &mdash; the <strong>Insurance Training Manual</strong> and the <strong>Introductory Guide to Kansas Laws &amp; Insurance</strong> &mdash; and rewritten in her own words.</p>
           <div class="story-actions">
             <button class="button" id="storyBegin">${progress.completed.length ? "Continue CAT's journey" : 'Begin the journey'} &rarr;</button>
           </div>

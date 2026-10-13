@@ -90,6 +90,14 @@ async function main() {
     const goalSrc = await page.getAttribute('.goal-art img', 'src');
     ok(/MOTHER\.jpg/.test(goalSrc || ''), 'the phone landing shows the goal art', goalSrc);
 
+    const credit = await page.textContent('.hero-credit');
+    ok(/Insurance Training Manual/.test(credit || '') && /Kansas Laws & Insurance/.test(credit || ''),
+      'the landing credits both source texts', credit);
+    ok(!/Norris/i.test(credit || ''), 'the landing never names the training company');
+    const creditBox = await page.locator('.hero-credit').boundingBox();
+    ok(creditBox && right(creditBox) <= 391, 'the source credit fits inside the phone width',
+      creditBox ? `right=${Math.round(right(creditBox))}` : 'missing');
+
     const heroBox = await page.locator('.hero h1').boundingBox();
     ok(heroBox && heroBox.width > 100 && right(heroBox) <= 391, 'hero heading fits inside the phone width',
       heroBox ? `right=${Math.round(right(heroBox))}` : 'missing');
