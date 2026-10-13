@@ -80,7 +80,7 @@ a { color: var(--lamp); }
   border: 1px solid var(--line);
   box-shadow: inset 0 0 20px rgba(246, 198, 103, 0.12);
 }
-.brand-mark img { width: 38px; height: 38px; }
+.brand-mark img { width: 38px; height: 38px; object-fit: cover; border-radius: 9px; }
 .brand-text { display: flex; flex-direction: column; }
 .brand-text strong { font-size: 13.5px; letter-spacing: 1.5px; }
 .brand-text small { font-size: 11.5px; color: var(--ink-dim); letter-spacing: 0.5px; }
@@ -491,9 +491,33 @@ a { color: var(--lamp); }
 .tester-dialog input:focus { outline: 2px solid var(--lamp); outline-offset: 1px; }
 .tester-dialog-actions { display: flex; gap: 12px; justify-content: flex-end; margin-top: 14px; }
 
+/* ---------- goal (story) ---------- */
+.goal-band {
+  display: grid; grid-template-columns: minmax(180px, 300px) 1fr; gap: clamp(18px, 3vw, 36px);
+  align-items: center; padding: clamp(18px, 2.6vw, 28px); margin-bottom: 18px;
+  border-radius: var(--radius-lg); border: 1px solid var(--line);
+  background: linear-gradient(120deg, rgba(246, 198, 103, 0.12), rgba(143, 125, 255, 0.1));
+}
+.goal-art img { width: 100%; height: auto; border-radius: var(--radius); display: block; box-shadow: var(--shadow-card); }
+.goal-copy p { color: var(--ink-soft); margin: 0; font-size: 15.5px; }
+
+/* ---------- rival / contestant art ---------- */
+.rival-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.rival-art { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid var(--shadow-accent); }
+.rival-name { font-size: 12px; letter-spacing: 1.4px; text-transform: uppercase; color: var(--shadow-accent); font-weight: 700; }
+
+.attack-banner { display: none; align-items: center; gap: 14px; }
+.attack-banner.show { display: flex; }
+.attack-art { width: 54px; height: 54px; border-radius: 50%; object-fit: cover; border: 2px solid var(--shadow-accent); flex: none; }
+
+/* ---------- ending art ---------- */
+.ending-scene { gap: 14px; }
+.ending-mother { width: min(260px, 52vw); border-radius: var(--radius); box-shadow: var(--shadow-card); }
+.ending-cat { width: min(150px, 32vw); border-radius: var(--radius); box-shadow: var(--shadow-card); }
+
 /* ---------- responsive ---------- */
 @media (max-width: 900px) {
-  .hero, .story-page, .lesson-body, .study-map-layout, .boss-hero, .exam-hero { grid-template-columns: 1fr; }
+  .hero, .story-page, .lesson-body, .study-map-layout, .boss-hero, .exam-hero, .goal-band { grid-template-columns: 1fr; }
   .hero-art { max-width: 260px; margin: 0 auto; }
   .story-art { max-width: 240px; margin: 0 auto; }
   .lesson-aside, .study-map-nav { position: static; max-height: none; }

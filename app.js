@@ -3,8 +3,18 @@
 
   const app = document.querySelector('#app');
   const topProgress = document.querySelector('#topProgress');
-  const storageKey = 'cats-insurance-journey-v1';
+  const storageKey = 'cats-insurance-journey-v2';
   const letters = ['A', 'B', 'C', 'D'];
+
+  /* Character art. CAT begins young and grows up once enough lessons are mastered; contestants
+     appear during battles, SHADOW-1 is the final boss, and MOTHER is the goal and the ending. */
+  const ART = {
+    catYoung: 'assets/CAT_young.jpg',
+    catOlder: 'assets/CAT_older.jpg',
+    contestant: 'assets/contestant-1.jpg',
+    shadow: 'assets/SHADOW-1.jpg',
+    mother: 'assets/MOTHER.jpg',
+  };
 
   /* Other cats who test CAT's insurance knowledge, one per level. The battles are intellectual, never harmful. */
   const opponents = {
@@ -45,6 +55,7 @@
     lessonTimerSeconds: () => curr('lessonTimerSeconds', 600),
     questionTimerSeconds: () => curr('questionTimerSeconds', 60),
     masteryThreshold: () => curr('masteryThreshold', 80),
+    adultAtLesson: () => curr('adultAtLesson', 14),
   };
 
   function curr(path, fallback) {
@@ -65,9 +76,10 @@
         attempts: p.attempts && typeof p.attempts === 'object' ? p.attempts : {},
         examComplete: p.examComplete === true,
         examBest: p.examBest && typeof p.examBest === 'object' ? p.examBest : null,
+        examReview: p.examReview && typeof p.examReview === 'object' ? p.examReview : null,
       };
     } catch (_) {
-      return { completed: [], attempts: {}, examComplete: false, examBest: null };
+      return { completed: [], attempts: {}, examComplete: false, examBest: null, examReview: null };
     }
   }
 
@@ -78,7 +90,13 @@
 
   function updateProgressLabel() {
     topProgress.textContent = `${progress.completed.length} / 27 lessons`;
+    const brand = document.querySelector('.brand-mark img');
+    if (brand) brand.src = catArt();
   }
+
+  /* CAT grows up halfway through the journey: artwork switches from young to older. */
+  function isGrownUp() { return progress.completed.length >= CFG.adultAtLesson(); }
+  function catArt() { return isGrownUp() ? ART.catOlder : ART.catYoung; }
 
   /* ---------------- helpers ---------------- */
 
@@ -155,7 +173,7 @@
     app.innerHTML = `
       <section class="hero">
         <div class="hero-art">
-          <img src="assets/cat.svg" alt="CAT, a stray cat with bright amber eyes." />
+          <img src="${catArt()}" alt="CAT, a stray cat with bright amber eyes." />
         </div>
         <div class="hero-copy">
           <span class="eyebrow">A harder sequel to BAT</span>
@@ -183,11 +201,25 @@
       </section>
 
       <div class="section-heading">
+        <div><span class="eyebrow">The goal</span><h2>The door CAT is learning to reach</h2></div>
+      </div>
+      <section class="goal-band">
+        <div class="goal-art"><img src="${ART.mother}" alt="The mother who drives the red car." /></div>
+        <div class="goal-copy">
+          <p>
+            This is what all nine levels lead to: the red car, the mother who drives it, and a house with a
+            stack of cardboard boxes that will be CAT's alone. Every lesson below is practice for that one
+            ordinary afternoon &mdash; the rules matter, but the ride out is the point.
+          </p>
+        </div>
+      </section>
+
+      <div class="section-heading">
         <div><h2>How a lesson runs</h2><p>Every stop follows the same short loop.</p></div>
       </div>
       <section class="feature-grid">
-        <div class="feature-card"><h3>1 &middot; Read</h3><p>A short lesson built from the manual, with the source pages named up front.</p></div>
-        <div class="feature-card"><h3>2 &middot; Answer 10</h3><p>Ten questions, four choices each. Every answer reveals a teaching explanation and a manual page reference.</p></div>
+        <div class="feature-card"><h3>1 &middot; Read</h3><p>A short lesson that teaches one idea at a time, written in plain language.</p></div>
+        <div class="feature-card"><h3>2 &middot; Answer 10</h3><p>Ten questions, four choices each. Every answer reveals an explanation and the concept it tests.</p></div>
         <div class="feature-card"><h3>3 &middot; Beat the clock</h3><p>Ten minutes for the whole lesson and sixty seconds per question. Run out of time and the clock itself can be attacked.</p></div>
         <div class="feature-card"><h3>4 &middot; Pass or retake</h3><p>Score 8 of 10 to move on. Anything less and the lesson waits for a retake.</p></div>
       </section>
@@ -217,8 +249,8 @@
           After the twenty-seventh lesson, the only attacker left is SHADOW CAT: her own shadow. The
           exam draws 156 questions from every lesson, gives 150 minutes, and uses no ATTACK TIME at all.
           It is the one battle where the only clock is the one she carries herself &mdash; and the red
-          car is waiting at the end of it. Finish with results, explanations, manual page references,
-          and a breakdown of the areas that need work.
+          car is waiting at the end of it. Finish with results, explanations, and a breakdown of the areas
+          that need work.
         </p>
       </section>
 
@@ -234,7 +266,7 @@
         </div>
         <button class="button" id="storyCta">${progress.completed.length ? 'Continue' : 'Start Lesson 1'} &rarr;</button>
       </div>
-      <div class="map-footer-note manual-note">${esc(curriculum.manual)} &middot; every question cites its printed page and PDF page.</div>
+      <div class="map-footer-note manual-note">A Kansas Property &amp; Casualty study game &middot; every answer explains the idea it tests.</div>
     `;
 
     const go = () => {
@@ -327,6 +359,7 @@
               ${examReady ? 'Face SHADOW CAT &rarr;' : progress.examComplete ? 'Walk the path again &rarr;' : allDone ? 'Meet SHADOW CAT &rarr;' : `${progress.completed.length ? 'Continue the journey' : 'Begin at Lesson 1'} &rarr;`}
             </button>
             <button class="text-button" id="storyAgain">Read CAT's story</button>
+            ${progress.examReview ? '<button class="text-button" id="reviewLastExam">Review last exam</button>' : ''}
           </div>
         </div>
         <div class="map-progress-summary">
@@ -339,7 +372,7 @@
           <img class="map-image" src="assets/world.svg" alt="A winding dotted trail climbs through nine country lands, past twenty-seven lesson stones, to a red car waiting beside a warm lit door." />
           <div class="map-overlay" id="mapOverlay">
             <div class="map-marker" style="left:${mx}%;top:${my}%" aria-label="CAT's current position">
-              <img src="assets/cat.svg" alt="" />
+              <img src="${catArt()}" alt="" />
             </div>
             ${nodes}
           </div>
@@ -355,8 +388,8 @@
       </section>
       <div class="journey">${bands}</div>
       <div class="manual-note">
-        <strong>Sources:</strong> ${esc(curriculum.manual)}. Lesson notes and every question reference the
-        printed manual page and the matching PDF page.
+        <strong>Subject:</strong> ${esc(curriculum.subject)}. Lesson notes and every question explain the
+        idea being tested &mdash; no page-hunting required.
       </div>
     `;
 
@@ -369,6 +402,8 @@
       renderLesson(next.id);
     });
     document.querySelector('#storyAgain').addEventListener('click', renderStory);
+    const reviewBtn = document.querySelector('#reviewLastExam');
+    if (reviewBtn) reviewBtn.addEventListener('click', renderExamReview);
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
@@ -390,12 +425,12 @@
       </section>`).join('');
 
     const content = selected ? `
-      <div class="lesson-kicker">Lesson ${selected.id} &middot; ${esc(selected.pages)}</div>
+      <div class="lesson-kicker">Lesson ${selected.id} &middot; Level ${levelFor(selected.id).id}</div>
       <h2>${esc(selected.title)}</h2>
       <p class="study-subtitle">${esc(selected.subtitle)}</p>
       ${selected.teaching.map((t) => `
         <section class="study-topic"><h3>${esc(t.heading)}</h3><p>${esc(t.text)}</p></section>`).join('')}
-      <p class="study-citation">Source guide: ${esc(selected.sourceNote)}</p>
+      <p class="study-citation">Study focus: ${esc(selected.title)}.</p>
     ` : `<div class="empty-state"><h2>Pick a lesson to study</h2><p>Each outline summarizes the knowledge covered in that lesson's quiz.</p></div>`;
 
     app.className = 'view-animate';
@@ -403,7 +438,7 @@
       <button class="back-link" id="manualBack">&larr; Journey map</button>
       <div class="lesson-top">
         <span class="lesson-kicker">Study map &middot; no quiz answers</span>
-        <h1>The manual, in plain language</h1>
+        <h1>The study guide, in plain language</h1>
         <p>Choose a lesson for a concise outline of the ideas to understand. These notes explain the subject matter without revealing quiz answers.</p>
       </div>
       <div class="study-map-layout">
@@ -411,9 +446,8 @@
         <article class="study-map-content">${content}</article>
       </div>
       <section class="manual-note">
-        <strong>Scope:</strong> These outlines summarize the supplied training manual, ${esc(curriculum.manual)}.
-        Questions are drawn only from that manual. The manual's TEST BREAKDOWN page also cites a separate
-        Pre-Study Guide; that supplement is not part of this repository, so no topic is inferred from it.
+        <strong>Scope:</strong> These outlines cover ${esc(curriculum.subject)}. Questions stay inside that
+        material, and every answer explains the idea behind it.
       </section>
     `;
 
@@ -449,7 +483,7 @@
         <div class="lesson-kicker">Level ${level.id} &middot; ${esc(level.title)} &middot; Lesson ${id} of 27</div>
         <h1>${esc(lesson.title)}</h1>
         <p>${esc(lesson.subtitle)}</p>
-        <span class="source-pill">${esc(curriculum.manual.split('(')[0].trim())} &middot; ${esc(lesson.pages)}</span>
+        <span class="source-pill">${esc(curriculum.subject)} &middot; Level ${level.id}</span>
       </header>
       <div class="lesson-body">
         <article class="article">
@@ -469,7 +503,7 @@
             <h2>Check your understanding</h2>
             <p>
               Ten questions, four choices each. You have ten minutes for the lesson and sixty seconds per
-              question. Every answer includes a teaching explanation and a manual page reference. You need
+              question. Every answer includes an explanation and the concept it tests. You need
               8 of 10 correct to continue, and you can always retake the lesson.
             </p>
             <p class="muted">If the sixty seconds run out, ${esc(opponents[level.id])} has a
@@ -489,8 +523,8 @@
             <ul>${lesson.teaching.map((t) => `<li>${esc(t.heading)}</li>`).join('')}</ul>
           </section>
           <section class="aside-card">
-            <h3>Source reference</h3>
-            <p>${esc(curriculum.manual)}<br>${esc(lesson.pages)}<br>${esc(lesson.sourceNote)}</p>
+            <h3>Study focus</h3>
+            <p>${esc(curriculum.subject)}<br>Level ${level.id} &middot; ${esc(level.title)}<br>${esc(lesson.teaching.map((t) => t.heading).join(' &middot; '))}</p>
           </section>
         </aside>
       </div>
@@ -592,7 +626,11 @@
         </div>
         <div class="attack-banner" id="attackBanner" role="status" aria-live="assertive"></div>
         <section class="quiz-card">
-          <div class="question-meta">${esc(isExam ? 'SHADOW CAT asks' : `${opponents[run.level.id]} asks`)} &middot; ${esc(q.code)} &middot; Difficulty ${q.difficulty}/5</div>
+          <div class="rival-row">
+            <img class="rival-art" src="${isExam ? ART.shadow : ART.contestant}" alt="" />
+            <span class="rival-name">${esc(isExam ? 'SHADOW-1' : opponents[run.level.id])}</span>
+          </div>
+          <div class="question-meta">${esc(isExam ? 'SHADOW-1 asks' : `${opponents[run.level.id]} asks`)} &middot; ${esc(q.code)} &middot; Difficulty ${q.difficulty}/5</div>
           <p class="question-text">${esc(q.stem)}</p>
           <div class="choice-list" id="choiceList">
             ${q.options.map((o, i) => `<button class="choice" data-choice="${i}">
@@ -600,7 +638,7 @@
           </div>
           <div id="feedbackSlot"></div>
           <div class="quiz-actions">
-            <span class="muted">${isExam ? 'No ATTACK TIME. Choose the best answer, then check it.' : 'Choose the best answer; feedback appears right away.'}</span>
+            <span class="muted">${isExam ? 'No ATTACK TIME. Choose the best answer, then check it.' : 'Press 1-4 to choose an answer, Enter to check.'}</span>
             <button class="button" id="answerButton" disabled>Check answer</button>
           </div>
         </section>
@@ -624,6 +662,29 @@
     document.querySelector('#answerButton').addEventListener('click', gradeQuestion);
     tick();
     window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+
+  /* Keyboard play: 1-4 pick an answer, Enter checks or advances, Escape leaves the quiz. */
+  function handleQuizKeys(event) {
+    const run = activeRun;
+    if (!run || run.ended) return;
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      stopTicker();
+      if (run.kind === 'exam') renderExamIntro();
+      else renderLesson(run.lesson.id);
+      return;
+    }
+    const answerButton = document.querySelector('#answerButton');
+    if (event.key === 'Enter') {
+      if (answerButton && !answerButton.disabled) { event.preventDefault(); answerButton.click(); }
+      return;
+    }
+    if (event.key >= '1' && event.key <= '4') {
+      if (run.feedback) return;
+      const choice = document.querySelector(`[data-choice="${Number(event.key) - 1}"]`);
+      if (choice) { event.preventDefault(); choice.click(); }
+    }
   }
 
   function gradeQuestion() {
@@ -662,7 +723,7 @@
         <strong>${label}</strong>
         <p>${chosen} ${esc(q.explanation)}</p>
         ${correct ? '' : `<div class="correct-answer">Correct answer: ${letters[q.answer]} &mdash; ${esc(q.options[q.answer])}</div>`}
-        <div class="source"><strong>Manual reference:</strong> ${esc(q.source)}</div>
+        <div class="source"><strong>Topic:</strong> ${esc(q.topic)}</div>
       </div>`;
 
     const next = document.querySelector('#answerButton');
@@ -724,7 +785,7 @@
     recordAnswer(run, q, null, false, true);
     reveal(q, null, false, true);
 
-    /* The opponent rolls for ATTACK TIME; on a hit it steals 0-60 seconds from the lesson clock. */
+    /* A rival may turn up; on a hit it steals 0-60 seconds from the lesson clock. */
     const level = run.level.id;
     const chance = attackChance(level);
     if (Math.random() < chance) {
@@ -745,11 +806,13 @@
     const banner = document.querySelector('#attackBanner');
     if (!banner) return;
     if (stolen === null) {
-      banner.innerHTML = `<strong>${esc(name)} circles but holds back</strong>
-        <span>No ATTACK TIME this round. The lesson clock is untouched.</span>`;
+      banner.innerHTML = `<img class="attack-art" src="${ART.contestant}" alt="" />
+        <div><strong>${esc(name)} circles but holds back</strong>
+        <span>No ATTACK TIME this round. The lesson clock is untouched.</span></div>`;
     } else {
-      banner.innerHTML = `<strong>ATTACK TIME &mdash; ${esc(name)} strikes</strong>
-        <span>${stolen} second${stolen === 1 ? '' : 's'} taken from the lesson clock.</span>`;
+      banner.innerHTML = `<img class="attack-art" src="${ART.contestant}" alt="" />
+        <div><strong>ATTACK TIME &mdash; ${esc(name)} strikes</strong>
+        <span>${stolen} second${stolen === 1 ? '' : 's'} taken from the lesson clock.</span></div>`;
     }
     banner.classList.add('show');
   }
@@ -786,7 +849,7 @@
         <span class="${a.correct ? '' : 'miss'}">
           ${a.selected === null ? 'No answer' : `Your answer: ${letters[a.selected]}`} &middot;
           ${a.correct ? 'Correct' : `Correct answer: ${letters[a.question.answer]} &mdash; ${esc(a.question.options[a.question.answer])}`} &middot;
-          ${esc(a.question.source)}
+          ${esc(a.question.topic)}
         </span>
       </div>`).join('');
 
@@ -822,7 +885,7 @@
               ${missed.map((q) => `<div class="weak-card weak">
                 <span class="wk-head"><strong>${esc(q.code)}</strong></span>
                 <small>${esc(q.stem)}</small>
-                <small><strong>Source:</strong> ${esc(q.source)}</small>
+                <small><strong>Topic:</strong> ${esc(q.topic)}</small>
               </div>`).join('')}
             </div>
           </div>` : ''}
@@ -854,7 +917,7 @@
     app.innerHTML = `
       <section class="exam-hero boss-hero">
         <div class="boss-art">
-          <img src="assets/shadow.svg" alt="CAT's shadow self, a dark echo with violet eyes." />
+          <img src="${ART.shadow}" alt="SHADOW-1, CAT's shadow self." />
         </div>
         <div>
           <span class="eyebrow">The last attacker</span>
@@ -878,9 +941,9 @@
         <p>
           Choose the best answer to ${curriculum.exam.questionCount} shuffled questions drawn across every
           lesson. You have ${curriculum.exam.minutes} minutes for the whole exam, and there is no ATTACK TIME:
-          no opponent can touch the clock. Immediate explanations and manual references stay available.
+          no opponent can touch the clock. Immediate explanations stay available.
           A score of ${curriculum.exam.passPercent}% or higher completes the journey. At the end you get
-          results, a full answer review with page references, and a breakdown of the areas that need work.
+          results, a full answer review, and a breakdown of the areas that need work.
         </p>
         ${progress.examBest ? `<p class="muted">Best result so far: ${progress.examBest.percent}% (${progress.examBest.correct}/${progress.examBest.total}).</p>` : ''}
       </section>`;
@@ -901,6 +964,20 @@
       progress.examBest = { percent, correct, total };
     }
     if (passed) progress.examComplete = true;
+
+    /* Persist the full exam review so it survives a reload. */
+    progress.examReview = {
+      at: Date.now(),
+      percent, correct, total, passed, timedOut,
+      rows: run.answers.map((a) => ({
+        stem: a.question.stem,
+        topic: a.question.topic,
+        options: a.question.options,
+        answer: a.question.answer,
+        selected: a.selected,
+        correct: a.correct,
+      })),
+    };
     saveProgress();
 
     /* Weak-area feedback, grouped by level. */
@@ -947,7 +1024,7 @@
         <span class="${a.correct ? '' : 'miss'}">
           ${a.selected === null ? 'No answer' : `Your answer: ${letters[a.selected]}`} &middot;
           ${a.correct ? 'Correct' : `Correct answer: ${letters[a.question.answer]} &mdash; ${esc(a.question.options[a.question.answer])}`} &middot;
-          ${esc(a.question.source)}
+          ${esc(a.question.topic)}
         </span>
       </div>`).join('');
 
@@ -1001,6 +1078,42 @@
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
+  /* ---------------- stored exam review ---------------- */
+
+  function renderExamReview() {
+    stopTicker();
+    navActive('map');
+    const review = progress.examReview;
+    if (!review) { renderMap(); return; }
+    const rows = review.rows.map((a, i) => `
+      <div class="answer-row">
+        <strong>${i + 1}. ${a.correct ? '&#10003; Correct' : '&#10007; Review'}</strong> &middot; ${esc(a.stem)}<br>
+        <span class="${a.correct ? '' : 'miss'}">
+          ${a.selected === null ? 'No answer' : `Your answer: ${letters[a.selected]}`} &middot;
+          ${a.correct ? 'Correct' : `Correct answer: ${letters[a.answer]} &mdash; ${esc(a.options[a.answer])}`} &middot;
+          ${esc(a.topic)}
+        </span>
+      </div>`).join('');
+    app.className = 'view-animate';
+    app.innerHTML = `
+      <button class="back-link" id="reviewBack">&larr; Journey map</button>
+      <div class="quiz-shell">
+        <section class="quiz-card score-card">
+          <div class="score-badge">${review.percent}%</div>
+          <div class="eyebrow">Saved exam review &middot; SHADOW-1</div>
+          <h1>${review.passed ? 'A quiet victory' : 'Keep practicing'}</h1>
+          <span class="grade-pill">${review.correct}/${review.total} correct &middot; Grade ${gradeLetter(review.percent)}</span>
+          <p class="muted">Saved in this browser on this device. Retake the exam any time to replace it.</p>
+          <div class="answers-review">
+            <h2>Full answer review &middot; ${review.total} questions</h2>
+            ${rows}
+          </div>
+        </section>
+      </div>`;
+    document.querySelector('#reviewBack').addEventListener('click', renderMap);
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+
   /* ---------------- ending ---------------- */
 
   function renderEnding() {
@@ -1010,7 +1123,8 @@
     app.innerHTML = `
       <section class="ending">
         <div class="ending-scene">
-          <img src="assets/cat.svg" alt="CAT, warm and safe after the final exam." />
+          <img class="ending-mother" src="${ART.mother}" alt="The mother who drives the red car." />
+          <img class="ending-cat" src="${catArt()}" alt="CAT, warm and safe after the final exam." />
         </div>
         <span class="completion-chip">27 lessons &middot; SHADOW CAT passed</span>
         <h1>CAT FINDS A HOME</h1>
@@ -1074,12 +1188,13 @@
 
   function boot() {
     wireTester();
+    document.addEventListener('keydown', handleQuizKeys);
     document.querySelector('[data-nav="map"]').addEventListener('click', renderMap);
     document.querySelector('[data-nav="manual"]').addEventListener('click', () => renderManual());
     document.querySelector('[data-nav="story"]').addEventListener('click', renderStory);
     document.querySelector('#resetProgress').addEventListener('click', () => {
       if (confirm('Reset CAT to the beginning and erase saved progress on this device?')) {
-        progress = { completed: [], attempts: {}, examComplete: false, examBest: null };
+        progress = { completed: [], attempts: {}, examComplete: false, examBest: null, examReview: null };
         saveProgress();
         renderMap();
       }
@@ -1127,19 +1242,16 @@
     for (const q of bank) {
       if (!q.stem || q.options?.length !== 4 || new Set(q.options).size !== 4
           || !Number.isInteger(q.answer) || q.answer < 0 || q.answer > 3
-          || !q.explanation || !q.source || !Number.isInteger(q.difficulty)) {
+          || !q.explanation || !q.topic || !Number.isInteger(q.difficulty)) {
         throw new Error(`Question ${q.id || 'unknown'} has incomplete fields.`);
-      }
-      if (!q.source.startsWith('Manual p') || !q.source.includes('PDF p')) {
-        throw new Error(`Question ${q.id} is missing its manual or PDF page reference.`);
       }
     }
     for (const l of all) {
       if (l.questionIds.length !== 10 || l.questionIds.some((id) => !ids.has(id))) {
         throw new Error(`Lesson ${l.id} must map to ten valid questions.`);
       }
-      if (l.teaching.length !== 3 || !l.scenario?.text || !l.sourceNote.includes('PDF p')) {
-        throw new Error(`Lesson ${l.id} is missing instruction or source citations.`);
+      if (l.teaching.length !== 3 || !l.scenario?.text || l.scenario.text.length < 200) {
+        throw new Error(`Lesson ${l.id} is missing instruction or a full scenario.`);
       }
     }
     if (curriculum.questionsPerLesson !== 10 || curriculum.masteryThreshold !== 80) {
@@ -1170,6 +1282,8 @@
     renderStory,
     renderLesson,
     renderExamIntro,
+    renderExamReview,
+    isGrownUp,
   };
 
   boot();

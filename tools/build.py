@@ -2,9 +2,13 @@
 """Build CAT's data files from the hand-authored level modules.
 
 Each question is authored as (code, difficulty, stem, correct, [3 distractors],
-explanation, manual_page, pdf_page). The builder places the correct answer at a
-balanced index so the answer key is not predictable, then re-validates the whole
-bank so no unsourced or malformed question can ship.
+explanation, topic). The builder places the correct answer at a balanced index so
+the answer key is not predictable, then re-validates the whole bank so no
+malformed or under-specified question can ship.
+
+CAT teaches Kansas property and casualty insurance concepts. Questions are
+written in CAT's own words; they name the idea being tested (the "topic") rather
+than citing any source document.
 """
 import json
 import os
@@ -31,11 +35,13 @@ ATTACK_PER_LEVEL = 10
 EXAM_QUESTIONS = 156
 EXAM_MINUTES = 150
 
+# CAT starts the journey young and grows up once enough lessons are mastered.
+ADULT_AT_LESSON = 14
 
-def source_label(manual_page, pdf_page):
-    multi = any(ch in manual_page for ch in ",-") or any(ch in pdf_page for ch in ",-")
-    mark = "pp." if multi else "p."
-    return "Manual %s %s (PDF %s %s)." % (mark, manual_page, mark, pdf_page)
+SUBJECT = "Kansas Property & Casualty Insurance"
+
+# Text that would betray a source document. The bank must never name one.
+FORBIDDEN = ("manual p", "pdf p", "training manual", "pre-study guide")
 
 
 # Difficulty must rise level by level. Each level is given a target average, and the authored
@@ -75,7 +81,7 @@ def build():
             lesson_id = lesson_counter
             qids = []
             for q in lesson["qs"]:
-                code, diff, stem, correct, wrongs, expl, mp, pp = q
+                code, diff, stem, correct, wrongs, expl, topic = q
                 slot = ANSWER_PATTERN[q_counter % len(ANSWER_PATTERN)]
                 q_counter += 1
                 qid = "q%03d" % q_counter
@@ -95,7 +101,7 @@ def build():
                     "options": opts,
                     "answer": slot,
                     "explanation": expl,
-                    "source": source_label(mp, pp),
+                    "topic": topic,
                     "difficulty": difficulty_values[difficulty_index],
                 })
                 difficulty_index += 1
@@ -105,12 +111,10 @@ def build():
                 "levelId": level["n"],
                 "title": lesson["title"],
                 "subtitle": lesson["subtitle"],
-                "pages": lesson["pages"],
                 "questionIds": qids,
                 "intro": lesson["intro"],
                 "teaching": [{"heading": h, "text": t} for h, t in lesson["teaching"]],
                 "scenario": {"title": lesson["scenario"][0], "text": lesson["scenario"][1]},
-                "sourceNote": lesson["sourceNote"],
             })
         levels_out.append({
             "id": level["n"],
@@ -131,25 +135,25 @@ def build():
 
     curriculum = {
         "title": "CAT's Insurance Journey",
-        "manual": "Property & Casualty Training Manual, Book #2 (Norris Training System, Rev. 2024)",
-        "sourcePagination": "References use the printed section.page labels; PDF page numbers are shown alongside them.",
+        "subject": SUBJECT,
         "masteryThreshold": MASTERY_THRESHOLD,
         "questionsPerLesson": QUESTIONS_PER_LESSON,
         "lessonTimerSeconds": LESSON_TIMER_SECONDS,
         "questionTimerSeconds": QUESTION_TIMER_SECONDS,
+        "adultAtLesson": ADULT_AT_LESSON,
         "attackTime": {
             "minSeconds": ATTACK_MIN_SECONDS,
             "maxSeconds": ATTACK_MAX_SECONDS,
             "baseChancePercent": ATTACK_BASE_CHANCE,
             "chancePerLevelPercent": ATTACK_PER_LEVEL,
-            "note": "After a question times out the opponent may call ATTACK TIME, taking 0-60 seconds from the lesson clock. The chance rises from 10% at level 1 to 90% at level 9. The final exam has no artificial attacks.",
+            "note": "A rival may challenge CAT during a lesson. The chance rises from 10% at level 1 to 90% at level 9, and a challenge can cost up to a minute of the lesson clock. The final exam has no challenges.",
         },
         "story": [
             "CAT was a backyard alley cat in the country, and she survived on human scraps. Every winter tested her - cold nights, empty bowls, and whatever the households left behind - and she lived through each one on scraps and stubbornness.",
             "Other cats found her along the way, and they tested her. Not with claws: with insurance knowledge. Property and casualty rules, Kansas style - which promise answers for which loss, and what happens when the clock runs out. Losing an argument stung worse than losing a fight, so she learned the rules cold.",
             "For a long time her only goal was survival. Then one day she saw the red car, and the goal changed. She would leave with that car. Everything after that night was practice for the road out.",
-            "Nine levels stand between the backyard and the road: twenty-seven lessons, ten questions each, a ten minute clock and sixty seconds to a question. At every stop another cat waits to argue with her, and when the clock runs out they may call ATTACK TIME and steal seconds from the lesson.",
-            "At the very end waits the only attacker left: SHADOW CAT, her own shadow - everything survival taught her, turned around and looking back. One hundred fifty-six questions in one hundred fifty minutes, and no tricks at all.",
+            "Nine levels stand between the backyard and the road: twenty-seven lessons, ten questions each, a ten minute clock and sixty seconds to a question. At every stop a rival cat waits to argue with her, and when the clock runs out they may strike and steal seconds from the lesson.",
+            "At the very end waits the only challenger left: SHADOW CAT, her own shadow - everything survival taught her, turned around and looking back. One hundred fifty-six questions in one hundred fifty minutes, and no tricks at all.",
             "Win, and the mother who drives the red car brings her home. That is how CAT becomes the cardboard box tower queen - and only after that does a small black cat named BAT come into the story at all.",
         ],
         "levels": levels_out,
@@ -162,7 +166,7 @@ def build():
         },
         "boss": {
             "title": "The Shadow at the End of Level Nine",
-            "intro": "Nine levels are behind CAT, and the red car is idling at the edge of town. Between them stands the last attacker: SHADOW CAT, her own shadow - everything survival taught her, turned around and looking back.",
+            "intro": "Nine levels are behind CAT, and the red car is idling at the edge of town. Between them stands the last challenger: SHADOW CAT, her own shadow - everything survival taught her, turned around and looking back.",
             "dialogue": "You learned the rules to survive the alley. Now show me you can use them when nothing is chasing you and no clock is playing tricks.",
             "win": "SHADOW CAT steps aside. It was never an enemy, only the part of CAT that had nowhere to go. And down the road the red car is waiting, with the mother who will bring her home.",
             "lose": "SHADOW CAT holds its ground. Not a defeat, only another round: the rules are still there to be learned, and the red car will still be waiting next time.",
@@ -198,8 +202,6 @@ def validate(curriculum, questions):
         check(len(lesson["teaching"]) == 3, "lesson %d must have 3 teaching sections" % lesson["id"])
         check(len(lesson["scenario"]["text"]) >= 200,
               "lesson %d scenario is too short" % lesson["id"])
-        check("PDF p" in lesson["sourceNote"],
-              "lesson %d sourceNote needs a PDF reference" % lesson["id"])
 
     by_id = {q["id"]: q for q in questions}
     for lesson in lessons:
@@ -216,11 +218,9 @@ def validate(curriculum, questions):
         check(isinstance(q["answer"], int) and 0 <= q["answer"] <= 3,
               "%s has an invalid answer index" % q["id"])
         check(bool(q["explanation"]), "%s needs an explanation" % q["id"])
-        check(q["source"].startswith("Manual p"), "%s needs a manual reference" % q["id"])
-        check("PDF p" in q["source"], "%s needs a PDF page reference" % q["id"])
+        check(bool(q["topic"]), "%s needs a topic label" % q["id"])
         check(isinstance(q["difficulty"], int) and 1 <= q["difficulty"] <= 5,
               "%s has an invalid difficulty" % q["id"])
-        check(q["answer"] in range(4), "%s answer out of range" % q["id"])
         if 0 <= q["answer"] <= 3:
             dist[q["answer"]] += 1
 
@@ -242,6 +242,19 @@ def validate(curriculum, questions):
           "level 1 must stay within the accessible difficulties")
     check(any(by_id[qid]["difficulty"] >= 4 for l in levels[-1]["lessons"] for qid in l["questionIds"]),
           "level 9 must contain applied, higher-difficulty questions")
+
+    # Nothing may betray a source document: no manual names, page citations, or PDF references.
+    blob_parts = []
+    for q in questions:
+        blob_parts.extend([q["stem"], q["explanation"], q["topic"]] + q["options"])
+    for lesson in lessons:
+        blob_parts.extend([lesson["title"], lesson["subtitle"], lesson["intro"],
+                           lesson["scenario"]["title"], lesson["scenario"]["text"]])
+        for t in lesson["teaching"]:
+            blob_parts.extend([t["heading"], t["text"]])
+    blob = " ".join(blob_parts).lower()
+    for bad in FORBIDDEN:
+        check(bad not in blob, "content references a source document ('%s')" % bad)
 
     return errors, dist, means
 

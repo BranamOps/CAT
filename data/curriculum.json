@@ -1,24 +1,24 @@
 {
  "title": "CAT's Insurance Journey",
- "manual": "Property & Casualty Training Manual, Book #2 (Norris Training System, Rev. 2024)",
- "sourcePagination": "References use the printed section.page labels; PDF page numbers are shown alongside them.",
+ "subject": "Kansas Property & Casualty Insurance",
  "masteryThreshold": 80,
  "questionsPerLesson": 10,
  "lessonTimerSeconds": 600,
  "questionTimerSeconds": 60,
+ "adultAtLesson": 14,
  "attackTime": {
   "minSeconds": 0,
   "maxSeconds": 60,
   "baseChancePercent": 10,
   "chancePerLevelPercent": 10,
-  "note": "After a question times out the opponent may call ATTACK TIME, taking 0-60 seconds from the lesson clock. The chance rises from 10% at level 1 to 90% at level 9. The final exam has no artificial attacks."
+  "note": "A rival may challenge CAT during a lesson. The chance rises from 10% at level 1 to 90% at level 9, and a challenge can cost up to a minute of the lesson clock. The final exam has no challenges."
  },
  "story": [
   "CAT was a backyard alley cat in the country, and she survived on human scraps. Every winter tested her - cold nights, empty bowls, and whatever the households left behind - and she lived through each one on scraps and stubbornness.",
   "Other cats found her along the way, and they tested her. Not with claws: with insurance knowledge. Property and casualty rules, Kansas style - which promise answers for which loss, and what happens when the clock runs out. Losing an argument stung worse than losing a fight, so she learned the rules cold.",
   "For a long time her only goal was survival. Then one day she saw the red car, and the goal changed. She would leave with that car. Everything after that night was practice for the road out.",
-  "Nine levels stand between the backyard and the road: twenty-seven lessons, ten questions each, a ten minute clock and sixty seconds to a question. At every stop another cat waits to argue with her, and when the clock runs out they may call ATTACK TIME and steal seconds from the lesson.",
-  "At the very end waits the only attacker left: SHADOW CAT, her own shadow - everything survival taught her, turned around and looking back. One hundred fifty-six questions in one hundred fifty minutes, and no tricks at all.",
+  "Nine levels stand between the backyard and the road: twenty-seven lessons, ten questions each, a ten minute clock and sixty seconds to a question. At every stop a rival cat waits to argue with her, and when the clock runs out they may strike and steal seconds from the lesson.",
+  "At the very end waits the only challenger left: SHADOW CAT, her own shadow - everything survival taught her, turned around and looking back. One hundred fifty-six questions in one hundred fifty minutes, and no tricks at all.",
   "Win, and the mother who drives the red car brings her home. That is how CAT becomes the cardboard box tower queen - and only after that does a small black cat named BAT come into the story at all."
  ],
  "levels": [
@@ -32,8 +32,7 @@
      "id": 1,
      "levelId": 1,
      "title": "Two Kinds of Promise",
-     "subtitle": "Named perils and open perils decide what a policy will answer for.",
-     "pages": "1.1",
+     "subtitle": "How a policy decides which losses it will actually answer for.",
      "questionIds": [
       "q001",
       "q002",
@@ -46,33 +45,31 @@
       "q009",
       "q010"
      ],
-     "intro": "Every property policy answers one question first: which causes of loss does it promise to pay for? The manual splits that answer in two, and the split shapes almost every later lesson.",
+     "intro": "Before anything else, a property policy settles one question: which causes of loss is it promising to pay for? There are two ways to answer that, and the choice colors almost everything that follows in the journey.",
      "teaching": [
       {
        "heading": "A contract between two parties",
-       "text": "The property insurance policy is a two-party contract. The insured is the first party; the insurer is the second party. When the insured suffers a covered loss, the insurer reimburses the insured up to the limits shown on the declarations page."
+       "text": "A property insurance policy is a two-party contract. The insured is the first party and the insurer is the second party. When the insured suffers a covered loss, the insurer reimburses the insured up to the limits printed on the declarations page."
       },
       {
        "heading": "Named peril coverage",
-       "text": "Specified peril coverage, also called named peril coverage, covers only those perils that are named or listed in the policy. A peril that is not listed is not covered, no matter how unexpected the damage."
+       "text": "Specified coverage, also called named peril coverage, answers only for the causes of loss the policy lists. If a cause of loss is not listed, the damage it does is not covered, however sudden or surprising that damage may be."
       },
       {
        "heading": "Open peril coverage",
-       "text": "Special peril coverage, also called all risk or open peril, insures against the risk of direct physical loss to the property described. It does not name the covered perils; instead it names the losses it will not pay for."
+       "text": "Special coverage, also called open peril or all risk, insures against direct physical loss to the property described. Rather than naming each cause of loss it will pay for, it names the losses it will not pay for."
       }
      ],
      "scenario": {
       "title": "The rain that came through the roof",
-      "text": "A stray cat named CAT has been sleeping under a torn awning behind a grocery store. Overnight, wind tears the awning loose and water ruins a stack of cardboard boxes the store kept there. The owner reads two policies: one that lists wind among its covered causes of loss, and one that never mentions wind at all but does exclude floods. Before CAT can choose a dry place to sleep, the store owner has to decide which promise actually answers for the torn awning."
-     },
-     "sourceNote": "Manual pp. 1.1 (PDF p. 5)."
+      "text": "CAT has been sleeping under a torn awning behind a corner store. Overnight the wind rips the awning loose and rain ruins a stack of cardboard boxes the store kept beneath it. The owner pulls out two policies: one that lists wind among the causes of loss it covers, and one that never mentions wind but does exclude flooding. Before CAT picks a drier spot to sleep, the owner has to work out which of the two promises actually answers for the ruined boxes."
+     }
     },
     {
      "id": 2,
      "levelId": 1,
      "title": "The Extended List",
-     "subtitle": "Basic, broad, and the WHARVES that ride together.",
-     "pages": "1.2",
+     "subtitle": "Basic, broad, and the added causes of loss that ride together.",
      "questionIds": [
       "q011",
       "q012",
@@ -85,33 +82,31 @@
       "q019",
       "q020"
      ],
-     "intro": "When a policy does name its perils, the manual gives a precise sequence of lists. Knowing which perils sit on the basic list, which are added by extended coverage, and which appear only on the broad list keeps a coverage question from sliding into guesswork.",
+     "intro": "When a policy does name its causes of loss, there is a precise sequence of lists to keep straight. Knowing which causes sit on the basic list, which arrive through extended coverage, and which appear only on the broad list keeps a coverage question from turning into guesswork.",
      "teaching": [
       {
-       "heading": "The basic list",
-       "text": "Basic cause of loss lists eleven perils: fire including unfriendly or hostile fires and related damage, lightning, internal explosion, wind including tornado, hurricane and straight line, hail, aircraft missiles and spacecraft, riot and civil commotion, vehicle damage, volcanic eruption, external explosion, and smoke from a vented heating or cooking unit."
+       "heading": "The basic cause of loss list",
+       "text": "The basic cause of loss list names eleven causes of loss: fire, including hostile or unfriendly fire and the damage it causes; lightning; internal explosion; wind, including tornado, hurricane, and straight-line wind; hail; aircraft, missiles, and spacecraft; riot and civil commotion; damage by vehicles; volcanic eruption; external explosion; and smoke from a vented heating or cooking unit."
       },
       {
-       "heading": "Extended coverage adds WHARVES",
-       "text": "The extended coverage endorsement added to the standard fire policy brings in Wind, Hail, Aircraft, Riot, Vehicles, Explosion, Volcanic eruption, and Smoke. The manual remembers them as WHARVES."
+       "heading": "Extended coverage brings the WHARVES",
+       "text": "The extended coverage endorsement added to a standard fire policy brings in Wind, Hail, Aircraft, Riot, Vehicles, Explosion, Volcanic eruption, and Smoke. A handy memory aid strings their first letters into WHARVES."
       },
       {
-       "heading": "The broad list adds more",
-       "text": "Broad cause of loss keeps the same perils as the basic form and then adds vandalism and malicious mischief, weight of ice snow or sleet, falling objects, accidental discharge of water from an appliance or plumbing, freezing of pipes, sudden and accidental tearing apart of a heating, air conditioning or water heater unit, and damage by artificially generated electricity."
+       "heading": "The broad list adds still more",
+       "text": "The broad cause of loss list keeps the same causes as the basic form and then adds vandalism and malicious mischief; weight of ice, snow, or sleet; falling objects; accidental discharge of water from an appliance or plumbing; freezing of pipes; sudden and accidental tearing apart of a heating, air conditioning, or water heater unit; and damage caused by artificially generated electricity."
       }
      ],
      "scenario": {
       "title": "Choosing between two dry nights",
-      "text": "CAT has found two possible shelter spots: an open carport and a locked garden shed. A neighbor explains that one policy on the property lists only the basic causes of loss while another uses the broad list. Overnight, a pipe in the shed freezes and bursts, and a falling branch dents the carport roof. Before deciding which building CAT should claim, the neighbor wants to know whether freezing of pipes and falling objects belong to the basic list, the extended coverage endorsement, or the broad list."
-     },
-     "sourceNote": "Manual pp. 1.2 (PDF p. 6)."
+      "text": "CAT has found two possible shelters: an open carport and a locked garden shed. A neighbor explains that one policy on the property names only the basic causes of loss while another uses the broad list. Overnight a pipe in the shed freezes and bursts, and a falling branch dents the carport roof. Before choosing which building CAT should claim, the neighbor wants to know whether freezing pipes and falling objects belong to the basic list, the extended coverage endorsement, or the broad list."
+     }
     },
     {
      "id": 3,
      "levelId": 1,
-     "title": "What the Special Form Refuses",
-     "subtitle": "Exclusions, catastrophic perils, and property that is never covered.",
-     "pages": "1.3",
+     "title": "What the Open Form Refuses",
+     "subtitle": "Exclusions, catastrophic losses, and property no form will cover.",
      "questionIds": [
       "q021",
       "q022",
@@ -124,26 +119,25 @@
       "q029",
       "q030"
      ],
-     "intro": "The open peril form pays unless the loss is excluded, so the exclusions do the real work. The manual separates ordinary exclusions from catastrophic perils excluded on every form, and it lists kinds of property no basic property form will cover.",
+     "intro": "Because an open peril form pays unless the loss is excluded, the exclusions carry the real weight. There are everyday exclusions, catastrophic losses excluded on every form, and kinds of property that no basic property form will cover at all.",
      "teaching": [
       {
-       "heading": "Ordinary exclusions",
-       "text": "A special form will not insure losses caused by wear, tear, deterioration and defects; inherent vice and mechanical breakdown; smog, rust or other corrosion, mold, wet or dry rot; smoke from agricultural smudging or industrial operations; discharge of pollutants unless caused by a covered peril; and settling, shrinking or bulging of buildings."
+       "heading": "Everyday exclusions",
+       "text": "An open peril form will not answer for loss caused by wear, tear, deterioration, and defects; inherent vice and mechanical breakdown; smog, rust, or other corrosion, mold, wet rot, or dry rot; smoke from agricultural smudging or industrial operations; discharge of pollutants unless a covered peril caused the discharge; or settling, shrinking, or bulging of a building."
       },
       {
-       "heading": "Catastrophic perils excluded on all forms",
-       "text": "Earth movement, common power failure away from the premises, water damage from flood, sewer backup and sump pump failure, neglect or intentional acts, nuclear hazards, war, and zoning laws and ordinances are excluded on every form. Earthquake can be added by endorsement, typically with a deductible of two to ten percent of the amount of coverage, and quakes and aftershocks within 72 hours count as one occurrence."
+       "heading": "Catastrophic losses excluded everywhere",
+       "text": "Earth movement; common power failure away from the premises; water damage from flood, sewer backup, and sump pump failure; neglect or intentional acts; nuclear hazards; war; and zoning laws and ordinances are excluded on every form. Earthquake can be added by endorsement, usually with a deductible of two to ten percent of the amount of coverage, and quakes and aftershocks within 72 hours count as a single occurrence."
       },
       {
        "heading": "Property that is never covered",
-       "text": "Basic property forms do not cover property specifically covered by other insurance, aircraft, vehicles licensed for road use, property in which the insured has no insurable interest, land, damage to animals birds fish and rodents unless they are business inventory, patios and pavement, or an unrelated tenant's property."
+       "text": "A basic property form does not cover property already covered by other insurance, aircraft, vehicles licensed for road use, property in which the insured has no insurable interest, land, damage to animals, birds, fish, and rodents unless they are business inventory, patios and pavement, or an unrelated tenant's property."
       }
      ],
      "scenario": {
       "title": "The burst pipe and the muddy water",
-      "text": "Heavy rain floods the alley behind the grocery store and muddy water seeps into the shed where CAT shelters. The shed is also old, and its foundation has begun to settle and crack. The owner asks whether the special form on the shed will pay for the flood damage, for the settling, and for a rented scooter parked inside that is licensed for road use. CAT waits while the owner works out which of these losses the form answers for and which it refuses by design."
-     },
-     "sourceNote": "Manual pp. 1.3 (PDF p. 7)."
+      "text": "Heavy rain floods the alley behind the corner store, and muddy water seeps into the shed where CAT shelters. The shed is old, and its foundation has begun to settle and crack. The owner asks whether the open peril form on the shed will answer for the flood damage, for the settling, and for a rented scooter parked inside that is licensed for road use. CAT waits while the owner sorts out which of these losses the form pays for and which it refuses by design."
+     }
     }
    ]
   },
@@ -158,7 +152,6 @@
      "levelId": 2,
      "title": "Conditions of the Contract",
      "subtitle": "Cancellation, deductibles, other insurance, vacancy, and coinsurance.",
-     "pages": "1.4",
      "questionIds": [
       "q031",
       "q032",
@@ -171,33 +164,31 @@
       "q039",
       "q040"
      ],
-     "intro": "Conditions are the rules attached to the promise. They say how long the promise lasts, how it can be ended, how multiple policies share a loss, and what happens when the insured carries too little coverage.",
+     "intro": "Conditions are the fine print wrapped around the promise. They fix how long the promise runs, how either side may walk away, how two policies split one loss, and what happens when the insured carries too little coverage for the building.",
      "teaching": [
       {
        "heading": "Time and territory",
-       "text": "All losses must occur during the policy period shown on the declarations page, and the policy territory describes the area of coverage, which varies from worldwide down to a single location depending on the contract."
+       "text": "A covered loss has to happen while the policy period printed on the declarations page is still running. The policy territory fixes where coverage reaches, and it can stretch from the whole world down to one address depending on how the contract is written."
       },
       {
        "heading": "Cancellation and nonrenewal",
-       "text": "The insurer must give at least 10 days notice for non-payment of premium and 30 days for all other reasons. The insurer may cancel for any reason during the first 60 days, or 90 days for commercial policies, and afterwards only for specified reasons. Nonrenewal requires at least 30 days notice, or 60 days for commercial. The insured may cancel at any time in writing."
+       "text": "When premium goes unpaid the insurer must give at least 10 days notice; every other reason needs at least 30 days. The insurer may cancel for any reason during the first 60 days, or 90 days on a commercial policy, and after that only for reasons the policy lists. Nonrenewal calls for at least 30 days notice, 60 days on commercial. The insured, on the other hand, may cancel at any time simply by writing to the insurer."
       },
       {
        "heading": "Coinsurance",
-       "text": "Coinsurance, also called insurance to value, requires the insured to carry a limit of at least 80 percent of the replacement cost of the building at the time of loss. If the requirement is not met, the insurer can reduce the payment using the formula limit carried divided by limit required, multiplied by the loss."
+       "text": "Coinsurance, sometimes called insurance to value, asks the insured to carry a limit equal to at least 80 percent of what it would cost to rebuild the building at the time of the loss. Miss that mark and the insurer may cut the payment by the ratio of limit carried to limit required, applied to the amount of the loss."
       }
      ],
      "scenario": {
       "title": "Two policies and one small fire",
-      "text": "The grocery store owner carries two property policies: one that schedules the shed by address, and one blanket policy that does not. A space heater fire damages the shed and the deductible is $250. The owner also admits the building limit is only 60 percent of its replacement cost and wonders whether that matters. CAT sits on the windowsill while the owner sorts out which policy pays first, what the deductible does, and how carrying too little insurance changes the settlement."
-     },
-     "sourceNote": "Manual pp. 1.4 (PDF p. 8)."
+      "text": "The grocery store owner keeps two property policies: one that names the shed by its address, and a blanket policy that does not. A space heater fire scorches the shed; the deductible is $250. The owner also confesses the building limit is only 60 percent of what rebuilding would cost and wonders whether that is a problem. CAT watches from the windowsill while the owner works out which policy answers first, what role the deductible plays, and how running light on insurance reshapes the settlement."
+     }
     },
     {
      "id": 5,
      "levelId": 2,
      "title": "Duties, Subrogation, and Settlement",
      "subtitle": "What each side must do after a loss, and who ends up owning the remains.",
-     "pages": "1.5",
      "questionIds": [
       "q041",
       "q042",
@@ -210,33 +201,31 @@
       "q049",
       "q050"
      ],
-     "intro": "After a loss, the policy turns into a set of obligations. The insured reports and protects; the insurer settles and may recover. The manual gives exact time limits, which is why these provisions appear on nearly every property exam.",
+     "intro": "Once a loss happens the policy stops being a promise and becomes a to-do list. The insured reports and protects; the insurer settles and may recover. The time limits are exact, which is exactly why these provisions show up on nearly every property exam.",
      "teaching": [
       {
        "heading": "The insured's duties after a loss",
-       "text": "Notify the police for crimes, notify the insurer, protect the property from further loss, and file proof of loss within 60 days showing value, evidence and receipts. Assignment of rights and duties to a new owner must be approved by the insurer in writing. In Kansas the insured has up to five years to sue after the loss, and cannot sue until all provisions have been complied with."
+       "text": "The insured must call the police when a crime is involved, tell the insurer, shield the property from more damage, and deliver proof of loss within 60 days showing values, evidence and receipts. Transferring rights and duties to a new owner only counts once the insurer agrees in writing. In Kansas an insured may sue for up to five years after the loss, but not before every policy provision has been satisfied."
       },
       {
        "heading": "The insurer's provisions",
-       "text": "Liberalization applies revisions that broaden coverage during the policy period automatically when no new premium is required. Subrogation requires the insured to transfer the right of recovery against a responsible person to the insurer, which steps into the shoes of the insured. Salvage gives the insurer all rights to the salvage value once it pays for the damaged property."
+       "text": "Liberalization makes any revision that widens coverage mid-term apply on its own, as long as no extra premium is owed. Subrogation obliges the insured to hand the insurer the right to recover from whoever caused the damage, letting the insurer stand in the insured's shoes. Salvage hands the insurer every right to the salvage value once it has paid for the damaged property."
       },
       {
        "heading": "How losses are settled and paid",
-       "text": "Replacement cost is usually provided on buildings, while contents and outdoor property are settled on an actual cash value basis. The insurer must pay the loss within 30 days after proof of loss is filed, after a court judgment, or after an appraisal award. Under the appraisal clause each side picks an appraiser, and if they disagree the appraisers choose a third appraiser called an umpire, whose outcome is binding."
+       "text": "Buildings are normally settled at replacement cost, while contents and outdoor property are settled at actual cash value. The insurer has 30 days to pay after proof of loss is filed, after a court judgment, or after an appraisal award. Under the appraisal clause each side names an appraiser, and if the two disagree they pick a third - an umpire - whose decision binds everyone."
       }
      ],
      "scenario": {
       "title": "The neighbor's fallen tree",
-      "text": "A neighbor's neglected tree falls on the shed. The owner notifies the insurer, boards up the hole to prevent further damage, and files proof of loss. The insurer pays, then tells the owner it will pursue the neighbor for the money it spent. Meanwhile the insurer also says it now owns the salvage value of the ruined roofing material. CAT watches from a dry corner as the owner learns what the policy demands of each side after a covered loss."
-     },
-     "sourceNote": "Manual pp. 1.5 (PDF p. 9)."
+      "text": "A neighbor's long-neglected tree topples onto the shed. The owner calls the insurer, nails boards over the hole so rain cannot do more damage, and files proof of loss. The insurer pays, then announces it will chase the neighbor for what it spent. It also informs the owner that the salvage value of the ruined roofing is now the insurer's. CAT dozes in a dry corner while the owner learns what a covered loss demands of each side."
+     }
     },
     {
      "id": 6,
      "levelId": 2,
      "title": "Words That Decide Claims",
      "subtitle": "Definitions, valuation methods, and the mortgage clause.",
-     "pages": "1.6",
      "questionIds": [
       "q051",
       "q052",
@@ -249,41 +238,39 @@
       "q059",
       "q060"
      ],
-     "intro": "Most coverage arguments are really definition arguments. The manual supplies the vocabulary, from agreed value and direct loss to unoccupied and vacant, and it adds the two third-party conditions that protect a lender and an estate.",
+     "intro": "Most coverage fights are really definition fights. The vocabulary decides them - agreed value, direct loss, unoccupied, vacant - and two third-party conditions quietly protect a lender and an estate.",
      "teaching": [
       {
        "heading": "Third-party conditions",
-       "text": "The standard mortgage clause protects the interest of the mortgagee and allows the lender to file a claim if the insured does not, and it preserves coverage for the lender even if the insured intentionally damages the property. The insurer must give the lender a minimum of 10 days notice for cancellation or nonrenewal. On death, the legal representative of the insured becomes the insured until the estate is settled."
+       "text": "The standard mortgage clause guards the lender's interest and lets the lender file a claim when the insured will not, and it keeps coverage alive for the lender even if the insured deliberately damages the property. The insurer must give the lender at least 10 days notice before cancellation or nonrenewal. If the insured dies, the legal representative of the estate steps into the insured's place until the estate is closed."
       },
       {
        "heading": "Valuation methods",
-       "text": "Actual cash value is replacement cost less depreciation, obsolescence or deterioration. Replacement cost is the cost to repair or replace at today's labor and material costs. Market value is the current selling or negotiated price of the building, used to set the limit for older buildings."
+       "text": "Actual cash value is replacement cost minus depreciation, obsolescence or deterioration. Replacement cost is what it costs today, at present labor and material prices, to repair or rebuild. Market value is the current selling or negotiated price of the building and is used to set the limit on older buildings."
       },
       {
        "heading": "Definitions that move limits",
-       "text": "Agreed value is the value established and agreed upon when the policy is issued and becomes the maximum available for a covered loss, and if the named insured maintains agreed value the coinsurance penalty will not be assessed on partial losses. Blanket coverage is one policy covering several locations or items, while scheduled coverage lists each item separately with its own limit and premium."
+       "text": "Agreed value is a value settled and fixed when the policy is issued, and it becomes the most the policy will pay for a covered loss; if the named insured keeps agreed value in place, no coinsurance penalty is charged on partial losses. Blanket coverage puts several locations or items under one policy, while scheduled coverage lists each item on its own with a separate limit and premium."
       }
      ],
      "scenario": {
       "title": "The locked shed and the missing rent",
-      "text": "The shed's mortgage is held by a small local lender, and the owner has agreed with the insurer in advance on the shed's value. A windstorm tears off part of the roof, and the renter who kept tools there loses a month of use. CAT curls up beside the paperwork as the owner works through three questions: what the lender is entitled to, what agreed value changes about the coinsurance penalty, and whether the lost rental income is a direct loss or an indirect one."
-     },
-     "sourceNote": "Manual pp. 1.6 (PDF p. 10)."
+      "text": "A small local lender holds the mortgage on the shed, and the owner has agreed the shed's value with the insurer ahead of time. A windstorm peels off part of the roof, and the renter who stored tools there loses a month of use. CAT settles onto the paperwork while the owner sorts through three puzzles: what the lender is entitled to, what agreed value does to the coinsurance penalty, and whether the lost rental income is a direct loss or an indirect one."
+     }
     }
    ]
   },
   {
    "id": 3,
    "title": "The Garden Path",
-   "tagline": "A garden is quiet until someone else gets hurt in it.",
+   "tagline": "A garden stays peaceful until someone else gets hurt in it.",
    "color": "#4a7a4a",
    "lessons": [
     {
      "id": 7,
      "levelId": 3,
      "title": "Liability Begins with Fault",
-     "subtitle": "Negligence, standards of care, and the three kinds of damages.",
-     "pages": "1.7",
+     "subtitle": "How fault is measured, who counts as a visitor, and what a court can award.",
      "questionIds": [
       "q061",
       "q062",
@@ -296,33 +283,31 @@
       "q069",
       "q070"
      ],
-     "intro": "Property coverage pays the insured. Liability coverage pays someone else because of the insured. The manual introduces the three parties to that arrangement, then the legal vocabulary that decides who is at fault and how much the fault is worth.",
+     "intro": "Property coverage pays the insured. Liability coverage pays a stranger because of the insured. This lesson sets out the roles in that arrangement, the vocabulary that decides who was at fault, and the categories that decide what the fault is worth.",
      "teaching": [
       {
-       "heading": "Three parties, and defense costs",
-       "text": "A liability claim involves the insured, the insured's insurer, and the party who collects, called the claimant. The insurer pays all sums up to the stated limits for which the insured becomes legally liable, and it also pays investigation and defense costs, including attorney fees, in addition to the liability limits."
+       "heading": "Who pays whom",
+       "text": "A liability claim brings together the insured, the insured's insurer, and the injured party who collects, who is called the claimant. The insurer pays whatever sums the insured becomes legally obligated to pay up to the stated limit, and it pays investigation and defense costs, attorney fees included, on top of that limit rather than out of it."
       },
       {
-       "heading": "Negligence and the standard of care",
-       "text": "Negligence is a failure to do what a reasonable person would do under the same or similar circumstances, and tort or civil law determines fault and the amount of the award. The standard of care turns on who was on the premises: an invitee was specifically invited, a licensee includes friends, family, garbage collectors and letter carriers, and a trespasser may be casual or criminal."
+       "heading": "What counts as negligence",
+       "text": "Negligence is not doing what a reasonable person would do under the same or similar circumstances, and tort, or civil, law decides fault and the size of an award. The duty owed depends on who was present: an invitee was specifically invited, a licensee covers friends, family, and regular callers such as letter carriers and trash collectors, and a trespasser may be casual or criminal."
       },
       {
-       "heading": "Damages and fault without negligence",
-       "text": "Actual or compensatory damages combine special damages for medical bills, lost income, rehabilitation and direct expenses with general damages for pain and suffering, loss of companionship and mental anguish. Punitive damages punish and set an example, and are not covered by insurance. Absolute liability applies without fault, such as possessing hazardous property, and strict liability holds a manufacturer responsible for injury caused by its product even if the customer used it negligently."
+       "heading": "Damages, and liability without fault",
+       "text": "Actual, or compensatory, damages are split into special damages for medical bills, lost income, rehabilitation and direct expenses, and general damages for pain and suffering, loss of companionship and mental anguish. Punitive damages are meant to punish and set an example, and insurance does not pay them. Absolute liability applies with no fault at all, as with hazardous property, while strict liability holds a maker responsible for harm its product causes even if the buyer handled it carelessly."
       }
      ],
      "scenario": {
-      "title": "The loose paving stone",
-      "text": "A delivery driver crosses the grocery store's walkway, trips on a loose paving stone, and breaks a wrist. The driver was invited there to make a delivery, and the store knew the stone had been shifting for weeks. The store's insurer hires a lawyer even though the driver has not yet sued. CAT, dozing by the register, hears the store owner ask three questions: who is the claimant, what does the insurer pay in addition to the limits, and how would a jury sort the medical bills from the pain and suffering."
-     },
-     "sourceNote": "Manual pp. 1.7 (PDF p. 11)."
+      "title": "The cracked loading apron",
+      "text": "A courier crossing the hardware store's loading apron catches a boot on a cracked slab and goes down hard, breaking a wrist. He had been invited there to drop a pallet, and the owner had known for weeks that the slab was crumbling away. The insurer retains an attorney before anyone files a lawsuit. Watching from a shelf of paint cans, CAT hears the owner work through three puzzles: who exactly is the claimant, what the insurer pays beyond its stated limit, and how a jury would separate the hospital bills from the pain and suffering."
+     }
     },
     {
      "id": 8,
      "levelId": 3,
      "title": "Limits and Common Provisions",
-     "subtitle": "How liability policies share, cap, and apply coverage.",
-     "pages": "1.8",
+     "subtitle": "How much a liability policy pays, and how its shared clauses work.",
      "questionIds": [
       "q071",
       "q072",
@@ -335,33 +320,31 @@
       "q079",
       "q080"
      ],
-     "intro": "Liability policies reuse the same provisions as property policies, then add a family of limits. Reading a limit correctly, and knowing that coverage applies separately to each insured without increasing that limit, is the skill this lesson builds.",
+     "intro": "Liability forms borrow many provisions from property forms and then add a family of limits. Reading a limit correctly, and knowing that coverage applies separately to each insured without enlarging that limit, is the skill this lesson builds.",
      "teaching": [
       {
-       "heading": "The shared provisions",
-       "text": "The occurrence must take place during the policy period. Cancellation follows the familiar pattern of 10 days notice for non-payment and 30 days for other reasons. Where other insurance exists, the policy providing the most specific coverage pays first as primary, or the insurers pay pro rata. Assignment requires the insurer's written approval, and subrogation transfers the right of recovery against a responsible third party."
+       "heading": "Provisions carried over from property",
+       "text": "The occurrence must take place during the policy period. Cancellation follows a familiar pattern: ten days notice for non-payment and thirty days for other reasons. Where other insurance exists, the policy with the most specific coverage pays first as primary, or the insurers share pro rata. Assignment needs the insurer's written approval, and subrogation transfers the right of recovery against a responsible third party."
       },
       {
-       "heading": "The five limits",
-       "text": "Per occurrence is the maximum paid in any one event. Per person is the maximum paid to any one person. Aggregate is the maximum paid in any one policy period for all claims combined. Split limits provide separate limits for bodily injury and property damage that cannot be used for each other, while a combined single limit applies one limit to bodily injury and property damage together."
+       "heading": "The five ways a limit is written",
+       "text": "Per occurrence is the ceiling for any single event. Per person is the ceiling for any one individual. Aggregate is the ceiling for all claims combined across one policy period. Split limits give separate figures for bodily injury and property damage that cannot be borrowed from one another, while a combined single limit applies one figure to bodily injury and property damage together."
       },
       {
-       "heading": "Cooperation and separation",
-       "text": "The insured must notify the company promptly of an occurrence, a claim or a suit, send copies of legal notices, authorize the company to obtain records, cooperate, and make no payment or assume no obligation without the insurer's consent. Separation of insureds applies coverage separately to each insured, but it will not increase the limit of coverage that applies for any single occurrence."
+       "heading": "Duties after a loss, and separability",
+       "text": "The insured must tell the company promptly about an occurrence, a claim or a suit, forward copies of legal notices, allow the company to obtain records, cooperate, and neither pay nor assume any obligation without the insurer's consent. Bankruptcy of the insured does not release the insurer from its duties. Separation of insureds applies coverage separately to each insured but does not increase the limit for any single occurrence."
       }
      ],
      "scenario": {
-      "title": "Two dogs, one afternoon",
-      "text": "A visiting terrier nips a courier at the store, and an hour later the same dog knocks over a display case. One event, two kinds of harm, and a policy with a per-person limit, a per-occurrence limit, and an aggregate. The store owner also wants to know whether the neighbor who was walking the dog is treated as an insured. CAT, an expert at keeping a low profile, watches while the owner learns why the same occurrence cannot be charged against the limit twice."
-     },
-     "sourceNote": "Manual pp. 1.8 (PDF p. 12)."
+      "title": "One afternoon, two harms",
+      "text": "A visiting terrier nips a courier on the ankle, and not an hour later the same dog sends a display of paint cans crashing down. It is a single afternoon but two kinds of harm, and the store carries a policy with a per-person limit, a per-occurrence limit, and an aggregate. The owner also wonders whether the neighbor who was minding the dog counts as an insured. CAT, skilled at staying unnoticed, watches while the owner learns that one occurrence cannot be charged against the limit twice."
+     }
     },
     {
      "id": 9,
      "levelId": 3,
      "title": "Defending a Claim",
-     "subtitle": "Contributory fault, assumption of risk, and breaking the chain of cause.",
-     "pages": "1.9",
+     "subtitle": "Shared fault, accepted risk, and breaking the chain of cause.",
      "questionIds": [
       "q081",
       "q082",
@@ -374,26 +357,25 @@
       "q089",
       "q090"
      ],
-     "intro": "The manual closes its liability basics with the legal defenses that decide whether a claim survives at all. Some bar recovery outright and some merely reduce it, and one defense shifts the blame to a later cause entirely.",
+     "intro": "Liability basics close with the defenses that decide whether a claim survives at all. Some erase recovery entirely, some merely shrink it, and one shifts the blame to a later cause instead.",
      "teaching": [
       {
-       "heading": "Fault that bars recovery",
-       "text": "Contributory negligence is a common law defense: if a person contributes in any way to a loss, that person is barred from recovery against another even if the other person was mostly at fault. Assumption of risk is also a common law defense, and if a plaintiff voluntarily assumes the risk, recovery may be barred, as with an adult riding in the back of a pickup."
+       "heading": "Defenses that erase recovery",
+       "text": "Contributory negligence is a common law defense: a person who contributes in any way to a loss is barred from recovering from another, even if the other party was mostly at fault. Assumption of risk is also a common law defense, and a plaintiff who voluntarily takes on the risk may be barred, as when an adult rides in the back of a pickup."
       },
       {
-       "heading": "Fault that shares the loss",
-       "text": "Comparative negligence is a statutory defense that compares the negligence of all parties to determine the percentage of fault and the amount of the award. The person with the highest percentage of fault pays that percentage of the other person's damages or injuries."
+       "heading": "Defenses that divide the loss",
+       "text": "Comparative negligence is a statutory defense that weighs the conduct of every party to set the percentage of fault and the size of the award. The party carrying the highest percentage of fault pays that share of the other person's damages or injuries."
       },
       {
-       "heading": "Fault that moves elsewhere",
-       "text": "An intervening cause frees the defendant of liability. In the manual's example, a student's dropped cigarette starts a dorm fire, but investigators find the smoke detector had failed; if the detector had worked, the damage would have been slight. The intervening cause, the failed detector, becomes the proximate cause and frees the student of responsibility. A statute of limitations requires suits to be brought within the time period specified by law."
+       "heading": "Defenses that move the blame",
+       "text": "An intervening cause frees the defendant of liability. Picture a dropped cigarette starting a fire in a dormitory, only for investigators to find that a smoke detector had failed; had the detector worked, the damage would have been slight. That failure becomes the proximate cause and relieves the student of responsibility. A statute of limitations requires suits to be brought within the time period set by law."
       }
      ],
      "scenario": {
-      "title": "The pickup truck and the missing fence",
-      "text": "A teenager rides in the open bed of a pickup, as the neighbors have done for years, and is thrown when the truck hits a rut. The driver also argues that the fence the truck swerved to avoid had been leaning for months. CAT, who has survived on the street by understanding risk, listens while the owner's adjuster sorts three defenses: one that could bar the passenger's claim entirely, one that compares the percentage of fault, and one that claims a later cause is really to blame."
-     },
-     "sourceNote": "Manual pp. 1.9 (PDF p. 13)."
+      "title": "The pickup bed and the leaning fence",
+      "text": "A teenager rides in the open bed of a pickup, as neighbors have done for years, and is thrown clear when the truck jounces over a rut. The driver points out that the fence he swerved around had been leaning for months. CAT, who has survived on the street by reading risk early, listens while the adjuster weighs three defenses: one that could erase the passenger's claim outright, one that divides blame by percentage, and one that pins the real cause on something later in the chain."
+     }
     }
    ]
   },
@@ -406,9 +388,8 @@
     {
      "id": 10,
      "levelId": 4,
-     "title": "Homeowners Policy Structure",
-     "subtitle": "Coverages A through F, the Kansas provisions, and the endorsements.",
-     "pages": "2.1",
+     "title": "Inside a Homeowners Policy",
+     "subtitle": "The six coverages, the Kansas protections, and the endorsements that reshape them.",
      "questionIds": [
       "q091",
       "q092",
@@ -421,33 +402,31 @@
       "q099",
       "q100"
      ],
-     "intro": "The homeowners policy is the manual's first package policy: property and liability in one contract. Its declarations page lays out six coverages, and its endorsements change what those coverages will pay.",
+     "intro": "A homeowners policy folds property and liability protection into a single package. Its declarations page spells out six coverages, and endorsements decide how far each of them really reaches.",
      "teaching": [
       {
        "heading": "The six coverages",
-       "text": "Coverage A is the dwelling, shown with replacement cost value. Coverage B, other structures, is an additional amount, ten percent of A, with replacement cost on buildings and actual cash value on other property. Coverage C, unscheduled personal property, is fifty percent of A with an actual cash value settlement and a territory of one hundred percent of the limit worldwide. Coverage D, loss of use, is thirty percent of A and pays the consequential or indirect loss of additional living expenses or lost rent. Section II adds Coverage E, personal liability, at one hundred thousand dollars per occurrence, and Coverage F, medical payments to others, at one thousand dollars per person up to twenty-five thousand dollars per occurrence."
+       "text": "Coverage A is the dwelling itself, carried at replacement cost. Coverage B, other structures, rides along as an additional ten percent of A, paying replacement cost on buildings but actual cash value on other property. Coverage C, unscheduled personal property, adds fifty percent of A, settles at actual cash value, and follows the insured anywhere in the world up to one hundred percent of its limit. Coverage D, loss of use, adds thirty percent of A for indirect costs such as additional living expenses or lost rent. Section II brings Coverage E, personal liability, at one hundred thousand dollars per occurrence, and Coverage F, medical payments to others, at one thousand dollars per person up to twenty-five thousand dollars per occurrence."
       },
       {
-       "heading": "Package policy and Kansas provisions",
-       "text": "The homeowners policy is a package policy covering both property and liability exposures. The Kansas special provisions give the insured five years to sue the company instead of one year and require losses to be paid within thirty days instead of sixty days."
+       "heading": "One package, two sections",
+       "text": "A homeowners policy answers both the property and the liability exposures of an ordinary household in one contract. Kansas adds two timing protections to the fine print: an insured may sue the company for up to five years rather than the usual one, and a covered loss must be paid within thirty days rather than sixty."
       },
       {
-       "heading": "Endorsements worth knowing",
-       "text": "Personal property replacement cost coverage upgrades contents. Scheduled personal property provides specified limits with agreed value and no deductible, on an open peril worldwide basis, for valuables such as furs, jewelry, silverware, coins, fine arts and stamps. Water backup and sump pump discharge or overflow provides up to five thousand dollars with a two hundred fifty dollar deductible. Inflation guard helps maintain the eighty percent coinsurance requirement, and personal injury covers lawsuits such as defamation, wrongful arrest and wrongful eviction."
+       "heading": "Endorsements that change the deal",
+       "text": "Personal property replacement cost coverage lifts contents from actual cash value to replacement cost. Scheduled personal property lists valuables such as furs, jewelry, silverware, coins, fine art, and stamps at agreed value with no deductible and open peril coverage worldwide. Water backup and sump pump discharge or overflow pays up to five thousand dollars after a two hundred fifty dollar deductible. Inflation guard keeps the eighty percent coinsurance requirement in step with rising building costs, and personal injury responds to lawsuits including defamation, wrongful arrest, and wrongful eviction."
       }
      ],
      "scenario": {
-      "title": "Reading a declarations page aloud",
-      "text": "The grocery store owner's sister has inherited a small house and reads its declarations page to CAT, who is stretched along the sunny top of the garden wall. Coverage A says one hundred thousand dollars. The owner asks what amount sits behind other structures, what limit applies to unscheduled personal property, whether the family could be paid for a hotel if the house became uninhabitable, and what the medical payments coverage is worth. Each answer changes how much of the property and liability burden the policy really carries."
-     },
-     "sourceNote": "Manual pp. 2.1 (PDF p. 14)."
+      "title": "Reading a declarations page on the wall",
+      "text": "The grocery owner's sister has inherited a modest house, and she reads its declarations page out loud while CAT stretches along the warm top of the garden wall. Coverage A shows one hundred thousand dollars, and the questions come in a rush: how much sits behind the other structures, what limit follows the unscheduled contents, could the family be paid for a hotel if the house became uninhabitable, and how much medical payments coverage is really there. Each answer moves the boundary between what the household carries and what the policy carries."
+     }
     },
     {
      "id": 11,
      "levelId": 4,
-     "title": "Who Is an Insured",
-     "subtitle": "Named insured, insured location, and who qualifies for the policy.",
-     "pages": "2.2",
+     "title": "Who Counts as an Insured",
+     "subtitle": "The named insured, the broader class of insureds, the insured location, and eligible dwellings.",
      "questionIds": [
       "q101",
       "q102",
@@ -460,33 +439,31 @@
       "q109",
       "q110"
      ],
-     "intro": "Homeowners coverage questions are often really membership questions. The manual defines the named insured, the broader class of insureds, the insured location, and the short list of dwellings that simply do not qualify.",
+     "intro": "Many homeowners questions are really questions about membership. The policy defines who the named insured is, who else counts as an insured, what places count as the insured location, and which dwellings are simply not eligible.",
      "teaching": [
       {
-       "heading": "Named insured and insured",
-       "text": "The named insured is you and your spouse if a resident of the same household. Insured includes you and residents of your household who are your relatives by blood, adoption or marriage, and other persons under the age of twenty-one in the care of you or your relatives, such as foster children or a foreign exchange student."
+       "heading": "Named insured and insureds",
+       "text": "The named insured is the person on the declarations page: you, together with your spouse if the two of you share a household. The term insured reaches further, to residents of your household who are related to you by blood, adoption, or marriage, and to anyone under twenty-one in the care of you or one of those relatives, such as a foster child or an exchange student."
       },
       {
-       "heading": "Insured location",
-       "text": "The insured location includes the residence premises, the part of other premises, other structures and grounds used by you as a residence, a residence acquired during the policy period for your use, any part of a premises not owned by an insured where an insured is temporarily residing, vacant land other than farm land owned by or rented to an insured, and individual family cemetery plots or burial vaults up to five thousand dollars."
+       "heading": "What counts as an insured location",
+       "text": "The insured location starts with the residence premises. It also takes in the portion of other premises, structures, and grounds you use as a residence; a residence you buy during the policy period for your own use; any part of a premises you do not own where an insured is staying temporarily; vacant land you own or rent that is not farmland; and family cemetery plots or burial vaults, up to five thousand dollars."
       },
       {
-       "heading": "Eligibility",
-       "text": "The dwelling must be used primarily for residential purposes and be owner occupied, and it must be a one to four family dwelling. Up to two roomers or boarders are permitted, but an unrelated tenant's property is not covered. Farms and businesses are not eligible. An incidental service business with two or fewer employees may be conducted in the home, but mercantile, manufacturing, wholesale distribution and auto repair are not allowed. Coverage B is excluded if other structures are used for any business purpose, although a garage rented to another person for parking a car, boat or motorcycle is covered."
+       "heading": "Who and what qualifies",
+       "text": "The dwelling must be a one-to-four family home used mainly for residential purposes and lived in by its owner. Up to two roomers or boarders are allowed, and a tenant's own belongings are not covered. Farms and businesses fall outside the form. A small service business with no more than two employees may run inside the home, such as a barber shop or a professional office, but retail sales, manufacturing, wholesale distribution, and auto repair may not. Other structures slip out of Coverage B the moment they are used for any business purpose, although a garage rented to someone else purely for parking a car, boat, or motorcycle keeps its coverage."
       }
      ],
      "scenario": {
-      "title": "The house with three front doors",
-      "text": "A small house near the alley has a grandmother, her adult nephew, a foster child, and one paying boarder. The owner's cousin asks CAT whether the nephew's tools count, whether the boarder's laptop is covered, and whether the detached garage that the neighbor rents for parking is still insured. CAT, who lives on no one's declarations page, waits while the questions of who is an insured and what counts as the insured location get sorted out."
-     },
-     "sourceNote": "Manual pp. 2.2 (PDF p. 15)."
+      "title": "A house with several kinds of resident",
+      "text": "A narrow house near the alley holds a grandmother, her adult nephew, a foster child, and one paying boarder. The owner's cousin asks CAT to sort out who belongs to whom: do the nephew's work tools travel with the policy, is the boarder's laptop ever covered, and does the detached garage still qualify now that a neighbor pays to park there. CAT, who appears on nobody's declarations page, listens while the questions of membership and location get untangled."
+     }
     },
     {
      "id": 12,
      "levelId": 4,
-     "title": "Homeowners Forms Compared",
-     "subtitle": "HO-2, HO-3, HO-5, the renters and condo forms, and what no form covers.",
-     "pages": "2.3",
+     "title": "Choosing a Homeowners Form",
+     "subtitle": "HO-2, HO-3, HO-5, the renters and condo forms, and the losses that no form covers.",
      "questionIds": [
       "q111",
       "q112",
@@ -499,41 +476,39 @@
       "q119",
       "q120"
      ],
-     "intro": "Not every homeowners form uses the same cause of loss. The manual lines them up so the difference between broad named perils and special coverage is visible at a glance, and then lists the causes of loss that no form will pay for.",
+     "intro": "Homeowners forms do not all insure the same causes of loss. Lined up side by side, the difference between broad named perils and special coverage becomes obvious, along with the losses that no form on the market will pay for.",
      "teaching": [
       {
-       "heading": "The numbering",
-       "text": "The HO-2 broad form uses broad named perils on coverages A, B and C. The HO-3 special form uses a special or open peril cause of loss on A and B but broad named peril coverage on C. The HO-5 comprehensive form uses a special cause of loss on A, B and C. The HO-8 modified form uses basic named perils plus vandalism and malicious mischief and theft, with a one thousand dollar maximum on personal property, settled at actual cash value or repair cost up to market value."
+       "heading": "The form numbers",
+       "text": "The HO-2 broad form applies broad named perils to coverages A, B, and C. The HO-3 special form moves coverages A and B to a special, open peril basis while leaving C on broad named perils. The HO-5 comprehensive form puts a special cause of loss on A, B, and C alike. The HO-8 modified form stays with basic named perils and adds vandalism, malicious mischief, and theft, capping personal property at one thousand dollars and settling at actual cash value or repair cost up to market value."
       },
       {
        "heading": "Renters and condominium owners",
-       "text": "The HO-4 contents broad form does not need coverages A and B and applies broad perils to Coverage C, with ten percent of C provided for tenants improvements, also called building additions and alterations. The HO-6 condominium unit owners form applies broad named perils to coverages A and C and does not need Coverage B. The condominium association's commercial policy covers the outer shell of the building and separate structures owned by the association, and each owner then buys an HO-6."
+       "text": "The HO-4 contents broad form is built for tenants: it skips coverages A and B, applies broad perils to Coverage C, and devotes ten percent of C to tenants improvements, also called building additions and alterations. The HO-6 condominium unit owners form applies broad named perils to coverages A and C and needs no Coverage B. The outer shell of the building and any separate structures owned by the association are insured under the association's commercial policy, and each owner then insures their own unit with an HO-6."
       },
       {
-       "heading": "Excluded on all forms",
-       "text": "Every homeowners form excludes all earth movement, including earthquake, landslides, mine subsidence and sinkhole collapse; water damage from surface water such as flood, ground water, sewer backup and sump pump failure; ordinance or law, which in Kansas is ten percent of the Coverage A limit; common power failure; neglect and intentional loss; and war and nuclear hazard. All forms share the same Section II personal liability coverage, and all forms cover theft of personal property."
+       "heading": "What no form covers",
+       "text": "Every homeowners form turns down the same core list. Earth movement of any kind, including earthquake, landslide, mine subsidence, and sinkhole collapse, is out. So is water damage from surface water, which takes in flood, ground water, sewer backup, and sump pump failure. Ordinance or law is excluded, although Kansas permits ten percent of the Coverage A limit for it. Common power failure, neglect, intentional loss, and war or nuclear hazard are all excluded too. Every form still shares the same Section II personal liability coverage, and every form covers theft of personal property."
       }
      ],
      "scenario": {
-      "title": "Four houses on the same street",
-      "text": "On one street sit four very different homes: an older house insured on a modified form, a family home on a special form, a unit in a condominium building, and an apartment rented by a student. A storm drops hail, a sinkhole opens two streets over, and the student's laptop disappears from the apartment. CAT patrols the fence line while the adjuster explains which form pays for which loss and which loss no form on the street will touch."
-     },
-     "sourceNote": "Manual pp. 2.3 (PDF p. 16)."
+      "title": "Four very different homes on one street",
+      "text": "Four households share a single street: an old house insured on a modified form, a family home on a special form, a unit inside a condominium building, and an apartment rented by a student. A hailstorm sweeps through, a sinkhole opens two streets away, and the student's laptop vanishes from the apartment. CAT walks the fence line while the adjuster works through which form answers which loss, and which loss no form on the street will answer at all."
+     }
     }
    ]
   },
   {
    "id": 5,
    "title": "The Rooftop Run",
-   "tagline": "Up here the wind is real and so are the sub-limits.",
+   "tagline": "Up here the wind bites and the sub-limits bite back.",
    "color": "#7a5a8a",
    "lessons": [
     {
      "id": 13,
      "levelId": 5,
-     "title": "Coverage C Limits and Property Not Covered",
-     "subtitle": "Inside limits, and the things a homeowners form never insures.",
-     "pages": "2.4",
+     "title": "Inside Limits and the Gaps in Coverage",
+     "subtitle": "Small ceilings stacked on personal property, and what a homeowners form refuses outright.",
      "questionIds": [
       "q121",
       "q122",
@@ -546,33 +521,31 @@
       "q129",
       "q130"
      ],
-     "intro": "Unscheduled personal property sounds unlimited, but the manual attaches small inside limits to categories of valuables and lists property the form will not insure at all. These limits appear on nearly every exam because they are easy to confuse.",
+     "intro": "Unscheduled personal property reads as though it has no ceiling at all, yet narrow caps sit on whole categories of valuables, and a separate list names property the form will not touch. These ceilings show up on nearly every exam because they are so easy to mix up.",
      "teaching": [
       {
-       "heading": "Theft limits on valuables",
-       "text": "The inside limits apply per category. Theft, misplacing or losing is limited to fifteen hundred dollars for furs, jewelry, stones and watches, twenty-five hundred dollars for guns, and twenty-five hundred dollars for pewterware, goldware and silverware."
+       "heading": "Caps that apply to theft",
+       "text": "The narrow caps work category by category. When furs, jewelry, stones or watches are stolen, misplaced or simply lost, the ceiling is one thousand five hundred dollars. Guns get twenty-five hundred dollars, and pewterware, goldware and silverware get twenty-five hundred dollars as well."
       },
       {
-       "heading": "All-peril inside limits",
-       "text": "Banknotes, gold, silver and money are limited to two hundred dollars on an all peril basis. Fifteen hundred dollars applies to the re-creation of personal records, securities, accounts, deeds, passports, evidence of debt, manuscripts, tickets, stamps, watercraft, trailers and motors. Twenty-five hundred dollars applies to property used primarily for business, or fifteen hundred dollars if the property is off the residence premises. Portable electronic equipment that can be powered both by a vehicle and another power source is limited to fifteen hundred dollars while in or upon a motor vehicle or away from the residence premises, and media such as tapes, wires, records and disks are limited to two hundred fifty dollars."
+       "heading": "Caps that apply to every peril",
+       "text": "Banknotes, gold, silver and money top out at two hundred dollars when any peril is involved. One thousand five hundred dollars covers rebuilding personal records, securities, accounts, deeds, passports, evidence of debt, manuscripts, tickets, stamps, watercraft, trailers and motors. Property used mainly for business gets twenty-five hundred dollars, dropping to fifteen hundred when the property sits off the residence premises. Portable electronic equipment that can draw power from a vehicle as well as another source is capped at fifteen hundred dollars while inside or upon a motor vehicle or away from the residence premises, and media such as tapes, wires, records and disks are capped at two hundred fifty dollars."
       },
       {
-       "heading": "Property not covered",
-       "text": "Under coverages A and B the form does not cover land, including the land on which the structures are built. Under Coverage C, property already covered by other insurance is not covered, and the scheduled list excludes aircraft except models, motor vehicles except those used to service the residence and assist the handicapped, damage to animals birds and fish, an unrelated tenant's property, and business data in paper or computer form."
+       "heading": "Property the form will not cover",
+       "text": "Under coverages A and B, land is not covered, and that includes the ground the structures stand on. Under Coverage C, property that other insurance already covers is excluded, and the form also leaves out aircraft other than models, motor vehicles except those used to service the residence or assist the handicapped, harm to animals, birds and fish, a tenant's property when the tenant is unrelated, and business data whether it is on paper or in a computer."
       }
      ],
      "scenario": {
-      "title": "The box of small valuables",
-      "text": "A tenant moving out of the upstairs apartment leaves a shoebox behind. Inside are a gold ring, a set of antique silver spoons, a passport, a stamped coin collection, and a laptop that charges both in a car and at a wall outlet. A delivery driver takes the box from an unlocked car the next morning. CAT watches the owner try to work out which categories the box actually fell into and what each one is worth on the declarations page."
-     },
-     "sourceNote": "Manual pp. 2.4 (PDF p. 17)."
+      "title": "The shoebox left upstairs",
+      "text": "A tenant clears out of the upstairs flat and forgets a shoebox. It holds a gold ring, a set of antique silver spoons, a passport, a stamped coin collection, and a laptop that charges in a car as readily as at a wall outlet. Someone lifts the box from an unlocked car the following morning. CAT watches the owner sort the contents into categories and try to work out what each one is actually worth."
+     }
     },
     {
      "id": 14,
      "levelId": 5,
-     "title": "Section I Additional Coverages",
-     "subtitle": "Additions, extensions, and what each one really pays.",
-     "pages": "2.4",
+     "title": "Section I Add-On Coverages",
+     "subtitle": "The add-ons, the extensions, and what each one actually pays.",
      "questionIds": [
       "q131",
       "q132",
@@ -585,33 +558,31 @@
       "q139",
       "q140"
      ],
-     "intro": "Additional coverages come in two flavors. Additions increase a limit, while extensions let the insured apply unused limits somewhere else. The manual attaches a figure to each one.",
+     "intro": "The add-on coverages come in two shapes. An addition raises a limit, while an extension lets the insured move unused limits somewhere else. Each one carries its own figure.",
      "teaching": [
       {
-       "heading": "Additions versus extensions",
-       "text": "Additions increase the limit of insurance provided by the policy. Extensions do not increase a limit; instead they allow the insured to apply unused limits from one coverage to another."
+       "heading": "Additions against extensions",
+       "text": "An addition raises the limit of insurance the policy provides. An extension leaves the limit alone and instead lets the insured pour unused limits from one coverage into another."
       },
       {
-       "heading": "The dollar figures",
-       "text": "Debris removal is an extension, with an additional five percent of Coverage A available if the loss plus debris removal exceeds the policy limit, plus five hundred dollars per tree up to a maximum of one thousand dollars for trees felled by wind, hail or ice, or a neighbor's tree felled by a covered peril that damages a covered structure. Trees, shrubs and other plants are an addition of five percent of Coverage A with a maximum of five hundred dollars per item. The fire department service charge is five hundred dollars with no deductible. Property removed to preserve the property extends coverage for thirty days against direct loss from any cause. Credit card, fund transfer card, forgery and counterfeit money is an extension of five hundred dollars with no deductible. Loss assessment is an addition of one thousand dollars, and landlord's furnishings is an addition of twenty-five hundred dollars on broad perils except theft."
+       "heading": "The figures to know",
+       "text": "Debris removal is an extension, with an extra five percent of Coverage A available once the loss plus debris removal runs past the policy limit, plus five hundred dollars per tree up to one thousand dollars total for trees brought down by wind, hail or ice, or for a neighbor's tree felled by a covered peril that damages a covered structure. Trees, shrubs and other plants are an addition of five percent of Coverage A with a five hundred dollar ceiling per item. The fire department service charge is five hundred dollars with no deductible. Property moved to protect it keeps coverage for thirty days against direct loss from any cause. Credit card, fund transfer card, forgery and counterfeit money is an extension of five hundred dollars with no deductible. Loss assessment is an addition of one thousand dollars, and landlord's furnishings is an addition of twenty-five hundred dollars on broad perils except theft."
       },
       {
        "heading": "Landscaping and collapse",
-       "text": "Landscaping is covered for fire or lightning, explosion, riot or civil commotion, aircraft, non-owned vehicles, vandalism and malicious mischief, and theft, but there is no coverage for wind, hail, ice or snow. Collapse is not itself a peril, but coverage applies when collapse of a building under coverages A and B is caused by a peril insured against, the weight of people or property, or hidden insect and decay damage."
+       "text": "Landscaping is covered for fire or lightning, explosion, riot or civil commotion, aircraft, non-owned vehicles, vandalism and malicious mischief, and theft, but wind, hail, ice and snow are left out. Collapse is not a peril in its own right, yet coverage applies when a building under coverages A and B collapses because of a peril insured against, the weight of people or property, or hidden insect and decay damage."
       }
      ],
      "scenario": {
-      "title": "The storm that took the oak",
-      "text": "A windstorm splits the store's oak tree, which falls across the fence and leaves branches blocking the alley CAT uses at night. Clearing the tree costs more than the policy limit for the loss. The fire department also charges for a call, and the owner loses a credit card the same week. CAT circles the debris while the owner adds up five hundred dollars per tree, five percent of Coverage A, and a separate five hundred dollars for the fire department, trying to see which items are additions and which are extensions."
-     },
-     "sourceNote": "Manual pp. 2.4 (PDF p. 17)."
+      "title": "The oak that came down",
+      "text": "A windstorm splits the store's oak, which lands across the fence and leaves branches blocking the alley CAT crosses at night. Clearing the tree runs past the policy limit for the loss. The fire department bills for the call, and the owner misplaces a credit card the same week. CAT circles the wreckage while the owner stacks up five hundred dollars per tree, five percent of Coverage A, and a separate five hundred dollars for the fire department, trying to tell the additions from the extensions."
+     }
     },
     {
      "id": 15,
      "levelId": 5,
      "title": "Section II Liability and Supplementary Payments",
-     "subtitle": "Coverages E and F, defense costs, and the payments made in addition to limits.",
-     "pages": "2.5",
+     "subtitle": "Coverages E and F, defense costs, and what is paid on top of the limits.",
      "questionIds": [
       "q141",
       "q142",
@@ -624,26 +595,25 @@
       "q149",
       "q150"
      ],
-     "intro": "Section II turns the homeowners policy into a liability policy. It pays damages and defense, adds medical payments regardless of fault, and then stacks supplementary payments on top of the limits.",
+     "intro": "Section II turns the homeowners policy into a liability policy. It pays damages and defense, adds medical payments whether or not anyone was at fault, and then stacks supplementary payments on top of the limits.",
      "teaching": [
       {
        "heading": "Coverage E, personal liability",
-       "text": "The minimum combined single limit is one hundred thousand dollars per occurrence. Under the insuring agreement the insurer pays up to its limit for damages for which the insured is legally liable and provides a defense at its expense by counsel of its choice, even if the suit is groundless, false or fraudulent. The insurer may investigate and settle any claim it decides is appropriate, and the duty to settle or defend ends when the limit for the occurrence has been exhausted."
+       "text": "The minimum combined single limit is one hundred thousand dollars per occurrence. Under the insuring agreement the insurer pays up to its limit for damages the insured is legally liable for and provides a defense at its own expense through counsel it chooses, even when the suit is groundless, false or fraudulent. The insurer may investigate and settle any claim it sees fit, and the duty to settle or defend ends once the limit for that occurrence has been used up."
       },
       {
        "heading": "Coverage F, medical payments to others",
-       "text": "The minimum limits are one thousand dollars per person and twenty-five thousand dollars aggregate, payable up to three years from the date of the accident regardless of fault. Medical expenses means reasonable charges for medical, surgical, x-ray, dental, ambulance, hospital, professional nursing, prosthetic devices and funeral services. This coverage does not apply to the insured or regular residents of the household except residence employees. As to others, it applies to a person on the insured location with permission of an insured, or off the insured location if the injury arises out of a condition on the insured location or the ways immediately adjoining, is caused by the activities of an insured, is caused by a residence employee in the course of employment, or is caused by an animal owned by or in the care of an insured."
+       "text": "The minimum limits are one thousand dollars per person and twenty-five thousand dollars in the aggregate, payable for up to three years from the date of the accident whether or not anyone was at fault. Medical expenses covers reasonable charges for medical, surgical, x-ray, dental, ambulance, hospital, professional nursing, prosthetic devices and funeral services. Coverage does not reach the insured or regular household residents, except residence employees. For everyone else it applies to a person on the insured location with an insured's permission, or off the insured location when the injury grows out of a condition on the insured location or the ways immediately adjoining, comes from an insured's activities, comes from a residence employee acting in the course of employment, or comes from an animal owned by or in the care of an insured."
       },
       {
        "heading": "Supplementary payments",
-       "text": "Supplementary payments are made in addition to the limits of liability. They include claim expenses such as expenses the insurer incurs and costs taxed against the insured in any suit it defends, a two hundred fifty dollar premium for bail bonds, premiums on appeal bonds, accrued interest after judgment and prejudgment interest, and reasonable expenses incurred at the insurer's request including actual loss of earnings up to two hundred fifty dollars per day. These supplementary payments are found in every liability contract."
+       "text": "Supplementary payments are made on top of the limits of liability. They take in claim expenses such as costs the insurer incurs and costs taxed against the insured in any suit it defends, a two hundred fifty dollar premium for bail bonds, premiums on appeal bonds, interest that accrues after judgment along with prejudgment interest, and reasonable expenses the insurer asks the insured to incur, including actual lost earnings up to two hundred fifty dollars per day. Every liability contract carries these supplementary payments."
       }
      ],
      "scenario": {
       "title": "The bite at the garden gate",
-      "text": "A child reaches through the garden gate to pet a dog and is bitten. The family has no interest in suing, but the child needs stitches and a tetanus shot, and the medical bills arrive over the next several months. The dog is owned by the household. The insurer also sends a lawyer when the family threatens a claim. CAT, who has opinions about dogs, listens while the owner separates medical payments made regardless of fault from the defense costs paid in addition to the liability limit."
-     },
-     "sourceNote": "Manual pp. 2.5 (PDF p. 18)."
+      "text": "A child reaches through the garden gate to pet a dog and gets bitten. The family has no wish to sue, but the child needs stitches and a tetanus shot, and the bills trickle in over the next few months. The dog belongs to the household. The insurer also sends a lawyer once the family hints at a claim. CAT, who has firm views about dogs, listens while the owner untangles medical payments made regardless of fault from the defense costs paid on top of the liability limit."
+     }
     }
    ]
   },
@@ -656,9 +626,8 @@
     {
      "id": 16,
      "levelId": 6,
-     "title": "Homeowners Liability Exclusions",
-     "subtitle": "What coverages E and F refuse, and the narrow exceptions.",
-     "pages": "2.6",
+     "title": "When Liability Steps Back",
+     "subtitle": "The claims Sections E and F refuse, and the narrow ways back in.",
      "questionIds": [
       "q151",
       "q152",
@@ -671,33 +640,31 @@
       "q159",
       "q160"
      ],
-     "intro": "Section II liability is broad, which is exactly why the manual lists its exclusions so carefully. Several exclusions contain narrow exceptions that decide the answer to a question.",
+     "intro": "Liability coverage is generous on purpose, which is why it also lists its refusals so carefully. A few of those refusals carry small exceptions, and it is usually the exception - not the rule - that settles a claim.",
      "teaching": [
       {
-       "heading": "Intent and business",
-       "text": "Coverages E and F do not apply to bodily injury or property damage that is expected or intended by an insured, although property damage up to one thousand dollars caused by the intentional acts of children under thirteen is covered. Vicarious liability for a minor's use of motor vehicles, aircraft and watercraft is also excluded because those exposures belong to auto, aviation and boat insurance. A business engaged in by an insured is excluded, but this does not apply to a part time or occasional self-employed business of an insured who is under twenty-one. Providing professional services is also excluded."
+       "heading": "Harm that was intended",
+       "text": "Sections E and F turn away bodily injury or property damage that an insured expected or meant to cause. There is one carve-out: property damage of up to one thousand dollars that results from the deliberate act of a child under thirteen is still answered. The policy also refuses vicarious liability for a minor's use of a car, an aircraft or a watercraft, because those exposures belong to auto, aviation and boat coverage. Running a business is refused too, unless the insured is under twenty-one and the work is a part-time or occasional self-employment. Supplying professional services is refused as well."
       },
       {
-       "heading": "Vehicles, watercraft and aircraft",
-       "text": "The ownership, maintenance, use, loading or unloading of a motor vehicle is excluded, except vehicles used to service an insured's residence, to service the handicapped, a golf cart used to play golf, or a toy vehicle for children under seven powered by batteries with a top speed of five miles per hour. Watercraft are excluded except owned or rented boats with outboard motors of twenty-five horsepower or less and sailboats of twenty-six feet or less, and rented boats with inboard or inboard-out drive of fifty horsepower or less. Aircraft and hovercraft are excluded except models. Property damage to property owned by, rented to or used by an insured is excluded as the care, custody and control exclusion."
+       "heading": "Cars, boats and aircraft",
+       "text": "Owning, maintaining, using, loading or unloading a motor vehicle is refused, with four exceptions: a vehicle that services the insured's residence, a vehicle that serves the handicapped, a golf cart used to play golf, and a battery-powered toy for a child under seven that cannot top five miles per hour. Watercraft are refused unless they are owned or rented boats with outboards of twenty-five horsepower or less, sailboats of twenty-six feet or less, or rented boats with inboard or inboard-outdrive engines of fifty horsepower or less. Aircraft and hovercraft are refused except for models. Damage to property the insured owns, rents or uses is refused under the care, custody and control rule."
       },
       {
-       "heading": "Other exclusions",
-       "text": "Section II also excludes lawsuits from the transmission of a communicable disease, sexual molestation, corporal punishment, and physical or mental abuse by an insured, and it excludes the use, sale, manufacture, delivery, transfer or possession of a controlled substance."
+       "heading": "The rest of the list",
+       "text": "Sections E and F also refuse lawsuits that grow out of passing on a communicable disease, out of sexual molestation, out of corporal punishment, and out of physical or mental abuse by an insured. Claims tied to the use, sale, manufacture, delivery, transfer or possession of a controlled substance are refused as well."
       }
      ],
      "scenario": {
-      "title": "The pond, the golf cart, and the boy on a bicycle",
-      "text": "A neighbor's pond, a golf cart used on the course, and a twelve-year-old who throws a rock through a window all feature in one afternoon at the store owner's household. The insurer is asked which claims Section II answers and which it refuses. CAT, who once spent a winter in a boat shed, listens closely to the horsepower limits and the age of the child, because those small numbers decide whether a claim is covered at all."
-     },
-     "sourceNote": "Manual pp. 2.6 (PDF p. 19)."
+      "title": "The pond, the golf cart, and the boy on the bicycle",
+      "text": "One afternoon at the store owner's household gathers a neighbour's pond, a golf cart used out on the course, and a twelve-year-old with a good arm and a rock. The insurer has to sort which of the day's claims Sections E and F will answer and which they will turn away. CAT, who once rode out a winter in a boat shed, pays close attention to the horsepower ceilings and to the child's age, because those small numbers are what decide the whole thing."
+     }
     },
     {
      "id": 17,
      "levelId": 6,
-     "title": "Farm and Dwelling Policies",
-     "subtitle": "The farmowners spin-off and the dwelling policy that is not a package.",
-     "pages": "2.7, 2.8",
+     "title": "Farm and Dwelling Programs",
+     "subtitle": "The farmowners spinoff and a dwelling policy that is only property.",
      "questionIds": [
       "q161",
       "q162",
@@ -710,33 +677,31 @@
       "q169",
       "q170"
      ],
-     "intro": "Not every dwelling fits the homeowners program. The manual offers a farmowners policy built off the homeowners forms and a dwelling policy that is a pure property contract with optional liability.",
+     "intro": "Not every dwelling belongs in the homeowners program. There is a farmowners policy built off the homeowners forms, and a dwelling policy that is a pure property contract with liability sold only as an option.",
      "teaching": [
       {
-       "heading": "Farmowners",
-       "text": "The farmowners policy can be written as a stand-alone policy or in a commercial package policy format with four farm coverage forms: the farm property form, whose causes of loss may be basic, broad or special, the mobile agricultural machinery and equipment coverage form, the livestock coverage form, and the farm liability coverage form. Property coverages A through D are identical to the homeowners policies. The livestock coverage form covers animals on the premises if they stray into a neighbor's field and are injured or cause damage, and it excludes animals in transit or at sale barns and stock yards, diseases specific to breed, and vehicle damage, though it does cover strangulation, electrocution and drowning. The farm policy covers liability for custom combining under personal liability if receipts from that activity are less than two thousand dollars per year."
+       "heading": "Farmowners in outline",
+       "text": "A farmowners policy can be sold on its own or inside a commercial package, and it draws on four farm coverage forms: the farm property form, whose causes of loss may be basic, broad or special; the mobile agricultural machinery and equipment form; the livestock coverage form; and the farm liability coverage form. Property coverages A through D match the homeowners policies. The livestock form answers for animals on the premises that wander into a neighbour's field and are hurt or cause damage, and it turns away animals in transit, animals at sale barns and stockyards, breed-specific diseases, and damage from vehicles - though it does answer for strangulation, electrocution and drowning. Custom combining is picked up under personal liability when the yearly receipts from it stay under two thousand dollars."
       },
       {
-       "heading": "Dwelling policy basics",
-       "text": "The dwelling policy is a property policy and not a package policy. It is designed primarily for dwellings rented to others, and it also covers owner-occupied homes that do not qualify for the homeowners policy because the property is too old or too small. Eligibility allows a single family dwelling and up to four units, with up to five boarders in one structure. Farms and businesses are not eligible other than incidental service businesses with two or fewer employees, and all coverages carry a two hundred fifty dollar standard deductible. Personal liability can be added as an option and then provides the same coverage as Section II of the homeowners policy."
+       "heading": "What the dwelling policy is for",
+       "text": "The dwelling policy is a property policy, not a package policy. It is built mainly for dwellings rented out to others, and it also fits owner-occupied homes that cannot qualify for a homeowners policy because the property is too old or too small. It will accept a single-family dwelling and up to four units, with as many as five boarders in one structure. Farms and businesses are out, apart from an incidental service business with two or fewer employees. Every coverage carries a two hundred fifty dollar standard deductible. Personal liability can be added as an option, and it then matches Section II of the homeowners policy."
       },
       {
-       "heading": "The three dwelling forms",
-       "text": "The DP-1 basic form settles the dwelling on an actual cash value basis with no coinsurance, extends ten percent for other structures, and does not offer additional living expenses. The DP-2 broad form and the DP-3 special form settle the dwelling at replacement cost with an eighty percent coinsurance requirement and provide other structures, fair rental value, additional living expenses and theft of building parts on an additional basis. The vacancy period on the dwelling forms is sixty days, and every dwelling policy specifically excludes theft coverage for personal property unless the broad theft endorsement is added."
+       "heading": "Three dwelling forms",
+       "text": "The DP-1 basic form values the dwelling at actual cash value with no coinsurance, extends ten percent for other structures, and offers no additional living expenses. The DP-2 broad form and the DP-3 special form value the dwelling at replacement cost with an eighty percent coinsurance requirement and add other structures, fair rental value, additional living expenses and theft of building parts. The vacancy period on the dwelling forms runs sixty days, and every dwelling policy leaves theft of personal property out unless the broad theft endorsement is attached."
       }
      ],
      "scenario": {
-      "title": "The rented farmhouse and the old cottage",
-      "text": "Down the road from the alley, a rented farmhouse needs coverage and an old cottage is too small to qualify for a homeowners policy. The owner also keeps a few cows that sometimes wander into a neighbor's field. CAT, who considers a barn a five-star hotel, listens while the agent works out which policy answers for the wandering livestock, which form requires coinsurance, and which one never offers additional living expenses at all."
-     },
-     "sourceNote": "Manual pp. 2.7, 2.8 (PDF pp. 20-21)."
+      "title": "The rented farmhouse and the cramped cottage",
+      "text": "Out past the yards, a rented farmhouse needs coverage, and a small old cottage is too cramped to fit the homeowners program at all. The same owner keeps a few cows that now and then wander into a neighbour's field and do damage. CAT, who regards a barn as a five-star hotel, listens while the agent works out which policy answers for the wandering livestock, which form demands coinsurance, and which one never offers additional living expenses in the first place."
+     }
     },
     {
      "id": 18,
      "levelId": 6,
-     "title": "Mobile Homeowners",
-     "subtitle": "MH-1, MH-2, MH-3 and the rules for a home on wheels.",
-     "pages": "2.9",
+     "title": "Homes on Wheels",
+     "subtitle": "MH-1, MH-2, MH-3 and what a home must do to qualify.",
      "questionIds": [
       "q171",
       "q172",
@@ -749,33 +714,32 @@
       "q179",
       "q180"
      ],
-     "intro": "The mobile homeowners program is short and strict. Three forms, one settlement basis, and a list of conditions the home must meet before the policy applies at all.",
+     "intro": "The mobile homeowners program is short and strict: three forms, one settlement basis, and a set of conditions the home has to meet before the policy applies at all.",
      "teaching": [
       {
        "heading": "Three forms, one basis",
-       "text": "The mobile homeowners program offers the MH-1, MH-2 and MH-3 forms, and all forms provide coverage on an actual cash value basis only. The program does not cover camping trailers or motor homes."
+       "text": "The mobile homeowners program offers the MH-1, MH-2 and MH-3 forms, and every one of them settles losses on an actual cash value basis only. Camping trailers and motor homes are outside the program entirely."
       },
       {
-       "heading": "Permanently located",
-       "text": "The mobile home must be permanently located, skirted, tied down, and have its wheels removed. The policy does not cover the mobile home when it is transported or moved to a new location."
+       "heading": "Permanently placed",
+       "text": "For the policy to apply, the mobile home must be permanently located, skirted, tied down, and have its wheels taken off. The policy does not answer for the home while it is being transported or moved to a new location."
       },
       {
-       "heading": "If it does not qualify",
-       "text": "A mobile home that cannot qualify for an MH policy could be covered by a DP-1 dwelling policy. The manual also gives a memory aid on this page for remembering which homeowners form numbers use broad versus special coverage."
+       "heading": "When it does not qualify",
+       "text": "A mobile home that cannot qualify for an MH policy can still be written on a DP-1 dwelling policy. A handy memory aid for the form numbers is worth remembering here: an even number marks broad coverage and an odd number marks special coverage, apart from the high 8 and the low 1."
       }
      ],
      "scenario": {
       "title": "The home with wheels",
-      "text": "Behind the outer yards sits a mobile home whose owners have removed the wheels, tied it down, and skirted the base. Across the road, a family is still using their camper as a summer cottage and is surprised when the agent says the mobile homeowners program will not cover it. CAT, who has slept in better boxes, waits to hear which settlement basis applies to the home with wheels and what a DP-1 would do for the one that does not qualify."
-     },
-     "sourceNote": "Manual pp. 2.9 (PDF p. 22)."
+      "text": "Behind the outer yards sits a mobile home whose owners have pulled the wheels, tied it down and skirted the base. Across the road a family is still using their camper as a summer cottage, and they are surprised when the agent explains that the mobile homeowners program will not touch it. CAT, who has slept in worse boxes than either one, waits to hear which settlement basis fits the home with wheels - and what a DP-1 would do for the home that does not qualify."
+     }
     }
    ]
   },
   {
    "id": 7,
    "title": "The Night Watch",
-   "tagline": "The alley has a night shift, and it has rules.",
+   "tagline": "The alley runs a night shift, and the night shift has rules.",
    "color": "#5a5a8a",
    "lessons": [
     {
@@ -783,7 +747,6 @@
      "levelId": 7,
      "title": "Workers Compensation",
      "subtitle": "A social remedy, the exceptions, and the six policy parts.",
-     "pages": "3.1",
      "questionIds": [
       "q181",
       "q182",
@@ -796,33 +759,31 @@
       "q189",
       "q190"
      ],
-     "intro": "Workers compensation is the manual's clearest example of social policy inside an insurance contract. It replaces the employer's old legal defenses with a promise of benefits regardless of fault.",
+     "intro": "Workers compensation is the clearest place where a social policy sits inside an insurance contract. It trades the employer's old courtroom defenses for a promise of benefits no matter who was at fault.",
      "teaching": [
       {
        "heading": "A social remedy",
-       "text": "Workers compensation is a social remedy for the three basic legal defenses an employer had before its inception: assumption of risk, contributory negligence, and the fellow servant rule. Its purpose is to pay benefits to injured workers regardless of fault or negligence."
+       "text": "Workers compensation exists to answer three defenses an employer once used to escape liability: assumption of risk, contributory negligence, and the fellow servant rule. The system pays an injured worker whether or not anyone was negligent, which is why it is described as a social remedy rather than a fault-based one."
       },
       {
        "heading": "Who must carry it",
-       "text": "Coverage is mandatory for all classes of employment except real estate brokers and salespersons, agricultural workers, domestic workers and homemakers, any employer whose payroll is less than twenty thousand dollars, workers covered by federal law, and sole proprietors, partners and self-employed individuals. Owners of a company may exclude themselves from the workers compensation policy. If an employer fails to provide required coverage, the employee receives a benefit equal to what the policy would have paid and the employer must pay it, the employer is charged with a misdemeanor and fined, and the employee's compensation benefits are increased as a further penalty."
+       "text": "Coverage is required for nearly every class of employment, with a short list of exceptions: real estate brokers and salespersons, farm workers, domestic workers and homemakers, employers whose payroll falls below twenty thousand dollars, workers already covered by federal law, and sole proprietors, partners and the self-employed. A company's owners may choose to exclude themselves from the policy. When an employer skips required coverage, three things follow: the worker still receives the benefit the policy would have paid, the employer commits a misdemeanor and is fined, and the worker's benefits are increased as an added penalty."
       },
       {
        "heading": "Structure and rating",
-       "text": "The policy has six parts: Part I statutory workers compensation benefits, Part II employers liability, Part III other state's coverage, Part IV the insured employer's duties if injury occurs, which include providing medical services, reporting the injury and cooperating with the insurer, Part V premiums, and Part VI conditions. Payroll is estimated and a deposit premium is collected, with the final premium determined at the end of the policy period through a premium audit. Premiums and losses over a three year period determine any premium adjustment: an experience modification reduces premium when loss history is lower than average, and a surcharge increases it when losses are higher. Rates are based per one hundred dollars of payroll for each job classification, and risks that are not acceptable may be assigned to the Kansas Workers Compensation Insurance Plan."
+       "text": "The policy is built from six parts: Part I statutory benefits, Part II employers liability, Part III other state's coverage, Part IV the insured employer's duties when an injury occurs - supplying medical care, reporting the injury and cooperating with the insurer - Part V premiums, and Part VI conditions. Payroll is estimated up front and a deposit premium is collected, then a premium audit at the end of the term settles the final figure. Loss experience over three years drives any adjustment: an experience modification lowers the premium when losses run below average, and a surcharge raises it when they run above. Rates are quoted per one hundred dollars of payroll for each job classification, and a risk the market will not accept may be placed through the Kansas Workers Compensation Insurance Plan."
       }
      ],
      "scenario": {
       "title": "The night crew at the market",
-      "text": "The grocery store hires a night crew to unload trucks, and one worker slips on a wet floor at two in the morning. The owner asks CAT's opinion on three things: whether a worker who was partly at fault still gets benefits, whether the store must carry coverage at all with a small payroll, and what happens if the store never bought the policy. CAT, who has dodged far worse, keeps out of the way while the owner reads about the fellow servant rule and the deposit premium audit."
-     },
-     "sourceNote": "Manual pp. 3.1 (PDF p. 23)."
+      "text": "The grocery store keeps a night crew to unload trucks, and one of them goes down on a wet floor at two in the morning. The owner wants three answers: does a worker who was partly careless still collect, must a store with a small payroll carry coverage at all, and what happens if the policy was never bought. CAT watches from the top of a pallet while the fellow servant rule and the deposit premium audit get untangled."
+     }
     },
     {
      "id": 20,
      "levelId": 7,
      "title": "Benefits and the Umbrella",
-     "subtitle": "The Kansas act's benefits, exclusive remedy, and broad excess coverage.",
-     "pages": "3.2, 3.3",
+     "subtitle": "Statutory benefits, exclusive remedy, and broad excess coverage.",
      "questionIds": [
       "q191",
       "q192",
@@ -835,33 +796,31 @@
       "q199",
       "q200"
      ],
-     "intro": "The Kansas act splits workers compensation into statutory benefits and common law employers liability. The umbrella then sits above the primary liability policies, ready to cover what they do not.",
+     "intro": "The Kansas act separates workers compensation into statutory benefits and common law employers liability. Above both sits the umbrella, ready to answer what the primary policies leave behind.",
      "teaching": [
       {
        "heading": "Part One and its benefits",
-       "text": "Part One covers statutory claims made against the employer for occupational injuries and occupational diseases arising from the employer-employee relationship. Benefits include unlimited medical expenses with mileage for distance traveled over five miles and per diem, a loss of time benefit with a seven day elimination period and retroactive payment after three weeks, temporary partial and temporary total disability subject to state minimums and maximums of one hundred thirty thousand dollars, permanent partial disability through scheduled injury payments, permanent total disability limited at one hundred fifty-five thousand dollars, and survivor's death benefits of a three hundred thousand dollar lump sum plus survivor income benefits for a widow and children up to age eighteen, or twenty-three if still in school, with a five thousand dollar burial allowance. An employee has ten days to notify if there has been an accident, or ninety days if diagnosed with an illness."
+       "text": "Part One responds to statutory claims an employee brings for occupational injury or occupational disease that grows out of the employment relationship. The benefits include unlimited medical care with mileage paid beyond five miles plus a per diem, a loss of time benefit with a seven-day elimination period and retroactive payment after three weeks, temporary partial and temporary total disability subject to state minimums and a $130,000 maximum, permanent partial disability paid through scheduled injury awards, permanent total disability capped at $155,000, and survivor's death benefits of a $300,000 lump sum with survivor income for a widow and children to age eighteen, or twenty-three while still in school, plus a $5,000 burial allowance. A worker must give notice within ten days of an accident, or within ninety days of an illness diagnosis."
       },
       {
        "heading": "Part Two and exclusive remedy",
-       "text": "Part Two covers common law claims made against the employer, including suits by an employee not covered by the Compensation Act and third party lawsuits against the insured, with a basic liability limit of one hundred thousand dollars that may be increased. It excludes punitive damages, bodily injury to an employee employed in violation of the law with the insured's knowledge, intentional bodily injury, injury occurring outside the United States and Canada, damages arising from discrimination, and obligations imposed by workers compensation laws. Exclusive remedy means employers are responsible for work-related injury and disease regardless of fault, and in return the injured employee gives up the right to sue when the employer's negligence causes the harm."
+       "text": "Part Two answers common law claims against the employer, including suits by workers outside the Compensation Act and third-party actions against the insured. It carries a basic liability limit of $100,000 that can be raised. It does not cover punitive damages, an injury to a worker employed in violation of the law with the insured's knowledge, intentional injury, injury outside the United States and Canada, damages from discrimination, or obligations already imposed by workers compensation law. Under exclusive remedy, the employer answers for work-related injury and disease no matter who was at fault, and in exchange the injured worker gives up the right to sue over the employer's negligence."
       },
       {
        "heading": "Umbrella liability",
-       "text": "Umbrella liability, also called excess liability, provides broad excess coverage over primary limits and has no standard forms. A personal umbrella in the manual's example sits over auto, boat and homeowners limits of three hundred thousand dollars each, while a commercial umbrella sits over a commercial general liability limit of one million, employers liability of one million, and the business auto policy of one million, using a one million dollar umbrella limit. Areas not covered by primary coverage are covered by the umbrella after a self-insured retention, which is a deductible."
+       "text": "Umbrella liability, also called excess liability, layers broad excess coverage above primary limits and has no standard form. A personal umbrella in the example sits above auto, boat and homeowners limits of $300,000 each, while a commercial umbrella sits above a general liability limit of one million, employers liability of one million, and the business auto limit of one million, using a one million dollar umbrella limit. Where no primary coverage exists at all, the umbrella still responds, but only after a self-insured retention that works like a deductible."
       }
      ],
      "scenario": {
       "title": "The fall from the loading dock",
-      "text": "The market's night worker who slipped on the wet floor now needs surgery, and the owner learns about the seven day elimination period, the mileage benefit, and the survivor benefits that would have applied if the accident had been worse. A separate lawsuit against the store naming a third party follows, and the owner asks whether the umbrella will respond above the general liability limit. CAT, who has absorbed plenty of landings, listens while the numbers and the exclusive remedy doctrine get sorted out."
-     },
-     "sourceNote": "Manual pp. 3.2, 3.3 (PDF pp. 24-25)."
+      "text": "The night worker from the wet floor now needs surgery, and the numbers start to matter: the seven-day elimination period, the mileage benefit, and the survivor benefits that would have applied had the fall gone worse. A separate suit against the store names a third party, and the owner wants to know whether the umbrella answers above the general liability limit. CAT, who has absorbed plenty of hard landings, listens while the figures and the exclusive remedy rule get sorted out."
+     }
     },
     {
      "id": 21,
      "levelId": 7,
      "title": "Professional Liability and Bonds",
      "subtitle": "E&O, D&O, employment practices, and the three parties to a bond.",
-     "pages": "3.4, 3.5",
      "questionIds": [
       "q201",
       "q202",
@@ -874,26 +833,25 @@
       "q209",
       "q210"
      ],
-     "intro": "Professional liability answers for advice, judgment and decisions rather than for accidents. Bonds look similar but reverse who pays and who is protected, and the manual names all three parties.",
+     "intro": "Professional liability answers for advice, judgment and decisions rather than for accidents. Bonds look similar until you check who pays and who is protected, and there are three parties to keep straight.",
      "teaching": [
       {
        "heading": "Professional liability coverages",
-       "text": "Professional liability protects the insured for failure to perform the services for which they were hired, or to perform them in accordance with the appropriate standards of conduct. Errors and omissions applies to liability exposures from knowledge, skill or advice and is available for advertisers, broadcasters, publishers, insurance agents, accountants, real estate agents and brokers, architects, engineers, attorneys, pension plan fiduciaries and stockbrokers; the lawyers form of errors and omissions automatically covers all member attorneys of the firm as named insureds without naming them. Directors and officers coverage protects directors and officers from lawsuits from stockholders for wrongful acts and decisions that cause stockholders to lose money, and it covers each of them individually while performing their duties. Employment practices liability responds to wrongful termination, discrimination and verbal, physical, mental or emotional abuse against an employee. Medical malpractice is professional liability for health care professionals and may include a consent to settle clause requiring the insurer to receive the insured's consent before settling. Data breach or cyber liability responds when personal information a business collects is leaked or hacked and causes a financial loss to customers."
+       "text": "Professional liability protects an insured who fails to perform the services they were hired for, or performs them below the appropriate standard of conduct. Errors and omissions covers exposures that grow out of knowledge, skill or advice, and is written for advertisers, broadcasters, publishers, insurance agents, accountants, real estate agents and brokers, architects, engineers, attorneys, pension plan fiduciaries and stockbrokers; the lawyers form automatically covers every member attorney of the firm as a named insured without listing them. Directors and officers coverage defends directors and officers against stockholder suits over wrongful acts and decisions that cost stockholders money, and it protects each of them individually while they carry out their duties. Employment practices liability answers wrongful termination, discrimination, and verbal, physical, mental or emotional abuse of an employee. Medical malpractice is professional liability for health care providers and may include a consent to settle clause that requires the insurer to obtain the insured's consent before settling. Data breach or cyber liability responds when personal information a business collected is leaked or hacked and causes a financial loss to customers."
       },
       {
        "heading": "The three bond parties",
-       "text": "The obligee-insured is the person who collects on the bond when the obligor-principal defaults, and is the person who is protected. The surety-guarantor is the insurance company, which guarantees the obligee that the obligor-principal will fulfill its obligations or the surety will pay the obligee. The obligor-principal is the person who is bonded and whose obligation is being guaranteed, and the surety pays the penalty to the obligee if the obligor ever defaults."
+       "text": "The obligee-insured is the party who collects on the bond when the obligor-principal defaults, and is the party the bond protects. The surety-guarantor is the insurance company, which guarantees the obligee that the obligor-principal will meet its obligations or the surety will pay instead. The obligor-principal is the party who is bonded and whose obligation is being guaranteed; if that party defaults, the surety pays the penalty to the obligee."
       },
       {
        "heading": "Fidelity and surety",
-       "text": "Fidelity bonds protect an employer from loss when its employees cause loss through dishonest or negligent action, and coverage ends for an employee after a dishonest act has been discovered; the discovery period allows the business owner two years to discover whether a past employee took money or property. Surety bonds are issued by the surety guaranteeing that the obligor-principal will fulfill an obligation to an obligee-insured, and a surety bond lasts only as long as it takes to fulfill the principal's obligation. Fidelity bonds are arranged and paid by the obligee-insured, while surety bonds are arranged and paid by the obligor-principal."
+       "text": "Fidelity bonds shield an employer from loss caused by an employee's dishonest or negligent acts, and coverage for that employee ends once the dishonesty is discovered; a discovery period gives the business owner two years to determine whether a former employee took money or property. Surety bonds are issued by the surety to guarantee that the obligor-principal fulfills an obligation to the obligee-insured, and a surety bond runs only as long as it takes the principal to meet that obligation. Fidelity bonds are arranged and paid for by the obligee-insured, while surety bonds are arranged and paid for by the obligor-principal."
       }
      ],
      "scenario": {
       "title": "The bonding of the small shop",
-      "text": "A contractor who owes the market money must post a bond before starting the loading dock repair, and the market's owner asks CAT who is protected if the contractor walks away. The same week, the store's bookkeeper is caught taking cash from the register, and the owner wonders how the fidelity bond responds and how long there is to discover the loss. CAT settles on the counter while the paperwork explains the obligee, the obligor, and the surety."
-     },
-     "sourceNote": "Manual pp. 3.4, 3.5 (PDF pp. 26-27)."
+      "text": "A contractor who owes the market money must post a bond before it can start repairing the loading dock, and the owner wants to know who is protected if the contractor simply walks away. The same week, the store's bookkeeper is caught lifting cash from the register, and the owner asks how the fidelity bond responds and how long there is to discover the loss. CAT settles onto the counter while the paperwork sorts out the obligee, the obligor and the surety."
+     }
     }
    ]
   },
@@ -907,8 +865,7 @@
      "id": 22,
      "levelId": 8,
      "title": "Personal Auto: Cards on the Table",
-     "subtitle": "Covered autos, new cars, and who is an insured person.",
-     "pages": "4.1",
+     "subtitle": "Which vehicles count, how a fresh purchase is covered, and who else may drive.",
      "questionIds": [
       "q211",
       "q212",
@@ -921,33 +878,31 @@
       "q219",
       "q220"
      ],
-     "intro": "The personal auto policy starts with definitions. What counts as a covered auto, how long a newly acquired car stays covered, and who else may drive all decide whether a claim exists before limits are even discussed.",
+     "intro": "Every auto claim begins with definitions, not dollars. Before anyone talks about limits, the policy has already decided whether this vehicle is a covered auto, how long a car bought last week stays protected, and whose hands were allowed on the wheel.",
      "teaching": [
       {
-       "heading": "The coverage names",
-       "text": "Bodily injury liability pays for injuries, sickness, disease and death to other persons the insured injures with the car. Property damage liability pays for repairs to the other person's car or any other property of others that the insured hits. Physical damage repairs the insured's own car through collision and other than collision, which is also called comprehensive."
+       "heading": "Naming the coverages",
+       "text": "Bodily injury liability answers for harm the insured causes to other people with the car, including sickness, disease and death. Property damage liability answers for the other party's vehicle or any other property of theirs that the car strikes. Physical damage is the part that repairs the insured's own car, split into collision and other than collision, the second of which is also called comprehensive."
       },
       {
-       "heading": "Covered autos and new vehicles",
-       "text": "A covered auto includes any vehicle shown on the declarations page, private passenger autos, pick-ups or vans less than ten thousand pounds with four wheels or more, and trailers owned by the insured, whose liability is automatic while attached or towed. An additional vehicle gets fourteen days of automatic coverage for all coverages the insured currently has, but only four days of coverage for collision and other than collision if that coverage is not provided on at least one vehicle already insured, subject to a five hundred dollar deductible. A replacement vehicle keeps the same coverage as the car it replaced, with four days to add or fourteen days to continue Coverage D, and liability continues to the end of the policy period without notification. A temporary substitute is the vehicle driven while the regular car is being repaired, and vehicles leased for more than six months are insured as if owned."
+       "heading": "Covered autos and newly acquired vehicles",
+       "text": "A covered auto is any vehicle listed on the declarations page, plus private passenger autos and pick-ups or vans under ten thousand pounds with four wheels or more, along with trailers the insured owns, whose liability rides along automatically whether attached or being towed. A car added to the household gets fourteen days of automatic protection for every coverage the insured already carries, but just four days of collision and other than collision coverage when no existing vehicle has that coverage, and a five hundred dollar deductible applies. A car that replaces another inherits the coverage of the vehicle it replaced, leaving four days to add it or fourteen days to continue Coverage D, while liability keeps running to the end of the policy term with no notice needed. A temporary substitute is whatever the insured drives while the usual car is being repaired, and a vehicle leased for more than six months is treated as if owned."
       },
       {
        "heading": "Insured persons and territory",
-       "text": "Other insured persons include anyone with assumed permission to drive the insured car and family members, meaning resident relatives including a ward or foster child. The named insured includes the spouse if living together and for ninety days after a separation or a divorce. Common exclusions include intentional acts, damage to property being transported, prearranged racing, and non-owned autos provided for the regular use of the insured. The policy territory is the United States, its territories and possessions, Puerto Rico and Canada, and there is no coverage in Mexico."
+       "text": "Other insured persons include anyone driving the insured car with assumed permission and family members, meaning resident relatives such as a ward or foster child. The named insured also takes in the spouse while the couple lives together and for ninety days following a separation or divorce. Exclusions reach intentional acts, damage to property being hauled, prearranged racing, and non-owned autos furnished for the insured's regular use. The policy territory is the United States, its territories and possessions, Puerto Rico and Canada, with nothing at all in Mexico."
       }
      ],
      "scenario": {
       "title": "The borrowed truck and the new car",
-      "text": "A neighbor borrows the market's delivery truck for one afternoon, and the owner buys a second car the same week. A wheel comes off the borrowed truck at a stoplight. CAT, who crosses roads only at night, listens while the owner works through two questions: whose insurance applies to the borrowed truck, and how many days of automatic coverage the new car has for collision and other than collision."
-     },
-     "sourceNote": "Manual pp. 4.1 (PDF p. 28)."
+      "text": "A neighbor takes the market's delivery truck for an afternoon, and the owner signs for a second car the same week. A wheel shears off the borrowed truck at a stoplight. CAT, who only ever crosses roads after dark, listens while the owner works through two questions: whose insurance stands behind the borrowed truck, and how many mornings of automatic collision coverage the new car actually has."
+     }
     },
     {
      "id": 23,
      "levelId": 8,
      "title": "Auto Coverages and Kansas Law",
      "subtitle": "Liability, PIP, uninsured motorist, physical damage, and the reparations act.",
-     "pages": "4.2, 4.3",
      "questionIds": [
       "q221",
       "q222",
@@ -960,33 +915,31 @@
       "q229",
       "q230"
      ],
-     "intro": "Kansas law shapes the personal auto policy. Required limits, required personal injury protection, and the narrow window in which an injured person may sue for non-pecuniary injuries all come from the state rather than the form.",
+     "intro": "Kansas law writes part of the personal auto policy for you. Required limits, mandatory personal injury protection, and the narrow doorway through which an injured person may sue for non-pecuniary harm all come from the state, not the form.",
      "teaching": [
       {
        "heading": "Liability and supplementary payments",
-       "text": "Liability coverage is required, and Kansas requires split limits of twenty-five thousand per person and fifty thousand per occurrence for bodily injury and twenty-five thousand for property damage, written as 25/50/25. Supplementary payments are made in addition to the liability limits and include investigation and defense costs, a two hundred fifty dollar premium on bail bonds, premiums on appeal bonds, accrued interest after judgment, two hundred dollars per day for lost earnings while attending trials or hearings at the company's request, and other reasonable expenses incurred at the company's request."
+       "text": "Liability coverage is mandatory, and Kansas sets split limits of twenty-five thousand per person and fifty thousand per occurrence for bodily injury, with twenty-five thousand for property damage, written 25/50/25. Supplementary payments sit on top of those limits and take in investigation and defense costs, a two hundred fifty dollar premium on bail bonds, appeal bond premiums, interest that accrues after judgment, two hundred dollars a day for lost earnings while attending trials or hearings at the company's request, and other reasonable expenses incurred at the company's request."
       },
       {
        "heading": "Personal injury protection",
-       "text": "Personal injury protection is no fault coverage. The manual lists forty-five hundred dollars for medical bills, forty-five hundred dollars for rehabilitation, one hundred percent of income up to nine hundred dollars a month for up to twelve months, a nine hundred dollar per month survivor benefit for up to twelve months for a spouse and children under eighteen, two thousand dollars for funeral expenses, and twenty-five dollars per day for essential services with minimum coverage of three hundred sixty-five days. PIP benefits are paid to the insured, family, and persons occupying the insured's car who do not own a car themselves, and no family member or other passenger can collect from the insured's PIP if they own a car too. Occupying means in, upon, in the act of getting in or out, near, under or around the car."
+       "text": "Personal injury protection is no fault coverage. It provides forty-five hundred dollars for medical bills, forty-five hundred dollars for rehabilitation, one hundred percent of income up to nine hundred dollars a month for as long as twelve months, a nine hundred dollar monthly survivor benefit for up to twelve months for a spouse and children under eighteen, two thousand dollars for funeral expenses, and twenty-five dollars a day for essential services, with a floor of three hundred sixty-five days. PIP pays the insured, family members, and people riding in the insured's car who do not own a car of their own; a family member or other passenger who does own a car cannot collect from the insured's PIP. Occupying means in, upon, in the act of getting in or out, near, under or around the car."
       },
       {
        "heading": "Uninsured motorist, physical damage and the Kansas act",
-       "text": "Uninsured motorist pays the insured's own injuries if hit by an uninsured car, a car insured with a company declared insolvent, or a hit and run car, and underinsured motorist pays the difference between the other driver's limits and the insured's limits; in both cases the other driver must be at fault, and limits for uninsured and underinsured motorist must be the same. Physical damage pays actual cash value, carries a deductible, and pays for collision or other than collision; collision with animals, theft, earthquake and flood are covered under other than collision. Under Kansas law an individual cannot sue another party for non-pecuniary injuries unless the threshold is met, meaning over two thousand dollars in medical bills, damage to a weight bearing bone, or permanent disfigurement or disability."
+       "text": "Uninsured motorist pays the insured's own injuries when hit by a car with no insurance, a car whose insurer has been declared insolvent, or a hit and run car, while underinsured motorist makes up the difference between the other driver's limits and the insured's own; the other driver must be at fault, and the uninsured and underinsured limits have to match. Physical damage pays actual cash value, carries a deductible, and answers for collision or other than collision, with collisions involving animals, theft, earthquake and flood falling under other than collision. Under Kansas law a person may not sue another party for non-pecuniary injuries unless the threshold is crossed: more than two thousand dollars in medical bills, damage to a weight bearing bone, or permanent disfigurement or disability."
       }
      ],
      "scenario": {
       "title": "Two cars and a broken wrist",
-      "text": "A driver with no insurance runs a light at the highway verge and hits a market employee's car. The employee has PIP, uninsured motorist coverage, and a broken wrist from the impact. CAT watches from the far side of the fence as the employee's family asks whether PIP pays the medical bills, whether the uninsured motorist coverage responds, and whether the employee may sue for pain and suffering when the medical bills only reach fifteen hundred dollars."
-     },
-     "sourceNote": "Manual pp. 4.2, 4.3 (PDF pp. 29-30)."
+      "text": "A driver carrying no insurance blows through a light at the highway verge and strikes a market employee's car. The employee holds PIP and uninsured motorist coverage and leaves with a broken wrist. CAT watches from the far side of the fence as the family asks whether PIP picks up the medical bills, whether uninsured motorist responds, and whether pain and suffering can be claimed when the bills only reach fifteen hundred dollars."
+     }
     },
     {
      "id": 24,
      "levelId": 8,
      "title": "Business Auto, Garage and Boats",
      "subtitle": "Nine symbols, garage liability, and a policy that floats.",
-     "pages": "4.5, 4.6, 4.7",
      "questionIds": [
       "q231",
       "q232",
@@ -999,26 +952,25 @@
       "q239",
       "q240"
      ],
-     "intro": "The business auto policy replaces the personal auto form's single covered auto definition with nine numbered symbols. Garage and boat coverage then extend the same logic to vehicles a business holds for others and to a boat that never touches a road.",
+     "intro": "The business auto policy swaps the personal form's single covered auto idea for nine numbered symbols. Garage and watercraft coverage then carry the same reasoning over to vehicles a business holds for customers and to a boat that never touches a road.",
      "teaching": [
       {
        "heading": "The nine coverage symbols",
-       "text": "Section I of the business auto policy covers autos through nine symbols: one, any auto, which is the broadest; two, owned autos only; three, owned private passenger autos only; four, owned autos other than private passenger autos; five, owned autos subject to no fault benefits, which is required in Kansas; six, owned autos subject to the compulsory uninsured motorists law, also required in Kansas; seven, specifically described autos only, which is the most narrow; eight, hired autos only; and nine, non-owned autos only. Newly acquired autos are automatically covered until the end of the policy term under symbols one through six, but if symbol seven is used a newly acquired auto has only thirty days of automatic coverage."
+       "text": "Section I of the business auto policy covers vehicles through nine symbols: one, any auto, the broadest; two, owned autos only; three, owned private passenger autos only; four, owned autos other than private passenger autos; five, owned autos subject to no fault benefits, required in Kansas; six, owned autos subject to the compulsory uninsured motorists law, also required in Kansas; seven, specifically described autos only, the narrowest; eight, hired autos only; and nine, non-owned autos only. A newly acquired auto is covered automatically to the end of the policy term under symbols one through six, but under symbol seven it gets only thirty days."
       },
       {
        "heading": "Business auto liability and conditions",
-       "text": "Business auto liability is written at 25/50/25 or a minimum single limit of seventy-five thousand dollars in Kansas, designed as a single limit policy that can be endorsed to split limits, with the usual defense and supplementary payments. Insured persons are the named insured for any covered auto; the owner or anyone else from whom a trailer is hired or borrowed and connected to an auto owned by the named insured; anyone using with permission a covered auto owned, hired or borrowed by the named insured; and anyone liable for the conduct of an insured, but only to the extent of that liability. Physical damage coverages available are collision and upset, comprehensive, specified causes of loss, towing with a basic limit of twenty-five dollars, and coverage extensions for transportation expenses of twenty dollars per day up to six hundred dollars, beginning forty-eight hours after theft. Auto means a land motor vehicle, trailer or semi-trailer designed for travel on public roads, but mobile equipment is covered while carried or towed by a covered auto for liability only, and cleanup of pollutants being carried by a vehicle and not used in its operation is not covered."
+       "text": "Business auto liability is written in Kansas at 25/50/25 or a minimum single limit of seventy-five thousand dollars, built as a single limit policy that may be endorsed to split limits, and it carries the customary defense and supplementary payments. Insured persons are the named insured for any covered auto; the owner or anyone else from whom a trailer is hired or borrowed and connected to an auto the named insured owns; anyone using with permission a covered auto owned, hired or borrowed by the named insured; and anyone liable for an insured's conduct, but only up to that liability. Physical damage options are collision and upset, comprehensive, specified causes of loss, towing with a basic limit of twenty-five dollars, and extensions for transportation expenses of twenty dollars a day up to six hundred dollars, starting forty-eight hours after a theft. Auto means a land motor vehicle, trailer or semi-trailer built for public roads, though mobile equipment is covered while carried or towed by a covered auto for liability only, and cleanup of pollutants being carried by a vehicle and not used in its operation is not covered."
       },
       {
        "heading": "Garage and watercraft",
-       "text": "Garagekeepers is optional bailee coverage for damage to vehicles left in the custody of the business for repair or service, and it can cover collision and other than collision to the customer's vehicle on either a primary or excess basis over the customer's coverage. Garage liability is required: the dealers form serves businesses that sell autos and covers both owned and non-owned autos on a primary basis, while the service form serves service stations, repair shops and parking garages and covers non-owned autos on a primary basis. Boatowners or watercraft coverage resembles auto insurance, with liability covering bodily injury and property damage to others plus the same supplementary payments, medical payments for the insured and others injured while boating, and physical damage providing collision and other than collision after deductibles for the boat, motors, trailer, attached equipment and miscellaneous equipment. Lay-up warranties are common in cold weather climates."
+       "text": "Garagekeepers is optional bailee coverage for damage to vehicles left in a business's custody for repair or service, and it can answer for collision and other than collision to a customer's vehicle on either a primary or excess basis over the customer's own coverage. Garage liability is required: the dealers form serves businesses that sell autos and covers owned and non-owned autos on a primary basis, while the service form serves service stations, repair shops and parking garages and covers non-owned autos on a primary basis. Boatowners or watercraft coverage mirrors auto insurance, with liability for bodily injury and property damage to others plus the same supplementary payments, medical payments for the insured and others hurt while boating, and physical damage for collision and other than collision after deductibles on the boat, motors, trailer, attached equipment and miscellaneous equipment. Lay-up warranties are common where winters bite."
       }
      ],
      "scenario": {
       "title": "The lot, the lift, and the lake",
-      "text": "The market's owner opens a small repair bay, takes a customer's car onto the lift, and buys a used boat for weekend deliveries to the lake. A customer's car is scratched while on the lift, and the boat is damaged by hail. CAT, unimpressed by vehicles of any size, listens while the agent explains which business auto symbol applies to a borrowed car, whether garagekeepers pays before or after the customer's own policy, and why a lay-up warranty exists on a boat."
-     },
-     "sourceNote": "Manual pp. 4.5, 4.6, 4.7 (PDF pp. 32-34)."
+      "text": "The market's owner opens a small repair bay, rolls a customer's car onto the lift, and buys a used boat for weekend runs to the lake. A customer's car is scratched on the lift, and hail dents the boat. CAT, unimpressed by vehicles of any size, listens while the agent explains which business auto symbol fits a borrowed car, whether garagekeepers pays before or after the customer's own policy, and why a lay-up warranty belongs on a boat."
+     }
     }
    ]
   },
@@ -1032,8 +984,7 @@
      "id": 25,
      "levelId": 9,
      "title": "The Businessowners Policy",
-     "subtitle": "Eligibility, limits, definitions, and the one property form.",
-     "pages": "5.1, 5.2, 5.3",
+     "subtitle": "Who can buy it, what it pays, and the single property form behind it.",
      "questionIds": [
       "q241",
       "q242",
@@ -1046,33 +997,31 @@
       "q249",
       "q250"
      ],
-     "intro": "The businessowners policy is the manual's commercial package. It is deliberately narrow: a short list of eligible businesses, hard maximums, and one open peril property form.",
+     "intro": "The businessowners policy is the small-commercial workhorse. It is a packaged product with a short eligibility list, firm size ceilings, and one open peril property form doing most of the work.",
      "teaching": [
       {
-       "heading": "Who qualifies",
-       "text": "The businessowners policy is a complete package policy with few optional coverages, meant for certain small and medium sized businesses, with one property coverage form written on a special form, all risk or open peril basis. The maximums are six stories, one hundred thousand square feet, not more than twenty-five thousand square feet in any one business, and three million dollars in gross receipts. Eligible businesses include apartments, office and retail establishments, selected processing and service occupancies, and residential and office condominiums. Ineligible businesses include bars, grills and restaurants, condominium associations other than office or residential, contractors, places of amusement such as carnivals, bowling alleys and theatres, wholesalers, financial institutions, and auto dealers or auto repair and servicing."
+       "heading": "Who may buy the form",
+       "text": "The businessowners policy is a packaged commercial contract with very few optional pieces. It is aimed at certain small and medium sized firms and carries a single property form written on an open peril, all risk basis. Size ceilings are strict: no building over six stories, no more than one hundred thousand square feet of total floor area, a maximum of twenty-five thousand square feet for any one occupant, and gross receipts no higher than three million dollars. Apartments, offices, retail shops, some processing and service operations, and residential or office condominiums all fit the program. Bars, grills and restaurants, condominium associations outside the office and residential classes, contractors, amusement operations such as carnivals, bowling alleys and theatres, wholesalers, financial institutions, and auto dealers or auto repair shops do not."
       },
       {
-       "heading": "Section I property",
-       "text": "Buildings and business personal property are insured at replacement cost, and the building coverage includes an automatic increase, or inflation guard, up to a percentage shown on the declarations page. Peak season coverage provides a twenty-five percent automatic increase during seasonal periods at no additional charge. Business income coverage is an unlimited dollar amount that expires at the expected business continuation date but never more than twelve months. Outdoor signs are covered to one thousand dollars, and bailee's customer coverage handles customer property. Optional coverages include employee dishonesty, which is a fidelity bond, boiler and pressure vessels and air conditioner or mechanical breakdown, burglary robbery and theft, money and securities, and additional outdoor signage. If a building is vacant over sixty days, there is no coverage for theft, vandalism or sprinkler leakage, and all other losses are reduced by fifteen percent."
+       "heading": "Section I property coverages",
+       "text": "Buildings and business personal property settle at replacement cost, and the building limit carries an automatic percentage increase, often called inflation guard, set on the declarations page. Peak season coverage adds a twenty-five percent automatic bump during busy periods at no extra premium. Business income is written as an unlimited dollar amount that runs to the expected date of business resumption but never past twelve months. Outdoor signs are insured up to one thousand dollars, and bailee's customer coverage protects property customers leave with the business. Optional pieces include employee dishonesty, which is a fidelity bond, boiler and pressure vessel or mechanical breakdown, burglary robbery and theft, money and securities, and additional outdoor signage. If a building stays vacant beyond sixty days, theft, vandalism and sprinkler leakage are dropped entirely and every other loss is trimmed by fifteen percent."
       },
       {
-       "heading": "Section II liability and key definitions",
-       "text": "Section II includes premises and operations, personal injury, advertising injury, products and completed operations, fire legal liability at three hundred thousand dollars per occurrence as lawsuit protection, and medical payments to others regardless of fault. Business income coverage provides income to cover salaries, payroll and expenses that continue during a business interruption caused by a covered peril, and the period of restoration begins primarily after a direct covered loss and ends when the building is repaired, replaced or rebuilt. Extra expense insurance indemnifies the insured for expenses incurred when the business temporarily relocates to prevent loss of income. A reporting form lets the insured cover fluctuating inventory by reporting needed coverage at regular intervals, and the honesty clause penalizes those who under report by reducing the claim payment by the percentage of under report. Supplemental payments pay defense, investigation and claims costs and are always paid in addition to the limit of liability."
+       "heading": "Section II liability and the money words",
+       "text": "Section II packages premises and operations, personal injury, advertising injury, products and completed operations, fire legal liability at three hundred thousand dollars per occurrence for lawsuit protection, and medical payments to others paid without regard to fault. Business income pays the salaries, payroll and continuing expenses a business keeps paying during a shutdown caused by a covered peril; the period of restoration generally begins after a direct covered loss and ends when the building is repaired, replaced or rebuilt. Extra expense reimburses costs a business takes on when it temporarily moves so it does not lose income. A reporting form suits inventory that swings, letting the insured report values on a regular schedule, and the honesty clause punishes under-reporting by cutting the loss payment by that same percentage. Supplemental payments cover defense, investigation and claim costs and are paid on top of the limit of liability."
       }
      ],
      "scenario": {
-      "title": "The restaurant that does not qualify",
-      "text": "The market's owner wants to add a small restaurant beside the store and asks whether one businessowners policy can cover both the retail operation and the grill. CAT, who has strong views about restaurants, listens while the agent explains the ineligible list, the twenty-five thousand square foot limit per business, and what happens to coverage if the building sits vacant over sixty days. Then the owner asks how a reporting form would treat an inventory that swings up before the holidays."
-     },
-     "sourceNote": "Manual pp. 5.1, 5.2, 5.3 (PDF pp. 35-37)."
+      "title": "The grill that would not fit",
+      "text": "The market owner wants to open a small grill beside the store and asks whether one businessowners policy can cover the retail operation and the new restaurant. CAT, who has strong opinions about restaurants, listens while the agent walks through the ineligible list, the twenty-five thousand square foot ceiling for a single occupant, and what happens to coverage when a building sits empty past sixty days. Then the owner asks how a reporting form treats inventory that surges before the holidays."
+     }
     },
     {
      "id": 26,
      "levelId": 9,
      "title": "General Liability in Depth",
-     "subtitle": "Basic hazards, the claims made form, and commercial conditions.",
-     "pages": "5.4, 5.5, 5.6",
+     "subtitle": "The offense coverages, the products problem, and the claims made trigger.",
      "questionIds": [
       "q251",
       "q252",
@@ -1085,33 +1034,31 @@
       "q259",
       "q260"
      ],
-     "intro": "The commercial general liability form is built from basic hazards, each with its own logic. The claims made form then changes when a claim must arrive, and the policy conditions govern everything else.",
+     "intro": "The commercial general liability form is assembled from distinct pieces, each with its own logic. The claims made form then decides when a claim must arrive, and the conditions govern everything else.",
      "teaching": [
       {
-       "heading": "The basic hazards",
-       "text": "Premises and operations covers bodily injury or property damage occurring at the place of business or arising from the type of business conducted. Advertising injury and personal injury do not cover bodily injury or property damage; advertising injury covers defamation caused to others in the course of advertising a product, including misappropriation of advertising ideas or style and infringement of title or slogan, while personal injury adds wrongful entry or eviction and false arrest, detention, imprisonment and malicious prosecution. Fire legal, also called tenant liability, covers damage caused by an insured to that part of a building leased or rented if it should burn or explode, with the rest of the building covered by the premises liability coverage. Medical payments to others pays medical bills of others regardless of negligence to discourage lawsuits, for up to one year from the occurrence."
+       "heading": "The building blocks",
+       "text": "Premises and operations responds to bodily injury or property damage that happens at the business or grows out of the work the business does. Advertising injury and personal injury are offense coverages and never pay for bodily injury or property damage: advertising injury reaches defamation committed while advertising a product, including misappropriation of advertising ideas or style and infringement of title or slogan, while personal injury adds wrongful entry or eviction and false arrest, detention, imprisonment and malicious prosecution. Fire legal, sometimes called tenant liability, covers damage an insured causes to the leased or rented portion of a building by fire or explosion, with the rest of the building left to premises liability. Medical payments to others pays the medical bills of other people whether or not the insured was negligent, up to one year from the occurrence, in order to head off lawsuits."
       },
       {
-       "heading": "Products, completed operations and employees",
-       "text": "Product liability covers bodily injury or property damage caused by a defective product, but does not cover damage to the product itself or the cost to recall it, and lawsuits are usually settled on a strict liability basis. To be covered, the injury or damage must occur off the business premises, except for restaurants, and the product must be under the total control of the customer. Completed operations covers defective workmanship and designs that cause injury or damage in the future, and the insured must have completed the project and left before the occurrence; completed operations are always an off-premises exposure. Injuries to employees are covered by workers compensation, while injuries caused by employees to other people who are not employees are covered under the commercial general liability policy."
+       "heading": "Products, completed work and employees",
+       "text": "Product liability answers for bodily injury or property damage a defective product causes, but never for damage to the product itself or the cost of recalling it, and such suits are usually settled under strict liability. The harm must happen away from the business premises, except for restaurants, and the product must be entirely in the customer's control. Completed operations picks up defective workmanship or design that causes injury or damage later, once the insured has finished the job and left the site; it is always an off-premises exposure. Injuries to employees belong to workers compensation, while injuries that employees cause to non-employees are handled by the commercial general liability form."
       },
       {
-       "heading": "Claims made and reporting periods",
-       "text": "There are two types of commercial general liability forms. On the occurrence form the occurrence must occur during the policy period and the claim can be made at any time in the future. On the claims made form the occurrence must occur during the policy period and the claim must also be made during the policy period. A retroactive date places a limit on how far into the past coverage is afforded for prior occurrences. The basic extended reporting period is automatically included at no extra charge and is either sixty days or five years: after termination of the policy a sixty-day reporting period is in effect for any claim, and if the insured reports occurrences that took place during the policy period within that sixty days, there is an extended reporting period of five years for claims resulting from those reported occurrences only. The supplemental extended reporting period is purchased as an option and provides an unlimited extension for claims from occurrences that took place during the policy period, taking effect after the basic extended reporting period expires."
+       "heading": "The claims made form and reporting windows",
+       "text": "Commercial general liability comes in two flavors. On an occurrence form the occurrence must fall inside the policy period while the claim may surface at any time afterward. On a claims made form both the occurrence and the claim must fall inside the policy period. A retroactive date caps how far back coverage reaches for occurrences that predate the policy. The basic extended reporting period comes automatically at no charge: sixty days after the policy ends for any claim, and if the insured reports occurrences that happened during the policy period inside those sixty days, a five-year window opens for claims arising from those reported occurrences only. The supplemental extended reporting period is optional and purchased, and it adds an unlimited extension for claims from occurrences that happened during the policy period, beginning when the basic window closes."
       }
      ],
      "scenario": {
-      "title": "The chili that traveled",
-      "text": "A customer buys a jar of the market's house chili, takes it home, and becomes ill. The jar was made and sold at the store, and the customer controlled it the entire time after purchase. A separate claim arrives from a tenant who says a leaking pipe above her shop was caused when the market's crew worked on the roof. CAT, who has eaten worse, listens while the adjuster separates products and completed operations from premises and operations, and then asks whether the claim arrived in time under a claims made form."
-     },
-     "sourceNote": "Manual pp. 5.4, 5.5, 5.6 (PDF pp. 38-40)."
+      "title": "The jar and the roof",
+      "text": "A shopper takes home a jar of the store's own chili, eats it, and falls ill; the jar was made and sold on site and stayed in the customer's hands after that. In the same week a tenant complains that water poured through her ceiling while the store's crew worked on the roof above her shop. CAT, who has eaten worse, listens as the adjuster pulls products apart from completed operations and premises apart from the roof work, then asks whether the tenant's claim arrived soon enough to matter under a claims made form."
+     }
     },
     {
      "id": 27,
      "levelId": 9,
      "title": "The Shadow at the Edge",
-     "subtitle": "Commercial property, inland marine, and the language of crime.",
-     "pages": "5.7, 5.8, 5.9",
+     "subtitle": "The commercial package, property on the move, and the language of crime.",
      "questionIds": [
       "q261",
       "q262",
@@ -1124,26 +1071,25 @@
       "q269",
       "q270"
      ],
-     "intro": "The last lesson assembles the commercial package, the coverage that follows property as it moves, and the crime form whose definitions turn on whether anyone was present and whether there was evidence of force.",
+     "intro": "The last lesson assembles the commercial package, the coverage that follows property as it travels, and the crime form whose definitions turn on whether anyone was present and whether there was evidence of force.",
      "teaching": [
       {
        "heading": "The commercial package",
-       "text": "The commercial package policy is a customizable package, not a package policy in the BOP sense, and it is built for larger businesses. Its common policy declarations name the company and named insureds, noting that the first name listed carries the first named insured duties, along with the policy period, described premises, mortgage holder, description of business, premiums for each coverage part and the list of forms. Its coverage parts include commercial property, commercial inland marine, commercial general liability and commercial crime. Common policy conditions include cancellation, changes, premiums, examination of books and records, inspections and surveys, assignment, and the first named insured, who may cancel, make changes, and receives the bill and premium refund."
+       "text": "The commercial package policy is a customizable product, not a package in the businessowners sense, and it is built for larger operations. Its common policy declarations name the company and the insureds, note that the first name listed carries the first named insured duties, and record the policy period, described premises, mortgage holder, description of business, each coverage part's premium, and the list of forms. Coverage parts include commercial property, commercial inland marine, commercial general liability and commercial crime. Common policy conditions cover cancellation, changes, premiums, examination of books and records, inspections and surveys, assignment, and the first named insured, who may cancel, make changes, and receives both the bill and any premium refund."
       },
       {
        "heading": "Inland marine",
-       "text": "Inland marine is property insurance on certain kinds of property and is almost always written on a special form basis. It excludes war, nuclear, wear and tear, deterioration, inherent vice, and insects or vermin. State law restricts inland marine forms to three categories of property, and real property and the contents of a building cannot be insured using inland marine policies and forms. Business personal property is not covered when it is more than one hundred feet from the premises, whether in a truck or not. Coverage classes include accounts receivable, commercial articles, contractor equipment floater, electronic data processing, installation floater, signs, valuable papers and records, and bailee's customer coverage for items in the care, custody and control of the business. A floater insures property of a movable nature, and inherent vice is the process by which property naturally destroys itself over time, such as rust damage to metal. Personal inland marine includes personal article floaters for guns, jewelry and furs."
+       "text": "Inland marine insures certain kinds of property and is almost always written on a special form. It excludes war, nuclear events, wear and tear, deterioration, inherent vice, and insects or vermin. State law keeps inland marine forms inside three categories of property, and neither real property nor a building's contents may be insured on inland marine paper. Business personal property stops being covered once it sits more than one hundred feet from the premises, truck or not. Available classes include accounts receivable, commercial articles, contractor equipment floaters, electronic data processing, installation floaters, signs, valuable papers and records, and bailee's customer coverage for items in the business's care, custody and control. A floater covers property that moves from place to place, and inherent vice is the process by which property destroys itself over time, like rust eating metal. Personal inland marine lines include article floaters for guns, jewelry and furs."
       },
       {
        "heading": "Commercial crime",
-       "text": "Burglary is the taking of property with evidence of forced entry into or out of a premises or safe, after hours with no people present. Robbery is the taking of property by causing or threatening bodily harm, during hours with people present. Theft is any act of stealing and is the best crime coverage. Extortion is the surrender of property away from premises because of a threat to harm the insured, an employee, or a relative being held captive, and pilferage is stealing small amounts. A custodian is the insured, a relative, a partner or member, or an employee while having care and custody of property inside the premises, excluding a watchperson or janitor, while a messenger holds care and custody outside the premises. Mysterious disappearance is property that is missing with no evidence that a crime occurred. Employee dishonesty, the fidelity bond, covers employees' dishonest acts, coverage ends for an employee after a dishonest act has been discovered, and the discovery period allows the business owner two years to discover whether a past employee took money or property."
+       "text": "Burglary is the taking of property with visible evidence of forced entry into or out of a premises or safe, after hours, with no people present. Robbery is the taking of property by causing or threatening bodily harm during hours when people are present. Theft is any act of stealing and is the broadest crime coverage. Extortion is handing over property away from the premises because of a threat to harm the insured, an employee, or a captive relative, and pilferage is stealing in small amounts. A custodian is the insured, a relative, a partner or member, or an employee who has care and custody of property inside the premises, but never a watchperson or janitor; a messenger holds care and custody outside the premises. Mysterious disappearance means property is gone with no evidence a crime took place. Employee dishonesty, the fidelity bond, covers dishonest acts by employees, ends coverage for an employee once a dishonest act is discovered, and gives the owner a discovery period of two years to find out whether a former employee took money or property."
       }
      ],
      "scenario": {
-      "title": "The long night at the loading dock",
-      "text": "Someone forces the loading dock door, takes two crates, and leaves no one the wiser until morning. The same week, a courier is threatened at the curb and hands over a deposit bag, and a stack of invoices goes missing from a desk with no sign of any break-in at all. CAT, who has seen every kind of night, watches while the owner sorts burglary from robbery from mysterious disappearance, and asks whether the dry cleaner's customer's coat still counts as covered property."
-     },
-     "sourceNote": "Manual pp. 5.7, 5.8, 5.9 (PDF pp. 41-43)."
+      "title": "The night the dock door opened",
+      "text": "Someone pries open the loading dock door, removes two crates, and nobody notices until morning. That same week a courier is threatened at the curb and surrenders a deposit bag, and a sheaf of invoices vanishes from a desk with no sign of a break-in at all. CAT, who has watched every kind of night, listens while the owner sorts burglary from robbery from mysterious disappearance, and asks whether the dry cleaner's customer's coat still counts as covered property."
+     }
     }
    ]
   }
@@ -1185,7 +1131,7 @@
  },
  "boss": {
   "title": "The Shadow at the End of Level Nine",
-  "intro": "Nine levels are behind CAT, and the red car is idling at the edge of town. Between them stands the last attacker: SHADOW CAT, her own shadow - everything survival taught her, turned around and looking back.",
+  "intro": "Nine levels are behind CAT, and the red car is idling at the edge of town. Between them stands the last challenger: SHADOW CAT, her own shadow - everything survival taught her, turned around and looking back.",
   "dialogue": "You learned the rules to survive the alley. Now show me you can use them when nothing is chasing you and no clock is playing tricks.",
   "win": "SHADOW CAT steps aside. It was never an enemy, only the part of CAT that had nowhere to go. And down the road the red car is waiting, with the mother who will bring her home.",
   "lose": "SHADOW CAT holds its ground. Not a defeat, only another round: the rules are still there to be learned, and the red car will still be waiting next time."

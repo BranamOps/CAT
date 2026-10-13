@@ -85,6 +85,11 @@ async function main() {
 
     const heroVisible = await page.isVisible('.hero');
     ok(heroVisible, 'hero is visible on a phone');
+    const heroSrc = await page.getAttribute('.hero-art img', 'src');
+    ok(/CAT_young\.jpg/.test(heroSrc || ''), 'the phone landing shows the young CAT art', heroSrc);
+    const goalSrc = await page.getAttribute('.goal-art img', 'src');
+    ok(/MOTHER\.jpg/.test(goalSrc || ''), 'the phone landing shows the goal art', goalSrc);
+
     const heroBox = await page.locator('.hero h1').boundingBox();
     ok(heroBox && heroBox.width > 100 && right(heroBox) <= 391, 'hero heading fits inside the phone width',
       heroBox ? `right=${Math.round(right(heroBox))}` : 'missing');
@@ -113,6 +118,9 @@ async function main() {
     ok(await page.locator('.choice').count() === 4, 'four answer choices render');
     ok(await page.isVisible('#lessonClock'), 'lesson clock is visible');
     ok(await page.isVisible('#questionClock'), 'per-question clock is visible');
+
+    await page.keyboard.press('2');
+    ok(await page.evaluate(() => window.__CAT__.run.selected === 1), 'the keyboard selects an answer in a real browser');
 
     const choiceBox = await page.locator('.choice').first().boundingBox();
     ok(choiceBox && choiceBox.height >= 40, 'choice buttons are a comfortable tap target', choiceBox ? String(Math.round(choiceBox.height)) : 'missing');

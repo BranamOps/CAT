@@ -39,7 +39,7 @@ async function waitFor(fn, ms = 5000) {
 
 const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const appSrc = fs.readFileSync(path.join(root, 'app.js'), 'utf8');
-const STORAGE_KEY = 'cats-insurance-journey-v1';
+const STORAGE_KEY = 'cats-insurance-journey-v2';
 const MML = /^\d+:\d{2}$/;
 
 async function makeDom(overrides, seed) {
@@ -103,7 +103,9 @@ async function main() {
   ok(lessons.every((l) => l.questionIds.length === 10), 'ten questions per lesson');
   ok(new Set(bank.map((q) => q.id)).size === bank.length, 'question ids are unique');
   ok(bank.every((q) => q.options.length === 4 && new Set(q.options).size === 4), 'every question has four distinct options');
-  ok(bank.every((q) => /^Manual p/.test(q.source) && /PDF p/.test(q.source)), 'every question cites a manual and PDF page');
+  ok(bank.every((q) => q.topic && q.topic.length > 3), 'every question names the concept it tests');
+  ok(!/manual p|pdf p|training manual|pre-study guide/i.test(JSON.stringify([curriculum, bank])),
+    'no content references a source document');
   ok(bank.every((q) => q.explanation && q.explanation.length > 30), 'every question has a teaching explanation');
   const dist = [0, 0, 0, 0];
   bank.forEach((q) => { dist[q.answer] += 1; });
@@ -136,7 +138,9 @@ async function main() {
     ok(/CAT's Insurance Journey/.test(story), 'landing/story renders');
     ok(/ATTACK TIME/.test(story), 'landing explains ATTACK TIME');
     ok(/156/.test(story) && /150/.test(story), 'landing states the 156 / 150 exam facts');
-    ok(/assets\/cat\.svg/.test(w.document.querySelector('#app').innerHTML), 'landing shows the CAT art');
+    ok(/assets\/CAT_young\.jpg/.test(w.document.querySelector('#app').innerHTML), 'landing shows the young CAT art');
+    ok(/assets\/MOTHER\.jpg/.test(w.document.querySelector('#app').innerHTML), 'landing shows the goal art');
+    ok(w.__CAT__.isGrownUp() === false, 'CAT starts the journey young');
 
     // the level's difficulty band is shown on the lesson page
     w.__CAT__.renderLesson(1);
@@ -196,7 +200,8 @@ async function main() {
     ok(banner.classList.contains('show') && /ATTACK TIME/.test(banner.textContent), 'ATTACK TIME banner is shown');
     const fb = w.document.querySelector('#feedbackSlot').textContent;
     ok(/Time expired/.test(fb), 'feedback marks the question as timed out');
-    ok(/Manual reference/.test(fb) && /PDF p/.test(fb), 'feedback shows the manual and PDF page reference');
+    ok(/Topic:/.test(fb), 'feedback names the question topic');
+    ok(!/Manual|PDF p/.test(fb), 'feedback never cites a document');
   }
 
   /* ---------- 6. no attack when the roll misses ---------- */
@@ -264,7 +269,7 @@ async function main() {
     w.__CAT__.renderExamIntro();
     const intro = w.document.querySelector('#app').textContent;
     ok(/The Shadow at the End of Level Nine/.test(intro), 'shadow intro renders');
-    ok(/assets\/shadow\.svg/.test(w.document.querySelector('#app').innerHTML), 'shadow art renders');
+    ok(/assets\/SHADOW-1\.jpg/.test(w.document.querySelector('#app').innerHTML), 'SHADOW-1 art renders');
     w.document.querySelector('#beginExam').click();
     const run = w.__CAT__.run;
     ok(run.kind === 'exam', 'exam mode starts');
@@ -283,14 +288,15 @@ async function main() {
     ok(w.document.querySelectorAll('.answer-row').length === 156, 'results review lists all 156 questions');
     ok(/Weak-area feedback/.test(res), 'results include weak-area feedback');
     ok(w.document.querySelectorAll('.weak-card').length === 9, 'weak-area feedback covers every level');
-    ok(/Manual p/.test(res) && /PDF p/.test(res), 'results carry source page references');
+    ok(!/Manual p|PDF p/i.test(res), 'results never cite a document');
     ok(/%$|%/.test(res), 'results show a percentage');
     ok(w.__CAT__.progress.examComplete === true, 'a passing exam marks the journey complete');
     ok(!!w.document.querySelector('#seeEnding'), 'a passing result offers the ending');
     w.document.querySelector('#seeEnding').click();
     const ending = w.document.querySelector('#app').textContent;
     ok(/CAT FINDS A HOME/.test(ending), 'the ending renders the loving home');
-    ok(/assets\/cat\.svg/.test(w.document.querySelector('#app').innerHTML), 'the ending shows CAT art');
+    ok(/assets\/(CAT_young|CAT_older)\.jpg/.test(w.document.querySelector('#app').innerHTML), 'the ending shows CAT art');
+    ok(/assets\/MOTHER\.jpg/.test(w.document.querySelector('#app').innerHTML), 'the ending shows the goal art');
   }
 
   /* ---------- 11. exam failure path ---------- */
@@ -353,10 +359,14 @@ async function main() {
   console.log('\n14. Static hosting and mobile requirements');
   {
     const files = ['index.html', 'app.css', 'app.js', 'data/curriculum.json', 'data/questions.json',
-      'assets/cat.svg', 'assets/shadow.svg', 'assets/Norris Property and Casualty Training Manual Book 2.pdf',
-      '.github/workflows/static.yml'];
+      'assets/CAT_young.jpg', 'assets/CAT_older.jpg', 'assets/contestant-1.jpg', 'assets/SHADOW-1.jpg',
+      'assets/MOTHER.jpg', 'assets/world.svg', '.github/workflows/static.yml'];
     const missing = files.filter((f) => !fs.existsSync(path.join(root, f)));
     ok(missing.length === 0, 'all deployable files exist', missing.join(', '));
+    const shipped = fs.readdirSync(path.join(root, 'assets'));
+    const allowed = ['CAT_young.jpg', 'CAT_older.jpg', 'contestant-1.jpg', 'SHADOW-1.jpg', 'MOTHER.jpg', 'world.svg'];
+    ok(shipped.length === allowed.length && allowed.every((f) => shipped.includes(f)),
+      'assets contain only the game artwork', shipped.join(', '));
     ok(/<meta name="viewport"/.test(html), 'viewport meta tag present for mobile layout');
     const css = fs.readFileSync(path.join(root, 'app.css'), 'utf8');
     ok((css.match(/@media/g) || []).length >= 2, 'stylesheet declares responsive breakpoints');
@@ -365,6 +375,65 @@ async function main() {
     ok(!/http:\/\/(?!www\.w3\.org)/.test(html + css), 'no external runtime dependencies in html/css');
     const workflow = fs.readFileSync(path.join(root, '.github/workflows/static.yml'), 'utf8');
     ok(/actions\/deploy-pages/.test(workflow), 'Pages deploy workflow present');
+  }
+
+  /* ---------- 15. CAT art, contests, keyboard and the saved review ---------- */
+  console.log('\n15. CAT art, contests, keyboard and the saved exam review');
+  {
+    const { w } = await makeDom();
+    ok(/assets\/CAT_young\.jpg/.test(w.document.querySelector('#app').innerHTML), 'the landing shows the young CAT art');
+    ok(/assets\/MOTHER\.jpg/.test(w.document.querySelector('#app').innerHTML), 'the landing shows the goal art');
+    ok(w.__CAT__.isGrownUp() === false, 'CAT starts the journey young');
+
+    const halfway = completeSeed(lessons.slice(0, 13));
+    const { w: mid } = await makeDom({}, halfway);
+    ok(mid.__CAT__.isGrownUp() === false, 'still young at 13 of 27 lessons');
+    mid.__CAT__.progress.completed.push(14);
+    ok(mid.__CAT__.isGrownUp() === true, 'fully grown once lesson 14 is mastered');
+
+    const { w: grown } = await makeDom({}, completeSeed(lessons));
+    grown.__CAT__.renderMap();
+    ok(/assets\/CAT_older\.jpg/.test(grown.document.querySelector('#app').innerHTML), 'the map marker uses the older CAT art');
+
+    const { w: battle } = await makeDom({ questionTimerSeconds: 1, lessonTimerSeconds: 300, attackChanceForced: 1 });
+    battle.__CAT__.startLessonQuiz(battle.__CAT__.curriculum.levels[3].lessons[0]);
+    ok(/assets\/contestant-1\.jpg/.test(battle.document.querySelector('#app').innerHTML), 'the contestant appears during a battle');
+    await waitFor(() => battle.__CAT__.run.attacks.length === 1, 4000);
+    ok(/attack-art/.test(battle.document.querySelector('#attackBanner').innerHTML), 'the ATTACK TIME banner shows the contestant');
+
+    const { w: kb } = await makeDom();
+    kb.__CAT__.startLessonQuiz(kb.__CAT__.curriculum.levels[0].lessons[0]);
+    kb.document.dispatchEvent(new kb.window.KeyboardEvent('keydown', { key: '2', bubbles: true }));
+    ok(kb.__CAT__.run.selected === 1, 'pressing 2 selects the second choice');
+    kb.document.dispatchEvent(new kb.window.KeyboardEvent('keydown', { key: 'Enter', bubbles: true }));
+    ok(kb.__CAT__.run.answers.length === 1, 'Enter checks the answer');
+    ok(kb.__CAT__.run.answers[0].selected === 1, 'the keyboard-selected choice is the one graded');
+    kb.document.dispatchEvent(new kb.window.KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+    ok(/Check your understanding/.test(kb.document.querySelector('#app').textContent), 'Escape leaves the quiz');
+
+    const { w: t } = await makeDom();
+    t.__CAT__.startLessonQuiz(t.__CAT__.curriculum.levels[0].lessons[0]);
+    const qt = t.__CAT__.run.questions[0];
+    t.document.querySelector(`[data-choice="${qt.answer}"]`).click();
+    t.document.querySelector('#answerButton').click();
+    ok(/Topic:<\/strong>/.test(t.document.querySelector('#feedbackSlot').innerHTML), 'feedback names the question topic');
+    ok(!/Manual|PDF p/.test(t.document.querySelector('#feedbackSlot').innerHTML), 'feedback never cites a document');
+
+    const { w: rev } = await makeDom({}, completeSeed(lessons));
+    rev.__CAT__.renderExamIntro();
+    rev.document.querySelector('#beginExam').click();
+    const r = rev.__CAT__.run;
+    for (let i = 0; i < 155; i += 1) r.answers.push({ question: r.questions[i], selected: r.questions[i].answer, correct: true, timedOut: false });
+    r.index = 155;
+    answerCurrent(rev, 'correct');
+    ok(rev.__CAT__.progress.examReview && rev.__CAT__.progress.examReview.rows.length === 156, 'the exam review is stored in progress');
+    ok(/"examReview"/.test(rev.localStorage.getItem(STORAGE_KEY)), 'the stored review is written to localStorage');
+
+    const saved = JSON.parse(rev.localStorage.getItem(STORAGE_KEY));
+    const { w: reloaded } = await makeDom({}, saved);
+    ok(!!reloaded.__CAT__.progress.examReview, 'the saved review loads back after a reload');
+    reloaded.__CAT__.renderExamReview();
+    ok(reloaded.document.querySelectorAll('.answer-row').length === 156, 'the saved review renders all 156 questions');
   }
 
   console.log(`\n${checks - failures}/${checks} checks passed.`);
