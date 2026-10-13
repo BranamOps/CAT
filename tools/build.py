@@ -28,7 +28,7 @@ MASTERY_THRESHOLD = 80
 QUESTIONS_PER_LESSON = 10
 LESSON_TIMER_SECONDS = 600
 QUESTION_TIMER_SECONDS = 60
-ATTACK_MIN_SECONDS = 0
+ATTACK_MIN_SECONDS = 1
 ATTACK_MAX_SECONDS = 60
 ATTACK_BASE_CHANCE = 10
 ATTACK_PER_LEVEL = 10
@@ -146,14 +146,14 @@ def build():
             "maxSeconds": ATTACK_MAX_SECONDS,
             "baseChancePercent": ATTACK_BASE_CHANCE,
             "chancePerLevelPercent": ATTACK_PER_LEVEL,
-            "note": "A rival may challenge CAT during a lesson. The chance rises from 10% at level 1 to 90% at level 9, and a challenge can cost up to a minute of the lesson clock. The final exam has no challenges.",
+            "note": "SHADOW CAT may strike when a question's clock runs out. The chance rises from 10% at level 1 to 90% at level 9, and a strike takes 1-60 seconds off the lesson clock. A contestant can also turn up mid-question and double the speed of both clocks. The final exam has no strikes.",
         },
         "story": [
             "CAT was a backyard alley cat in the country, and she survived on human scraps. Every winter tested her - cold nights, empty bowls, and whatever the households left behind - and she lived through each one on scraps and stubbornness.",
             "Other cats found her along the way, and they tested her. Not with claws: with insurance knowledge. Property and casualty rules, Kansas style - which promise answers for which loss, and what happens when the clock runs out. Losing an argument stung worse than losing a fight, so she learned the rules cold.",
             "For a long time her only goal was survival. Then one day she saw the red car, and the goal changed. She would leave with that car. Everything after that night was practice for the road out.",
             "Nine levels stand between the backyard and the road: twenty-seven lessons, ten questions each, a ten minute clock and sixty seconds to a question. At every stop a rival cat waits to argue with her, and when the clock runs out they may strike and steal seconds from the lesson.",
-            "At the very end waits the only challenger left: SHADOW CAT, her own shadow - everything survival taught her, turned around and looking back. One hundred fifty-six questions in one hundred fifty minutes, and no tricks at all.",
+            "At the end of the trail, past the last stone, CAT must battle her own shadow.",
             "Win, and the mother who drives the red car brings her home. That is how CAT becomes the cardboard box tower queen - and only after that does a small black cat named BAT come into the story at all.",
         ],
         "levels": levels_out,

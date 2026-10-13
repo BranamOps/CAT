@@ -16,6 +16,11 @@
     mother: 'assets/MOTHER.jpg',
   };
 
+  /* The contestant turns up mid-quiz and shouts one of these from a speech bubble. While it is on
+     screen both clocks run at double speed, so the player has to hurry. */
+  const CONTESTANT_CRIES = ['HISS', 'MYAAAAAAAGH', 'SSSSSSSS', 'MROOOOOWWW', 'YEEEEOOWL', 'RRRRROWWR', 'PFFFFFTTT'];
+  const CONTESTANT_CRY_MS = 3000;
+
   /* Other cats who test CAT's insurance knowledge, one per level. The battles are intellectual, never harmful. */
   const opponents = {
     1: 'The Alley Tom',
@@ -36,7 +41,7 @@
     [31, 66], [37, 63], [43, 66], [49, 62], [47, 57], [53, 54], [59, 57], [64, 52], [60, 47],
     [55, 44], [61, 41], [67, 44], [72, 39], [70, 34], [76, 31], [81, 28], [86, 31], [90, 25],
   ];
-  const goalPoint = [85, 15];
+  const goalPoint = [93, 30];
 
   /* Optional overrides let an automated check run shortened clocks. Never set in normal use. */
   const testOverrides = (typeof window !== 'undefined' && window.__CAT_TEST__) || {};
@@ -179,16 +184,45 @@
           <span class="eyebrow">A harder sequel to BAT</span>
           <h1>CAT's Insurance Journey</h1>
           <p class="hero-lede">
-            Nine levels. Twenty-seven lessons. At every stop an opponent waits &mdash; not to hurt her,
-            only to argue about Kansas Property &amp; Casualty rules. Ten questions per lesson, a
-            ten-minute clock, and sixty seconds per question.
+            Nine levels of Kansas Property &amp; Casualty, argued one lesson at a time. Ten questions a
+            stop, a clock running the whole way, and a cat waiting to argue at every one of them.
           </p>
           <div class="story-actions">
             <button class="button" id="storyBegin">${progress.completed.length ? "Continue CAT's journey" : 'Begin the journey'} &rarr;</button>
-            <button class="text-button" id="storyMap">See the journey map first</button>
           </div>
         </div>
       </section>
+
+      <div class="section-heading">
+        <div><span class="eyebrow">The goal</span><h2>The door CAT is learning to reach</h2></div>
+      </div>
+      <section class="goal-band">
+        <div class="goal-art"><img src="${ART.mother}" alt="The mother who drives the red car." /></div>
+        <div class="goal-copy">
+          <p>
+            Everything below is practice for one ordinary afternoon: the red car, the mother who drives it,
+            and a house with a stack of boxes that will be CAT's alone.
+          </p>
+        </div>
+      </section>
+
+      <div class="section-heading">
+        <div><span class="eyebrow">The journey</span><h2>Twenty-seven stones to the road out</h2></div>
+      </div>
+      ${mapSection()}
+
+      <div class="cta-band">
+        <div>
+          <h2>${nextLesson() ? `Begin at Lesson ${nextLesson().id}` : (progress.examComplete ? 'The journey is complete' : 'SHADOW CAT is waiting')}</h2>
+          <p>${progress.completed.length} of 27 lessons mastered. Progress is saved in this browser on this device.</p>
+        </div>
+        <button class="button" id="storyCta">${progress.completed.length ? 'Continue' : 'Start Lesson 1'} &rarr;</button>
+      </div>
+
+      <div class="section-heading">
+        <div><h2>The nine levels</h2><p>From the backyard in the country to the road out.</p></div>
+      </div>
+      <section class="levels-grid">${levelCards}</section>
 
       <div class="section-heading">
         <div>
@@ -199,74 +233,6 @@
       <section class="content-card story-copy">
         ${curriculum.story.map((p) => `<p>${esc(p)}</p>`).join('')}
       </section>
-
-      <div class="section-heading">
-        <div><span class="eyebrow">The goal</span><h2>The door CAT is learning to reach</h2></div>
-      </div>
-      <section class="goal-band">
-        <div class="goal-art"><img src="${ART.mother}" alt="The mother who drives the red car." /></div>
-        <div class="goal-copy">
-          <p>
-            This is what all nine levels lead to: the red car, the mother who drives it, and a house with a
-            stack of cardboard boxes that will be CAT's alone. Every lesson below is practice for that one
-            ordinary afternoon &mdash; the rules matter, but the ride out is the point.
-          </p>
-        </div>
-      </section>
-
-      <div class="section-heading">
-        <div><h2>How a lesson runs</h2><p>Every stop follows the same short loop.</p></div>
-      </div>
-      <section class="feature-grid">
-        <div class="feature-card"><h3>1 &middot; Read</h3><p>A short lesson that teaches one idea at a time, written in plain language.</p></div>
-        <div class="feature-card"><h3>2 &middot; Answer 10</h3><p>Ten questions, four choices each. Every answer reveals an explanation and the concept it tests.</p></div>
-        <div class="feature-card"><h3>3 &middot; Beat the clock</h3><p>Ten minutes for the whole lesson and sixty seconds per question. Run out of time and the clock itself can be attacked.</p></div>
-        <div class="feature-card"><h3>4 &middot; Pass or retake</h3><p>Score 8 of 10 to move on. Anything less and the lesson waits for a retake.</p></div>
-      </section>
-
-      <div class="section-heading">
-        <div><h2>ATTACK TIME</h2><p>The sequel's signature rule.</p></div>
-      </div>
-      <section class="rules-grid">
-        <div class="rule-card"><h3><span class="big">10%</span>at Level 1</h3><p>When a question's sixty seconds run out, the opponent rolls for ATTACK TIME.</p></div>
-        <div class="rule-card"><h3><span class="big">+10%</span>per level</h3><p>The chance climbs steadily, one level at a time, all the way up the map.</p></div>
-        <div class="rule-card"><h3><span class="big">90%</span>at Level 9</h3><p>At the top of the journey, a missed question almost always draws a strike.</p></div>
-        <div class="rule-card"><h3><span class="big">0&ndash;60s</span>stolen</h3><p>An attack subtracts a random slice of time from the lesson's ten-minute clock.</p></div>
-      </section>
-
-      <div class="section-heading">
-        <div><h2>The final exam</h2><p>No tricks at the end, only questions.</p></div>
-      </div>
-      <section class="exam-facts">
-        <div class="exam-fact"><b>156</b><span>questions</span></div>
-        <div class="exam-fact"><b>150</b><span>minutes</span></div>
-        <div class="exam-fact"><b>80%</b><span>to pass</span></div>
-        <div class="exam-fact"><b>0</b><span>artificial attacks</span></div>
-      </section>
-      <section class="content-card">
-        <h2>SHADOW CAT at the end of Level Nine</h2>
-        <p>
-          After the twenty-seventh lesson, the only attacker left is SHADOW CAT: her own shadow. The
-          exam draws 156 questions from every lesson, gives 150 minutes, and uses no ATTACK TIME at all.
-          It is the one battle where the only clock is the one she carries herself &mdash; and the red
-          car is waiting at the end of it. Finish with results, explanations, and a breakdown of the areas
-          that need work.
-        </p>
-      </section>
-
-      <div class="section-heading">
-        <div><h2>The nine levels</h2><p>From the backyard in the country to the red car at the edge of town.</p></div>
-      </div>
-      <section class="levels-grid">${levelCards}</section>
-
-      <div class="cta-band">
-        <div>
-          <h2>${nextLesson() ? `Next stop: Lesson ${nextLesson().id}` : (progress.examComplete ? 'The journey is complete' : 'SHADOW CAT is waiting')}</h2>
-          <p>${progress.completed.length} of 27 lessons mastered. Progress is saved in this browser on this device.</p>
-        </div>
-        <button class="button" id="storyCta">${progress.completed.length ? 'Continue' : 'Start Lesson 1'} &rarr;</button>
-      </div>
-      <div class="map-footer-note manual-note">A Kansas Property &amp; Casualty study game &middot; every answer explains the idea it tests.</div>
     `;
 
     const go = () => {
@@ -279,26 +245,18 @@
     };
     document.querySelector('#storyBegin').addEventListener('click', go);
     document.querySelector('#storyCta').addEventListener('click', go);
-    document.querySelector('#storyMap').addEventListener('click', () => {
-      storySeen = true;
-      sessionStorage.setItem('cats-intro-seen', 'yes');
-      renderMap();
+    document.querySelectorAll('[data-lesson]').forEach((btn) => {
+      btn.addEventListener('click', () => renderLesson(Number(btn.dataset.lesson)));
     });
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
   /* ---------------- journey map ---------------- */
 
-  function renderMap() {
-    stopTicker();
-    navActive('map');
+  /* The illustrated map, shared by the landing page and the journey page. */
+  function mapSection() {
     const next = nextLesson();
-    const allDone = !next;
-    const examReady = allDone && !progress.examComplete;
-
     const [mx, my] = next ? mapPoints[next.id - 1] : goalPoint;
-
-    /* The 27 lesson stones sit on the map image itself, BAT-style. */
     const nodes = lessons().map((lesson) => {
       const [x, y] = mapPoints[lesson.id - 1];
       const done = complete(lesson.id);
@@ -317,6 +275,34 @@
                 title="Lesson ${lesson.id}: ${esc(lesson.title)} - ${state}"
                 aria-label="Lesson ${lesson.id}: ${esc(lesson.title)} - ${state}">${done ? '&#10003;' : lesson.id}</button>`;
     }).join('');
+    return `
+      <section class="map-card" aria-label="Adventure map with twenty-seven lesson destinations">
+        <div class="map-frame">
+          <img class="map-image" src="assets/world.svg" alt="A winding dotted trail climbs through nine country lands, past a barn, windmill, pond and gate, up a hill to a red car waiting beside a warm lit door." />
+          <div class="map-overlay" id="mapOverlay">
+            <div class="map-marker" style="left:${mx}%;top:${my}%" aria-label="CAT's current position">
+              <img src="${catArt()}" alt="" />
+            </div>
+            ${nodes}
+          </div>
+        </div>
+        <div class="map-caption">
+          <span>Tap an open stone to study. Locked stones open as CAT masters the path.</span>
+          <div class="map-legend">
+            <span class="legend-item"><i class="legend-swab swab-done"></i> Mastered</span>
+            <span class="legend-item"><i class="legend-swab swab-current"></i> Current</span>
+            <span class="legend-item"><i class="legend-swab swab-locked"></i> Locked</span>
+          </div>
+        </div>
+      </section>`;
+  }
+
+  function renderMap() {
+    stopTicker();
+    navActive('map');
+    const next = nextLesson();
+    const allDone = !next;
+    const examReady = allDone && !progress.examComplete;
 
     const bands = curriculum.levels.map((level) => {
       const openCount = level.lessons.filter((l) => complete(l.id)).length;
@@ -367,30 +353,8 @@
           <small>lessons mastered</small>
         </div>
       </section>
-      <section class="map-card" aria-label="Adventure map with twenty-seven lesson destinations">
-        <div class="map-frame">
-          <img class="map-image" src="assets/world.svg" alt="A winding dotted trail climbs through nine country lands, past twenty-seven lesson stones, to a red car waiting beside a warm lit door." />
-          <div class="map-overlay" id="mapOverlay">
-            <div class="map-marker" style="left:${mx}%;top:${my}%" aria-label="CAT's current position">
-              <img src="${catArt()}" alt="" />
-            </div>
-            ${nodes}
-          </div>
-        </div>
-        <div class="map-caption">
-          <span>Click an open stone to study. Locked stones open as CAT masters the path.</span>
-          <div class="map-legend">
-            <span class="legend-item"><i class="legend-swab swab-done"></i> Mastered</span>
-            <span class="legend-item"><i class="legend-swab swab-current"></i> Current</span>
-            <span class="legend-item"><i class="legend-swab swab-locked"></i> Locked</span>
-          </div>
-        </div>
-      </section>
+      ${mapSection()}
       <div class="journey">${bands}</div>
-      <div class="manual-note">
-        <strong>Subject:</strong> ${esc(curriculum.subject)}. Lesson notes and every question explain the
-        idea being tested &mdash; no page-hunting required.
-      </div>
     `;
 
     document.querySelectorAll('[data-lesson]').forEach((btn) => {
@@ -506,9 +470,9 @@
               question. Every answer includes an explanation and the concept it tests. You need
               8 of 10 correct to continue, and you can always retake the lesson.
             </p>
-            <p class="muted">If the sixty seconds run out, ${esc(opponents[level.id])} has a
-              ${Math.round(attackChance(level.id) * 100)}% chance to call ATTACK TIME and take up to a
-              minute off the lesson clock.</p>
+            <p class="muted">If the sixty seconds run out, SHADOW CAT strikes
+              (${Math.round(attackChance(level.id) * 100)}% chance at this level) and takes up to a minute
+              off the lesson clock. The contestant may also turn up mid-question and speed both clocks up.</p>
             <button class="button quiz-launch" id="startQuiz">Start the 10-question lesson check &rarr;</button>
           </section>
         </article>
@@ -556,6 +520,8 @@
       attacks: [],
       lessonDeadline: Date.now() + CFG.lessonTimerSeconds() * 1000,
       questionDeadline: Date.now() + CFG.questionTimerSeconds() * 1000,
+      lastTick: Date.now(),
+      contestant: initContestant(),
       ended: false,
     };
     renderQuestion();
@@ -638,9 +604,13 @@
           </div>
           <div id="feedbackSlot"></div>
           <div class="quiz-actions">
-            <span class="muted">${isExam ? 'No ATTACK TIME. Choose the best answer, then check it.' : 'Press 1-4 to choose an answer, Enter to check.'}</span>
+            <span class="muted">${isExam ? 'Choose the best answer, then check it.' : 'Press 1-4 to choose an answer, Enter to check.'}</span>
             <button class="button" id="answerButton" disabled>Check answer</button>
           </div>
+          ${isExam ? '' : `<div class="contestant-slot" id="contestantSlot" hidden>
+            <div class="speech-bubble" id="contestantBubble"></div>
+            <img class="contestant-art" src="${ART.contestant}" alt="" />
+          </div>`}
         </section>
       </div>
     `;
@@ -660,6 +630,7 @@
       });
     });
     document.querySelector('#answerButton').addEventListener('click', gradeQuestion);
+    paintContestant(run);
     tick();
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
@@ -737,6 +708,59 @@
     };
   }
 
+  /* ---------------- the contestant ---------------- */
+
+  function initContestant() {
+    const now = Date.now();
+    return {
+      active: false,
+      until: 0,
+      cry: '',
+      cryUntil: 0,
+      nextAt: now + randInt(9000, 18000),
+      enabled: testOverrides.contestantDisabled !== true,
+    };
+  }
+
+  function updateContestant(run, now) {
+    const c = run.contestant;
+    if (!c) return false;
+    if (!c.enabled || run.feedback) {
+      if (c.active) { c.active = false; }
+      paintContestant(run);
+      return false;
+    }
+    if (c.active && now >= c.until) {
+      c.active = false;
+      c.cry = '';
+      c.nextAt = now + randInt(9000, 20000);
+      paintContestant(run);
+    }
+    if (!c.active && now >= c.nextAt) {
+      c.active = true;
+      c.until = now + randInt(3, 9) * 1000;
+      c.cryUntil = 0;
+    }
+    if (c.active && now >= c.cryUntil) {
+      c.cry = CONTESTANT_CRIES[Math.floor(Math.random() * CONTESTANT_CRIES.length)];
+      c.cryUntil = now + CONTESTANT_CRY_MS;
+      paintContestant(run);
+    }
+    return c.active;
+  }
+
+  function paintContestant(run) {
+    const slot = document.querySelector('#contestantSlot');
+    if (!slot) return;
+    const c = run.contestant;
+    const on = !!c && c.active && !run.feedback;
+    slot.hidden = !on;
+    if (on) {
+      const bubble = document.querySelector('#contestantBubble');
+      if (bubble) bubble.textContent = c.cry || '';
+    }
+  }
+
   /* ---------------- clocks ---------------- */
 
   function tick() {
@@ -745,6 +769,16 @@
     const now = Date.now();
 
     if (run.kind === 'lesson') {
+      /* The contestant burns both clocks at double speed while it is on screen. */
+      const elapsed = now - (run.lastTick || now);
+      run.lastTick = now;
+      const contestantOn = updateContestant(run, now);
+      if (contestantOn) {
+        run.lessonDeadline -= elapsed;
+        run.questionDeadline -= elapsed;
+      }
+      const strip = document.querySelector('.timer-strip');
+      if (strip) strip.classList.toggle('doubled', contestantOn);
       const lessonLeft = (run.lessonDeadline - now) / 1000;
       const qLeft = (run.questionDeadline - now) / 1000;
       const lc = document.querySelector('#lessonClock');
@@ -785,7 +819,7 @@
     recordAnswer(run, q, null, false, true);
     reveal(q, null, false, true);
 
-    /* A rival may turn up; on a hit it steals 0-60 seconds from the lesson clock. */
+    /* SHADOW CAT may strike; a hit steals 1-60 seconds from the lesson clock. */
     const level = run.level.id;
     const chance = attackChance(level);
     if (Math.random() < chance) {
@@ -793,26 +827,24 @@
       const stolen = randInt(cfg.minSeconds, cfg.maxSeconds);
       run.lessonDeadline -= stolen * 1000;
       run.attacks.push({ level, stolen });
-      showAttack(opponents[level], stolen);
+      showAttack(stolen);
       if (run.lessonDeadline <= Date.now()) {
         setTimeout(() => { if (activeRun === run && !run.ended) finishRun('lesson-time'); }, 1200);
       }
     } else {
-      showAttack(opponents[level], null);
+      showAttack(null);
     }
   }
 
-  function showAttack(name, stolen) {
+  function showAttack(stolen) {
     const banner = document.querySelector('#attackBanner');
     if (!banner) return;
     if (stolen === null) {
-      banner.innerHTML = `<img class="attack-art" src="${ART.contestant}" alt="" />
-        <div><strong>${esc(name)} circles but holds back</strong>
-        <span>No ATTACK TIME this round. The lesson clock is untouched.</span></div>`;
+      banner.innerHTML = `<strong>SHADOW CAT CIRCLES BUT HOLDS BACK</strong>
+        <span>The lesson clock is untouched.</span>`;
     } else {
-      banner.innerHTML = `<img class="attack-art" src="${ART.contestant}" alt="" />
-        <div><strong>ATTACK TIME &mdash; ${esc(name)} strikes</strong>
-        <span>${stolen} second${stolen === 1 ? '' : 's'} taken from the lesson clock.</span></div>`;
+      banner.innerHTML = `<strong>SHADOW CAT STRIKES &mdash; ${stolen} SECOND${stolen === 1 ? '' : 'S'} TAKEN FROM THE LESSON CLOCK</strong>
+        <span>Answer faster, or the clock runs out.</span>`;
     }
     banner.classList.add('show');
   }
@@ -854,8 +886,8 @@
       </div>`).join('');
 
     const attacksNote = run.attacks.length
-      ? `${opponents[run.level.id]} called ATTACK TIME ${run.attacks.length} time${run.attacks.length === 1 ? '' : 's'}, taking ${run.attacks.reduce((s, a) => s + a.stolen, 0)} seconds in total.`
-      : `No ATTACK TIME was called this lesson.`;
+      ? `SHADOW CAT struck ${run.attacks.length} time${run.attacks.length === 1 ? '' : 's'}, taking ${run.attacks.reduce((s, a) => s + a.stolen, 0)} seconds in total.`
+      : `SHADOW CAT never caught her off guard this lesson.`;
 
     app.className = 'view-animate';
     app.innerHTML = `
@@ -1284,6 +1316,7 @@
     renderExamIntro,
     renderExamReview,
     isGrownUp,
+    contestantCries: CONTESTANT_CRIES,
   };
 
   boot();

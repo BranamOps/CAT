@@ -130,6 +130,15 @@ async function main() {
     ok(o.scroll <= o.client + 1, 'quiz has no horizontal overflow', `scroll ${o.scroll} widest ${Math.round(o.widest)}`);
     await page.screenshot({ path: '/tmp/cat-mobile-quiz.png', fullPage: false });
 
+    // the contestant turns up and doubles both clocks
+    await page.evaluate(() => { window.__CAT__.run.contestant.nextAt = 0; });
+    await page.waitForSelector('#contestantSlot:not([hidden])', { timeout: 5000 });
+    ok(true, 'the contestant turns up in a real browser');
+    const bubble = await page.textContent('#contestantBubble');
+    ok(bubble && bubble.trim().length >= 3, 'the contestant shouts one of the cries', bubble);
+    ok(await page.evaluate(() => document.querySelector('.timer-strip').classList.contains('doubled')),
+      'the clocks are marked as doubled');
+
     // live timers
     const t1 = await page.textContent('#questionClock');
     await page.waitForTimeout(1400);
@@ -168,7 +177,7 @@ async function main() {
     await page.evaluate(() => window.__CAT__.startLessonQuiz(window.__CAT__.curriculum.levels[7].lessons[0]));
     await page.waitForSelector('#attackBanner.show', { timeout: 6000 });
     const text = await page.textContent('#attackBanner');
-    ok(/ATTACK TIME/.test(text), 'ATTACK TIME banner appears in the browser', text.trim().slice(0, 70));
+    ok(/SHADOW CAT STRIKES/.test(text), 'the SHADOW CAT strike banner appears in the browser', text.trim().slice(0, 70));
     ok(await page.evaluate(() => window.__CAT__.run.attacks.length === 1), 'the attack was recorded');
     const vis = await page.isVisible('#attackBanner.show');
     ok(vis, 'attack banner is visible');

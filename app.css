@@ -510,6 +510,29 @@ a { color: var(--lamp); }
 .attack-banner.show { display: flex; }
 .attack-art { width: 54px; height: 54px; border-radius: 50%; object-fit: cover; border: 2px solid var(--shadow-accent); flex: none; }
 
+/* ---------- the contestant ---------- */
+.contestant-slot { display: flex; align-items: center; gap: 12px; margin-top: 22px; }
+.contestant-slot[hidden] { display: none; }
+.contestant-art { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; border: 3px solid var(--bad); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); flex: none; }
+.speech-bubble {
+  position: relative; background: #fdf6e6; color: #180f06; font-weight: 800;
+  letter-spacing: 1px; font-size: 15px; padding: 11px 17px; border-radius: 15px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.45); animation: bubblePop .2s ease both;
+}
+.speech-bubble::after {
+  content: ''; position: absolute; right: -8px; top: 50%; transform: translateY(-50%);
+  border-top: 9px solid transparent; border-bottom: 9px solid transparent;
+  border-left: 10px solid #fdf6e6;
+}
+.speech-bubble:empty { display: none; }
+@keyframes bubblePop { from { transform: scale(.72); opacity: 0; } to { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .speech-bubble { animation: none; } }
+
+/* while the contestant is on screen both clocks burn at double speed */
+.timer-strip.doubled .timer { border-color: rgba(255, 138, 122, 0.8); }
+.timer-strip.doubled .timer-value { color: var(--bad); }
+.timer-strip.doubled .timer-label::after { content: ' · 2\u00d7'; color: var(--bad); font-weight: 800; }
+
 /* ---------- ending art ---------- */
 .ending-scene { gap: 14px; }
 .ending-mother { width: min(260px, 52vw); border-radius: var(--radius); box-shadow: var(--shadow-card); }
@@ -538,6 +561,8 @@ a { color: var(--lamp); }
   .timer-value { font-size: 19px; }
   .result-actions .button, .story-actions .button { width: 100%; }
   .question-text { font-size: 17.5px; }
+  .contestant-art { width: 72px; height: 72px; }
+  .speech-bubble { font-size: 13.5px; padding: 9px 13px; }
   .choice { padding: 13px 14px; }
   .answers-review .answer-row { font-size: 13.5px; }
 }

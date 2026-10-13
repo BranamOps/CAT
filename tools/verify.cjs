@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* Verification for CAT. Checks the authored data and then drives the real app
- * inside a headless DOM so timers, ATTACK TIME, scoring, retakes and the final
+ * inside a headless DOM so timers, strikes, scoring, retakes and the final
  * exam are exercised through the same interface a learner uses.
  *
  *   JSDOM_PATH=/path/to/jsdom node tools/verify.cjs
@@ -136,8 +136,12 @@ async function main() {
     ok(/0 \/ 27 lessons/.test(w.document.querySelector('#topProgress').textContent), 'progress chip starts at 0 / 27');
     const story = w.document.querySelector('#app').textContent;
     ok(/CAT's Insurance Journey/.test(story), 'landing/story renders');
-    ok(/ATTACK TIME/.test(story), 'landing explains ATTACK TIME');
-    ok(/156/.test(story) && /150/.test(story), 'landing states the 156 / 150 exam facts');
+    ok(/assets\/world\.svg/.test(w.document.querySelector('#app').innerHTML), 'the landing embeds the journey map');
+    ok(/own shadow/.test(story), 'the bio hints at the shadow at the end');
+    ok(!/How a lesson runs/.test(story), 'the landing drops the how-a-lesson-runs tutorial');
+    ok(!/ATTACK TIME/.test(story), 'the landing drops the ATTACK TIME tutorial');
+    ok(!/at the end of Level Nine/.test(story), 'the landing drops the shadow explanation');
+    ok(!/Manual|PDF p|Norris/i.test(story), 'the landing never references a document');
     ok(/assets\/CAT_young\.jpg/.test(w.document.querySelector('#app').innerHTML), 'landing shows the young CAT art');
     ok(/assets\/MOTHER\.jpg/.test(w.document.querySelector('#app').innerHTML), 'landing shows the goal art');
     ok(w.__CAT__.isGrownUp() === false, 'CAT starts the journey young');
@@ -194,10 +198,10 @@ async function main() {
     ok(a && a.correct === false, 'expired question scores as incorrect');
     ok(w.__CAT__.run.attacks.length === 1, 'opponent triggered ATTACK TIME on a forced roll');
     const stolen = w.__CAT__.run.attacks[0].stolen;
-    ok(stolen >= 0 && stolen <= 60, 'attack steals between 0 and 60 seconds', String(stolen));
+    ok(stolen >= 1 && stolen <= 60, 'a strike takes between 1 and 60 seconds', String(stolen));
     ok(w.__CAT__.run.lessonDeadline === before - stolen * 1000, 'attack reduced the remaining lesson time by the stolen amount');
     const banner = w.document.querySelector('#attackBanner');
-    ok(banner.classList.contains('show') && /ATTACK TIME/.test(banner.textContent), 'ATTACK TIME banner is shown');
+    ok(banner.classList.contains('show') && /SHADOW CAT STRIKES/.test(banner.textContent), 'the SHADOW CAT strike banner is shown');
     const fb = w.document.querySelector('#feedbackSlot').textContent;
     ok(/Time expired/.test(fb), 'feedback marks the question as timed out');
     ok(/Topic:/.test(fb), 'feedback names the question topic');
@@ -213,7 +217,7 @@ async function main() {
     await waitFor(() => w.__CAT__.run.answers.length === 1, 4000);
     ok(w.__CAT__.run.attacks.length === 0, 'no attack recorded when the roll misses');
     ok(w.__CAT__.run.lessonDeadline === before, 'lesson clock untouched when the roll misses');
-    ok(/holds back/.test(w.document.querySelector('#attackBanner').textContent), 'banner explains the opponent held back');
+    ok(/holds back/i.test(w.document.querySelector('#attackBanner').textContent), 'banner explains that SHADOW CAT held back');
   }
 
   /* ---------- 7. scoring, pass and progression ---------- */
@@ -399,7 +403,7 @@ async function main() {
     battle.__CAT__.startLessonQuiz(battle.__CAT__.curriculum.levels[3].lessons[0]);
     ok(/assets\/contestant-1\.jpg/.test(battle.document.querySelector('#app').innerHTML), 'the contestant appears during a battle');
     await waitFor(() => battle.__CAT__.run.attacks.length === 1, 4000);
-    ok(/attack-art/.test(battle.document.querySelector('#attackBanner').innerHTML), 'the ATTACK TIME banner shows the contestant');
+    ok(/SHADOW CAT STRIKES/.test(battle.document.querySelector('#attackBanner').innerHTML), 'the strike banner names SHADOW CAT');
 
     const { w: kb } = await makeDom();
     kb.__CAT__.startLessonQuiz(kb.__CAT__.curriculum.levels[0].lessons[0]);
@@ -434,6 +438,45 @@ async function main() {
     ok(!!reloaded.__CAT__.progress.examReview, 'the saved review loads back after a reload');
     reloaded.__CAT__.renderExamReview();
     ok(reloaded.document.querySelectorAll('.answer-row').length === 156, 'the saved review renders all 156 questions');
+  }
+
+  /* ---------- 16. the contestant and the double-speed clocks ---------- */
+  console.log('\n16. The contestant and the double-speed clocks');
+  {
+    const { w } = await makeDom();
+    w.__CAT__.startLessonQuiz(w.__CAT__.curriculum.levels[0].lessons[0]);
+    const run = w.__CAT__.run;
+    ok(w.__CAT__.contestantCries.length === 7, 'there are seven cries', String(w.__CAT__.contestantCries.length));
+    ok(!run.contestant.active, 'the contestant is not on screen at the start');
+
+    run.contestant.nextAt = 0;
+    ok(await waitFor(() => run.contestant.active, 3000), 'the contestant turns up during the quiz');
+    await sleep(150);
+    const slot = w.document.querySelector('#contestantSlot');
+    ok(slot && !slot.hidden, 'the contestant is shown');
+    ok(/assets\/contestant-1\.jpg/.test(slot.innerHTML), 'the contestant art is on screen');
+    const choices = w.document.querySelector('#choiceList');
+    ok(!!(choices && choices.compareDocumentPosition(slot) & 4), 'the contestant sits below the multiple choice');
+    const cry = w.document.querySelector('#contestantBubble').textContent;
+    ok(w.__CAT__.contestantCries.includes(cry), 'the bubble shows one of the cries', cry);
+
+    const lessonBefore = run.lessonDeadline - Date.now();
+    const questionBefore = run.questionDeadline - Date.now();
+    await sleep(1000);
+    const lessonBurned = lessonBefore - (run.lessonDeadline - Date.now());
+    const questionBurned = questionBefore - (run.questionDeadline - Date.now());
+    ok(lessonBurned > 1500, 'the lesson clock runs at double speed', String(Math.round(lessonBurned)));
+    ok(questionBurned > 1500, 'the question clock runs at double speed', String(Math.round(questionBurned)));
+
+    run.contestant.until = Date.now() - 1;
+    ok(await waitFor(() => !run.contestant.active, 3000), 'the contestant leaves again');
+    await sleep(150);
+    ok(w.document.querySelector('#contestantSlot').hidden, 'the contestant is hidden once it leaves');
+
+    const { w: ex } = await makeDom({}, completeSeed(lessons));
+    ex.__CAT__.renderExamIntro();
+    ex.document.querySelector('#beginExam').click();
+    ok(!ex.document.querySelector('#contestantSlot'), 'the final exam has no contestant');
   }
 
   console.log(`\n${checks - failures}/${checks} checks passed.`);
