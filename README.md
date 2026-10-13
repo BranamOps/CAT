@@ -27,7 +27,7 @@ switches from `CAT_young.jpg` to `CAT_older.jpg` everywhere she appears.
 | --- | --- | --- |
 | CAT (young) | `assets/CAT_young.jpg` | Levels 1–4, before the halfway point |
 | CAT (older) | `assets/CAT_older.jpg` | Level 5 onward, and the repository page |
-| The contestant | `assets/contestant-1.jpg` | Every lesson battle — and any ATTACK TIME |
+| The contestants | `assets/contestant-1.jpg`, `contestant-2.jpg`, `contestant-3.jpg` | Every lesson battle; one portrait turns up at random |
 | SHADOW-1 | `assets/SHADOW-1.jpg` | The final exam |
 | The mother | `assets/MOTHER.jpg` | The goal, on the landing page, and the ending |
 
@@ -49,9 +49,9 @@ saved in this browser on this device.
 
 ## The journey
 
-Nine levels, three lessons each — twenty-seven lessons in all, ten questions per lesson. Question
-difficulty rises strictly with the level. Each land is guarded by a rival who may turn up for
-**ATTACK TIME** when a question's clock runs out.
+Nine levels, three lessons each — twenty-seven lessons in all, fifteen questions in every lesson's
+bank with ten drawn per run. Question difficulty rises strictly with the level. Each land is guarded
+by a rival who may turn up for **ATTACK TIME** when a question's clock runs out.
 
 | Level | Title | Rival | ATTACK TIME chance |
 | --- | --- | --- | --- |
@@ -68,13 +68,15 @@ difficulty rises strictly with the level. Each land is guarded by a rival who ma
 ## How a lesson runs
 
 1. **Study** the lesson, its three teaching sections, its scenario, and the ideas it covers.
-2. **Answer ten questions.** Every answer immediately shows a teaching explanation and the concept
-   being tested.
+2. **Answer ten questions.** Each lesson's bank holds fifteen, and a run draws ten of them, so a
+   retake deals a different hand. Every answer immediately shows a teaching explanation and the
+   concept being tested.
 3. **Beat the clock.** The lesson has a **10-minute** timer and each question has a **60-second** timer.
 4. **Survive ATTACK TIME.** If a question's 60 seconds expire, the question scores as incorrect and
    the rival may call **ATTACK TIME**, subtracting a random **0–60 seconds** from the lesson clock.
-   The chance rises from **10% at Level 1 to 90% at Level 9** (10 points per level). The contestant
-   appears whenever a challenge lands.
+   The chance rises from **10% at Level 1 to 90% at Level 9** (10 points per level). A contestant also
+   drops in at most **once per question**, and while it is on screen both clocks run **three times as
+   fast**.
 5. **Pass or retake.** A lesson needs **80%** (8 of 10). Anything less keeps the lesson locked with a
    **retake** available — retakes reshuffle the question order and reset both clocks.
 
@@ -109,10 +111,11 @@ and the exam can be checked; it is a testing convenience, not access control.
 - `index.html`, `app.css`, `app.js` — page shell, night-alley theme, and game behavior.
 - `data/curriculum.json` — the nine levels, twenty-seven lessons, teaching text, timer configuration,
   the ATTACK TIME curve, and the exam blueprint.
-- `data/questions.json` — the 270-question bank.
+- `data/questions.json` — the 405-question bank (fifteen per lesson, with three to five drawn from
+  the Kansas laws and insurance material in each lesson).
 - `assets/world.svg` — the illustrated journey map (a winding trail to the red car).
-- `assets/CAT_young.jpg`, `assets/CAT_older.jpg`, `assets/contestant-1.jpg`, `assets/SHADOW-1.jpg`,
-  `assets/MOTHER.jpg` — character and ending art.
+- `assets/CAT_young.jpg`, `assets/CAT_older.jpg`, `assets/contestant-1.jpg`, `assets/contestant-2.jpg`,
+  `assets/contestant-3.jpg`, `assets/SHADOW-1.jpg`, `assets/MOTHER.jpg` — character and ending art.
 - `tools/` — the authoring and verification scripts (development only; not needed to play).
 - `.github/workflows/static.yml` — deploys the repository to GitHub Pages on every push to `main`.
 
@@ -128,27 +131,32 @@ python3 tools/build.py          # rebuild data/*.json and validate the bank
 ```
 
 `build.py` refuses to write output unless the bank passes its checks: nine levels, three lessons per
-level, ten questions per lesson, four distinct options, a valid answer index, a non-empty explanation,
-a topic label on every question, an answer key within 15–35% per position, and an average question
-difficulty that rises strictly from level to level. It also rejects any content that references a
-source document.
+level, fifteen questions per lesson, four distinct options, a valid answer index, a non-empty
+explanation, a topic label on every question, an answer key within 15–35% per position, and an average
+question difficulty that rises strictly from level to level. It also requires three to five of every
+lesson's questions to carry the Kansas source tag, and rejects any content that names a source document.
+
+Each question may carry an optional eighth element, `"kansas"`, marking an idea taken from the Kansas
+laws and insurance material; every other question is treated as `"manual"`. The tag is authoring
+metadata only and is stripped before the bank ships, so the game itself never cites a source.
 
 ## Verification
 
 ```bash
-# data + headless DOM behavior (129 checks)
+# data + headless DOM behavior
 JSDOM_PATH=/path/to/jsdom node tools/verify.cjs
 
-# real-browser layout, mobile viewport, timers, ATTACK TIME (34 checks)
+# real-browser layout, mobile viewport, timers, ATTACK TIME
 PLAYWRIGHT_PATH=/path/to/playwright node tools/browser-check.cjs
 ```
 
-`verify.cjs` drives the actual app in a headless DOM: it validates the bank, then runs lessons,
-lets the question clock expire, forces and suppresses ATTACK TIME, checks that an attack subtracts
-exactly the stolen seconds, runs a lesson to a passing and a failing score, exercises the retake
-path, tests the keyboard shortcuts, confirms the CAT young/older switch and the contestant art,
-checks that the exam review persists across a reload, and runs the 156-question exam to both a
-passing and a failing result.
+`verify.cjs` drives the actual app in a headless DOM: it validates the bank (405 questions, fifteen
+per lesson), then runs lessons, lets the question clock expire, forces and suppresses ATTACK TIME,
+checks that an attack subtracts exactly the stolen seconds, runs a lesson to a passing and a failing
+score, exercises the retake path, tests the keyboard shortcuts, confirms the CAT young/older switch
+and the contestant portraits, verifies the contestant turns up at most once per question and triples
+both clocks while it is on screen, checks that the exam review persists across a reload, and runs the
+156-question exam to both a passing and a failing result.
 
 `browser-check.cjs` runs the same app in headless Chromium at a 390×844 phone viewport and a
 1366×900 desktop viewport, checking for console errors, horizontal overflow, tap-target size, live

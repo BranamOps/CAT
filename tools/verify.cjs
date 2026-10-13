@@ -100,12 +100,12 @@ async function main() {
   ok(curriculum.levels.length === 9, 'nine levels');
   ok(curriculum.levels.every((lv) => lv.lessons.length === 3), 'three lessons per level');
   ok(lessons.length === 27, 'twenty-seven lessons');
-  ok(bank.length === 270, 'two hundred seventy questions');
-  ok(lessons.every((l) => l.questionIds.length === 10), 'ten questions per lesson');
+  ok(bank.length === 405, 'four hundred five questions');
+  ok(lessons.every((l) => l.questionIds.length === 15), 'fifteen authored questions per lesson');
   ok(new Set(bank.map((q) => q.id)).size === bank.length, 'question ids are unique');
   ok(bank.every((q) => q.options.length === 4 && new Set(q.options).size === 4), 'every question has four distinct options');
   ok(bank.every((q) => q.topic && q.topic.length > 3), 'every question names the concept it tests');
-  ok(!/manual p|pdf p|training manual|pre-study guide/i.test(JSON.stringify([curriculum, bank])),
+  ok(!/manual p|pdf p|training manual|pre-study guide|norris|kansas laws/i.test(JSON.stringify([curriculum, bank])),
     'no content references a source document');
   ok(bank.every((q) => q.explanation && q.explanation.length > 30), 'every question has a teaching explanation');
   const dist = [0, 0, 0, 0];
@@ -132,7 +132,7 @@ async function main() {
   console.log('\n2. Runtime boot (headless DOM)');
   {
     const { w } = await makeDom();
-    ok(w.__CAT__.bank.length === 270, 'app loaded 270 questions');
+    ok(w.__CAT__.bank.length === 405, 'app loaded 405 questions');
     ok(w.__CAT__.curriculum.levels.length === 9, 'app loaded 9 levels');
     ok(/0 \/ 27 lessons/.test(w.document.querySelector('#topProgress').textContent), 'progress chip starts at 0 / 27');
     const story = w.document.querySelector('#app').textContent;
@@ -202,7 +202,8 @@ async function main() {
     ok(stolen >= 1 && stolen <= 60, 'a strike takes between 1 and 60 seconds', String(stolen));
     ok(w.__CAT__.run.lessonDeadline === before - stolen * 1000, 'attack reduced the remaining lesson time by the stolen amount');
     const banner = w.document.querySelector('#attackBanner');
-    ok(banner.classList.contains('show') && /SHADOW CAT STRIKES/.test(banner.textContent), 'the SHADOW CAT strike banner is shown');
+    ok(banner.classList.contains('show') && /THE ALLEY TOM STRIKES/.test(banner.textContent), 'the strike banner names the rival who guards the land');
+    ok(!/SHADOW CAT/.test(banner.textContent), 'SHADOW CAT does not turn up in an early lesson');
     const fb = w.document.querySelector('#feedbackSlot').textContent;
     ok(/Time expired/.test(fb), 'feedback marks the question as timed out');
     ok(/Topic:/.test(fb), 'feedback names the question topic');
@@ -218,7 +219,8 @@ async function main() {
     await waitFor(() => w.__CAT__.run.answers.length === 1, 4000);
     ok(w.__CAT__.run.attacks.length === 0, 'no attack recorded when the roll misses');
     ok(w.__CAT__.run.lessonDeadline === before, 'lesson clock untouched when the roll misses');
-    ok(/holds back/i.test(w.document.querySelector('#attackBanner').textContent), 'banner explains that SHADOW CAT held back');
+    const held = w.document.querySelector('#attackBanner').textContent;
+    ok(/holds back/i.test(held) && /SHADOW CAT/.test(held), 'level 9 rival holds back and is named');
   }
 
   /* ---------- 7. scoring, pass and progression ---------- */
@@ -364,12 +366,14 @@ async function main() {
   console.log('\n14. Static hosting and mobile requirements');
   {
     const files = ['index.html', 'app.css', 'app.js', 'data/curriculum.json', 'data/questions.json',
-      'assets/CAT_young.jpg', 'assets/CAT_older.jpg', 'assets/contestant-1.jpg', 'assets/SHADOW-1.jpg',
-      'assets/MOTHER.jpg', 'assets/world.svg', '.github/workflows/static.yml'];
+      'assets/CAT_young.jpg', 'assets/CAT_older.jpg', 'assets/contestant-1.jpg', 'assets/contestant-2.jpg',
+      'assets/contestant-3.jpg', 'assets/SHADOW-1.jpg', 'assets/MOTHER.jpg', 'assets/world.svg',
+      '.github/workflows/static.yml'];
     const missing = files.filter((f) => !fs.existsSync(path.join(root, f)));
     ok(missing.length === 0, 'all deployable files exist', missing.join(', '));
     const shipped = fs.readdirSync(path.join(root, 'assets'));
-    const allowed = ['CAT_young.jpg', 'CAT_older.jpg', 'contestant-1.jpg', 'SHADOW-1.jpg', 'MOTHER.jpg', 'world.svg'];
+    const allowed = ['CAT_young.jpg', 'CAT_older.jpg', 'contestant-1.jpg', 'contestant-2.jpg',
+      'contestant-3.jpg', 'SHADOW-1.jpg', 'MOTHER.jpg', 'world.svg'];
     ok(shipped.length === allowed.length && allowed.every((f) => shipped.includes(f)),
       'assets contain only the game artwork', shipped.join(', '));
     ok(/<meta name="viewport"/.test(html), 'viewport meta tag present for mobile layout');
@@ -410,9 +414,10 @@ async function main() {
 
     const { w: battle } = await makeDom({ questionTimerSeconds: 1, lessonTimerSeconds: 300, attackChanceForced: 1 });
     battle.__CAT__.startLessonQuiz(battle.__CAT__.curriculum.levels[3].lessons[0]);
-    ok(/assets\/contestant-1\.jpg/.test(battle.document.querySelector('#app').innerHTML), 'the contestant appears during a battle');
+    ok(/assets\/contestant-[123]\.jpg/.test(battle.document.querySelector('#app').innerHTML), 'a contestant portrait appears during a battle');
     await waitFor(() => battle.__CAT__.run.attacks.length === 1, 4000);
-    ok(/SHADOW CAT STRIKES/.test(battle.document.querySelector('#attackBanner').innerHTML), 'the strike banner names SHADOW CAT');
+    ok(/THE WALL CAT STRIKES/.test(battle.document.querySelector('#attackBanner').innerHTML), 'the level 4 rival names itself when it strikes');
+    ok(!/SHADOW CAT/.test(battle.document.querySelector('#attackBanner').innerHTML), 'SHADOW CAT stays out of level 4 battles');
 
     const { w: kb } = await makeDom();
     kb.__CAT__.startLessonQuiz(kb.__CAT__.curriculum.levels[0].lessons[0]);
@@ -449,13 +454,14 @@ async function main() {
     ok(reloaded.document.querySelectorAll('.answer-row').length === 156, 'the saved review renders all 156 questions');
   }
 
-  /* ---------- 16. the contestant and the double-speed clocks ---------- */
-  console.log('\n16. The contestant and the double-speed clocks');
+  /* ---------- 16. the contestant, one visit per question, the triple-speed clocks ---------- */
+  console.log('\n16. The contestant, one visit per question, and the triple-speed clocks');
   {
     const { w } = await makeDom();
     w.__CAT__.startLessonQuiz(w.__CAT__.curriculum.levels[0].lessons[0]);
     const run = w.__CAT__.run;
     ok(w.__CAT__.contestantCries.length === 7, 'there are seven cries', String(w.__CAT__.contestantCries.length));
+    ok(w.__CAT__.contestantArts.length === 3, 'three contestant portraits are configured', String(w.__CAT__.contestantArts.length));
     ok(!run.contestant.active, 'the contestant is not on screen at the start');
 
     run.contestant.nextAt = 0;
@@ -463,7 +469,7 @@ async function main() {
     await sleep(150);
     const slot = w.document.querySelector('#contestantSlot');
     ok(slot && !slot.hidden, 'the contestant is shown');
-    ok(/assets\/contestant-1\.jpg/.test(slot.innerHTML), 'the contestant art is on screen');
+    ok(/assets\/contestant-[123]\.jpg/.test(slot.innerHTML), 'a contestant portrait is on screen');
     const choices = w.document.querySelector('#choiceList');
     ok(!!(choices && choices.compareDocumentPosition(slot) & 4), 'the contestant sits below the multiple choice');
     const cry = w.document.querySelector('#contestantBubble').textContent;
@@ -474,13 +480,30 @@ async function main() {
     await sleep(1000);
     const lessonBurned = lessonBefore - (run.lessonDeadline - Date.now());
     const questionBurned = questionBefore - (run.questionDeadline - Date.now());
-    ok(lessonBurned > 1500, 'the lesson clock runs at double speed', String(Math.round(lessonBurned)));
-    ok(questionBurned > 1500, 'the question clock runs at double speed', String(Math.round(questionBurned)));
+    ok(lessonBurned > 2500, 'the lesson clock runs at triple speed', String(Math.round(lessonBurned)));
+    ok(questionBurned > 2500, 'the question clock runs at triple speed', String(Math.round(questionBurned)));
 
     run.contestant.until = Date.now() - 1;
     ok(await waitFor(() => !run.contestant.active, 3000), 'the contestant leaves again');
     await sleep(150);
     ok(w.document.querySelector('#contestantSlot').hidden, 'the contestant is hidden once it leaves');
+
+    // Rate limit: the contestant gets exactly one visit per question.
+    ok(run.contestant.appearedThisQuestion === true, 'the contestant has used its one visit for this question');
+    run.contestant.nextAt = 0;
+    await sleep(700);
+    ok(!run.contestant.active, 'the contestant never returns twice in the same question');
+    answerCurrent(w, 'correct');
+    ok(run.contestant.appearedThisQuestion === false, 'a fresh question reopens one visit window');
+
+    // The portrait is drawn from whatever pool is available, so a custom pool shows a custom face.
+    const { w: pool } = await makeDom({ contestantArts: ['assets/contestant-2.jpg', 'assets/contestant-3.jpg'] });
+    pool.__CAT__.startLessonQuiz(pool.__CAT__.curriculum.levels[0].lessons[0]);
+    pool.__CAT__.run.contestant.nextAt = 0;
+    ok(await waitFor(() => pool.__CAT__.run.contestant.active, 3000), 'a contestant turns up with a custom pool');
+    await sleep(150);
+    ok(/assets\/contestant-[23]\.jpg/.test(pool.document.querySelector('#contestantSlot').innerHTML),
+      'the on-screen portrait is drawn from the available pool');
 
     const { w: ex } = await makeDom({}, completeSeed(lessons));
     ex.__CAT__.renderExamIntro();

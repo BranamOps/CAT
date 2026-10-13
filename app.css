@@ -560,10 +560,10 @@ a { color: var(--lamp); }
 @keyframes bubblePop { from { transform: scale(.72); opacity: 0; } to { transform: none; opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .speech-bubble { animation: none; } }
 
-/* while the contestant is on screen both clocks burn at double speed */
-.timer-strip.doubled .timer { border-color: rgba(255, 138, 122, 0.8); }
-.timer-strip.doubled .timer-value { color: var(--bad); }
-.timer-strip.doubled .timer-label::after { content: ' · 2\u00d7'; color: var(--bad); font-weight: 800; }
+/* while the contestant is on screen both clocks burn at triple speed */
+.timer-strip.spedup .timer { border-color: rgba(255, 138, 122, 0.8); }
+.timer-strip.spedup .timer-value { color: var(--bad); }
+.timer-strip.spedup .timer-label::after { content: ' · 3\u00d7'; color: var(--bad); font-weight: 800; }
 
 /* ---------- ending art ---------- */
 .ending-scene { gap: 14px; }

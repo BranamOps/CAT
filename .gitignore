@@ -3,3 +3,7 @@ node_modules/
 *.log
 __pycache__/
 *.pyc
+
+# Source PDFs and extraction scratch (reference material, not shipped)
+*.pdf
+.work/

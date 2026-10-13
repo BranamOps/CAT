@@ -54,7 +54,7 @@ async function boot(browser, viewport, overrides) {
   page.on('pageerror', (e) => errors.push(String(e)));
   await serve(page);
   await page.goto(BASE, { waitUntil: 'load' });
-  await page.waitForFunction(() => window.__CAT__ && window.__CAT__.bank && window.__CAT__.bank.length === 270, null, { timeout: 15000 });
+  await page.waitForFunction(() => window.__CAT__ && window.__CAT__.bank && window.__CAT__.bank.length === 405, null, { timeout: 15000 });
   return { context, page, errors };
 }
 
@@ -130,14 +130,29 @@ async function main() {
     ok(o.scroll <= o.client + 1, 'quiz has no horizontal overflow', `scroll ${o.scroll} widest ${Math.round(o.widest)}`);
     await page.screenshot({ path: '/tmp/cat-mobile-quiz.png', fullPage: false });
 
-    // the contestant turns up and doubles both clocks
+    // the contestant turns up and triples both clocks
     await page.evaluate(() => { window.__CAT__.run.contestant.nextAt = 0; });
     await page.waitForSelector('#contestantSlot:not([hidden])', { timeout: 5000 });
     ok(true, 'the contestant turns up in a real browser');
     const bubble = await page.textContent('#contestantBubble');
     ok(bubble && bubble.trim().length >= 3, 'the contestant shouts one of the cries', bubble);
-    ok(await page.evaluate(() => document.querySelector('.timer-strip').classList.contains('doubled')),
-      'the clocks are marked as doubled');
+    const contestantSrc = await page.getAttribute('.contestant-art', 'src');
+    ok(/contestant-[123]\.jpg/.test(contestantSrc || ''), 'a contestant portrait is on screen', contestantSrc);
+    ok(await page.evaluate(() => document.querySelector('.timer-strip').classList.contains('spedup')),
+      'the clocks are marked as tripled');
+    const portraits = await page.evaluate(async () => {
+      const srcs = window.__CAT__.contestantArts;
+      const results = await Promise.all(srcs.map((src) => new Promise((res) => {
+        const img = new Image();
+        img.onload = () => res(img.naturalWidth > 0);
+        img.onerror = () => res(false);
+        img.src = src;
+      })));
+      return { count: srcs.length, loaded: results.filter(Boolean).length };
+    });
+    ok(portraits.count === 3 && portraits.loaded === 3,
+      'all three contestant portraits load in the browser',
+      `${portraits.loaded}/${portraits.count}`);
 
     // live timers
     const t1 = await page.textContent('#questionClock');
@@ -177,7 +192,8 @@ async function main() {
     await page.evaluate(() => window.__CAT__.startLessonQuiz(window.__CAT__.curriculum.levels[7].lessons[0]));
     await page.waitForSelector('#attackBanner.show', { timeout: 6000 });
     const text = await page.textContent('#attackBanner');
-    ok(/SHADOW CAT STRIKES/.test(text), 'the SHADOW CAT strike banner appears in the browser', text.trim().slice(0, 70));
+    ok(/THE HIGHWAY CAT STRIKES/.test(text), 'the level rival strike banner appears in the browser', text.trim().slice(0, 70));
+    ok(!/SHADOW CAT/.test(text), 'SHADOW CAT does not strike outside level 9');
     ok(await page.evaluate(() => window.__CAT__.run.attacks.length === 1), 'the attack was recorded');
     const vis = await page.isVisible('#attackBanner.show');
     ok(vis, 'attack banner is visible');

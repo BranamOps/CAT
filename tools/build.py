@@ -2,9 +2,15 @@
 """Build CAT's data files from the hand-authored level modules.
 
 Each question is authored as (code, difficulty, stem, correct, [3 distractors],
-explanation, topic). The builder places the correct answer at a balanced index so
-the answer key is not predictable, then re-validates the whole bank so no
+explanation, topic[, origin]). The builder places the correct answer at a balanced
+index so the answer key is not predictable, then re-validates the whole bank so no
 malformed or under-specified question can ship.
+
+The optional eighth element records where the idea came from: "kansas" for a fact
+drawn from the Kansas laws and insurance material, and "manual" (the default) for
+the training-manual track. The origin is authoring metadata used only for
+validation; it is stripped before the bank ships, so the game never cites a source
+document. Every lesson must draw 3 to 5 of its questions from the Kansas material.
 
 CAT teaches Kansas property and casualty insurance concepts. Questions are
 written in CAT's own words; they name the idea being tested (the "topic") rather
@@ -28,6 +34,14 @@ ANSWER_PATTERN = [1, 3, 0, 2, 0, 2, 3, 1, 2, 0, 3, 1]
 
 MASTERY_THRESHOLD = 80
 QUESTIONS_PER_LESSON = 10
+# The bank authors more questions than a lesson asks so retakes and the exam draw
+# from a deeper pool: fifteen authored, ten asked.
+AUTHORED_PER_LESSON = 15
+# Every lesson must source between three and five questions from the Kansas laws
+# and insurance material.
+KANSAS_MIN_PER_LESSON = 3
+KANSAS_MAX_PER_LESSON = 5
+EXPECTED_QUESTIONS = 405
 LESSON_TIMER_SECONDS = 600
 QUESTION_TIMER_SECONDS = 60
 ATTACK_MIN_SECONDS = 1
@@ -43,7 +57,8 @@ ADULT_AT_LESSON = 14
 SUBJECT = "Kansas Property & Casualty Insurance"
 
 # Text that would betray a source document. The bank must never name one.
-FORBIDDEN = ("manual p", "pdf p", "training manual", "pre-study guide")
+FORBIDDEN = ("manual p", "pdf p", "training manual", "pre-study guide",
+             "kansas laws", "norris")
 
 
 # Difficulty must rise level by level. Each level is given a target average, and the authored
@@ -83,7 +98,8 @@ def build():
             lesson_id = lesson_counter
             qids = []
             for q in lesson["qs"]:
-                code, diff, stem, correct, wrongs, expl, topic = q
+                code, diff, stem, correct, wrongs, expl, topic = q[:7]
+                origin = q[7] if len(q) > 7 else "manual"
                 slot = ANSWER_PATTERN[q_counter % len(ANSWER_PATTERN)]
                 q_counter += 1
                 qid = "q%03d" % q_counter
@@ -105,6 +121,7 @@ def build():
                     "explanation": expl,
                     "topic": topic,
                     "difficulty": difficulty_values[difficulty_index],
+                    "origin": origin,
                 })
                 difficulty_index += 1
                 qids.append(qid)
@@ -148,7 +165,7 @@ def build():
             "maxSeconds": ATTACK_MAX_SECONDS,
             "baseChancePercent": ATTACK_BASE_CHANCE,
             "chancePerLevelPercent": ATTACK_PER_LEVEL,
-            "note": "SHADOW CAT may strike when a question's clock runs out. The chance rises from 10% at level 1 to 90% at level 9, and a strike takes 1-60 seconds off the lesson clock. A contestant can also turn up mid-question and double the speed of both clocks. The final exam has no strikes.",
+            "note": "The rival who guards a land may strike when a question's clock runs out. The chance rises from 10% at level 1 to 90% at level 9, and a strike takes 1-60 seconds off the lesson clock. SHADOW CAT is only the level 9 rival, so she never strikes in the earlier lands. Any one of the rival contestants may also turn up once during a question and triple the speed of both clocks. The final exam has no strikes.",
         },
         "story": [
             "CAT was a backyard alley cat in the country, and she survived on human scraps. Every winter tested her - cold nights, empty bowls, and whatever the households left behind - and she lived through each one on scraps and stubbornness.",
@@ -191,7 +208,8 @@ def validate(curriculum, questions):
     check(len(levels) == 9, "expected 9 levels, found %d" % len(levels))
     check(all(len(lv["lessons"]) == 3 for lv in levels), "each level must have 3 lessons")
     check(len(lessons) == 27, "expected 27 lessons, found %d" % len(lessons))
-    check(len(questions) == 270, "expected 270 questions, found %d" % len(questions))
+    check(len(questions) == EXPECTED_QUESTIONS,
+          "expected %d questions, found %d" % (EXPECTED_QUESTIONS, len(questions)))
     check(sum(curriculum["exam"]["lessonCounts"]) == curriculum["exam"]["questionCount"],
           "exam blueprint must total the exam question count")
 
@@ -199,13 +217,23 @@ def validate(curriculum, questions):
     check(len(set(ids)) == len(ids), "duplicate question ids")
 
     for lesson in lessons:
-        check(len(lesson["questionIds"]) == 10,
-              "lesson %d must have exactly 10 questions" % lesson["id"])
+        check(len(lesson["questionIds"]) == AUTHORED_PER_LESSON,
+              "lesson %d must have exactly %d questions" % (lesson["id"], AUTHORED_PER_LESSON))
         check(len(lesson["teaching"]) == 3, "lesson %d must have 3 teaching sections" % lesson["id"])
         check(len(lesson["scenario"]["text"]) >= 200,
               "lesson %d scenario is too short" % lesson["id"])
 
     by_id = {q["id"]: q for q in questions}
+
+    # Each lesson must draw 3 to 5 of its questions from the Kansas material.
+    for lesson in lessons:
+        origins = [by_id[qid]["origin"] for qid in lesson["questionIds"] if qid in by_id]
+        kansas = origins.count("kansas")
+        check(all(o in ("kansas", "manual") for o in origins),
+              "lesson %d has an unknown question origin" % lesson["id"])
+        check(KANSAS_MIN_PER_LESSON <= kansas <= KANSAS_MAX_PER_LESSON,
+              "lesson %d must draw %d-%d questions from the Kansas material (found %d)"
+              % (lesson["id"], KANSAS_MIN_PER_LESSON, KANSAS_MAX_PER_LESSON, kansas))
     for lesson in lessons:
         for qid in lesson["questionIds"]:
             check(qid in by_id, "lesson %d references missing question %s" % (lesson["id"], qid))
@@ -294,6 +322,10 @@ def main():
         for e in errors:
             print("VALIDATION ERROR:", e)
         return 1
+    # The origin tag is authoring metadata; it must never ship in the bank.
+    kansas_total = sum(1 for q in questions if q.get("origin") == "kansas")
+    for q in questions:
+        q.pop("origin", None)
     with open(os.path.join(root, "data", "curriculum.json"), "w") as fh:
         json.dump(curriculum, fh, indent=1)
         fh.write("\n")
@@ -309,6 +341,7 @@ def main():
     print("Difficulty by level: %s" % " ".join("%.2f" % m for m in means))
     print("Exam blueprint: %d questions across %d lessons." % (
         sum(curriculum["exam"]["lessonCounts"]), len(curriculum["exam"]["lessonCounts"])))
+    print("Kansas-sourced questions: %d of %d." % (kansas_total, len(questions)))
     print("Asset version: %s%s" % (version, " (index.html restamped)" if restamped else ""))
     return 0
 

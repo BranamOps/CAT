@@ -12,14 +12,20 @@
     catYoung: 'assets/CAT_young.jpg',
     catOlder: 'assets/CAT_older.jpg',
     contestant: 'assets/contestant-1.jpg',
+    contestants: ['assets/contestant-1.jpg', 'assets/contestant-2.jpg', 'assets/contestant-3.jpg'],
     shadow: 'assets/SHADOW-1.jpg',
     mother: 'assets/MOTHER.jpg',
   };
 
-  /* The contestant turns up mid-quiz and shouts one of these from a speech bubble. While it is on
-     screen both clocks run at double speed, so the player has to hurry. */
+  /* Which rival portraits are actually present. The art is probed once at boot, so a missing file
+     simply drops out of the rotation instead of flashing a broken image. */
+  let availableContestants = [];
+
+  /* A randomly chosen contestant turns up mid-quiz - at most once per question - and shouts one of
+     these from a speech bubble. While it is on screen both clocks run at triple speed. */
   const CONTESTANT_CRIES = ['HISS', 'MYAAAAAAAGH', 'SSSSSSSS', 'MROOOOOWWW', 'YEEEEOOWL', 'RRRRROWWR', 'PFFFFFTTT'];
   const CONTESTANT_CRY_MS = 3000;
+  const CONTESTANT_SPEED = 3;
 
   /* Other cats who test CAT's insurance knowledge, one per level. The battles are intellectual, never harmful. */
   const opponents = {
@@ -61,6 +67,7 @@
     questionTimerSeconds: () => curr('questionTimerSeconds', 60),
     masteryThreshold: () => curr('masteryThreshold', 80),
     adultAtLesson: () => curr('adultAtLesson', 14),
+    questionsPerLesson: () => curr('questionsPerLesson', 10),
   };
 
   function curr(path, fallback) {
@@ -483,9 +490,10 @@
               question. Every answer includes an explanation and the concept it tests. You need
               8 of 10 correct to continue, and you can always retake the lesson.
             </p>
-            <p class="muted">If the sixty seconds run out, SHADOW CAT strikes
+            <p class="muted">If the sixty seconds run out, ${esc(opponents[level.id])} strikes
               (${Math.round(attackChance(level.id) * 100)}% chance at this level) and takes up to a minute
-              off the lesson clock. The contestant may also turn up mid-question and speed both clocks up.</p>
+              off the lesson clock. A contestant may also turn up once mid-question and run both clocks three
+              times as fast.</p>
             <button class="button quiz-launch" id="startQuiz">Start the 10-question lesson check &rarr;</button>
           </section>
         </article>
@@ -517,9 +525,10 @@
   function startLessonQuiz(lesson) {
     stopTicker();
     const level = levelFor(lesson.id);
-    const attempt = progress.attempts[lesson.id] || 0;
-    let questions = lesson.questionIds.map(getQuestion).filter(Boolean);
-    if (attempt) questions = shuffle(questions);
+    /* The bank authors more questions than a lesson asks, so draw the asked count from the pool.
+       Drawing fresh every time also reshuffles the order on a retake. */
+    const questions = shuffle(lesson.questionIds.map(getQuestion).filter(Boolean))
+      .slice(0, CFG.questionsPerLesson());
 
     activeRun = {
       kind: 'lesson',
@@ -531,6 +540,7 @@
       selected: null,
       feedback: false,
       attacks: [],
+      contestantArt: pickContestantArt(),
       lessonDeadline: Date.now() + CFG.lessonTimerSeconds() * 1000,
       questionDeadline: Date.now() + CFG.questionTimerSeconds() * 1000,
       lastTick: Date.now(),
@@ -582,7 +592,10 @@
     const q = run.questions[run.index];
     run.selected = null;
     run.feedback = false;
-    if (run.kind === 'lesson') run.questionDeadline = Date.now() + CFG.questionTimerSeconds() * 1000;
+    if (run.kind === 'lesson') {
+      run.questionDeadline = Date.now() + CFG.questionTimerSeconds() * 1000;
+      restartContestantWindow(run);
+    }
 
     const isExam = run.kind === 'exam';
     const headLeft = isExam ? 'THE SHADOW &middot; FINAL EXAM' : `LESSON ${run.lesson.id} &middot; QUESTION ${run.index + 1}`;
@@ -606,7 +619,7 @@
         <div class="attack-banner" id="attackBanner" role="status" aria-live="assertive"></div>
         <section class="quiz-card">
           <div class="rival-row">
-            <img class="rival-art" src="${isExam ? ART.shadow : ART.contestant}" alt="" />
+            <img class="rival-art" src="${isExam ? ART.shadow : (run.contestantArt || ART.contestant)}" alt="" />
             <span class="rival-name">${esc(isExam ? 'SHADOW-1' : opponents[run.level.id])}</span>
           </div>
           <div class="question-meta">${esc(isExam ? 'SHADOW-1 asks' : `${opponents[run.level.id]} asks`)} &middot; ${esc(q.code)} &middot; Difficulty ${q.difficulty}/5</div>
@@ -622,7 +635,7 @@
           </div>
           ${isExam ? '' : `<div class="contestant-slot" id="contestantSlot" hidden>
             <div class="speech-bubble" id="contestantBubble"></div>
-            <img class="contestant-art" src="${ART.contestant}" alt="" />
+            <img class="contestant-art" src="${run.contestant ? run.contestant.art : ART.contestant}" alt="" />
           </div>`}
         </section>
       </div>
@@ -723,6 +736,29 @@
 
   /* ---------------- the contestant ---------------- */
 
+  /* Only portraits that actually load are eligible, so a missing file cannot break the art. */
+  function contestantPool() {
+    return availableContestants.length ? availableContestants : [ART.contestants[0]];
+  }
+
+  function pickContestantArt() {
+    const pool = contestantPool();
+    return pool[Math.floor(Math.random() * pool.length)];
+  }
+
+  function probeContestants() {
+    if (Array.isArray(testOverrides.contestantArts) && testOverrides.contestantArts.length) {
+      availableContestants = testOverrides.contestantArts.slice();
+      return;
+    }
+    ART.contestants.forEach((src) => {
+      const probe = new Image();
+      probe.onload = () => { if (!availableContestants.includes(src)) availableContestants.push(src); };
+      probe.onerror = () => {};
+      probe.src = src;
+    });
+  }
+
   function initContestant() {
     const now = Date.now();
     return {
@@ -730,9 +766,24 @@
       until: 0,
       cry: '',
       cryUntil: 0,
-      nextAt: now + randInt(9000, 18000),
+      nextAt: now + randInt(6000, 18000),
+      art: pickContestantArt(),
+      appearedThisQuestion: false,
       enabled: testOverrides.contestantDisabled !== true,
     };
+  }
+
+  /* Each question opens exactly one window: the contestant may turn up once, and only once. */
+  function restartContestantWindow(run) {
+    const c = run.contestant;
+    if (!c) return;
+    c.active = false;
+    c.until = 0;
+    c.cry = '';
+    c.appearedThisQuestion = false;
+    c.art = pickContestantArt();
+    const budget = Math.max(3000, CFG.questionTimerSeconds() * 1000 - 6000);
+    c.nextAt = Date.now() + randInt(4000, budget);
   }
 
   function updateContestant(run, now) {
@@ -746,11 +797,12 @@
     if (c.active && now >= c.until) {
       c.active = false;
       c.cry = '';
-      c.nextAt = now + randInt(9000, 20000);
       paintContestant(run);
     }
-    if (!c.active && now >= c.nextAt) {
+    if (!c.active && !c.appearedThisQuestion && now >= c.nextAt) {
       c.active = true;
+      c.appearedThisQuestion = true;
+      c.art = pickContestantArt();
       c.until = now + randInt(3, 9) * 1000;
       c.cryUntil = 0;
     }
@@ -769,6 +821,8 @@
     const on = !!c && c.active && !run.feedback;
     slot.hidden = !on;
     if (on) {
+      const art = slot.querySelector('.contestant-art');
+      if (art && c.art) art.src = c.art;
       const bubble = document.querySelector('#contestantBubble');
       if (bubble) bubble.textContent = c.cry || '';
     }
@@ -782,16 +836,17 @@
     const now = Date.now();
 
     if (run.kind === 'lesson') {
-      /* The contestant burns both clocks at double speed while it is on screen. */
+      /* The contestant burns both clocks at triple speed while it is on screen. */
       const elapsed = now - (run.lastTick || now);
       run.lastTick = now;
       const contestantOn = updateContestant(run, now);
       if (contestantOn) {
-        run.lessonDeadline -= elapsed;
-        run.questionDeadline -= elapsed;
+        const extra = elapsed * (CONTESTANT_SPEED - 1);
+        run.lessonDeadline -= extra;
+        run.questionDeadline -= extra;
       }
       const strip = document.querySelector('.timer-strip');
-      if (strip) strip.classList.toggle('doubled', contestantOn);
+      if (strip) strip.classList.toggle('spedup', contestantOn);
       const lessonLeft = (run.lessonDeadline - now) / 1000;
       const qLeft = (run.questionDeadline - now) / 1000;
       const lc = document.querySelector('#lessonClock');
@@ -832,31 +887,34 @@
     recordAnswer(run, q, null, false, true);
     reveal(q, null, false, true);
 
-    /* SHADOW CAT may strike; a hit steals 1-60 seconds from the lesson clock. */
+    /* The rival who guards this land may strike; a hit steals 1-60 seconds from the lesson clock.
+       SHADOW CAT is only the level 9 rival, so she never turns up in the early lands. */
     const level = run.level.id;
+    const attacker = opponents[level];
     const chance = attackChance(level);
     if (Math.random() < chance) {
       const cfg = curriculum.attackTime;
       const stolen = randInt(cfg.minSeconds, cfg.maxSeconds);
       run.lessonDeadline -= stolen * 1000;
       run.attacks.push({ level, stolen });
-      showAttack(stolen);
+      showAttack(stolen, attacker);
       if (run.lessonDeadline <= Date.now()) {
         setTimeout(() => { if (activeRun === run && !run.ended) finishRun('lesson-time'); }, 1200);
       }
     } else {
-      showAttack(null);
+      showAttack(null, attacker);
     }
   }
 
-  function showAttack(stolen) {
+  function showAttack(stolen, attacker) {
     const banner = document.querySelector('#attackBanner');
     if (!banner) return;
+    const name = esc(String(attacker || 'The rival').toUpperCase());
     if (stolen === null) {
-      banner.innerHTML = `<strong>SHADOW CAT CIRCLES BUT HOLDS BACK</strong>
+      banner.innerHTML = `<strong>${name} CIRCLES BUT HOLDS BACK</strong>
         <span>The lesson clock is untouched.</span>`;
     } else {
-      banner.innerHTML = `<strong>SHADOW CAT STRIKES &mdash; ${stolen} SECOND${stolen === 1 ? '' : 'S'} TAKEN FROM THE LESSON CLOCK</strong>
+      banner.innerHTML = `<strong>${name} STRIKES &mdash; ${stolen} SECOND${stolen === 1 ? '' : 'S'} TAKEN FROM THE LESSON CLOCK</strong>
         <span>Answer faster, or the clock runs out.</span>`;
     }
     banner.classList.add('show');
@@ -898,9 +956,10 @@
         </span>
       </div>`).join('');
 
+    const rival = esc(opponents[run.level.id]);
     const attacksNote = run.attacks.length
-      ? `SHADOW CAT struck ${run.attacks.length} time${run.attacks.length === 1 ? '' : 's'}, taking ${run.attacks.reduce((s, a) => s + a.stolen, 0)} seconds in total.`
-      : `SHADOW CAT never caught her off guard this lesson.`;
+      ? `${rival} struck ${run.attacks.length} time${run.attacks.length === 1 ? '' : 's'}, taking ${run.attacks.reduce((s, a) => s + a.stolen, 0)} seconds in total.`
+      : `${rival} never caught her off guard this lesson.`;
 
     app.className = 'view-animate';
     app.innerHTML = `
@@ -1231,6 +1290,7 @@
   /* ---------------- boot ---------------- */
 
   function boot() {
+    probeContestants();
     wireTester();
     document.addEventListener('keydown', handleQuizKeys);
     document.querySelector('[data-nav="map"]').addEventListener('click', renderMap);
@@ -1280,7 +1340,7 @@
         || curriculum.levels.some((lv) => lv.lessons.length !== 3)) {
       throw new Error('Curriculum must contain nine levels with three lessons each.');
     }
-    if (bank.length !== 270) throw new Error('The question bank should contain 270 questions.');
+    if (bank.length !== 405) throw new Error('The question bank should contain 405 questions.');
     const ids = new Set(bank.map((q) => q.id));
     if (ids.size !== bank.length) throw new Error('The question bank has duplicate ids.');
     for (const q of bank) {
@@ -1291,8 +1351,8 @@
       }
     }
     for (const l of all) {
-      if (l.questionIds.length !== 10 || l.questionIds.some((id) => !ids.has(id))) {
-        throw new Error(`Lesson ${l.id} must map to ten valid questions.`);
+      if (l.questionIds.length !== 15 || l.questionIds.some((id) => !ids.has(id))) {
+        throw new Error(`Lesson ${l.id} must map to fifteen valid questions.`);
       }
       if (l.teaching.length !== 3 || !l.scenario?.text || l.scenario.text.length < 200) {
         throw new Error(`Lesson ${l.id} is missing instruction or a full scenario.`);
@@ -1329,6 +1389,7 @@
     renderExamReview,
     isGrownUp,
     contestantCries: CONTESTANT_CRIES,
+    contestantArts: ART.contestants,
   };
 
   boot();
