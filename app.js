@@ -6,18 +6,27 @@
   const storageKey = 'cats-insurance-journey-v1';
   const letters = ['A', 'B', 'C', 'D'];
 
-  /* Opponents CAT meets, one per level. The battles are intellectual, never harmful. */
+  /* Other cats who test CAT's insurance knowledge, one per level. The battles are intellectual, never harmful. */
   const opponents = {
     1: 'The Alley Tom',
-    2: 'The Porch Keeper',
-    3: 'The Garden Snake',
+    2: 'The Porch Cat',
+    3: 'The Garden Tabby',
     4: 'The Wall Cat',
-    5: 'The Rooftop Crow',
-    6: 'The Yard Dog',
-    7: 'The Night Rat',
-    8: 'The Highway Magpie',
-    9: 'The Long Shadow',
+    5: 'The Rooftop Tom',
+    6: 'The Yard Cat',
+    7: 'The Night Cat',
+    8: 'The Highway Cat',
+    9: 'SHADOW CAT',
   };
+
+  /* Twenty-seven trail stones on assets/world.svg, in percent of the map frame, plus the goal:
+     the red car. Keep these in step with the painted road in world.svg. */
+  const mapPoints = [
+    [7, 87], [13, 84], [19, 87], [25, 83], [22, 78], [28, 75], [34, 78], [40, 74], [36, 69],
+    [31, 66], [37, 63], [43, 66], [49, 62], [47, 57], [53, 54], [59, 57], [64, 52], [60, 47],
+    [55, 44], [61, 41], [67, 44], [72, 39], [70, 34], [76, 31], [81, 28], [86, 31], [90, 25],
+  ];
+  const goalPoint = [85, 15];
 
   /* Optional overrides let an automated check run shortened clocks. Never set in normal use. */
   const testOverrides = (typeof window !== 'undefined' && window.__CAT_TEST__) || {};
@@ -166,7 +175,7 @@
       <div class="section-heading">
         <div>
           <span class="eyebrow">CAT's story</span>
-          <h2>A tower she found, and a home she never had</h2>
+          <h2>Survival, a red car, and the road out</h2>
         </div>
       </div>
       <section class="content-card story-copy">
@@ -203,23 +212,24 @@
         <div class="exam-fact"><b>0</b><span>artificial attacks</span></div>
       </section>
       <section class="content-card">
-        <h2>The shadow at the end of Level Nine</h2>
+        <h2>SHADOW CAT at the end of Level Nine</h2>
         <p>
-          After the twenty-seventh lesson, CAT meets the last opponent: her own shadow. The exam draws
-          156 questions from every lesson, gives 150 minutes, and uses no ATTACK TIME at all. It is the
-          one battle where the only clock is the one she carries herself. Finish with results,
-          explanations, manual page references, and a breakdown of the areas that need work.
+          After the twenty-seventh lesson, the only attacker left is SHADOW CAT: her own shadow. The
+          exam draws 156 questions from every lesson, gives 150 minutes, and uses no ATTACK TIME at all.
+          It is the one battle where the only clock is the one she carries herself &mdash; and the red
+          car is waiting at the end of it. Finish with results, explanations, manual page references,
+          and a breakdown of the areas that need work.
         </p>
       </section>
 
       <div class="section-heading">
-        <div><h2>The nine levels</h2><p>From the cold alley to the long shadow at the edge of town.</p></div>
+        <div><h2>The nine levels</h2><p>From the backyard in the country to the red car at the edge of town.</p></div>
       </div>
       <section class="levels-grid">${levelCards}</section>
 
       <div class="cta-band">
         <div>
-          <h2>${nextLesson() ? `Next stop: Lesson ${nextLesson().id}` : (progress.examComplete ? 'The journey is complete' : 'The shadow is waiting')}</h2>
+          <h2>${nextLesson() ? `Next stop: Lesson ${nextLesson().id}` : (progress.examComplete ? 'The journey is complete' : 'SHADOW CAT is waiting')}</h2>
           <p>${progress.completed.length} of 27 lessons mastered. Progress is saved in this browser on this device.</p>
         </div>
         <button class="button" id="storyCta">${progress.completed.length ? 'Continue' : 'Start Lesson 1'} &rarr;</button>
@@ -254,29 +264,40 @@
     const allDone = !next;
     const examReady = allDone && !progress.examComplete;
 
+    const [mx, my] = next ? mapPoints[next.id - 1] : goalPoint;
+
+    /* The 27 lesson stones sit on the map image itself, BAT-style. */
+    const nodes = lessons().map((lesson) => {
+      const [x, y] = mapPoints[lesson.id - 1];
+      const done = complete(lesson.id);
+      const open = unlocked(lesson.id);
+      const isCurrent = next && next.id === lesson.id;
+      const cls = [
+        'stop',
+        done ? 'completed' : '',
+        open && !done ? 'available' : '',
+        isCurrent ? 'current' : '',
+        !open ? 'locked' : '',
+      ].filter(Boolean).join(' ');
+      const state = done ? 'Mastered' : open ? (isCurrent ? 'Current stop' : 'Ready') : 'Locked';
+      return `<button class="${cls}" data-lesson="${lesson.id}"${open ? '' : ' disabled'}
+                style="left:${x}%;top:${y}%"
+                title="Lesson ${lesson.id}: ${esc(lesson.title)} - ${state}"
+                aria-label="Lesson ${lesson.id}: ${esc(lesson.title)} - ${state}">${done ? '&#10003;' : lesson.id}</button>`;
+    }).join('');
+
     const bands = curriculum.levels.map((level) => {
-      const stops = level.lessons.map((lesson) => {
+      const openCount = level.lessons.filter((l) => complete(l.id)).length;
+      const chips = level.lessons.map((lesson) => {
         const done = complete(lesson.id);
         const open = unlocked(lesson.id);
-        const isCurrent = next && next.id === lesson.id;
-        const cls = [
-          'stop',
-          done ? 'completed' : '',
-          open && !done ? 'available' : '',
-          isCurrent ? 'current' : '',
-          !open ? 'locked' : '',
-        ].filter(Boolean).join(' ');
-        const state = done ? 'Mastered' : open ? (isCurrent ? 'Current stop' : 'Ready') : 'Locked';
-        return `<button class="${cls}" data-lesson="${lesson.id}"${open ? '' : ' disabled'}
-                  title="Lesson ${lesson.id}: ${esc(lesson.title)} - ${state}">
-                  <span class="stop-index" aria-hidden="true">${done ? '&#10003;' : lesson.id}</span>
-                  <span>
-                    <span class="stop-title">${esc(lesson.title)}</span>
-                    <span class="stop-meta">Lesson ${lesson.id} &middot; ${state}</span>
-                  </span>
+        const state = done ? 'Mastered' : open ? 'Ready' : 'Locked';
+        return `<button class="band-lesson${done ? ' completed' : ''}" data-lesson="${lesson.id}"${open ? '' : ' disabled'}>
+                  <span class="band-num" aria-hidden="true">${done ? '&#10003;' : lesson.id}</span>
+                  <span class="band-title">${esc(lesson.title)}</span>
+                  <span class="band-state">${state}</span>
                 </button>`;
       }).join('');
-      const openCount = level.lessons.filter((l) => complete(l.id)).length;
       return `<section class="level-band" style="--level:${level.color}">
           <div class="level-band-head">
             <div>
@@ -286,7 +307,7 @@
             </div>
             <span class="lv-open">${openCount} / 3 mastered</span>
           </div>
-          <div class="lesson-stops">${stops}</div>
+          <div class="band-lessons">${chips}</div>
         </section>`;
     }).join('');
 
@@ -294,15 +315,16 @@
     app.innerHTML = `
       <section class="map-intro">
         <div class="map-intro-copy">
-          <span class="eyebrow">CAT's road, nine levels long</span>
-          <h1>Twenty-seven lessons to the shadow.</h1>
+          <span class="eyebrow">CAT's road, nine lands long</span>
+          <h1>Twenty-seven lessons to the red car.</h1>
           <p>
-            Master a lesson to open the next stop. Every level is guarded by an opponent who will call
-            ATTACK TIME when the clock runs out &mdash; more often the higher CAT climbs.
+            Follow the winding trail from the backyard to the road out. Master a lesson to open the
+            next stone. Every land is guarded by a cat who will call ATTACK TIME when the clock runs
+            out &mdash; more often the farther CAT travels.
           </p>
           <div class="map-controls">
             <button class="button" id="continueButton">
-              ${examReady ? 'Face the shadow &rarr;' : progress.examComplete ? 'Walk the path again &rarr;' : allDone ? 'Meet the shadow &rarr;' : `${progress.completed.length ? 'Continue the journey' : 'Begin at Lesson 1'} &rarr;`}
+              ${examReady ? 'Face SHADOW CAT &rarr;' : progress.examComplete ? 'Walk the path again &rarr;' : allDone ? 'Meet SHADOW CAT &rarr;' : `${progress.completed.length ? 'Continue the journey' : 'Begin at Lesson 1'} &rarr;`}
             </button>
             <button class="text-button" id="storyAgain">Read CAT's story</button>
           </div>
@@ -310,6 +332,25 @@
         <div class="map-progress-summary">
           <strong>${progress.completed.length}<span>/27</span></strong>
           <small>lessons mastered</small>
+        </div>
+      </section>
+      <section class="map-card" aria-label="Adventure map with twenty-seven lesson destinations">
+        <div class="map-frame">
+          <img class="map-image" src="assets/world.svg" alt="A winding dotted trail climbs through nine country lands, past twenty-seven lesson stones, to a red car waiting beside a warm lit door." />
+          <div class="map-overlay" id="mapOverlay">
+            <div class="map-marker" style="left:${mx}%;top:${my}%" aria-label="CAT's current position">
+              <img src="assets/cat.svg" alt="" />
+            </div>
+            ${nodes}
+          </div>
+        </div>
+        <div class="map-caption">
+          <span>Click an open stone to study. Locked stones open as CAT masters the path.</span>
+          <div class="map-legend">
+            <span class="legend-item"><i class="legend-swab swab-done"></i> Mastered</span>
+            <span class="legend-item"><i class="legend-swab swab-current"></i> Current</span>
+            <span class="legend-item"><i class="legend-swab swab-locked"></i> Locked</span>
+          </div>
         </div>
       </section>
       <div class="journey">${bands}</div>
@@ -537,7 +578,7 @@
     app.className = 'view-animate';
     app.innerHTML = `
       <div class="quiz-shell">
-        <button class="back-link" id="exitQuiz">&larr; ${isExam ? 'The shadow' : 'Lesson'}</button>
+        <button class="back-link" id="exitQuiz">&larr; ${isExam ? 'SHADOW CAT' : 'Lesson'}</button>
         <div class="question-top">
           <span>${headLeft}</span>
           <span>${isExam ? '<strong id="examClock" aria-label="Time remaining in the exam"></strong> &middot; ' : ''}${run.index + 1} / ${run.questions.length}</span>
@@ -551,7 +592,7 @@
         </div>
         <div class="attack-banner" id="attackBanner" role="status" aria-live="assertive"></div>
         <section class="quiz-card">
-          <div class="question-meta">${esc(isExam ? 'The shadow asks' : `${opponents[run.level.id]} asks`)} &middot; ${esc(q.code)} &middot; Difficulty ${q.difficulty}/5</div>
+          <div class="question-meta">${esc(isExam ? 'SHADOW CAT asks' : `${opponents[run.level.id]} asks`)} &middot; ${esc(q.code)} &middot; Difficulty ${q.difficulty}/5</div>
           <p class="question-text">${esc(q.stem)}</p>
           <div class="choice-list" id="choiceList">
             ${q.options.map((o, i) => `<button class="choice" data-choice="${i}">
@@ -771,7 +812,7 @@
           <p class="muted">${esc(attacksNote)}</p>
           <div class="result-actions">
             ${passed && nextL ? '<button class="button" id="nextStop">Next stop &rarr;</button>' : ''}
-            ${passed && !nextL ? '<button class="button" id="toShadow">Meet the shadow &rarr;</button>' : ''}
+            ${passed && !nextL ? '<button class="button" id="toShadow">Meet SHADOW CAT &rarr;</button>' : ''}
             ${passed ? '' : '<button class="button" id="retake">Review &amp; retake &rarr;</button>'}
             <button class="button secondary" id="resultsMap">Journey map</button>
           </div>
@@ -816,10 +857,10 @@
           <img src="assets/shadow.svg" alt="CAT's shadow self, a dark echo with violet eyes." />
         </div>
         <div>
-          <span class="eyebrow">The last opponent</span>
+          <span class="eyebrow">The last attacker</span>
           <h1>${esc(curriculum.boss.title)}</h1>
           <p>${esc(curriculum.boss.intro)}</p>
-          <div class="boss-quote"><strong>The shadow:</strong> &ldquo;${esc(curriculum.boss.dialogue)}&rdquo;</div>
+          <div class="boss-quote"><strong>SHADOW CAT:</strong> &ldquo;${esc(curriculum.boss.dialogue)}&rdquo;</div>
           <button class="button light" id="beginExam">Begin the final exam &rarr;</button>
         </div>
       </section>
@@ -915,8 +956,8 @@
       <div class="quiz-shell">
         <section class="quiz-card score-card">
           <div class="score-badge">${percent}%</div>
-          <div class="eyebrow">Final exam &middot; the shadow</div>
-          <h1>${passed ? 'A quiet victory' : timedOut ? 'The exam clock ran out' : 'The shadow holds its ground'}</h1>
+          <div class="eyebrow">Final exam &middot; SHADOW CAT</div>
+          <h1>${passed ? 'A quiet victory' : timedOut ? 'The exam clock ran out' : 'SHADOW CAT holds its ground'}</h1>
           <span class="grade-pill">${correct}/${total} correct &middot; Grade ${gradeLetter(percent)} &middot; ${threshold}% needed</span>
           <p class="result-message">
             ${timedOut
@@ -971,13 +1012,20 @@
         <div class="ending-scene">
           <img src="assets/cat.svg" alt="CAT, warm and safe after the final exam." />
         </div>
-        <span class="completion-chip">27 lessons &middot; the shadow passed</span>
+        <span class="completion-chip">27 lessons &middot; SHADOW CAT passed</span>
         <h1>CAT FINDS A HOME</h1>
         <p>
-          The shadow steps aside and fades into the ordinary dark of a street CAT has walked a hundred
-          times. She knew the rules. She could argue about coinsurance, about care, custody and control,
-          about the exact hour a house becomes vacant &mdash; and it turns out that knowing the rules was
-          never the point. The point was the door at the end of the alley, standing open, with a light on.
+          The red car slows at the end of the road, and the mother who drives it opens the door. Years of
+          scraps and cold winters end on one ordinary afternoon: CAT rides away from the backyard, away
+          from the alley, away from everything survival taught her to outrun. She knew the rules &mdash;
+          she could argue about coinsurance, about care, custody and control, about the exact hour a
+          house becomes vacant &mdash; and it turns out the rules were never the point. The point was the
+          ride out, and the door at the end of it, standing open with a light on.
+        </p>
+        <p>
+          In that house is a stack of cardboard boxes that is hers alone. CAT, who survived the country
+          winters on scraps and won every argument with the rules, becomes the cardboard box tower
+          queen. And only after that does a small black cat named BAT come into the story at all.
         </p>
         <p class="muted">
           Score on the final exam: ${progress.examBest ? `${progress.examBest.percent}% (${progress.examBest.correct}/${progress.examBest.total})` : '&mdash;'}.
@@ -1060,7 +1108,7 @@
       .catch((error) => {
         app.innerHTML = `<section class="content-card">
           <h1>Couldn't open the journey</h1>
-          <p>${esc(error.message)} Serve this folder over HTTP (for example, run the START CAT Adventure launcher) rather than opening index.html directly from disk.</p>
+          <p>${esc(error.message)} Serve this folder over HTTP (for example, python3 -m http.server) rather than opening index.html directly from disk.</p>
         </section>`;
       });
   }

@@ -29,6 +29,9 @@ Target URLs:
 | Final exam blueprint: 156 questions / 150 min / no attacks | **Done** |
 | Game: timers, ATTACK TIME, pass/retake, story, endings, review | **Done** |
 | Theme (`index.html`, `app.css`), responsive layout, original art | **Done** |
+| Storyline (country alley cat → the red car → SHADOW CAT → adoption) | **Done — corrected 2026-10-13** |
+| Illustrated journey map (BAT-style `assets/world.svg`, 27 stones + red car goal) | **Done — 2026-10-13** |
+| README TODO roadmap (art slots, story, gameplay, a11y) | **Done — 2026-10-13** |
 | Verification: headless DOM + headless Chromium | **Passing (105/105 and 31/31)** |
 | Git history on `main` | **Done — pushed to `BranamOps/CAT` on 2026-10-13** |
 | Push to GitHub | **Done — the workspace credential is scoped to CAT** |
@@ -128,8 +131,9 @@ What `browser-check.cjs` asserts: real Chromium at **390×844** and **1366×900*
 no horizontal overflow, ≥40 px tap targets, live countdown, forced ATTACK TIME banner, a full lesson
 to 100%, and the exam screen showing `1 / 156` with `attacks: None`.
 
-Local play: `START CAT Adventure.cmd` (Windows, needs Python 3) or `python3 -m http.server 4174`.
-Never open `index.html` over `file://` — the game fetches its JSON.
+Local play: `python3 -m http.server 4174`. The game lives at <https://BranamOps.github.io/CAT/>, so
+the Windows launcher was removed on purpose (GitHub-only, 2026-10-13). Never open `index.html` over
+`file://` — the game fetches its JSON.
 
 ---
 
@@ -193,12 +197,13 @@ supplied, drop it in `assets/`, read it, add the affected topics as new question
 
 - **Pages is unfinished** (§3): the push is done, but the live URL has never been loaded because the
   one-time Pages enablement requires the GitHub UI (the App token gets 403 creating a Pages site).
-- `START CAT Adventure.cmd` is a **Windows** launcher and could not be executed in the Linux sandbox —
-  it is unverified by execution. Its contents mirror BAT's working launcher.
 - The Pages workflow publishes the **repo root**, so the Norris manual PDF is publicly downloadable
   under `/assets/`. That matches what BAT already does. Exclude it only deliberately (the game does
   not read it at runtime; only the authoring/verification tools reference it).
 - No server sync, no accounts, no analytics. Progress is per browser.
+- **Character art is still the original SVG art.** Generated CAT and SHADOW CAT portraits are pending
+  from the user; drop them over `assets/cat.svg` / `assets/shadow.svg` (or provide PNGs and update the
+  references). See the README TODO for the full art list.
 
 ---
 

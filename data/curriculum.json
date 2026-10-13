@@ -14,11 +14,12 @@
   "note": "After a question times out the opponent may call ATTACK TIME, taking 0-60 seconds from the lesson clock. The chance rises from 10% at level 1 to 90% at level 9. The final exam has no artificial attacks."
  },
  "story": [
-  "CAT was a stray before she was anything else. She found the cardboard Box Tower on the greenway, guarded it, and learned the rules well enough to test a small black cat named BAT. BAT passed, the tower opened to every cat, and CAT walked back out through the door she had held shut.",
-  "A tower you found first is not the same as a home you can keep. So CAT takes the long way: nine levels, from the cold alley to the long shadow at the edge of town.",
-  "At every stop an opponent waits, and the battles are intellectual and harmless. No claws, no bites: just Property & Casualty rules for Kansas, a ten minute clock, and ten questions. Answer well and the path continues. Let the clock run out and the opponent may call ATTACK TIME and steal seconds from the lesson.",
-  "Past the ninth level waits the last opponent of all: CAT's own shadow, the part of her that never had a door to close. It asks one hundred fifty-six questions in one hundred fifty minutes and uses no tricks.",
-  "Answer well, and CAT finds what every stray is looking for."
+  "CAT was a backyard alley cat in the country, and she survived on human scraps. Every winter tested her - cold nights, empty bowls, and whatever the households left behind - and she lived through each one on scraps and stubbornness.",
+  "Other cats found her along the way, and they tested her. Not with claws: with insurance knowledge. Property and casualty rules, Kansas style - which promise answers for which loss, and what happens when the clock runs out. Losing an argument stung worse than losing a fight, so she learned the rules cold.",
+  "For a long time her only goal was survival. Then one day she saw the red car, and the goal changed. She would leave with that car. Everything after that night was practice for the road out.",
+  "Nine levels stand between the backyard and the road: twenty-seven lessons, ten questions each, a ten minute clock and sixty seconds to a question. At every stop another cat waits to argue with her, and when the clock runs out they may call ATTACK TIME and steal seconds from the lesson.",
+  "At the very end waits the only attacker left: SHADOW CAT, her own shadow - everything survival taught her, turned around and looking back. One hundred fifty-six questions in one hundred fifty minutes, and no tricks at all.",
+  "Win, and the mother who drives the red car brings her home. That is how CAT becomes the cardboard box tower queen - and only after that does a small black cat named BAT come into the story at all."
  ],
  "levels": [
   {
@@ -1184,9 +1185,9 @@
  },
  "boss": {
   "title": "The Shadow at the End of Level Nine",
-  "intro": "Nine levels are behind CAT. At the edge of town the last opponent is her own shadow - everything the alley taught, turned around and looking back.",
-  "dialogue": "You learned the rules to leave the alley. Now show me you can use them when nothing is chasing you and no clock is playing tricks.",
-  "win": "The shadow steps aside. It was never an enemy, only the part of CAT that had nowhere to go. And down the road, a door stands open and a light is on.",
-  "lose": "The shadow holds its ground. Not a defeat, only another round: the rules are still there to be learned, and the door will still be open next time."
+  "intro": "Nine levels are behind CAT, and the red car is idling at the edge of town. Between them stands the last attacker: SHADOW CAT, her own shadow - everything survival taught her, turned around and looking back.",
+  "dialogue": "You learned the rules to survive the alley. Now show me you can use them when nothing is chasing you and no clock is playing tricks.",
+  "win": "SHADOW CAT steps aside. It was never an enemy, only the part of CAT that had nowhere to go. And down the road the red car is waiting, with the mother who will bring her home.",
+  "lose": "SHADOW CAT holds its ground. Not a defeat, only another round: the rules are still there to be learned, and the red car will still be waiting next time."
  }
 }

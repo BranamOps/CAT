@@ -224,28 +224,65 @@ a { color: var(--lamp); }
 .level-band-head .lv-tag { color: var(--ink-soft); font-size: 13.5px; margin: 0; }
 .level-band-head .lv-open { font-size: 12px; color: var(--lamp); border: 1px solid var(--line); border-radius: 999px; padding: 4px 11px; }
 
-.lesson-stops { display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: 12px; }
+/* Illustrated journey map (BAT-style): map image + positioned stones + marker. */
+.map-card {
+  padding: 12px; border-radius: var(--radius-lg); margin-bottom: 22px;
+  background: rgba(12, 12, 20, 0.6); border: 1px solid var(--line-soft);
+}
+.map-frame { position: relative; overflow: hidden; isolation: isolate; border-radius: 14px; }
+.map-image { display: block; width: 100%; height: auto; aspect-ratio: 1200 / 760; object-fit: fill; }
+.map-overlay { position: absolute; inset: 0; pointer-events: none; }
+.map-marker {
+  position: absolute; z-index: 2; width: clamp(34px, 3.8vw, 50px); height: clamp(34px, 3.8vw, 50px);
+  border-radius: 50%; overflow: hidden; border: 3px solid var(--lamp);
+  background: var(--night-700); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+  transform: translate(-50%, -72%);
+  transition: left .65s cubic-bezier(.2, .8, .2, 1), top .65s cubic-bezier(.2, .8, .2, 1);
+}
+.map-marker img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .stop {
-  text-align: left; font: inherit; cursor: pointer; width: 100%;
-  display: flex; gap: 13px; align-items: flex-start;
-  padding: 14px; border-radius: var(--radius);
-  background: rgba(12, 12, 20, 0.6);
-  border: 1px solid var(--line-soft);
-  color: var(--ink-soft);
+  position: absolute; transform: translate(-50%, -50%); pointer-events: auto;
+  width: clamp(28px, 3.2vw, 44px); height: clamp(28px, 3.2vw, 44px); min-width: 0; padding: 0;
+  border-radius: 50%; display: grid; place-items: center; text-align: center;
+  font: 700 clamp(11px, 1.05vw, 15px)/1 var(--font-display, sans-serif);
+  cursor: pointer; color: var(--ink);
+  background: rgba(28, 28, 43, 0.92); border: 2px solid rgba(246, 236, 214, 0.85);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
   transition: transform .15s, border-color .18s, background .18s;
 }
-.stop:hover:not(:disabled) { transform: translateY(-2px); border-color: var(--lamp); background: rgba(246, 198, 103, 0.08); }
-.stop .stop-index {
+.stop:hover:not(:disabled) { transform: translate(-50%, -50%) scale(1.09); border-color: var(--lamp); }
+.stop.completed { background: var(--good); color: #06251a; border-color: rgba(234, 241, 228, 0.9); }
+.stop.available { background: var(--lamp); color: #17130a; }
+.stop.current { outline: 3px solid var(--lamp); outline-offset: 3px; }
+.stop.locked { opacity: .55; cursor: not-allowed; }
+.map-caption {
+  display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; justify-content: space-between;
+  padding: 12px 6px 2px; color: var(--ink-soft); font-size: 12.5px;
+}
+.map-legend { display: flex; flex-wrap: wrap; gap: 14px; }
+.legend-item { display: inline-flex; gap: 7px; align-items: center; }
+.legend-swab { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.swab-done { background: var(--good); }
+.swab-current { background: var(--lamp); }
+.swab-locked { background: #c8c9ba; opacity: .65; }
+
+/* Land chips below the map: comfortable tap targets for every lesson. */
+.band-lessons { display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: 12px; }
+.band-lesson {
+  display: flex; gap: 12px; align-items: center; text-align: left; width: 100%;
+  padding: 13px 14px; border-radius: var(--radius); font: inherit; cursor: pointer;
+  background: rgba(12, 12, 20, 0.6); border: 1px solid var(--line-soft); color: var(--ink-soft);
+  transition: transform .15s, border-color .18s, background .18s;
+}
+.band-lesson:hover:not(:disabled) { transform: translateY(-2px); border-color: var(--lamp); background: rgba(246, 198, 103, 0.08); }
+.band-lesson:disabled { opacity: .52; cursor: not-allowed; }
+.band-num {
   flex: none; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center;
   font-size: 12.5px; font-weight: 700; background: rgba(255, 255, 255, 0.08); color: var(--ink);
 }
-.stop.completed { border-color: rgba(111, 214, 164, 0.45); }
-.stop.completed .stop-index { background: var(--good); color: #06251a; }
-.stop.available { border-color: rgba(246, 198, 103, 0.5); }
-.stop.available .stop-index { background: var(--lamp); color: #17130a; }
-.stop.locked { opacity: .52; cursor: not-allowed; }
-.stop-title { display: block; font-weight: 700; color: var(--ink); font-size: 14.5px; }
-.stop-meta { display: block; font-size: 12px; color: var(--ink-dim); margin-top: 3px; }
+.band-lesson.completed .band-num { background: var(--good); color: #06251a; }
+.band-title { flex: 1; font-weight: 700; color: var(--ink); font-size: 14.5px; }
+.band-state { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--ink-dim); }
 
 /* ---------- lesson ---------- */
 .lesson-top { margin-bottom: 22px; }
@@ -469,7 +506,10 @@ a { color: var(--lamp); }
   .brand-text strong { font-size: 12px; letter-spacing: 1px; }
   .progress-chip { font-size: 11.5px; }
   .nav-button { padding: 7px 11px; font-size: 12.5px; }
-  .lesson-stops { grid-template-columns: 1fr; }
+  .band-lessons { grid-template-columns: 1fr; }
+  .map-caption { font-size: 11.5px; }
+  .stop { width: 30px; height: 30px; font-size: 11px; border-width: 2px; }
+  .map-marker { width: 36px; height: 36px; }
   .timer { flex: 1 1 100%; }
   .timer-value { font-size: 19px; }
   .result-actions .button, .story-actions .button { width: 100%; }

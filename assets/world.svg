@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="catMapTitle catMapDesc">
+  <title id="catMapTitle">CAT's winding journey through nine country lands</title>
+  <desc id="catMapDesc">A dusk-lit country map with a winding dotted road, twenty-seven lesson stones climbing from a backyard scrap bowl toward a red car waiting beside a warm lit door.</desc>
+
+  <defs>
+    <linearGradient id="sky" x2="0" y2="1">
+      <stop stop-color="#f2c9a0"/>
+      <stop offset="0.55" stop-color="#f6dfb8"/>
+      <stop offset="1" stop-color="#f8ecca"/>
+    </linearGradient>
+    <linearGradient id="hillFar" x2="0" y2="1">
+      <stop stop-color="#c2c69c"/>
+      <stop offset="1" stop-color="#b3bb8e"/>
+    </linearGradient>
+    <linearGradient id="hillMid" x2="0" y2="1">
+      <stop stop-color="#a3b581"/>
+      <stop offset="1" stop-color="#93a874"/>
+    </linearGradient>
+    <linearGradient id="hillNear" x2="0" y2="1">
+      <stop stop-color="#87a26e"/>
+      <stop offset="1" stop-color="#79975f"/>
+    </linearGradient>
+    <radialGradient id="doorGlow">
+      <stop stop-color="#ffd98a" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#ffd98a" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#4a3b26" flood-opacity="0.22"/>
+    </filter>
+    <pattern id="grain" width="70" height="70" patternUnits="userSpaceOnUse">
+      <circle cx="9" cy="11" r="1.2" fill="#8a7a52" opacity="0.16"/>
+      <circle cx="53" cy="48" r="1" fill="#8a7a52" opacity="0.13"/>
+    </pattern>
+    <g id="tree">
+      <ellipse cy="6" rx="20" ry="6" fill="#4c6440" opacity="0.18"/>
+      <circle cy="-15" r="18" fill="#6d9469"/>
+      <circle cx="-13" cy="-7" r="12" fill="#7ba474"/>
+      <circle cx="13" cy="-5" r="12" fill="#5c8560"/>
+      <path d="M0 2v18" stroke="#8b6847" stroke-width="6" stroke-linecap="round"/>
+    </g>
+    <g id="stone">
+      <ellipse cy="15" rx="21" ry="6" fill="#4c5238" opacity="0.2"/>
+      <circle r="20" fill="#fdf6e3" stroke="#a8a582" stroke-width="2"/>
+      <circle r="14" fill="#e9e2c8"/>
+    </g>
+  </defs>
+
+  <!-- dusk sky and rolling lands -->
+  <rect width="1200" height="760" fill="url(#sky)"/>
+  <circle cx="152" cy="112" r="36" fill="#faeed2" opacity="0.85"/>
+  <circle cx="140" cy="102" r="7" fill="#efdcb8" opacity="0.7"/>
+  <circle cx="164" cy="122" r="5" fill="#efdcb8" opacity="0.6"/>
+  <g fill="#fff6e2" opacity="0.55">
+    <ellipse cx="420" cy="96" rx="58" ry="17"/>
+    <ellipse cx="462" cy="86" rx="36" ry="14"/>
+    <ellipse cx="820" cy="120" rx="64" ry="18"/>
+    <ellipse cx="864" cy="110" rx="38" ry="14"/>
+  </g>
+  <path d="M0 240Q170 172 330 236t325-8q180-90 335 4t210-16v544H0z" fill="url(#hillFar)"/>
+  <path d="M0 330q130-52 257 4t267-14q157-58 304 6t372-2v436H0z" fill="url(#hillMid)"/>
+  <path d="M0 470q150-46 290 6t280-10q150-44 300 8t330-4v290H0z" fill="url(#hillNear)"/>
+  <path d="M0 0h1200v760H0z" fill="url(#grain)"/>
+
+  <!-- pond -->
+  <ellipse cx="706" cy="642" rx="94" ry="44" fill="#8fb0bd" opacity="0.85"/>
+  <ellipse cx="690" cy="632" rx="58" ry="22" fill="#a9c4cd" opacity="0.8"/>
+  <path d="M628 640q30-12 76-8" fill="none" stroke="#c5dae0" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+
+  <!-- start: the backyard -->
+  <g filter="url(#soft)">
+    <rect x="20" y="692" width="118" height="64" fill="#c19272"/>
+    <path d="M8 696 79 654l72 42z" fill="#8a5a46"/>
+    <rect x="40" y="710" width="26" height="24" fill="#ffce86"/>
+    <rect x="92" y="712" width="30" height="44" fill="#7c5540"/>
+  </g>
+  <ellipse cx="192" cy="742" rx="24" ry="9" fill="#7f8b96"/>
+  <ellipse cx="192" cy="738" rx="18" ry="6" fill="#a7b2bc"/>
+  <g stroke="#9b7c5c" stroke-width="5" stroke-linecap="round">
+    <path d="M232 758v-26M262 758v-26M292 758v-26M322 758v-26M222 742h110M222 752h110"/>
+  </g>
+
+  <!-- the barn mid-way -->
+  <g filter="url(#soft)">
+    <rect x="72" y="432" width="112" height="62" fill="#b0785c"/>
+    <path d="M60 436 128 402l68 34z" fill="#7d4f3f"/>
+    <rect x="112" y="456" width="30" height="38" fill="#6b4636"/>
+    <rect x="84" y="448" width="18" height="16" fill="#f4c67c"/>
+  </g>
+
+  <!-- hay bales and scattered trees -->
+  <g filter="url(#soft)">
+    <circle cx="216" cy="560" r="17" fill="#d9b96c"/>
+    <circle cx="248" cy="568" r="14" fill="#cfae62"/>
+  </g>
+  <use href="#tree" x="242" y="298"/>
+  <use href="#tree" x="318" y="234"/>
+  <use href="#tree" x="522" y="288"/>
+  <use href="#tree" x="634" y="210"/>
+  <use href="#tree" x="902" y="430"/>
+  <use href="#tree" x="954" y="494"/>
+  <use href="#tree" x="152" y="558"/>
+  <use href="#tree" x="392" y="370"/>
+  <use href="#tree" x="480" y="180"/>
+  <use href="#tree" x="1134" y="518"/>
+  <use href="#tree" x="1058" y="618"/>
+  <use href="#tree" x="826" y="700"/>
+
+  <!-- the winding road: 27 lesson stones, then the red car -->
+  <path d="M84 661 156 638 228 661 300 631 264 593 336 570 408 593 480 562 432 524 372 502 444 479 516 502 588 471 564 433 636 410 708 433 768 395 720 357 660 334 732 312 804 334 864 296 840 258 912 236 972 213 1032 236 1080 190 1020 114"
+        fill="none" stroke="#b99b6e" stroke-width="26" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+  <path d="M84 661 156 638 228 661 300 631 264 593 336 570 408 593 480 562 432 524 372 502 444 479 516 502 588 471 564 433 636 410 708 433 768 395 720 357 660 334 732 312 804 334 864 296 840 258 912 236 972 213 1032 236 1080 190 1020 114"
+        fill="none" stroke="#f0dfb4" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M84 661 156 638 228 661 300 631 264 593 336 570 408 593 480 562 432 524 372 502 444 479 516 502 588 471 564 433 636 410 708 433 768 395 720 357 660 334 732 312 804 334 864 296 840 258 912 236 972 213 1032 236 1080 190 1020 114"
+        fill="none" stroke="#fff8e6" stroke-width="4" stroke-linecap="round" stroke-dasharray="0 19" opacity="0.9"/>
+
+  <use href="#stone" x="84" y="661"/>
+  <use href="#stone" x="156" y="638"/>
+  <use href="#stone" x="228" y="661"/>
+  <use href="#stone" x="300" y="631"/>
+  <use href="#stone" x="264" y="593"/>
+  <use href="#stone" x="336" y="570"/>
+  <use href="#stone" x="408" y="593"/>
+  <use href="#stone" x="480" y="562"/>
+  <use href="#stone" x="432" y="524"/>
+  <use href="#stone" x="372" y="502"/>
+  <use href="#stone" x="444" y="479"/>
+  <use href="#stone" x="516" y="502"/>
+  <use href="#stone" x="588" y="471"/>
+  <use href="#stone" x="564" y="433"/>
+  <use href="#stone" x="636" y="410"/>
+  <use href="#stone" x="708" y="433"/>
+  <use href="#stone" x="768" y="395"/>
+  <use href="#stone" x="720" y="357"/>
+  <use href="#stone" x="660" y="334"/>
+  <use href="#stone" x="732" y="312"/>
+  <use href="#stone" x="804" y="334"/>
+  <use href="#stone" x="864" y="296"/>
+  <use href="#stone" x="840" y="258"/>
+  <use href="#stone" x="912" y="236"/>
+  <use href="#stone" x="972" y="213"/>
+  <use href="#stone" x="1032" y="236"/>
+  <use href="#stone" x="1080" y="190"/>
+
+  <!-- the goal: a home, the cardboard boxes, and the red car -->
+  <circle cx="1140" cy="72" r="86" fill="url(#doorGlow)"/>
+  <g filter="url(#soft)">
+    <rect x="1092" y="22" width="106" height="76" fill="#e6d5b3"/>
+    <path d="M1082 26 1145 0l66 26z" fill="#8a5f48"/>
+    <rect x="1128" y="52" width="30" height="46" fill="#ffce86"/>
+    <rect x="1168" y="42" width="20" height="18" fill="#f7cf92"/>
+  </g>
+  <g filter="url(#soft)">
+    <rect x="1042" y="70" width="22" height="24" fill="#c99f68" stroke="#a87f4d" stroke-width="2"/>
+    <rect x="1064" y="70" width="24" height="24" fill="#c99f68" stroke="#a87f4d" stroke-width="2"/>
+    <rect x="1050" y="46" width="24" height="24" fill="#d4ac76" stroke="#a87f4d" stroke-width="2"/>
+    <path d="M1062 46v24M1050 58h24" stroke="#a87f4d" stroke-width="2"/>
+  </g>
+  <g filter="url(#soft)">
+    <ellipse cx="1022" cy="132" rx="66" ry="8" fill="#5b4a2e" opacity="0.28"/>
+    <path d="M968 128q-2-16 12-18l24-2 16-16h44l16 16 20 2q12 2 12 16v6q0 5-6 5h-124q-7 0-7-6z" fill="#c3402f"/>
+    <path d="M1010 96h38l12 13h-62z" fill="#dfe8ea"/>
+    <rect x="962" y="112" width="10" height="7" rx="3" fill="#ffd98a"/>
+    <circle cx="992" cy="132" r="13" fill="#2c2c33"/>
+    <circle cx="992" cy="132" r="5" fill="#c9c9d2"/>
+    <circle cx="1056" cy="132" r="13" fill="#2c2c33"/>
+    <circle cx="1056" cy="132" r="5" fill="#c9c9d2"/>
+  </g>
+</svg>
