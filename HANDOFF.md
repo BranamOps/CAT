@@ -30,17 +30,27 @@ Target URLs:
 | Game: timers, ATTACK TIME, pass/retake, story, endings, review | **Done** |
 | Theme (`index.html`, `app.css`), responsive layout, original art | **Done** |
 | Verification: headless DOM + headless Chromium | **Passing (105/105 and 31/31)** |
-| Git commits in this folder | **Done locally — 5 commits on `main`, unpushed** |
-| Push to GitHub | **BLOCKED — see §3** |
-| GitHub Pages enabled + live URL verified | **NOT DONE — follows the push** |
+| Git history on `main` | **Done — pushed to `BranamOps/CAT` on 2026-10-13** |
+| Push to GitHub | **Done — the workspace credential is scoped to CAT** |
+| GitHub Pages enabled + live URL verified | **BLOCKED — needs one-time UI enablement, see §3** |
 
-Nothing is half-written. The only unfinished work is delivery (§3).
+Nothing is half-written. The only unfinished work is the one-time Pages enablement (§3).
 
 ---
 
 ## 3. The blocker, and exactly how to finish
 
-### Why the push fails
+**Status update (2026-10-13).** The push is done: the session's workspace is connected to
+`BranamOps/CAT` itself, so the managed credential is scoped to this repository and `git push -u
+origin main` succeeded. What remains is Pages: `gh api -X POST repos/BranamOps/CAT/pages -f
+build_type=workflow` returns **403 "Resource not accessible by integration"** (the GitHub App
+cannot create a Pages site), and the first workflow run failed at `actions/configure-pages` with
+"Get Pages site failed … Not Found" because no Pages site exists yet. **A human must enable Pages
+once in the GitHub UI: Settings → Pages → Source: GitHub Actions.** Then trigger the deploy
+(`gh workflow run "Deploy static content to Pages" --repo BranamOps/CAT` or push any commit), wait
+for the run to go green, and verify with the curl commands at the end of this section.
+
+### Why the push originally failed (historical)
 
 Freebuff injects a GitHub App credential **scoped to the repositories in the App's installation**.
 This workspace is connected to `BranamOps/BAT`, so:
@@ -181,7 +191,8 @@ supplied, drop it in `assets/`, read it, add the affected topics as new question
 
 ## 8. Known limitations / not done
 
-- **Push and Pages are unfinished** (§3). The live URL has never been loaded.
+- **Pages is unfinished** (§3): the push is done, but the live URL has never been loaded because the
+  one-time Pages enablement requires the GitHub UI (the App token gets 403 creating a Pages site).
 - `START CAT Adventure.cmd` is a **Windows** launcher and could not be executed in the Linux sandbox —
   it is unverified by execution. Its contents mirror BAT's working launcher.
 - The Pages workflow publishes the **repo root**, so the Norris manual PDF is publicly downloadable
