@@ -7,6 +7,7 @@
  */
 'use strict';
 
+const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
 
@@ -372,6 +373,14 @@ async function main() {
     ok(shipped.length === allowed.length && allowed.every((f) => shipped.includes(f)),
       'assets contain only the game artwork', shipped.join(', '));
     ok(/<meta name="viewport"/.test(html), 'viewport meta tag present for mobile layout');
+    const stamp = crypto.createHash('sha256')
+      .update(fs.readFileSync(path.join(root, 'app.js')))
+      .update(fs.readFileSync(path.join(root, 'app.css')))
+      .digest('hex').slice(0, 10);
+    ok(html.includes(`app.js?v=${stamp}`),
+      'index.html stamps app.js with the current content hash', stamp);
+    ok(html.includes(`app.css?v=${stamp}`),
+      'index.html stamps app.css with the current content hash');
     const css = fs.readFileSync(path.join(root, 'app.css'), 'utf8');
     ok((css.match(/@media/g) || []).length >= 2, 'stylesheet declares responsive breakpoints');
     ok(/@media \(max-width: 560px\)/.test(css), 'a small-screen breakpoint exists');

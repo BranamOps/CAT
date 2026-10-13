@@ -10,8 +10,10 @@ CAT teaches Kansas property and casualty insurance concepts. Questions are
 written in CAT's own words; they name the idea being tested (the "topic") rather
 than citing any source document.
 """
+import hashlib
 import json
 import os
+import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -259,6 +261,30 @@ def validate(curriculum, questions):
     return errors, dist, means
 
 
+def asset_version(root):
+    """A short content hash of the two files the browser caches longest."""
+    digest = hashlib.sha256()
+    for name in ("app.js", "app.css"):
+        with open(os.path.join(root, name), "rb") as fh:
+            digest.update(fh.read())
+    return digest.hexdigest()[:10]
+
+
+def stamp_asset_versions(root):
+    """Point index.html's ?v= at the current hash so that a deploy can never be
+    masked by a cached app.js or app.css."""
+    version = asset_version(root)
+    path = os.path.join(root, "index.html")
+    with open(path, "r", encoding="utf-8", newline="") as fh:
+        html = fh.read()
+    stamped = re.sub(r"((?:app\.js|app\.css)\?v=)[0-9a-zA-Z]+", r"\g<1>" + version, html)
+    if stamped == html:
+        return version, False
+    with open(path, "w", encoding="utf-8", newline="") as fh:
+        fh.write(stamped)
+    return version, True
+
+
 def main():
     here = os.path.dirname(os.path.abspath(__file__))
     root = os.path.dirname(here)
@@ -274,6 +300,7 @@ def main():
     with open(os.path.join(root, "data", "questions.json"), "w") as fh:
         json.dump(questions, fh, indent=1)
         fh.write("\n")
+    version, restamped = stamp_asset_versions(root)
     print("Built %d levels, %d lessons, %d questions." % (
         len(curriculum["levels"]),
         sum(len(lv["lessons"]) for lv in curriculum["levels"]),
@@ -282,6 +309,7 @@ def main():
     print("Difficulty by level: %s" % " ".join("%.2f" % m for m in means))
     print("Exam blueprint: %d questions across %d lessons." % (
         sum(curriculum["exam"]["lessonCounts"]), len(curriculum["exam"]["lessonCounts"])))
+    print("Asset version: %s%s" % (version, " (index.html restamped)" if restamped else ""))
     return 0
 
 
