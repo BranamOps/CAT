@@ -201,6 +201,10 @@ supplied, drop it in `assets/`, read it, add the affected topics as new question
   under `/assets/`. That matches what BAT already does. Exclude it only deliberately (the game does
   not read it at runtime; only the authoring/verification tools reference it).
 - No server sync, no accounts, no analytics. Progress is per browser.
+- A Pages deploy run can fail transiently with "No artifacts named `github-pages` were found" even
+  though the upload step succeeds (seen 2026-10-13, run 38368234914) — an artifact-metadata API
+  glitch, not a build problem. `gh run rerun` and `gh workflow run` are 403 for this credential, so
+  **retry by pushing any commit**; the next run deploys normally.
 - **Character art is still the original SVG art.** Generated CAT and SHADOW CAT portraits are pending
   from the user; drop them over `assets/cat.svg` / `assets/shadow.svg` (or provide PNGs and update the
   references). See the README TODO for the full art list.
