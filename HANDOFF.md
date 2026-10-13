@@ -15,8 +15,8 @@ for structural ideas only and is **unmodified** — do not "improve" BAT as part
 
 Target URLs:
 
-- Live site (once Pages is on): <https://BranamOps.github.io/CAT/>
-- Repository: <https://github.com/BranamOps/CAT> (created by the user, currently **empty**)
+- Live site: <https://BranamOps.github.io/CAT/>
+- Repository: <https://github.com/BranamOps/CAT>
 
 ---
 
@@ -33,7 +33,7 @@ Target URLs:
 | Git history on `main` | **Done — pushed to `BranamOps/CAT` on 2026-10-13** |
 | Push to GitHub | **Done — the workspace credential is scoped to CAT** |
 | GitHub Pages enabled | **Done — enabled 2026-10-13 (Settings → Pages → Source: GitHub Actions)** |
-| Live URL verified | **Deploying — triggered by push; see §3 for the verification commands** |
+| Live URL verified | **Done — <https://BranamOps.github.io/CAT/> serves the game (200), 2026-10-13** |
 
 Nothing is half-written. Delivery is complete; every push to `main` redeploys Pages.
 
