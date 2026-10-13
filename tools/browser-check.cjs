@@ -112,7 +112,9 @@ async function main() {
     // lesson
     await page.click('.stop[data-lesson="1"]');
     await page.waitForSelector('#startQuiz');
-    ok(await page.isVisible('.lesson-aside'), 'lesson aside renders');
+    ok((await page.locator('.lesson-aside').count()) === 0, 'the lesson page drops the side cards');
+    ok(await page.isVisible('.quiz-start'), 'the start block renders');
+    ok(await page.isVisible('.quiz-note'), 'the strike note renders under the start button');
     await page.click('#startQuiz');
     await page.waitForSelector('.quiz-card');
     ok(await page.locator('.choice').count() === 4, 'four answer choices render');
@@ -210,13 +212,23 @@ async function main() {
     ok(errors.length === 0, 'no console errors on desktop', errors.slice(0, 2).join(' | '));
     let o = await overflow(page);
     ok(o.scroll <= o.client + 1, 'desktop landing has no horizontal overflow');
-    const grid = await page.locator('.levels-grid .level-card').count();
-    ok(grid === 9, 'landing lists all nine levels', String(grid));
+    ok((await page.locator('.levels-grid').count()) === 0, 'the front page drops the nine-level grid');
+    ok((await page.locator('.map-card').count()) === 0, 'the front page drops the journey map');
     await page.screenshot({ path: '/tmp/cat-desktop-landing.png', fullPage: false });
 
+    await page.click('[data-nav="map"]');
+    await page.waitForSelector('.level-band');
+    ok((await page.locator('.level-band').count()) === 9, 'the journey map screen lists all nine levels');
+
     await page.click('[data-nav="manual"]');
-    await page.waitForSelector('.study-map-layout');
+    await page.waitForSelector('.study-guide');
     await page.click('[data-study-lesson="17"]');
+    await page.waitForSelector('.study-item.open .study-map-content', { timeout: 5000 });
+    ok(await page.evaluate(() => {
+      const item = document.querySelector('.study-item.open');
+      return !!(item && item.querySelector('[data-study-lesson="17"]')
+        && item.querySelector('.study-map-content'));
+    }), 'the outline opens inside its own lesson item');
     ok((await page.textContent('.study-map-content')).includes('Dwelling'),
       'study guide renders the selected lesson content');
     await page.screenshot({ path: '/tmp/cat-desktop-manual.png', fullPage: false });

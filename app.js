@@ -173,14 +173,6 @@
   function renderStory() {
     stopTicker();
     navActive('story');
-    const lv = curriculum.levels;
-    const levelCards = lv.map((level) => `
-      <div class="level-card" style="--level:${level.color}">
-        <span class="lv-num">Level ${level.id}</span>
-        <strong>${esc(level.title)}</strong>
-        <p>${esc(level.tagline)}</p>
-      </div>`).join('');
-
     app.className = 'view-animate';
     app.innerHTML = `
       <section class="hero">
@@ -188,12 +180,8 @@
           <img src="${catArt()}" alt="CAT, a stray cat with bright amber eyes." />
         </div>
         <div class="hero-copy">
-          <span class="eyebrow">A harder sequel to BAT</span>
           <h1>CAT's Insurance Journey</h1>
-          <p class="hero-lede">
-            Nine levels of Kansas Property &amp; Casualty, argued one lesson at a time. Ten questions a
-            stop, a clock running the whole way, and a cat waiting to argue at every one of them.
-          </p>
+          <p class="hero-lede">Nine lives. Twenty-seven lessons. One alley cat with zero patience for fine print.</p>
           <div class="story-actions">
             <button class="button" id="storyBegin">${progress.completed.length ? "Continue CAT's journey" : 'Begin the journey'} &rarr;</button>
           </div>
@@ -203,20 +191,9 @@
       <div class="section-heading">
         <div><span class="eyebrow">The goal</span><h2>The door CAT is learning to reach</h2></div>
       </div>
-      <section class="goal-band">
+      <section class="goal-band solo">
         <div class="goal-art"><img src="${ART.mother}" alt="The mother who drives the red car." /></div>
-        <div class="goal-copy">
-          <p>
-            Everything below is practice for one ordinary afternoon: the red car, the mother who drives it,
-            and a house with a stack of boxes that will be CAT's alone.
-          </p>
-        </div>
       </section>
-
-      <div class="section-heading">
-        <div><span class="eyebrow">The journey</span><h2>Twenty-seven stones to the road out</h2></div>
-      </div>
-      ${mapSection()}
 
       <div class="cta-band">
         <div>
@@ -225,11 +202,6 @@
         </div>
         <button class="button" id="storyCta">${progress.completed.length ? 'Continue' : 'Start Lesson 1'} &rarr;</button>
       </div>
-
-      <div class="section-heading">
-        <div><h2>The nine levels</h2><p>From the backyard in the country to the road out.</p></div>
-      </div>
-      <section class="levels-grid">${levelCards}</section>
 
       <div class="section-heading">
         <div>
@@ -399,23 +371,34 @@
     const all = lessons();
     const selected = all.find((l) => l.id === selectedId) || null;
 
-    const nav = curriculum.levels.map((level) => `
+    /* The outline opens directly beneath the lesson that was tapped, like a dropdown. */
+    const panel = (l) => `
+      <div class="study-map-content" id="study-panel-${l.id}">
+        <div class="lesson-kicker">Lesson ${l.id} &middot; Level ${levelFor(l.id).id}</div>
+        <h3 class="study-title">${esc(l.title)}</h3>
+        <p class="study-subtitle">${esc(l.subtitle)}</p>
+        ${l.teaching.map((t) => `
+          <section class="study-topic"><h4>${esc(t.heading)}</h4><p>${esc(t.text)}</p></section>`).join('')}
+        <p class="study-citation">Study focus: ${esc(l.title)}.</p>
+      </div>`;
+
+    const guide = curriculum.levels.map((level) => `
       <section class="study-map-level" style="--level:${level.color}">
         <h2>Level ${level.id} &middot; ${esc(level.title)}</h2>
-        ${level.lessons.map((l) => `
-          <button class="study-map-link ${selected && selected.id === l.id ? 'active' : ''}" data-study-lesson="${l.id}">
-            <span>Lesson ${l.id}</span>${esc(l.title)}
-          </button>`).join('')}
+        <div class="study-items">
+          ${level.lessons.map((l) => {
+            const open = !!(selected && selected.id === l.id);
+            return `
+            <div class="study-item${open ? ' open' : ''}">
+              <button class="study-map-link${open ? ' active' : ''}" data-study-lesson="${l.id}"
+                aria-expanded="${open}" aria-controls="study-panel-${l.id}">
+                <span>Lesson ${l.id}</span>${esc(l.title)}
+              </button>
+              ${open ? panel(l) : ''}
+            </div>`;
+          }).join('')}
+        </div>
       </section>`).join('');
-
-    const content = selected ? `
-      <div class="lesson-kicker">Lesson ${selected.id} &middot; Level ${levelFor(selected.id).id}</div>
-      <h2>${esc(selected.title)}</h2>
-      <p class="study-subtitle">${esc(selected.subtitle)}</p>
-      ${selected.teaching.map((t) => `
-        <section class="study-topic"><h3>${esc(t.heading)}</h3><p>${esc(t.text)}</p></section>`).join('')}
-      <p class="study-citation">Study focus: ${esc(selected.title)}.</p>
-    ` : `<div class="empty-state"><h2>Pick a lesson to study</h2><p>Each outline summarizes the knowledge covered in that lesson's quiz.</p></div>`;
 
     app.className = 'view-animate';
     app.innerHTML = `
@@ -423,12 +406,9 @@
       <div class="lesson-top">
         <span class="lesson-kicker">Study map &middot; no quiz answers</span>
         <h1>The study guide, in plain language</h1>
-        <p>Choose a lesson for a concise outline of the ideas to understand. These notes explain the subject matter without revealing quiz answers.</p>
+        <p>Tap a lesson to open its outline right underneath it. These notes explain the subject matter without revealing quiz answers.</p>
       </div>
-      <div class="study-map-layout">
-        <nav class="study-map-nav" aria-label="Study guide lessons">${nav}</nav>
-        <article class="study-map-content">${content}</article>
-      </div>
+      <div class="study-guide">${guide}</div>
       <section class="manual-note">
         <strong>Scope:</strong> These outlines cover ${esc(curriculum.subject)}. Questions stay inside that
         material, and every answer explains the idea behind it.
@@ -437,9 +417,12 @@
 
     document.querySelector('#manualBack').addEventListener('click', renderMap);
     document.querySelectorAll('[data-study-lesson]').forEach((b) => {
-      b.addEventListener('click', () => renderManual(Number(b.dataset.studyLesson)));
+      const id = Number(b.dataset.studyLesson);
+      b.addEventListener('click', () => renderManual(selected && selected.id === id ? null : id));
     });
-    window.scrollTo({ top: 0, behavior: 'instant' });
+    const openItem = document.querySelector('.study-item.open');
+    if (openItem) openItem.scrollIntoView({ block: 'nearest' });
+    else window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
   /* ---------------- lesson ---------------- */
@@ -451,14 +434,10 @@
     if (!lesson) { renderMap(); return; }
     const level = levelFor(id);
     navActive('map');
-    const levelDifficulties = level.lessons
-      .flatMap((l) => l.questionIds.map(getQuestion))
-      .filter(Boolean)
-      .map((q) => q.difficulty);
-    const difficultyBand = `${Math.min(...levelDifficulties)}-${Math.max(...levelDifficulties)} of 5`;
 
+    /* One bubble holds every idea the lesson teaches, so the page is not a stack of cards. */
     const teaching = lesson.teaching.map((t) => `
-      <section class="content-card teaching-card"><h2>${esc(t.heading)}</h2><p>${esc(t.text)}</p></section>`).join('');
+      <div class="teaching-block"><h3>${esc(t.heading)}</h3><p>${esc(t.text)}</p></div>`).join('');
 
     app.className = 'view-animate';
     app.innerHTML = `
@@ -476,42 +455,25 @@
             <h2>Why this lesson matters</h2>
             <p>${esc(lesson.intro)}</p>
           </section>
-          ${teaching}
+          <section class="content-card">
+            <div class="eyebrow">The ideas to understand</div>
+            <h2>What you'll need to understand</h2>
+            ${teaching}
+          </section>
           <section class="scenario-card">
             <div class="eyebrow">Opponent: ${esc(opponents[level.id])}</div>
             <h2>${esc(lesson.scenario.title)}</h2>
             <p>${esc(lesson.scenario.text)}</p>
           </section>
-          <section class="content-card">
-            <div class="eyebrow">Ready when you are</div>
+          <section class="content-card quiz-start">
             <h2>Check your understanding</h2>
-            <p>
-              Ten questions, four choices each. You have ten minutes for the lesson and sixty seconds per
-              question. Every answer includes an explanation and the concept it tests. You need
-              8 of 10 correct to continue, and you can always retake the lesson.
-            </p>
-            <p class="muted">If the sixty seconds run out, ${esc(opponents[level.id])} strikes
+            <button class="button quiz-launch" id="startQuiz">Start the 10-question lesson check &rarr;</button>
+            <p class="quiz-note">If the sixty seconds run out, ${esc(opponents[level.id])} strikes
               (${Math.round(attackChance(level.id) * 100)}% chance at this level) and takes up to a minute
               off the lesson clock. A contestant may also turn up once mid-question and run both clocks three
               times as fast.</p>
-            <button class="button quiz-launch" id="startQuiz">Start the 10-question lesson check &rarr;</button>
           </section>
         </article>
-        <aside class="lesson-aside">
-          <section class="aside-card">
-            <h3>Lesson route</h3>
-            <p>Introduction &rarr; Teaching &rarr; Scenario &rarr; 10 questions &rarr; results</p>
-            <p>Level ${level.id} difficulty band: ${esc(difficultyBand)}</p>
-          </section>
-          <section class="aside-card">
-            <h3>What you'll practice</h3>
-            <ul>${lesson.teaching.map((t) => `<li>${esc(t.heading)}</li>`).join('')}</ul>
-          </section>
-          <section class="aside-card">
-            <h3>Study focus</h3>
-            <p>${esc(curriculum.subject)}<br>Level ${level.id} &middot; ${esc(level.title)}<br>${esc(lesson.teaching.map((t) => t.heading).join(' &middot; '))}</p>
-          </section>
-        </aside>
       </div>
     `;
 
@@ -622,7 +584,7 @@
             <img class="rival-art" src="${isExam ? ART.shadow : (run.contestantArt || ART.contestant)}" alt="" />
             <span class="rival-name">${esc(isExam ? 'SHADOW-1' : opponents[run.level.id])}</span>
           </div>
-          <div class="question-meta">${esc(isExam ? 'SHADOW-1 asks' : `${opponents[run.level.id]} asks`)} &middot; ${esc(q.code)} &middot; Difficulty ${q.difficulty}/5</div>
+          <div class="question-meta">${esc(isExam ? 'SHADOW-1 asks' : `${opponents[run.level.id]} asks`)}</div>
           <p class="question-text">${esc(q.stem)}</p>
           <div class="choice-list" id="choiceList">
             ${q.options.map((o, i) => `<button class="choice" data-choice="${i}">
@@ -1385,6 +1347,7 @@
     renderMap,
     renderStory,
     renderLesson,
+    renderManual,
     renderExamIntro,
     renderExamReview,
     isGrownUp,

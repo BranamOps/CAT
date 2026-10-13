@@ -137,7 +137,8 @@ async function main() {
     ok(/0 \/ 27 lessons/.test(w.document.querySelector('#topProgress').textContent), 'progress chip starts at 0 / 27');
     const story = w.document.querySelector('#app').textContent;
     ok(/CAT's Insurance Journey/.test(story), 'landing/story renders');
-    ok(/assets\/world\.svg/.test(w.document.querySelector('#app').innerHTML), 'the landing embeds the journey map');
+    ok(!/assets\/world\.svg/.test(w.document.querySelector('#app').innerHTML), 'the front page keeps the journey map off it');
+    ok(!/A harder sequel to BAT/.test(story), 'the front page drops the sequel tagline');
     ok(/own shadow/.test(story), 'the bio hints at the shadow at the end');
     ok(!/How a lesson runs/.test(story), 'the landing drops the how-a-lesson-runs tutorial');
     ok(!/ATTACK TIME/.test(story), 'the landing drops the ATTACK TIME tutorial');
@@ -147,17 +148,43 @@ async function main() {
     ok(/assets\/MOTHER\.jpg/.test(w.document.querySelector('#app').innerHTML), 'landing shows the goal art');
     ok(w.__CAT__.isGrownUp() === false, 'CAT starts the journey young');
 
-    // the level's difficulty band is shown on the lesson page
+    // the study guide opens each outline directly beneath its lesson button
+    w.__CAT__.renderManual();
+    ok(!!w.document.querySelector('.study-guide'), 'the study guide renders as an accordion');
+    ok(!w.document.querySelector('.study-map-content'), 'no outline is open until a lesson is tapped');
+    w.document.querySelector('[data-study-lesson="17"]').click();
+    const panel = w.document.querySelector('.study-map-content');
+    const item = w.document.querySelector('.study-item.open');
+    ok(!!panel && /Dwelling/.test(panel.textContent), 'tapping a lesson opens its outline');
+    ok(!!item && item.contains(panel) && !!item.querySelector('[data-study-lesson="17"]'),
+      'the outline sits directly under its own lesson button');
+    ok(item.querySelector('[data-study-lesson="17"]').getAttribute('aria-expanded') === 'true',
+      'the open lesson reports aria-expanded');
+    w.document.querySelector('[data-study-lesson="17"]').click();
+    ok(!w.document.querySelector('.study-map-content'), 'tapping the open lesson closes it again');
+
+    // the lesson overview is two content bubbles, a scenario, and a start block at the bottom
     w.__CAT__.renderLesson(1);
-    ok(/difficulty band: 1-2 of 5/i.test(w.document.querySelector('#app').textContent),
-      'lesson page states the level difficulty band');
+    const auto = w.document.querySelector('#app');
+    ok(!auto.querySelector('.lesson-aside'), 'the lesson page drops the side cards');
+    ok(/Why this lesson matters/.test(auto.textContent), 'the lesson page keeps the why-it-matters bubble');
+    ok(/What you'll need to understand/.test(auto.textContent),
+      'the lesson page groups the ideas into one bubble');
+    ok(!/Lesson route|Study focus|Ten questions, four choices each/.test(auto.textContent),
+      'the lesson page drops the route, study focus and boilerplate');
+    const startCard = auto.querySelector('.quiz-start');
+    const article = auto.querySelector('.article');
+    ok(!!startCard && article.lastElementChild === startCard,
+      'the start button sits at the bottom of the overview');
+    ok(!!startCard.querySelector('#startQuiz') && !!startCard.querySelector('.quiz-note'),
+      'the strike note sits under the start button as small print');
 
     // default clocks, read synchronously right after the run starts
     w.__CAT__.startLessonQuiz(w.__CAT__.curriculum.levels[0].lessons[0]);
     ok(w.document.querySelector('#lessonClock').textContent === '10:00', '10-minute lesson clock by default');
     ok(w.document.querySelector('#questionClock').textContent === '1:00', '60-second per-question clock by default');
-    ok(/Difficulty \d\/5/.test(w.document.querySelector('.question-meta').textContent),
-      'quiz names the question difficulty');
+    ok(!/Difficulty \d\/5|PROP/.test(w.document.querySelector('.question-meta').textContent),
+      'the quiz hides the question code and difficulty');
   }
 
   /* ---------- 3. attack chance curve ---------- */
@@ -343,6 +370,8 @@ async function main() {
   {
     const { w } = await makeDom({}, completeSeed(lessons));
     w.__CAT__.renderMap();
+    ok(!!w.document.querySelector('.map-intro .map-progress-summary'),
+      'the mastery counter sits in the map intro row');
     const map = w.document.querySelector('#app').textContent;
     ok(/27 lessons/.test(map) || /27/.test(map), 'map shows the 27-lesson progress');
     ok(w.document.querySelectorAll('.stop').length === 27, 'map renders 27 lesson stops');
@@ -516,8 +545,11 @@ async function main() {
   {
     const { w } = await makeDom(); // fresh profile: nothing mastered yet
     ok(w.__CAT__.progress.completed.length === 0, 'a fresh profile has mastered no lessons');
-    ok(/assets\/world\.svg/.test(w.document.querySelector('#app').innerHTML), 'the landing map is present');
+    ok(!/assets\/world\.svg/.test(w.document.querySelector('#app').innerHTML), 'the front page carries no map');
 
+    w.__CAT__.renderMap();
+    ok(/assets\/world\.svg/.test(w.document.querySelector('#app').innerHTML),
+      'the journey map screen carries the map');
     const hotspot = w.document.querySelector('[data-goal]');
     ok(!!hotspot, 'the map carries a hotspot on the red car');
     ok(hotspot && hotspot.style.left === '93%' && hotspot.style.top === '30%',

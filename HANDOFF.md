@@ -29,7 +29,9 @@ Target URLs:
 | MOTHER art as the goal (landing) and the ending | Done |
 | Keyboard shortcuts (1–4, Enter, Escape) | Done |
 | Exam review persisted across reloads | Done |
-| Journey map art with barn, windmill, pond, gate | Done |
+| Journey map art with barn, windmill, pond, gate | Done (lives on the Journey map screen, not the front page) |
+| Front page | Lean: hero + comedic one-liner, goal art, CTA, CAT's story. No map, no nine-level grid. |
+| Study guide | Accordion: each outline opens directly under its lesson button |
 | Verification: headless DOM + headless Chromium | Passing (167/167 and 39/39) |
 
 ## 3. How to verify

@@ -29,14 +29,15 @@ switches from `CAT_young.jpg` to `CAT_older.jpg` everywhere she appears.
 | CAT (older) | `assets/CAT_older.jpg` | Level 5 onward, and the repository page |
 | The contestants | `assets/contestant-1.jpg`, `contestant-2.jpg`, `contestant-3.jpg` | Every lesson battle; one portrait turns up at random |
 | SHADOW-1 | `assets/SHADOW-1.jpg` | The final exam |
-| The mother | `assets/MOTHER.jpg` | The goal, on the landing page, and the ending |
+| The mother | `assets/MOTHER.jpg` | The goal, on the front page, and the ending |
 
 The goal is shown before you begin and again when you finish: the red car, the mother who drives it,
 and the door CAT is learning to reach.
 
 ## How to play
 
-1. Choose **Begin the journey** or click Lesson 1 on the map.
+1. Choose **Begin the journey**. The winding **Journey map** lives on its own screen — open it from the
+   top navigation and tap Lesson 1 there whenever you prefer.
 2. Read the short lesson, then choose **Start the 10-question lesson check**.
 3. Choose an answer with the mouse, or press **1–4** and then **Enter**.
 4. Every answer shows an explanation and the concept it tests.
