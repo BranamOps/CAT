@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" role="img" aria-label="CAT's shadow self, a dark echo with violet eyes">
+  <defs>
+    <radialGradient id="shadowGlow" cx="50%" cy="45%" r="58%">
+      <stop offset="0%" stop-color="#7b6cff" stop-opacity=".3"/>
+      <stop offset="100%" stop-color="#7b6cff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="void" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1b1b28"/>
+      <stop offset="100%" stop-color="#0a0a12"/>
+    </linearGradient>
+    <linearGradient id="voidEdge" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6f5cff" stop-opacity=".55"/>
+      <stop offset="50%" stop-color="#a08bff" stop-opacity=".9"/>
+      <stop offset="100%" stop-color="#6f5cff" stop-opacity=".55"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="240" cy="220" r="205" fill="url(#shadowGlow)"/>
+
+  <path d="M352 350 C 424 348 442 296 418 252 C 408 232 384 236 383 254 C 382 272 400 278 408 270"
+        fill="none" stroke="#0d0d16" stroke-width="20" stroke-linecap="round"/>
+
+  <ellipse cx="240" cy="330" rx="120" ry="108" fill="url(#void)"/>
+  <ellipse cx="240" cy="330" rx="120" ry="108" fill="none" stroke="url(#voidEdge)" stroke-width="2.5"/>
+
+  <g>
+    <path d="M150 148 L138 60 L216 116 Z" fill="#101019"/>
+    <path d="M330 148 L342 60 L264 116 Z" fill="#101019"/>
+    <path d="M158 140 L152 84 L206 122 Z" fill="#7b6cff" opacity=".38"/>
+    <path d="M322 140 L328 84 L274 122 Z" fill="#7b6cff" opacity=".38"/>
+    <ellipse cx="240" cy="176" rx="98" ry="86" fill="url(#void)"/>
+    <ellipse cx="240" cy="176" rx="98" ry="86" fill="none" stroke="url(#voidEdge)" stroke-width="2"/>
+    <g>
+      <ellipse cx="206" cy="166" rx="23" ry="26" fill="#0e0e18"/>
+      <ellipse cx="274" cy="166" rx="23" ry="26" fill="#0e0e18"/>
+      <ellipse cx="206" cy="166" rx="15" ry="18" fill="#8f7dff"/>
+      <ellipse cx="274" cy="166" rx="15" ry="18" fill="#8f7dff"/>
+      <ellipse cx="206" cy="166" rx="4" ry="15" fill="#0a0a12"/>
+      <ellipse cx="274" cy="166" rx="4" ry="15" fill="#0a0a12"/>
+    </g>
+    <path d="M240 198 l-10 11 h20 z" fill="#5a4a7a"/>
+    <path d="M240 209 v9 M240 218 c-8 8 -20 8 -26 0 M240 218 c8 8 20 8 26 0"
+          fill="none" stroke="#2a2440" stroke-width="4" stroke-linecap="round"/>
+  </g>
+</svg>

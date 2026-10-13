@@ -1,0 +1,4322 @@
+[
+ {
+  "id": "q001",
+  "lessonId": 1,
+  "code": "PROP",
+  "stem": "A policy insures against the risk of direct physical loss to the described property and then lists only the losses it will not pay for. Which form is this?",
+  "options": [
+   "Specified (named) peril form",
+   "Special (open peril / all risk) form",
+   "Standard fire policy",
+   "Liability form"
+  ],
+  "answer": 1,
+  "explanation": "A special, open peril, or all risk form covers direct physical loss to described property and names exclusions rather than naming each covered peril.",
+  "source": "Manual p. 1.1 (PDF p. 5).",
+  "difficulty": 1
+ },
+ {
+  "id": "q002",
+  "lessonId": 1,
+  "code": "PROP",
+  "stem": "Which statement correctly describes specified (named) peril coverage?",
+  "options": [
+   "It covers every peril except those it excludes",
+   "It covers only fire and lightning",
+   "It covers liability for injuries to others",
+   "It covers only those perils named or listed in the policy"
+  ],
+  "answer": 3,
+  "explanation": "A named peril policy covers only the perils that are named or listed in it, so an unlisted cause of loss is not covered.",
+  "source": "Manual p. 1.1 (PDF p. 5).",
+  "difficulty": 1
+ },
+ {
+  "id": "q003",
+  "lessonId": 1,
+  "code": "PROP",
+  "stem": "In a property insurance policy, which party is the insurer?",
+  "options": [
+   "The second party",
+   "The first party",
+   "The third party",
+   "The claimant"
+  ],
+  "answer": 0,
+  "explanation": "The insured is the first party and the insurer is the second party in the two-party property insurance contract.",
+  "source": "Manual p. 1.1 (PDF p. 5).",
+  "difficulty": 1
+ },
+ {
+  "id": "q004",
+  "lessonId": 1,
+  "code": "PROP",
+  "stem": "The insurer becomes liable to reimburse the insured when the insured suffers a loss that is:",
+  "options": [
+   "Reported within 24 hours",
+   "Smaller than the deductible",
+   "Caused by a covered peril",
+   "Caused by the insured's own neglect"
+  ],
+  "answer": 2,
+  "explanation": "When a loss is caused by a covered peril, the insurer reimburses the insured up to the limits stated on the declarations page.",
+  "source": "Manual p. 1.1 (PDF p. 5).",
+  "difficulty": 1
+ },
+ {
+  "id": "q005",
+  "lessonId": 1,
+  "code": "PROP",
+  "stem": "Property insurance is primarily used to cover which exposures?",
+  "options": [
+   "Buildings and their contents",
+   "Injuries to other people",
+   "Business income only",
+   "Vehicles and watercraft only"
+  ],
+  "answer": 0,
+  "explanation": "Property insurance protects the insured when covered property is damaged by a covered peril, and it is primarily used to cover buildings and contents.",
+  "source": "Manual p. 1.1 (PDF p. 5).",
+  "difficulty": 1
+ },
+ {
+  "id": "q006",
+  "lessonId": 1,
+  "code": "PROP",
+  "stem": "The manual groups property insurance coverages into which two basic categories?",
+  "options": [
+   "Primary and excess coverage",
+   "Scheduled and blanket coverage",
+   "Specified (named) peril coverage and special (all risk / open peril) coverage",
+   "Basic and catastrophic coverage"
+  ],
+  "answer": 2,
+  "explanation": "Property coverage is grouped by how perils are described: specified or named peril coverage, and special or open peril coverage.",
+  "source": "Manual p. 1.1 (PDF p. 5).",
+  "difficulty": 1
+ },
+ {
+  "id": "q007",
+  "lessonId": 1,
+  "code": "PROP",
+  "stem": "A policy covers fire, lightning, wind, and hail and lists nothing further. This is best described as:",
+  "options": [
+   "Special (open peril) coverage",
+   "Blanket coverage",
+   "Agreed value coverage",
+   "Specified (named) peril coverage"
+  ],
+  "answer": 3,
+  "explanation": "Only listed causes of loss are covered, so this is named peril coverage. A special form would cover direct physical loss except where excluded.",
+  "source": "Manual p. 1.1 (PDF p. 5).",
+  "difficulty": 1
+ },
+ {
+  "id": "q008",
+  "lessonId": 1,
+  "code": "PROP",
+  "stem": "The phrase all risk, as the manual uses it, means that:",
+  "options": [
+   "Every conceivable peril is covered with no exclusions",
+   "Direct physical loss to described property is covered unless the policy excludes it",
+   "All property a person owns is covered",
+   "All insureds share a single limit"
+  ],
+  "answer": 1,
+  "explanation": "All risk or open peril coverage is still subject to exclusions; it covers direct physical loss unless the loss is excluded.",
+  "source": "Manual p. 1.1 (PDF p. 5).",
+  "difficulty": 1
+ },
+ {
+  "id": "q009",
+  "lessonId": 1,
+  "code": "PROP",
+  "stem": "The maximum the insurer will reimburse for a covered loss is set by:",
+  "options": [
+   "The insured's request at the time of loss",
+   "The selling price of nearby buildings",
+   "The limits stated on the declarations page",
+   "The size of the deductible chosen"
+  ],
+  "answer": 2,
+  "explanation": "A covered loss is reimbursed up to the limits stated on the declarations page, which is where the principal limits are shown.",
+  "source": "Manual p. 1.1 (PDF p. 5).",
+  "difficulty": 1
+ },
+ {
+  "id": "q010",
+  "lessonId": 1,
+  "code": "PROP",
+  "stem": "Which pairing of coverage type to promise is correct?",
+  "options": [
+   "Named peril coverage lists what is covered; open peril coverage lists what is not covered",
+   "Named peril coverage lists what is excluded; open peril coverage lists what is covered",
+   "Both types list only what is excluded",
+   "Both types list only what is covered"
+  ],
+  "answer": 0,
+  "explanation": "A named peril policy names the perils that are covered, while a special form names the perils that are not covered, meaning the exclusions.",
+  "source": "Manual p. 1.1 (PDF p. 5).",
+  "difficulty": 1
+ },
+ {
+  "id": "q011",
+  "lessonId": 2,
+  "code": "PROP",
+  "stem": "How many perils does the basic cause of loss list?",
+  "options": [
+   "Six",
+   "Eight",
+   "Fifteen",
+   "Eleven"
+  ],
+  "answer": 3,
+  "explanation": "The basic list contains eleven perils, beginning with fire and ending with smoke from a vented heating or cooking unit.",
+  "source": "Manual p. 1.2 (PDF p. 6).",
+  "difficulty": 1
+ },
+ {
+  "id": "q012",
+  "lessonId": 2,
+  "code": "PROP",
+  "stem": "The extended coverage endorsement adds which set of perils?",
+  "options": [
+   "Vandalism, leaking pipes, and broken glass",
+   "Wind, hail, aircraft, riot, vehicles, explosion, volcanic eruption, and smoke",
+   "Theft, burglary, and robbery",
+   "Freezing, weight of ice, and falling objects"
+  ],
+  "answer": 1,
+  "explanation": "Extended coverage adds the WHARVES perils: wind, hail, aircraft, riot, vehicles, explosion, volcanic eruption, and smoke.",
+  "source": "Manual p. 1.2 (PDF p. 6).",
+  "difficulty": 1
+ },
+ {
+  "id": "q013",
+  "lessonId": 2,
+  "code": "PROP",
+  "stem": "Which peril appears on the broad list but not on the basic list?",
+  "options": [
+   "Lightning",
+   "Accidental discharge of water from an appliance or plumbing",
+   "Internal explosion",
+   "Volcanic eruption"
+  ],
+  "answer": 1,
+  "explanation": "Broad coverage adds accidental discharge of water from an appliance or plumbing along with the other extra perils; lightning, internal explosion and volcanic eruption are already on the basic list.",
+  "source": "Manual p. 1.2 (PDF p. 6).",
+  "difficulty": 1
+ },
+ {
+  "id": "q014",
+  "lessonId": 2,
+  "code": "PROP",
+  "stem": "Vandalism and malicious mischief is covered under which cause of loss form?",
+  "options": [
+   "Basic",
+   "Standard fire only",
+   "Special liability",
+   "Broad"
+  ],
+  "answer": 3,
+  "explanation": "Vandalism and malicious mischief is added by the broad cause of loss form; it is not on the basic list.",
+  "source": "Manual p. 1.2 (PDF p. 6).",
+  "difficulty": 1
+ },
+ {
+  "id": "q015",
+  "lessonId": 2,
+  "code": "PROP",
+  "stem": "Weight of ice, snow or sleet is added by which form?",
+  "options": [
+   "Broad",
+   "Basic",
+   "Extended coverage endorsement",
+   "Liability form"
+  ],
+  "answer": 0,
+  "explanation": "Weight of ice, snow or sleet appears on the broad list, not on the basic list or the extended coverage endorsement.",
+  "source": "Manual p. 1.2 (PDF p. 6).",
+  "difficulty": 1
+ },
+ {
+  "id": "q016",
+  "lessonId": 2,
+  "code": "PROP",
+  "stem": "Which of the following is NOT part of the extended coverage endorsement that a standard fire policy can add?",
+  "options": [
+   "Wind",
+   "Hail",
+   "Vandalism and malicious mischief",
+   "Aircraft"
+  ],
+  "answer": 2,
+  "explanation": "Vandalism and malicious mischief is added by the broad form, not by the extended coverage endorsement.",
+  "source": "Manual p. 1.2 (PDF p. 6).",
+  "difficulty": 1
+ },
+ {
+  "id": "q017",
+  "lessonId": 2,
+  "code": "PROP",
+  "stem": "The letter W in the memory aid WHARVES stands for:",
+  "options": [
+   "Wind",
+   "Water damage",
+   "War",
+   "Wear and tear"
+  ],
+  "answer": 0,
+  "explanation": "WHARVES stands for Wind, Hail, Aircraft, Riot, Vehicles, Explosion, Volcanic eruption and Smoke.",
+  "source": "Manual p. 1.2 (PDF p. 6).",
+  "difficulty": 1
+ },
+ {
+  "id": "q018",
+  "lessonId": 2,
+  "code": "PROP",
+  "stem": "Smoke as a basic peril is limited to smoke from:",
+  "options": [
+   "Any fire including a fireplace that has been used before",
+   "Agricultural smudging",
+   "A vented heating or cooking unit",
+   "Industrial operations"
+  ],
+  "answer": 2,
+  "explanation": "The basic list covers smoke from a vented heating or cooking unit; smoke from agricultural smudging or industrial operations is excluded.",
+  "source": "Manual p. 1.2 (PDF p. 6).",
+  "difficulty": 1
+ },
+ {
+  "id": "q019",
+  "lessonId": 2,
+  "code": "PROP",
+  "stem": "Which statement about the broad form is correct?",
+  "options": [
+   "It contains fewer perils than the basic form",
+   "It replaces the basic perils with special coverage",
+   "It covers only fire and lightning",
+   "It contains the same perils as the basic form plus several additional perils"
+  ],
+  "answer": 3,
+  "explanation": "The broad cause of loss begins with the same list as the basic form and then adds perils such as vandalism, weight of ice, falling objects, and accidental discharge of water.",
+  "source": "Manual p. 1.2 (PDF p. 6).",
+  "difficulty": 2
+ },
+ {
+  "id": "q020",
+  "lessonId": 2,
+  "code": "PROP",
+  "stem": "Fire coverage on the basic list is described as covering:",
+  "options": [
+   "Friendly fires only",
+   "Unfriendly or hostile fires and all related damage",
+   "Fire in vacant buildings only",
+   "Fires set intentionally by the insured"
+  ],
+  "answer": 1,
+  "explanation": "The basic list describes fire as unfriendly or hostile fires and all related damage.",
+  "source": "Manual p. 1.2 (PDF p. 6).",
+  "difficulty": 2
+ },
+ {
+  "id": "q021",
+  "lessonId": 3,
+  "code": "PROP",
+  "stem": "Which loss would a special (open peril) form exclude on the described property?",
+  "options": [
+   "Damage caused by wind",
+   "Damage from a falling tree",
+   "Damage caused by smoke from industrial operations",
+   "Damage from accidental water discharge"
+  ],
+  "answer": 2,
+  "explanation": "Smoke from agricultural smudging or industrial operations is an exclusion on the special form.",
+  "source": "Manual p. 1.3 (PDF p. 7).",
+  "difficulty": 2
+ },
+ {
+  "id": "q022",
+  "lessonId": 3,
+  "code": "PROP",
+  "stem": "Earthquake coverage on a property policy is usually:",
+  "options": [
+   "Added by endorsement with a deductible often ranging from 2 to 10 percent of the amount of coverage",
+   "Included automatically with no deductible",
+   "Never available in any form",
+   "Provided only by the federal government"
+  ],
+  "answer": 0,
+  "explanation": "Earthquake can be added by endorsement, and the coverage typically carries a deductible of two to ten percent of the amount of coverage, applied separately to each covered structure.",
+  "source": "Manual p. 1.3 (PDF p. 7).",
+  "difficulty": 2
+ },
+ {
+  "id": "q023",
+  "lessonId": 3,
+  "code": "PROP",
+  "stem": "For earthquake coverage, quakes and aftershocks that occur within 72 hours are treated as:",
+  "options": [
+   "Two separate occurrences",
+   "Three separate occurrences",
+   "Unlimited separate occurrences",
+   "One quake, or one occurrence"
+  ],
+  "answer": 3,
+  "explanation": "Quakes and aftershocks within 72 hours are treated as one quake, meaning one occurrence.",
+  "source": "Manual p. 1.3 (PDF p. 7).",
+  "difficulty": 2
+ },
+ {
+  "id": "q024",
+  "lessonId": 3,
+  "code": "PROP",
+  "stem": "Flood coverage is available through which source named in the manual?",
+  "options": [
+   "Any homeowners policy as a built-in coverage",
+   "The federal government through the National Flood Insurance Program",
+   "The Kansas Department of Insurance",
+   "The declarations page endorsement"
+  ],
+  "answer": 1,
+  "explanation": "Flood is excluded on the forms but can be purchased through the federal government's National Flood Insurance Program.",
+  "source": "Manual p. 1.3 (PDF p. 7).",
+  "difficulty": 2
+ },
+ {
+  "id": "q025",
+  "lessonId": 3,
+  "code": "PROP",
+  "stem": "Personal and commercial property policies do not cover vandalism, malicious mischief, or theft if the building has been vacant for a specified period, cited in the manual as:",
+  "options": [
+   "10 days",
+   "60 days",
+   "30 days",
+   "90 days"
+  ],
+  "answer": 1,
+  "explanation": "The special form does not cover vandalism, malicious mischief and theft if the property has been vacant for a specified period, which the manual cites as 60 days.",
+  "source": "Manual p. 1.3 (PDF p. 7).",
+  "difficulty": 2
+ },
+ {
+  "id": "q026",
+  "lessonId": 3,
+  "code": "PROP",
+  "stem": "Which of the following is a catastrophic peril excluded on all forms?",
+  "options": [
+   "Hail",
+   "Riot",
+   "Vehicle damage",
+   "Common power failure away from the premises"
+  ],
+  "answer": 3,
+  "explanation": "Common power failure, meaning off-premises power failure, is excluded on all forms along with the other catastrophic perils.",
+  "source": "Manual p. 1.3 (PDF p. 7).",
+  "difficulty": 2
+ },
+ {
+  "id": "q027",
+  "lessonId": 3,
+  "code": "PROP",
+  "stem": "Which kind of property is NOT covered under a basic property form?",
+  "options": [
+   "Vehicles licensed for road use",
+   "The dwelling itself",
+   "Household furniture",
+   "A detached garage"
+  ],
+  "answer": 0,
+  "explanation": "Vehicles licensed for road use are among the kinds of property not covered; they require auto insurance.",
+  "source": "Manual p. 1.3 (PDF p. 7).",
+  "difficulty": 2
+ },
+ {
+  "id": "q028",
+  "lessonId": 3,
+  "code": "PROP",
+  "stem": "Damage to animals, birds, fish and rodents is not covered unless:",
+  "options": [
+   "They are kept as pets",
+   "They are livestock on a farm",
+   "They are inventory in a business",
+   "They are more than five years old"
+  ],
+  "answer": 2,
+  "explanation": "Damage to animals, birds, fish and rodents is not covered unless they are inventory in a business.",
+  "source": "Manual p. 1.3 (PDF p. 7).",
+  "difficulty": 2
+ },
+ {
+  "id": "q029",
+  "lessonId": 3,
+  "code": "PROP",
+  "stem": "Which loss is covered even under the special form's exclusion list?",
+  "options": [
+   "Discharge of pollutants when the discharge is caused by a covered peril",
+   "Settling and shrinking of a building",
+   "Wear and tear on a roof",
+   "Mold and wet rot"
+  ],
+  "answer": 0,
+  "explanation": "Discharge of pollutants is excluded unless it is caused by a covered peril, in which case it is not barred by that exclusion.",
+  "source": "Manual p. 1.3 (PDF p. 7).",
+  "difficulty": 2
+ },
+ {
+  "id": "q030",
+  "lessonId": 3,
+  "code": "PROP",
+  "stem": "Property in which the insured has no insurable interest is:",
+  "options": [
+   "Covered up to 10 percent of Coverage A",
+   "Covered as blanket property",
+   "Not covered",
+   "Covered if the insured lives nearby"
+  ],
+  "answer": 2,
+  "explanation": "Property in which the insured has no insurable interest, like land itself, is among the types of property not covered.",
+  "source": "Manual p. 1.3 (PDF p. 7).",
+  "difficulty": 2
+ },
+ {
+  "id": "q031",
+  "lessonId": 4,
+  "code": "PROP",
+  "stem": "How much notice must an insurer give to cancel a property policy for non-payment of premium?",
+  "options": [
+   "A minimum of 30 days",
+   "A minimum of 60 days",
+   "No notice is required",
+   "A minimum of 10 days"
+  ],
+  "answer": 3,
+  "explanation": "The insurer must give a minimum of 10 days notice for non-payment of premium and 30 days for all other reasons.",
+  "source": "Manual p. 1.4 (PDF p. 8).",
+  "difficulty": 1
+ },
+ {
+  "id": "q032",
+  "lessonId": 4,
+  "code": "PROP",
+  "stem": "For how long may an insurer cancel a property policy for any reason?",
+  "options": [
+   "The first 10 days only",
+   "The first 60 days, or 90 days for commercial policies",
+   "The first 12 months",
+   "It may cancel for any reason at any time"
+  ],
+  "answer": 1,
+  "explanation": "The insurer can cancel for any reason during the first 60 days, or 90 days for commercial policies; afterwards only for specified reasons.",
+  "source": "Manual p. 1.4 (PDF p. 8).",
+  "difficulty": 1
+ },
+ {
+  "id": "q033",
+  "lessonId": 4,
+  "code": "PROP",
+  "stem": "How much notice is required for nonrenewal of a commercial property policy?",
+  "options": [
+   "10 days",
+   "30 days",
+   "60 days",
+   "90 days"
+  ],
+  "answer": 2,
+  "explanation": "Nonrenewal requires a minimum of 30 days notice, and 60 days for commercial policies.",
+  "source": "Manual p. 1.4 (PDF p. 8).",
+  "difficulty": 1
+ },
+ {
+  "id": "q034",
+  "lessonId": 4,
+  "code": "PROP",
+  "stem": "The standard dollar deductible on the property forms discussed in the manual is:",
+  "options": [
+   "$250",
+   "$100",
+   "$500",
+   "$1,000"
+  ],
+  "answer": 0,
+  "explanation": "The standard dollar deductible is $250, although some deductibles are expressed as a percentage of the insurance limits.",
+  "source": "Manual p. 1.4 (PDF p. 8).",
+  "difficulty": 1
+ },
+ {
+  "id": "q035",
+  "lessonId": 4,
+  "code": "PROP",
+  "stem": "When is the deductible waived on a property loss?",
+  "options": [
+   "When the insured reports the loss within 24 hours",
+   "When a mortgagee files the claim",
+   "It is never waived",
+   "When the loss is a total loss equal to or greater than the limits"
+  ],
+  "answer": 3,
+  "explanation": "In the event of a total loss, meaning a loss equal to or greater than the limits, the deductible is waived.",
+  "source": "Manual p. 1.4 (PDF p. 8).",
+  "difficulty": 2
+ },
+ {
+  "id": "q036",
+  "lessonId": 4,
+  "code": "PROP",
+  "stem": "When other insurance exists on the same property, which coverage is primary?",
+  "options": [
+   "The unscheduled coverage",
+   "The scheduled coverage",
+   "Whichever policy has the lower limit",
+   "Whichever policy was written first"
+  ],
+  "answer": 1,
+  "explanation": "The scheduled coverage is always primary and unscheduled coverage would be excess.",
+  "source": "Manual p. 1.4 (PDF p. 8).",
+  "difficulty": 2
+ },
+ {
+  "id": "q037",
+  "lessonId": 4,
+  "code": "PROP",
+  "stem": "Under the pro-rata method of handling other insurance, insurers pay:",
+  "options": [
+   "The full loss from the first policy written",
+   "Proportionately based on the percentage of coverage each provides",
+   "Nothing until one policy is exhausted",
+   "Only the deductible amount"
+  ],
+  "answer": 1,
+  "explanation": "Pro-rata means insurers pay proportionately based on the percentage of coverage each insurer provides.",
+  "source": "Manual p. 1.4 (PDF p. 8).",
+  "difficulty": 2
+ },
+ {
+  "id": "q038",
+  "lessonId": 4,
+  "code": "PROP",
+  "stem": "Coinsurance requires the insured to maintain a coverage limit of at least:",
+  "options": [
+   "50 percent of the market value",
+   "100 percent of the original purchase price",
+   "60 percent of the actual cash value",
+   "80 percent of the replacement cost of the building at the time of loss"
+  ],
+  "answer": 3,
+  "explanation": "Coinsurance, also called insurance to value, requires a limit of at least 80 percent of the replacement cost of the building at the time of loss.",
+  "source": "Manual p. 1.4 (PDF p. 8).",
+  "difficulty": 2
+ },
+ {
+  "id": "q039",
+  "lessonId": 4,
+  "code": "PROP",
+  "stem": "A building has a replacement cost of $200,000 and the insured carries a $120,000 limit. A $40,000 loss occurs. Using the coinsurance formula, what does the insurer pay?",
+  "options": [
+   "$30,000",
+   "$40,000",
+   "$24,000",
+   "$15,000"
+  ],
+  "answer": 0,
+  "explanation": "The limit carried divided by the limit required equals $120,000 divided by $160,000, or 0.75. Multiplied by the $40,000 loss, the insurer pays $30,000, leaving a $10,000 penalty.",
+  "source": "Manual p. 1.4 (PDF p. 8).",
+  "difficulty": 2
+ },
+ {
+  "id": "q040",
+  "lessonId": 4,
+  "code": "PROP",
+  "stem": "A building is vacant when it is:",
+  "options": [
+   "Empty of people but still holding furniture",
+   "Occupied only at night",
+   "Empty of both people and contents",
+   "Under construction"
+  ],
+  "answer": 2,
+  "explanation": "Vacant means empty of both people and contents, while unoccupied means the absence of people only.",
+  "source": "Manual p. 1.4 (PDF p. 8).",
+  "difficulty": 1
+ },
+ {
+  "id": "q041",
+  "lessonId": 5,
+  "code": "PROP",
+  "stem": "Within how many days must the insured file proof of loss after a loss?",
+  "options": [
+   "60 days",
+   "10 days",
+   "30 days",
+   "90 days"
+  ],
+  "answer": 0,
+  "explanation": "The insured's duties include filing proof of loss within 60 days showing value, evidence and receipts.",
+  "source": "Manual p. 1.5 (PDF p. 9).",
+  "difficulty": 1
+ },
+ {
+  "id": "q042",
+  "lessonId": 5,
+  "code": "PROP",
+  "stem": "Which of these is one of the insured's duties after a loss?",
+  "options": [
+   "Repair the property before the adjuster arrives",
+   "Pay the deductible to the insurer",
+   "Protect the property from further loss",
+   "Assign the policy to a neighbor"
+  ],
+  "answer": 2,
+  "explanation": "The insured must notify the police for crimes, notify the insurer, protect the property from further loss, and file proof of loss within 60 days.",
+  "source": "Manual p. 1.5 (PDF p. 9).",
+  "difficulty": 2
+ },
+ {
+  "id": "q043",
+  "lessonId": 5,
+  "code": "PROP",
+  "stem": "Assignment of rights and duties under a property policy must be:",
+  "options": [
+   "Reported within 10 days only",
+   "Automatic when the property is sold",
+   "Approved by the mortgagee only",
+   "Approved by the insurer in writing"
+  ],
+  "answer": 3,
+  "explanation": "Assignment transfers rights and duties to a new owner and must be approved by the insurer in writing.",
+  "source": "Manual p. 1.5 (PDF p. 9).",
+  "difficulty": 2
+ },
+ {
+  "id": "q044",
+  "lessonId": 5,
+  "code": "PROP",
+  "stem": "In Kansas, how long does an insured have to sue the insurer after a loss?",
+  "options": [
+   "Up to 1 year",
+   "Up to 5 years",
+   "Up to 2 years",
+   "Up to 10 years"
+  ],
+  "answer": 1,
+  "explanation": "The insured has up to five years to sue after the loss in Kansas, and may not sue until all policy provisions have been complied with.",
+  "source": "Manual p. 1.5 (PDF p. 9).",
+  "difficulty": 2
+ },
+ {
+  "id": "q045",
+  "lessonId": 5,
+  "code": "PROP",
+  "stem": "The liberalization provision means that:",
+  "options": [
+   "The insured may broaden coverage at any time for free",
+   "The insurer may narrow coverage mid-term",
+   "Revisions that broaden coverage during the policy period apply automatically if no new premium is required",
+   "The policy renews automatically forever"
+  ],
+  "answer": 2,
+  "explanation": "Liberalization applies broadening revisions made during the policy period automatically when no additional premium is required.",
+  "source": "Manual p. 1.5 (PDF p. 9).",
+  "difficulty": 2
+ },
+ {
+  "id": "q046",
+  "lessonId": 5,
+  "code": "PROP",
+  "stem": "Subrogation requires the insured to:",
+  "options": [
+   "Transfer the right of recovery against a responsible party to the insurer",
+   "Pay the insurer back after a loss",
+   "File suit against the responsible party personally",
+   "Give the insurer the damaged property"
+  ],
+  "answer": 0,
+  "explanation": "Under subrogation the insured transfers the right of recovery against a person responsible for the damage, and the insurer steps into the shoes of the insured.",
+  "source": "Manual p. 1.5 (PDF p. 9).",
+  "difficulty": 2
+ },
+ {
+  "id": "q047",
+  "lessonId": 5,
+  "code": "PROP",
+  "stem": "Salvage means that after the insurer pays for damaged property it:",
+  "options": [
+   "Must return the property to the insured",
+   "Must sell the property at auction for the insured",
+   "Loses any interest in the property",
+   "Has all rights to the salvage value"
+  ],
+  "answer": 3,
+  "explanation": "Once the insurer pays for the damaged property it has all rights to the salvage value.",
+  "source": "Manual p. 1.5 (PDF p. 9).",
+  "difficulty": 2
+ },
+ {
+  "id": "q048",
+  "lessonId": 5,
+  "code": "PROP",
+  "stem": "On which property is replacement cost usually provided?",
+  "options": [
+   "Contents",
+   "Buildings",
+   "Outdoor property",
+   "Business data"
+  ],
+  "answer": 1,
+  "explanation": "Replacement cost is usually provided on buildings, while contents and outdoor property are covered on an actual cash value basis.",
+  "source": "Manual p. 1.5 (PDF p. 9).",
+  "difficulty": 2
+ },
+ {
+  "id": "q049",
+  "lessonId": 5,
+  "code": "PROP",
+  "stem": "The insurer must pay a property loss within 30 days after:",
+  "options": [
+   "The insured requests payment",
+   "Proof of loss is filed, a court judgment, or an appraisal award",
+   "The police report is filed",
+   "The deductible is collected"
+  ],
+  "answer": 1,
+  "explanation": "The insurer must pay the loss within 30 days after proof of loss is filed, after a court judgment, or after an appraisal award.",
+  "source": "Manual p. 1.5 (PDF p. 9).",
+  "difficulty": 2
+ },
+ {
+  "id": "q050",
+  "lessonId": 5,
+  "code": "PROP",
+  "stem": "Under the appraisal clause, when the insured's and insurer's appraisers cannot agree, they:",
+  "options": [
+   "Submit the dispute to the state insurance department",
+   "Split the difference automatically",
+   "Cancel the policy and start over",
+   "Choose a third appraiser called an umpire, and the outcome is binding on all parties"
+  ],
+  "answer": 3,
+  "explanation": "If the two appraisers cannot agree, they choose a third appraiser called an umpire, and the outcome is binding to all parties.",
+  "source": "Manual p. 1.5 (PDF p. 9).",
+  "difficulty": 2
+ },
+ {
+  "id": "q051",
+  "lessonId": 6,
+  "code": "PROP",
+  "stem": "The standard mortgage clause protects the mortgagee by:",
+  "options": [
+   "Allowing the lender to file a claim if the insured fails to do so",
+   "Giving the lender ownership of the building",
+   "Removing the deductible for lenders",
+   "Covering the lender's liability for injuries"
+  ],
+  "answer": 0,
+  "explanation": "The clause protects the interest of the mortgagee and allows the lender to file a claim if the insured fails to do so, preserving coverage even if the insured intentionally damages the property.",
+  "source": "Manual p. 1.6 (PDF p. 10).",
+  "difficulty": 2
+ },
+ {
+  "id": "q052",
+  "lessonId": 6,
+  "code": "PROP",
+  "stem": "How much notice must the insurer give a lender before cancellation or nonrenewal under the standard mortgage clause?",
+  "options": [
+   "A minimum of 30 days",
+   "A minimum of 60 days",
+   "A minimum of 10 days",
+   "No notice is required"
+  ],
+  "answer": 2,
+  "explanation": "The standard mortgage clause requires the insurer to give the lender a minimum of 10 days notice for all reasons of cancellation and nonrenewal.",
+  "source": "Manual p. 1.6 (PDF p. 10).",
+  "difficulty": 2
+ },
+ {
+  "id": "q053",
+  "lessonId": 6,
+  "code": "PROP",
+  "stem": "On the death of a named insured, who becomes the insured until the estate is settled?",
+  "options": [
+   "The legal representative of the insured",
+   "The mortgagee",
+   "The nearest neighbor",
+   "The insurer's adjuster"
+  ],
+  "answer": 0,
+  "explanation": "The death condition provides that the legal representative of the insured becomes the insured until the estate is settled.",
+  "source": "Manual p. 1.6 (PDF p. 10).",
+  "difficulty": 2
+ },
+ {
+  "id": "q054",
+  "lessonId": 6,
+  "code": "PROP",
+  "stem": "Actual cash value is best described as:",
+  "options": [
+   "The current selling price of the building",
+   "The original purchase price",
+   "Replacement cost less depreciation, obsolescence or deterioration",
+   "The cost to rebuild with no deductions"
+  ],
+  "answer": 2,
+  "explanation": "Actual cash value is replacement cost less depreciation, obsolescence or deterioration.",
+  "source": "Manual p. 1.6 (PDF p. 10).",
+  "difficulty": 2
+ },
+ {
+  "id": "q055",
+  "lessonId": 6,
+  "code": "PROP",
+  "stem": "Market value is used mainly to:",
+  "options": [
+   "Replace buildings at today's labor costs",
+   "Calculate depreciation on contents",
+   "Set the deductible on a policy",
+   "Establish the limit of coverage to be purchased for older buildings"
+  ],
+  "answer": 3,
+  "explanation": "Market value, the current selling or negotiated price of the building, is used to establish the limit of coverage for older buildings.",
+  "source": "Manual p. 1.6 (PDF p. 10).",
+  "difficulty": 2
+ },
+ {
+  "id": "q056",
+  "lessonId": 6,
+  "code": "PROP",
+  "stem": "Agreed value is:",
+  "options": [
+   "The value determined by an umpire after a loss",
+   "A value established and agreed upon when the policy is issued that becomes the maximum available for a covered loss",
+   "The market value at the time of loss",
+   "The replacement cost less depreciation"
+  ],
+  "answer": 1,
+  "explanation": "Agreed value is established and agreed upon when the policy is issued and becomes the limit of coverage, the maximum available even if the loss exceeds it.",
+  "source": "Manual p. 1.6 (PDF p. 10).",
+  "difficulty": 2
+ },
+ {
+  "id": "q057",
+  "lessonId": 6,
+  "code": "PROP",
+  "stem": "If the named insured maintains agreed value, the effect on the coinsurance penalty for partial losses is that:",
+  "options": [
+   "The penalty doubles",
+   "The penalty applies to every loss",
+   "The penalty will not be assessed on partial losses",
+   "The deductible is waived instead"
+  ],
+  "answer": 2,
+  "explanation": "If the named insured maintains agreed value, the coinsurance penalty will not be assessed on partial losses.",
+  "source": "Manual p. 1.6 (PDF p. 10).",
+  "difficulty": 2
+ },
+ {
+  "id": "q058",
+  "lessonId": 6,
+  "code": "PROP",
+  "stem": "Indirect loss, also called consequential loss, is:",
+  "options": [
+   "The financial loss caused by loss of use of the building from a covered direct loss",
+   "Physical damage to the building itself",
+   "Damage caused by a third party",
+   "A loss excluded from every policy"
+  ],
+  "answer": 0,
+  "explanation": "Indirect or consequential loss is the financial loss caused by loss of use, such as additional living expenses or lost rental income.",
+  "source": "Manual p. 1.6 (PDF p. 10).",
+  "difficulty": 2
+ },
+ {
+  "id": "q059",
+  "lessonId": 6,
+  "code": "PROP",
+  "stem": "Blanket coverage is:",
+  "options": [
+   "A list of every item with its own limit",
+   "Coverage that never expires",
+   "Coverage written without a deductible",
+   "One policy covering several locations or items"
+  ],
+  "answer": 3,
+  "explanation": "Blanket coverage is one policy covering several locations or items and is a more efficient way to cover contents or similar situations.",
+  "source": "Manual p. 1.6 (PDF p. 10).",
+  "difficulty": 2
+ },
+ {
+  "id": "q060",
+  "lessonId": 6,
+  "code": "PROP",
+  "stem": "The difference between unoccupied and vacant is that vacant means a building:",
+  "options": [
+   "Empty of people only",
+   "Empty of both property and people",
+   "Under construction",
+   "Rented to tenants"
+  ],
+  "answer": 1,
+  "explanation": "Unoccupied means the absence of people only, while vacant means the building is empty of property and people.",
+  "source": "Manual p. 1.6 (PDF p. 10).",
+  "difficulty": 2
+ },
+ {
+  "id": "q061",
+  "lessonId": 7,
+  "code": "LIA",
+  "stem": "In a liability claim, the party who collects from the insurer is called the:",
+  "options": [
+   "First party",
+   "Claimant",
+   "Second party",
+   "Bonding principal"
+  ],
+  "answer": 1,
+  "explanation": "Liability insurance involves three parties: the insured, the insured's insurer, and the party that collects, called the claimant.",
+  "source": "Manual p. 1.7 (PDF p. 11).",
+  "difficulty": 2
+ },
+ {
+  "id": "q062",
+  "lessonId": 7,
+  "code": "LIA",
+  "stem": "Investigation and defense costs, including attorney fees, are paid:",
+  "options": [
+   "In place of the liability limits",
+   "Only after the limits are exhausted",
+   "By the claimant",
+   "In addition to the liability limits stated in the policy"
+  ],
+  "answer": 3,
+  "explanation": "The policy pays investigation and defense costs, including attorney fees, in addition to the liability limits stated in the policy.",
+  "source": "Manual p. 1.7 (PDF p. 11).",
+  "difficulty": 2
+ },
+ {
+  "id": "q063",
+  "lessonId": 7,
+  "code": "LIA",
+  "stem": "Negligence is defined in the manual as:",
+  "options": [
+   "Failure to do what a reasonable person would do under the same or similar circumstances",
+   "Any act that causes a financial loss",
+   "An intentional act that harms another person",
+   "A violation of a criminal statute"
+  ],
+  "answer": 0,
+  "explanation": "Negligence is the failure to do what a reasonable person would do under the same or similar circumstances, and tort or civil law determines fault and the amount of the award.",
+  "source": "Manual p. 1.7 (PDF p. 11).",
+  "difficulty": 2
+ },
+ {
+  "id": "q064",
+  "lessonId": 7,
+  "code": "LIA",
+  "stem": "Which term describes someone specifically invited onto the premises?",
+  "options": [
+   "Licensee",
+   "Trespasser",
+   "Invitee",
+   "Claimant"
+  ],
+  "answer": 2,
+  "explanation": "An invitee is someone specifically invited over, while a licensee includes friends, family, garbage collectors and letter carriers, and a trespasser may be casual or criminal.",
+  "source": "Manual p. 1.7 (PDF p. 11).",
+  "difficulty": 2
+ },
+ {
+  "id": "q065",
+  "lessonId": 7,
+  "code": "LIA",
+  "stem": "Which damages compensate for medical bills, loss of income, and rehabilitation?",
+  "options": [
+   "Special damages",
+   "General damages",
+   "Punitive damages",
+   "Nominal damages"
+  ],
+  "answer": 0,
+  "explanation": "Special damages are compensation for medical bills, loss of income, rehabilitation and other direct expenses, while general damages cover pain and suffering and mental anguish.",
+  "source": "Manual p. 1.7 (PDF p. 11).",
+  "difficulty": 2
+ },
+ {
+  "id": "q066",
+  "lessonId": 7,
+  "code": "LIA",
+  "stem": "Compensation for pain and suffering, loss of companionship and mental anguish is classified as:",
+  "options": [
+   "Special damages",
+   "Punitive damages",
+   "General damages",
+   "Actual cash value"
+  ],
+  "answer": 2,
+  "explanation": "General damages compensate for pain and suffering, loss of companionship and mental anguish, and together with special damages they make up actual or compensatory damages.",
+  "source": "Manual p. 1.7 (PDF p. 11).",
+  "difficulty": 2
+ },
+ {
+  "id": "q067",
+  "lessonId": 7,
+  "code": "LIA",
+  "stem": "Punitive damages are:",
+  "options": [
+   "Covered in full by the liability policy",
+   "Covered up to the policy limit",
+   "Paid by the claimant",
+   "Not covered by insurance"
+  ],
+  "answer": 3,
+  "explanation": "Punitive damages are a cash award in addition to actual damages to set an example, and they are not covered by insurance.",
+  "source": "Manual p. 1.7 (PDF p. 11).",
+  "difficulty": 2
+ },
+ {
+  "id": "q068",
+  "lessonId": 7,
+  "code": "LIA",
+  "stem": "Strict liability is used to establish legal liability when:",
+  "options": [
+   "A homeowner invites a guest to dinner",
+   "A customer is injured by a product, holding the manufacturer responsible even if the customer used it negligently",
+   "An employee is injured on the job",
+   "A driver rear-ends another car"
+  ],
+  "answer": 1,
+  "explanation": "Strict liability holds a manufacturer strictly liable for injury caused by its product even if the customer was using it in a negligent manner.",
+  "source": "Manual p. 1.7 (PDF p. 11).",
+  "difficulty": 2
+ },
+ {
+  "id": "q069",
+  "lessonId": 7,
+  "code": "LIA",
+  "stem": "Absolute liability is best described as:",
+  "options": [
+   "Liability that can never be insured",
+   "Liability created only by a written contract",
+   "Responsibility without fault or negligence, such as the possession of hazardous property",
+   "Liability shared equally by all parties"
+  ],
+  "answer": 2,
+  "explanation": "Absolute liability is responsibility without fault or negligence, for example the possession of hazardous property such as chemicals, explosives or animals.",
+  "source": "Manual p. 1.7 (PDF p. 11).",
+  "difficulty": 2
+ },
+ {
+  "id": "q070",
+  "lessonId": 7,
+  "code": "LIA",
+  "stem": "Which is a common limitation found in liability policies?",
+  "options": [
+   "The care, custody and control exclusion for property owned by, rented to, used by, or in the care of the insured",
+   "Coverage for intentional acts",
+   "Coverage for business exposures under a personal policy",
+   "Coverage for occurrences already covered by other liability policies"
+  ],
+  "answer": 0,
+  "explanation": "Liability policies commonly exclude intentional acts, occurrences covered by other types of liability policies, and damage to property owned by, rented to, occupied by, used by or in the care of the insured, which is the care, custody and control exclusion.",
+  "source": "Manual p. 1.7 (PDF p. 11).",
+  "difficulty": 2
+ },
+ {
+  "id": "q071",
+  "lessonId": 8,
+  "code": "LIA",
+  "stem": "The maximum amount an insurer will pay to any one person is the:",
+  "options": [
+   "Per occurrence limit",
+   "Aggregate limit",
+   "Combined single limit",
+   "Per person limit"
+  ],
+  "answer": 3,
+  "explanation": "Per person is the maximum paid to any one person, while per occurrence is the maximum paid in any one event.",
+  "source": "Manual p. 1.8 (PDF p. 12).",
+  "difficulty": 2
+ },
+ {
+  "id": "q072",
+  "lessonId": 8,
+  "code": "LIA",
+  "stem": "The maximum an insurer will pay in any one policy period for all claims combined is the:",
+  "options": [
+   "Per person limit",
+   "Aggregate limit",
+   "Split limit",
+   "Primary limit"
+  ],
+  "answer": 1,
+  "explanation": "The aggregate limit is the maximum paid in any one policy period for all claims combined.",
+  "source": "Manual p. 1.8 (PDF p. 12).",
+  "difficulty": 2
+ },
+ {
+  "id": "q073",
+  "lessonId": 8,
+  "code": "LIA",
+  "stem": "Split limits provide:",
+  "options": [
+   "One limit shared by bodily injury and property damage",
+   "Separate limits for bodily injury and property damage that cannot be used for each other",
+   "A separate limit for each claim made",
+   "Limits that reset after each occurrence"
+  ],
+  "answer": 1,
+  "explanation": "Split limits provide separate limits for bodily injury and property damage, and limits for one may not be used for the other.",
+  "source": "Manual p. 1.8 (PDF p. 12).",
+  "difficulty": 2
+ },
+ {
+  "id": "q074",
+  "lessonId": 8,
+  "code": "LIA",
+  "stem": "A combined single limit applies:",
+  "options": [
+   "Separate limits to bodily injury and property damage",
+   "A limit that applies only to property damage",
+   "A limit that applies only to defense costs",
+   "One limit to bodily injury and property damage together"
+  ],
+  "answer": 3,
+  "explanation": "A combined single limit applies a single limit to bodily injury and property damage together, rather than split limits.",
+  "source": "Manual p. 1.8 (PDF p. 12).",
+  "difficulty": 2
+ },
+ {
+  "id": "q075",
+  "lessonId": 8,
+  "code": "LIA",
+  "stem": "When two liability policies apply, the policy that pays first is:",
+  "options": [
+   "The policy providing the most specific coverage",
+   "The policy with the highest limit",
+   "The policy written most recently",
+   "The policy chosen by the insured"
+  ],
+  "answer": 0,
+  "explanation": "Under other insurance, the policy providing the most specific coverage pays first as primary, and pro rata applies when insurers share proportionately.",
+  "source": "Manual p. 1.8 (PDF p. 12).",
+  "difficulty": 2
+ },
+ {
+  "id": "q076",
+  "lessonId": 8,
+  "code": "LIA",
+  "stem": "An occurrence must take place when for liability coverage to apply?",
+  "options": [
+   "Before the policy was written",
+   "Whenever the claim is reported",
+   "During the policy period",
+   "Within 30 days of the policy's expiration"
+  ],
+  "answer": 2,
+  "explanation": "The occurrence must take place during the policy period for coverage to apply.",
+  "source": "Manual p. 1.8 (PDF p. 12).",
+  "difficulty": 2
+ },
+ {
+  "id": "q077",
+  "lessonId": 8,
+  "code": "LIA",
+  "stem": "What must the insured do when served with a lawsuit?",
+  "options": [
+   "Send copies of all legal notices, demands and summonses to the insurer",
+   "Settle the claim quickly without telling the insurer",
+   "Assume the obligation personally first",
+   "Wait until the trial date to notify the insurer"
+  ],
+  "answer": 0,
+  "explanation": "The insured must notify the company promptly of a claim or suit, send copies of all legal notices, demands and summonses, and make no payment or assume no obligation without the insurer's consent.",
+  "source": "Manual p. 1.8 (PDF p. 12).",
+  "difficulty": 2
+ },
+ {
+  "id": "q078",
+  "lessonId": 8,
+  "code": "LIA",
+  "stem": "Bankruptcy of the insured affects the insurer's responsibilities how?",
+  "options": [
+   "It ends all coverage immediately",
+   "It transfers the policy to the claimant",
+   "Bankruptcy of the insured does not relieve the insurer of its responsibilities under the policy",
+   "It doubles the remaining limits"
+  ],
+  "answer": 2,
+  "explanation": "The bankruptcy provision states that bankruptcy of the insured does not relieve the insurer from its responsibilities under the policy.",
+  "source": "Manual p. 1.8 (PDF p. 12).",
+  "difficulty": 2
+ },
+ {
+  "id": "q079",
+  "lessonId": 8,
+  "code": "LIA",
+  "stem": "Under separation of insureds, coverage applies separately to each insured but:",
+  "options": [
+   "Doubles the aggregate limit",
+   "Removes the deductible",
+   "Creates a separate policy period for each insured",
+   "Does not increase the limit of coverage for any single occurrence"
+  ],
+  "answer": 3,
+  "explanation": "Separation of insureds, also called severability of insurance, applies coverage separately to each insured without increasing the limit that applies for any single occurrence.",
+  "source": "Manual p. 1.8 (PDF p. 12).",
+  "difficulty": 2
+ },
+ {
+  "id": "q080",
+  "lessonId": 8,
+  "code": "LIA",
+  "stem": "An insured may not sue the insurer until:",
+  "options": [
+   "The statute of limitations has expired",
+   "All conditions of the policy have been complied with",
+   "The insurer has denied the claim twice",
+   "The claimant has been paid in full"
+  ],
+  "answer": 1,
+  "explanation": "Under legal action against the insurer, the insured cannot sue the insurer until all conditions have been complied with.",
+  "source": "Manual p. 1.8 (PDF p. 12).",
+  "difficulty": 3
+ },
+ {
+  "id": "q081",
+  "lessonId": 9,
+  "code": "LIA",
+  "stem": "Contributory negligence is a defense that:",
+  "options": [
+   "Reduces recovery by a percentage of fault",
+   "Applies only in criminal cases",
+   "Bars a person from recovery if they contributed in any way to the loss, even if another party was mostly at fault",
+   "Requires the insurer to pay punitive damages"
+  ],
+  "answer": 2,
+  "explanation": "Contributory negligence is a common law defense under which a person who contributes in any way to a loss is barred from recovery against another person.",
+  "source": "Manual p. 1.9 (PDF p. 13).",
+  "difficulty": 2
+ },
+ {
+  "id": "q082",
+  "lessonId": 9,
+  "code": "LIA",
+  "stem": "Comparative negligence determines fault by:",
+  "options": [
+   "Comparing the negligence of all parties to set the percentage of fault and the amount of the award",
+   "Barring recovery whenever the claimant is at fault at all",
+   "Awarding the full loss to the person who was least at fault",
+   "Ignoring the claimant's own conduct"
+  ],
+  "answer": 0,
+  "explanation": "Comparative negligence is a statutory doctrine that compares the negligence of all parties to determine the percentage of fault and the amount of the award.",
+  "source": "Manual p. 1.9 (PDF p. 13).",
+  "difficulty": 2
+ },
+ {
+  "id": "q083",
+  "lessonId": 9,
+  "code": "LIA",
+  "stem": "Under comparative negligence, who pays the greatest share?",
+  "options": [
+   "The insurer of the claimant",
+   "The party with the highest property value",
+   "The party who filed the first report",
+   "The party with the highest percentage of fault, who pays that percentage of the other person's damages"
+  ],
+  "answer": 3,
+  "explanation": "The person with the highest percentage of fault would pay that percentage of the other person's damages or injuries.",
+  "source": "Manual p. 1.9 (PDF p. 13).",
+  "difficulty": 2
+ },
+ {
+  "id": "q084",
+  "lessonId": 9,
+  "code": "LIA",
+  "stem": "The assumption of risk doctrine may bar recovery when:",
+  "options": [
+   "The plaintiff reported the loss late",
+   "The plaintiff voluntarily assumed the risk, such as an adult riding in the back of a pickup",
+   "The plaintiff was over 65 years old",
+   "The defendant has no insurance"
+  ],
+  "answer": 1,
+  "explanation": "Under the common law assumption of risk doctrine, if a plaintiff voluntarily assumes the risk they may be barred from recovery.",
+  "source": "Manual p. 1.9 (PDF p. 13).",
+  "difficulty": 2
+ },
+ {
+  "id": "q085",
+  "lessonId": 9,
+  "code": "LIA",
+  "stem": "An intervening cause:",
+  "options": [
+   "Increases the defendant's liability",
+   "Frees the defendant of liability by becoming the proximate cause of the damage",
+   "Creates comparative fault between the parties",
+   "Extends the statute of limitations"
+  ],
+  "answer": 1,
+  "explanation": "An intervening cause frees the defendant of liability, as when a failed smoke detector rather than a dropped cigarette becomes the proximate cause of the damage.",
+  "source": "Manual p. 1.9 (PDF p. 13).",
+  "difficulty": 3
+ },
+ {
+  "id": "q086",
+  "lessonId": 9,
+  "code": "LIA",
+  "stem": "The statute of limitations requires that:",
+  "options": [
+   "Insurers respond to claims within 30 days",
+   "Policies be renewed every five years",
+   "Claims be reported within 24 hours",
+   "Suits must be brought within the time period specified by law"
+  ],
+  "answer": 3,
+  "explanation": "The statute of limitations is a statutory rule that suits must be brought within the time period specified by law.",
+  "source": "Manual p. 1.9 (PDF p. 13).",
+  "difficulty": 2
+ },
+ {
+  "id": "q087",
+  "lessonId": 9,
+  "code": "LIA",
+  "stem": "Which defenses in the manual are described as common law rather than statutory?",
+  "options": [
+   "Contributory negligence, assumption of risk, and intervening cause",
+   "Comparative negligence and statute of limitations",
+   "Comparative negligence only",
+   "Statute of limitations only"
+  ],
+  "answer": 0,
+  "explanation": "Contributory negligence, assumption of risk, and intervening cause are identified as common law defenses, while comparative negligence and the statute of limitations are statutory.",
+  "source": "Manual p. 1.9 (PDF p. 13).",
+  "difficulty": 3
+ },
+ {
+  "id": "q088",
+  "lessonId": 9,
+  "code": "LIA",
+  "stem": "In the manual's dorm fire example, why was the student freed of legal responsibility?",
+  "options": [
+   "The student was a minor",
+   "The fire was intentionally set by another person",
+   "The failed smoke detector was the intervening, proximate cause of the damage",
+   "The building had no insurance"
+  ],
+  "answer": 2,
+  "explanation": "The intervening cause, the failure of the smoke detector, was the proximate cause of the damage and freed the student of legal responsibility.",
+  "source": "Manual p. 1.9 (PDF p. 13).",
+  "difficulty": 3
+ },
+ {
+  "id": "q089",
+  "lessonId": 9,
+  "code": "LIA",
+  "stem": "Proximate cause in liability insurance is:",
+  "options": [
+   "The occurrence that causes an unbroken chain of events resulting in injury or damage",
+   "The last person to touch the property",
+   "The value of the damaged property",
+   "The nearest relative of the claimant"
+  ],
+  "answer": 0,
+  "explanation": "Proximate cause in liability insurance is the occurrence which causes an unbroken chain of events resulting in injury or damage.",
+  "source": "Manual p. 1.7 (PDF p. 11).",
+  "difficulty": 3
+ },
+ {
+  "id": "q090",
+  "lessonId": 9,
+  "code": "LIA",
+  "stem": "A state that applies comparative negligence instead of contributory negligence most likely does so because:",
+  "options": [
+   "Comparative negligence eliminates the need for a statute of limitations",
+   "Comparative negligence is a common law doctrine",
+   "Comparative negligence is statutory and apportions fault rather than barring recovery entirely",
+   "Comparative negligence always bars recovery"
+  ],
+  "answer": 2,
+  "explanation": "Comparative negligence is a statutory doctrine that apportions fault, unlike contributory negligence, a common law doctrine that bars recovery entirely when the claimant contributes to the loss.",
+  "source": "Manual p. 1.9 (PDF p. 13).",
+  "difficulty": 3
+ },
+ {
+  "id": "q091",
+  "lessonId": 10,
+  "code": "HO",
+  "stem": "The homeowners policy is described in the manual as:",
+  "options": [
+   "A monoline property policy",
+   "A liability-only policy",
+   "A commercial liability policy",
+   "A package policy covering the property and liability exposures of the average homeowner"
+  ],
+  "answer": 3,
+  "explanation": "The homeowners policy is a package policy that covers the property and liability exposures the average homeowner has.",
+  "source": "Manual p. 2.1 (PDF p. 14).",
+  "difficulty": 2
+ },
+ {
+  "id": "q092",
+  "lessonId": 10,
+  "code": "HO",
+  "stem": "Coverage B, other structures, is written as an additional amount equal to what percentage of Coverage A in the manual's example?",
+  "options": [
+   "30 percent of Coverage A",
+   "10 percent of Coverage A",
+   "50 percent of Coverage A",
+   "100 percent of Coverage A"
+  ],
+  "answer": 1,
+  "explanation": "Coverage B is an additional ten percent of Coverage A, with replacement cost on buildings and actual cash value on other property.",
+  "source": "Manual p. 2.1 (PDF p. 14).",
+  "difficulty": 2
+ },
+ {
+  "id": "q093",
+  "lessonId": 10,
+  "code": "HO",
+  "stem": "Coverage C, unscheduled personal property, is an additional amount equal to what percentage of Coverage A?",
+  "options": [
+   "10 percent of Coverage A",
+   "30 percent of Coverage A",
+   "50 percent of Coverage A",
+   "80 percent of Coverage A"
+  ],
+  "answer": 2,
+  "explanation": "Coverage C is an additional fifty percent of Coverage A, settled on an actual cash value basis with a territory of one hundred percent of the limit worldwide.",
+  "source": "Manual p. 2.1 (PDF p. 14).",
+  "difficulty": 2
+ },
+ {
+  "id": "q094",
+  "lessonId": 10,
+  "code": "HO",
+  "stem": "Coverage D, loss of use, is an additional amount equal to what percentage of Coverage A?",
+  "options": [
+   "30 percent of Coverage A",
+   "10 percent of Coverage A",
+   "25 percent of Coverage A",
+   "50 percent of Coverage A"
+  ],
+  "answer": 0,
+  "explanation": "Coverage D is an additional thirty percent of Coverage A and provides consequential or indirect loss coverage for additional living expenses or loss of rent.",
+  "source": "Manual p. 2.1 (PDF p. 14).",
+  "difficulty": 2
+ },
+ {
+  "id": "q095",
+  "lessonId": 10,
+  "code": "HO",
+  "stem": "Coverage E, personal liability, is also known as:",
+  "options": [
+   "Medical payments to others",
+   "Unscheduled personal property",
+   "Scheduled personal property",
+   "The comprehensive personal liability policy"
+  ],
+  "answer": 3,
+  "explanation": "Section II personal liability, Coverage E, is also called the comprehensive personal liability policy and is shown at $100,000 per occurrence.",
+  "source": "Manual p. 2.1 (PDF p. 14).",
+  "difficulty": 2
+ },
+ {
+  "id": "q096",
+  "lessonId": 10,
+  "code": "HO",
+  "stem": "Coverage F, medical payments to others, is written in the manual's example as:",
+  "options": [
+   "$25,000 per person with a $1,000 aggregate",
+   "$1,000 per person with a $25,000 per occurrence aggregate",
+   "$5,000 per person with a $25,000 aggregate",
+   "$1,000 per person with no aggregate"
+  ],
+  "answer": 1,
+  "explanation": "Medical payments to others is shown as $1,000 per person with a $25,000 aggregate per occurrence.",
+  "source": "Manual p. 2.1 (PDF p. 14).",
+  "difficulty": 2
+ },
+ {
+  "id": "q097",
+  "lessonId": 10,
+  "code": "HO",
+  "stem": "Which Kansas special provision applies to the homeowners policy?",
+  "options": [
+   "It removes the coinsurance requirement",
+   "It gives the insured 5 years to sue the company instead of 1 year",
+   "It reduces the deductible to $100",
+   "It makes Coverage C replacement cost"
+  ],
+  "answer": 1,
+  "explanation": "The Kansas special provisions give the insured five years to sue the company instead of one year and require losses to be paid in thirty days instead of sixty.",
+  "source": "Manual p. 2.1 (PDF p. 14).",
+  "difficulty": 2
+ },
+ {
+  "id": "q098",
+  "lessonId": 10,
+  "code": "HO",
+  "stem": "Which endorsement provides agreed value, no deductible, and open peril coverage on a worldwide basis for valuables?",
+  "options": [
+   "Inflation guard",
+   "Water backup and sump pump discharge",
+   "Home day care",
+   "Scheduled personal property"
+  ],
+  "answer": 3,
+  "explanation": "Scheduled personal property provides specified limits, agreed value coverage with no deductible, and open peril coverage on a worldwide basis, for items such as furs, jewelry, silverware, coins, fine arts and stamps.",
+  "source": "Manual p. 2.1 (PDF p. 14).",
+  "difficulty": 3
+ },
+ {
+  "id": "q099",
+  "lessonId": 10,
+  "code": "HO",
+  "stem": "The water backup and sump pump discharge or overflow endorsement provides coverage of:",
+  "options": [
+   "Up to $5,000 with a $250 deductible",
+   "Up to $1,000 with no deductible",
+   "Up to $2,500 with a $500 deductible",
+   "Unlimited coverage with a $250 deductible"
+  ],
+  "answer": 0,
+  "explanation": "The water backup and sump pump discharge or overflow endorsement provides up to $5,000 of coverage with a $250 deductible.",
+  "source": "Manual p. 2.1 (PDF p. 14).",
+  "difficulty": 3
+ },
+ {
+  "id": "q100",
+  "lessonId": 10,
+  "code": "HO",
+  "stem": "The inflation guard endorsement exists to:",
+  "options": [
+   "Increase the liability limit each year",
+   "Waive the deductible after a total loss",
+   "Help maintain the 80 percent coinsurance requirement",
+   "Convert actual cash value to agreed value"
+  ],
+  "answer": 2,
+  "explanation": "Inflation guard helps maintain the eighty percent coinsurance requirement as building costs rise.",
+  "source": "Manual p. 2.1 (PDF p. 14).",
+  "difficulty": 3
+ },
+ {
+  "id": "q101",
+  "lessonId": 11,
+  "code": "HO",
+  "stem": "The named insured on a homeowners policy is:",
+  "options": [
+   "You and your spouse if a resident of the same household",
+   "You alone regardless of marital status",
+   "Any relative living in the same state",
+   "The mortgagee and the owner"
+  ],
+  "answer": 0,
+  "explanation": "The named insured is you and your spouse if a resident of the same household.",
+  "source": "Manual p. 2.2 (PDF p. 15).",
+  "difficulty": 2
+ },
+ {
+  "id": "q102",
+  "lessonId": 11,
+  "code": "HO",
+  "stem": "Which person qualifies as an insured under the homeowners policy?",
+  "options": [
+   "Any neighbor who helps with yard work",
+   "A roommate who is not related to you and is over 21",
+   "Residents of your household who are your relatives by blood, adoption or marriage",
+   "The previous owner of the house"
+  ],
+  "answer": 2,
+  "explanation": "Insured includes residents of your household who are your relatives by blood, adoption or marriage, and other persons under the age of 21 in the care of you or your relatives.",
+  "source": "Manual p. 2.2 (PDF p. 15).",
+  "difficulty": 2
+ },
+ {
+  "id": "q103",
+  "lessonId": 11,
+  "code": "HO",
+  "stem": "A foreign exchange student under the age of 21 in the care of the named insured is:",
+  "options": [
+   "Not covered because the student is unrelated",
+   "Covered only for medical payments",
+   "Covered only if named on the declarations page",
+   "An insured"
+  ],
+  "answer": 3,
+  "explanation": "Other persons under the age of 21 in the care of you or your relatives, such as foster children or a foreign exchange student, are insureds.",
+  "source": "Manual p. 2.2 (PDF p. 15).",
+  "difficulty": 2
+ },
+ {
+  "id": "q104",
+  "lessonId": 11,
+  "code": "HO",
+  "stem": "Vacant land owned by or rented to an insured is part of the insured location:",
+  "options": [
+   "Only if it is within one mile of the residence",
+   "When it is not farm land",
+   "Only if it has a building on it",
+   "Never"
+  ],
+  "answer": 1,
+  "explanation": "The insured location includes vacant land other than farm land owned by or rented to an insured.",
+  "source": "Manual p. 2.2 (PDF p. 15).",
+  "difficulty": 3
+ },
+ {
+  "id": "q105",
+  "lessonId": 11,
+  "code": "HO",
+  "stem": "Coverage for individual family cemetery plots or burial vaults of an insured is limited to:",
+  "options": [
+   "$1,000",
+   "$2,500",
+   "$5,000",
+   "$10,000"
+  ],
+  "answer": 2,
+  "explanation": "The insured location includes individual family cemetery plots or burial vaults of an insured up to $5,000.",
+  "source": "Manual p. 2.2 (PDF p. 15).",
+  "difficulty": 3
+ },
+ {
+  "id": "q106",
+  "lessonId": 11,
+  "code": "HO",
+  "stem": "To be eligible for a homeowners policy, the dwelling must be:",
+  "options": [
+   "Used primarily for residential purposes and owner occupied",
+   "Rented to tenants only",
+   "A farm dwelling",
+   "A commercial building with a residence inside"
+  ],
+  "answer": 0,
+  "explanation": "The dwelling must be used primarily for residential purposes and must be owner occupied, and it must be a one to four family dwelling.",
+  "source": "Manual p. 2.2 (PDF p. 15).",
+  "difficulty": 2
+ },
+ {
+  "id": "q107",
+  "lessonId": 11,
+  "code": "HO",
+  "stem": "How many roomers or boarders may a homeowners policy permit?",
+  "options": [
+   "Up to 5",
+   "Up to 1",
+   "Any number as long as rent is paid",
+   "Up to 2"
+  ],
+  "answer": 3,
+  "explanation": "A homeowners dwelling may have up to two roomers or boarders, and an unrelated tenant's property is not covered.",
+  "source": "Manual p. 2.2 (PDF p. 15).",
+  "difficulty": 3
+ },
+ {
+  "id": "q108",
+  "lessonId": 11,
+  "code": "HO",
+  "stem": "Which business is NOT allowed in an eligible homeowners dwelling?",
+  "options": [
+   "A barber shop",
+   "Auto repair",
+   "A music studio",
+   "A professional office"
+  ],
+  "answer": 1,
+  "explanation": "An incidental service business with two or less employees may be conducted in the home, such as a beauty or barber shop or a professional office, but mercantile, manufacturing, wholesale distributors and auto repair are not allowed.",
+  "source": "Manual p. 2.2 (PDF p. 15).",
+  "difficulty": 3
+ },
+ {
+  "id": "q109",
+  "lessonId": 11,
+  "code": "HO",
+  "stem": "A detached garage is excluded from Coverage B when:",
+  "options": [
+   "It is rented to another person for parking a car",
+   "It is used for any business purpose",
+   "It contains a lawn mower",
+   "It is more than 100 feet from the house"
+  ],
+  "answer": 1,
+  "explanation": "Coverage B other structures are excluded if used for any business purpose, but a garage rented to another person for the purpose of parking a car, boat or motorcycle is covered.",
+  "source": "Manual p. 2.2 (PDF p. 15).",
+  "difficulty": 3
+ },
+ {
+  "id": "q110",
+  "lessonId": 11,
+  "code": "HO",
+  "stem": "An unrelated tenant living in the dwelling must:",
+  "options": [
+   "Rely on the owner's policy for property coverage",
+   "Be added as a named insured",
+   "Buy a commercial package policy",
+   "Buy their own coverage, such as an HO-4 contents broad form"
+  ],
+  "answer": 3,
+  "explanation": "Unrelated tenants' personal property and liability are not covered; they need their own coverage, the HO-4 contents broad form.",
+  "source": "Manual p. 2.2 (PDF p. 15).",
+  "difficulty": 3
+ },
+ {
+  "id": "q111",
+  "lessonId": 12,
+  "code": "HO",
+  "stem": "Which homeowners form uses a special cause of loss on coverages A and B but broad named peril coverage on Coverage C?",
+  "options": [
+   "HO-3",
+   "HO-2",
+   "HO-5",
+   "HO-8"
+  ],
+  "answer": 0,
+  "explanation": "The HO-3 special form uses special or open peril coverage on coverages A and B and broad named peril coverage on Coverage C.",
+  "source": "Manual p. 2.3 (PDF p. 16).",
+  "difficulty": 2
+ },
+ {
+  "id": "q112",
+  "lessonId": 12,
+  "code": "HO",
+  "stem": "Which homeowners form uses a special cause of loss on coverages A, B and C?",
+  "options": [
+   "HO-3",
+   "HO-4",
+   "HO-5",
+   "HO-6"
+  ],
+  "answer": 2,
+  "explanation": "The HO-5 comprehensive form applies a special cause of loss to coverages A, B and C.",
+  "source": "Manual p. 2.3 (PDF p. 16).",
+  "difficulty": 2
+ },
+ {
+  "id": "q113",
+  "lessonId": 12,
+  "code": "HO",
+  "stem": "The HO-2 broad form provides:",
+  "options": [
+   "Broad named perils on coverages A, B and C",
+   "Special perils on coverages A and B only",
+   "Basic named perils on all coverages",
+   "Open peril coverage on all coverages"
+  ],
+  "answer": 0,
+  "explanation": "The HO-2 broad form uses broad named perils on coverages A, B and C.",
+  "source": "Manual p. 2.3 (PDF p. 16).",
+  "difficulty": 2
+ },
+ {
+  "id": "q114",
+  "lessonId": 12,
+  "code": "HO",
+  "stem": "The HO-8 modified form provides basic named perils plus vandalism and malicious mischief and theft, but limits personal property coverage to:",
+  "options": [
+   "$500",
+   "$2,500",
+   "$1,000",
+   "$5,000"
+  ],
+  "answer": 2,
+  "explanation": "The HO-8 modified form uses basic named perils plus vandalism and malicious mischief and theft coverage with a $1,000 maximum on personal property, settled at actual cash value or repair cost up to the market value.",
+  "source": "Manual p. 2.3 (PDF p. 16).",
+  "difficulty": 3
+ },
+ {
+  "id": "q115",
+  "lessonId": 12,
+  "code": "HO",
+  "stem": "The HO-4 contents broad form is designed for:",
+  "options": [
+   "Owners of older homes",
+   "Condominium unit owners",
+   "Farms",
+   "Tenants, and it does not need coverages A and B"
+  ],
+  "answer": 3,
+  "explanation": "The HO-4 contents broad form does not need coverages A and B and applies broad perils to Coverage C, and ten percent of C is provided for tenants improvements, also called building additions and alterations.",
+  "source": "Manual p. 2.3 (PDF p. 16).",
+  "difficulty": 3
+ },
+ {
+  "id": "q116",
+  "lessonId": 12,
+  "code": "HO",
+  "stem": "The HO-6 form applies broad named perils to which coverages?",
+  "options": [
+   "Coverages A, B and C",
+   "Coverages A and C, and Coverage B is not needed",
+   "Coverage C only",
+   "Coverage B only"
+  ],
+  "answer": 1,
+  "explanation": "The HO-6 condominium unit owners form applies broad named perils on coverages A and C, and Coverage B is not needed.",
+  "source": "Manual p. 2.3 (PDF p. 16).",
+  "difficulty": 3
+ },
+ {
+  "id": "q117",
+  "lessonId": 12,
+  "code": "HO",
+  "stem": "Who insures the outer shell of a condominium building and the separate structures owned by the association?",
+  "options": [
+   "Each unit owner's HO-6",
+   "The state insurance department",
+   "The association's commercial policy",
+   "The mortgagee's policy"
+  ],
+  "answer": 2,
+  "explanation": "A commercial policy covers the outer shell of the building structure and any separate structures owned by the condominium association, and each owner then buys their own insurance to cover their unit, the HO-6.",
+  "source": "Manual p. 2.3 (PDF p. 16).",
+  "difficulty": 3
+ },
+ {
+  "id": "q118",
+  "lessonId": 12,
+  "code": "HO",
+  "stem": "Which cause of loss is excluded on all homeowners forms?",
+  "options": [
+   "All earth movement, including earthquake, landslides and sinkhole collapse",
+   "Wind",
+   "Hail",
+   "Theft"
+  ],
+  "answer": 0,
+  "explanation": "Every homeowners form excludes all earth movement, water damage from surface water, ordinance or law, common power failure, neglect and intentional loss, and war and nuclear hazard.",
+  "source": "Manual p. 2.3 (PDF p. 16).",
+  "difficulty": 2
+ },
+ {
+  "id": "q119",
+  "lessonId": 12,
+  "code": "HO",
+  "stem": "Water damage from surface water that every homeowners form excludes includes:",
+  "options": [
+   "Rain entering an open window",
+   "A burst interior pipe",
+   "A leaking waterbed",
+   "Flood, ground water, and sewer backup and sump pump failure"
+  ],
+  "answer": 3,
+  "explanation": "The forms exclude water damage from surface water, which includes flood, ground water, and sewer backup and sump pump failure.",
+  "source": "Manual p. 2.3 (PDF p. 16).",
+  "difficulty": 3
+ },
+ {
+  "id": "q120",
+  "lessonId": 12,
+  "code": "HO",
+  "stem": "Which statement about homeowners forms is correct?",
+  "options": [
+   "Only the HO-5 covers liability",
+   "All forms have the same Section II personal liability coverage, and all forms cover theft of personal property",
+   "Theft is covered only on the HO-2",
+   "Coverage limits differ by form but liability coverage does not"
+  ],
+  "answer": 1,
+  "explanation": "The manual notes that all homeowners forms have the same Section II personal liability coverage and that all forms cover theft of personal property.",
+  "source": "Manual p. 2.3 (PDF p. 16).",
+  "difficulty": 3
+ },
+ {
+  "id": "q121",
+  "lessonId": 13,
+  "code": "HO",
+  "stem": "Theft of furs, jewelry, stones and watches under Coverage C is limited to:",
+  "options": [
+   "$200",
+   "$1,500",
+   "$2,500",
+   "$5,000"
+  ],
+  "answer": 1,
+  "explanation": "The manual lists a $1,500 inside limit for theft, misplacing or losing furs, jewelry, stones and watches.",
+  "source": "Manual p. 2.4 (PDF p. 17).",
+  "difficulty": 2
+ },
+ {
+  "id": "q122",
+  "lessonId": 13,
+  "code": "HO",
+  "stem": "Theft of guns under Coverage C is limited to:",
+  "options": [
+   "$1,500",
+   "$200",
+   "$1,000",
+   "$2,500"
+  ],
+  "answer": 3,
+  "explanation": "Theft, misplacing or losing on guns is limited to $2,500.",
+  "source": "Manual p. 2.4 (PDF p. 17).",
+  "difficulty": 2
+ },
+ {
+  "id": "q123",
+  "lessonId": 13,
+  "code": "HO",
+  "stem": "Banknotes, gold, silver and money are limited under Coverage C to, on an all peril basis:",
+  "options": [
+   "$200",
+   "$500",
+   "$1,500",
+   "$2,500"
+  ],
+  "answer": 0,
+  "explanation": "Banknotes, gold, silver and money carry a $200 all perils inside limit.",
+  "source": "Manual p. 2.4 (PDF p. 17).",
+  "difficulty": 2
+ },
+ {
+  "id": "q124",
+  "lessonId": 13,
+  "code": "HO",
+  "stem": "The all peril inside limit that applies to re-creation of personal records, securities, deeds, passports, stamps and trailers is:",
+  "options": [
+   "$200",
+   "$2,500",
+   "$1,500",
+   "$5,000"
+  ],
+  "answer": 2,
+  "explanation": "A $1,500 all perils limit applies to the re-creation of personal records, securities, accounts, deeds, passports, evidence of debt, manuscripts, tickets, stamps, watercraft, trailers and motors.",
+  "source": "Manual p. 2.4 (PDF p. 17).",
+  "difficulty": 3
+ },
+ {
+  "id": "q125",
+  "lessonId": 13,
+  "code": "HO",
+  "stem": "Which items are noted as having no inside limit under Coverage C?",
+  "options": [
+   "Rowboats and canoes, if stored properly",
+   "Fine art and stamps",
+   "Guns and jewelry",
+   "Money and banknotes"
+  ],
+  "answer": 0,
+  "explanation": "The manual notes that rowboats and canoes do not have an inside limit and must be stored properly.",
+  "source": "Manual p. 2.4 (PDF p. 17).",
+  "difficulty": 3
+ },
+ {
+  "id": "q126",
+  "lessonId": 13,
+  "code": "HO",
+  "stem": "Property used primarily for business is limited to $2,500, but the limit drops to what amount when the property is off the residence premises?",
+  "options": [
+   "$500",
+   "$200",
+   "$1,500",
+   "$2,000"
+  ],
+  "answer": 2,
+  "explanation": "Property used primarily for business carries a $2,500 all perils inside limit, reduced to $1,500 off the residence premises.",
+  "source": "Manual p. 2.4 (PDF p. 17).",
+  "difficulty": 3
+ },
+ {
+  "id": "q127",
+  "lessonId": 13,
+  "code": "HO",
+  "stem": "Portable electronic equipment that can be powered both by a vehicle and another power source is limited, while in a motor vehicle or away from the residence premises, to:",
+  "options": [
+   "$2,500, with no separate media limit",
+   "$200, with $500 for media",
+   "$500, with $1,500 for media",
+   "$1,500, with $250 for tapes, wires, records, disks and other media"
+  ],
+  "answer": 3,
+  "explanation": "Portable electronic equipment is limited to $1,500 while in or upon a motor vehicle or away from the residence premises, and $250 applies to tapes, wires, records, disks and other media.",
+  "source": "Manual p. 2.4 (PDF p. 17).",
+  "difficulty": 3
+ },
+ {
+  "id": "q128",
+  "lessonId": 13,
+  "code": "HO",
+  "stem": "Under coverages A and B, which property is not covered?",
+  "options": [
+   "The detached garage",
+   "Land, including land on which the structures are built",
+   "The dwelling itself",
+   "Fences and driveways"
+  ],
+  "answer": 1,
+  "explanation": "Under coverages A and B the form does not cover land, including the land on which the structures are built.",
+  "source": "Manual p. 2.4 (PDF p. 17).",
+  "difficulty": 2
+ },
+ {
+  "id": "q129",
+  "lessonId": 13,
+  "code": "HO",
+  "stem": "Which motor vehicles are covered under Coverage C?",
+  "options": [
+   "All motor vehicles kept on the premises",
+   "Only vehicles licensed for road use",
+   "Only those used to service the residence and assist the handicapped",
+   "Only vehicles owned by a tenant"
+  ],
+  "answer": 2,
+  "explanation": "Motor vehicles are not covered except those used to service the residence and assist the handicapped.",
+  "source": "Manual p. 2.4 (PDF p. 17).",
+  "difficulty": 3
+ },
+ {
+  "id": "q130",
+  "lessonId": 13,
+  "code": "HO",
+  "stem": "An unrelated tenant's property left in the dwelling is:",
+  "options": [
+   "Not covered under the owner's Coverage C",
+   "Covered up to $1,500",
+   "Covered as scheduled property",
+   "Covered because it is on the insured location"
+  ],
+  "answer": 0,
+  "explanation": "Unrelated tenant's property is among the property not covered under Coverage C; the tenant must buy their own coverage.",
+  "source": "Manual p. 2.4 (PDF p. 17).",
+  "difficulty": 3
+ },
+ {
+  "id": "q131",
+  "lessonId": 14,
+  "code": "HO",
+  "stem": "The difference between an addition and an extension is that an addition:",
+  "options": [
+   "Allows unused limits to be applied elsewhere without increasing a limit",
+   "Applies only to liability coverage",
+   "Requires an endorsement and additional premium",
+   "Increases the limit of insurance provided by the policy"
+  ],
+  "answer": 3,
+  "explanation": "Additions increase the limit of insurance provided by the policy, while extensions do not increase a limit but allow the insured to apply unused limits from one coverage to another.",
+  "source": "Manual p. 2.4 (PDF p. 17).",
+  "difficulty": 2
+ },
+ {
+  "id": "q132",
+  "lessonId": 14,
+  "code": "HO",
+  "stem": "Debris removal is classified in the manual as:",
+  "options": [
+   "An addition that doubles Coverage A",
+   "An extension, with an additional 5 percent of Coverage A if the loss plus debris removal exceeds the policy limit",
+   "A liability coverage",
+   "An endorsement that removes the deductible"
+  ],
+  "answer": 1,
+  "explanation": "Debris removal is described as an extension, but an additional five percent of Coverage A is available if the loss plus debris removal exceeds the policy limit.",
+  "source": "Manual p. 2.4 (PDF p. 17).",
+  "difficulty": 3
+ },
+ {
+  "id": "q133",
+  "lessonId": 14,
+  "code": "HO",
+  "stem": "The additional amount available for removal of trees felled by wind, hail or ice is:",
+  "options": [
+   "$1,000 per tree with no maximum",
+   "$500 per tree up to a maximum of $1,000",
+   "$250 per tree up to $500",
+   "$100 per tree with no maximum"
+  ],
+  "answer": 1,
+  "explanation": "An additional $500 per tree up to a maximum of $1,000 is available for removal of trees felled by wind, hail or ice, and for a neighbor's tree felled by a covered peril that damages a covered structure.",
+  "source": "Manual p. 2.4 (PDF p. 17).",
+  "difficulty": 3
+ },
+ {
+  "id": "q134",
+  "lessonId": 14,
+  "code": "HO",
+  "stem": "Coverage for trees, shrubs and other plants is an addition of:",
+  "options": [
+   "10 percent of Coverage A, with no per item limit",
+   "1 percent of Coverage A, with a $1,000 per item limit",
+   "50 percent of Coverage A, with a $250 per item limit",
+   "5 percent of Coverage A, with a maximum of $500 per item"
+  ],
+  "answer": 3,
+  "explanation": "Trees, shrubs and other plants are an addition of five percent of Coverage A with a maximum of five hundred dollars per item.",
+  "source": "Manual p. 2.4 (PDF p. 17).",
+  "difficulty": 3
+ },
+ {
+  "id": "q135",
+  "lessonId": 14,
+  "code": "HO",
+  "stem": "Landscaping under the trees and plants coverage is NOT covered for:",
+  "options": [
+   "Wind, hail, ice or snow",
+   "Fire or lightning",
+   "Explosion",
+   "Aircraft"
+  ],
+  "answer": 0,
+  "explanation": "Landscaping is covered for fire or lightning, explosion, riot or civil commotion, aircraft, non-owned vehicles, vandalism and malicious mischief, and theft, but there is no coverage for wind, hail, ice or snow.",
+  "source": "Manual p. 2.4 (PDF p. 17).",
+  "difficulty": 3
+ },
+ {
+  "id": "q136",
+  "lessonId": 14,
+  "code": "HO",
+  "stem": "The fire department service charge additional coverage pays:",
+  "options": [
+   "$1,000 with a $250 deductible",
+   "$250 with no deductible",
+   "$500 with no deductible",
+   "$5,000 with a $500 deductible"
+  ],
+  "answer": 2,
+  "explanation": "The fire department service charge is an addition of five hundred dollars with no deductible.",
+  "source": "Manual p. 2.4 (PDF p. 17).",
+  "difficulty": 2
+ },
+ {
+  "id": "q137",
+  "lessonId": 14,
+  "code": "HO",
+  "stem": "Property removed to preserve the property extends coverage:",
+  "options": [
+   "For 30 days against direct loss from any cause",
+   "For 14 days against named perils only",
+   "For 60 days against theft only",
+   "Indefinitely while the property is away"
+  ],
+  "answer": 0,
+  "explanation": "Property removed to preserve the property is an addition that extends coverage to property removed for thirty days against direct loss from any cause.",
+  "source": "Manual p. 2.4 (PDF p. 17).",
+  "difficulty": 3
+ },
+ {
+  "id": "q138",
+  "lessonId": 14,
+  "code": "HO",
+  "stem": "The credit card, fund transfer card, forgery and counterfeit money coverage is an extension of:",
+  "options": [
+   "$1,000 with a $250 deductible",
+   "$2,500 with no deductible",
+   "$500 with no deductible",
+   "$200 with a $100 deductible"
+  ],
+  "answer": 2,
+  "explanation": "Credit card, fund transfer card, forgery and counterfeit money is an extension of five hundred dollars with no deductible.",
+  "source": "Manual p. 2.4 (PDF p. 17).",
+  "difficulty": 3
+ },
+ {
+  "id": "q139",
+  "lessonId": 14,
+  "code": "HO",
+  "stem": "Loss assessment coverage is an addition of $1,000, and landlord's furnishings is an addition of:",
+  "options": [
+   "$1,000 on broad perils including theft",
+   "$5,000 on named perils",
+   "$500 on all perils",
+   "$2,500 on broad perils except theft"
+  ],
+  "answer": 3,
+  "explanation": "Loss assessment is an addition of one thousand dollars, and landlord's furnishings is an addition of twenty-five hundred dollars on broad perils except for theft.",
+  "source": "Manual p. 2.4 (PDF p. 17).",
+  "difficulty": 3
+ },
+ {
+  "id": "q140",
+  "lessonId": 14,
+  "code": "HO",
+  "stem": "Collapse coverage applies when the collapse of a building under coverages A and B is caused by:",
+  "options": [
+   "Earth movement only",
+   "A peril insured against, the weight of people or property, or hidden insect and decay damage",
+   "Flood water under the building",
+   "Poor workmanship by a contractor"
+  ],
+  "answer": 1,
+  "explanation": "Collapse is not a peril itself, but coverage applies when collapse is caused by a peril insured against, the weight of people or property, or hidden insect and decay damage.",
+  "source": "Manual p. 2.4 (PDF p. 17).",
+  "difficulty": 3
+ },
+ {
+  "id": "q141",
+  "lessonId": 15,
+  "code": "HO",
+  "stem": "Coverage E, personal liability, has a minimum combined single limit of:",
+  "options": [
+   "$25,000 per occurrence",
+   "$300,000 per occurrence",
+   "$100,000 per occurrence",
+   "$1,000,000 per occurrence"
+  ],
+  "answer": 2,
+  "explanation": "Coverage E personal liability carries a minimum combined single limit of $100,000 per occurrence.",
+  "source": "Manual p. 2.5 (PDF p. 18).",
+  "difficulty": 3
+ },
+ {
+  "id": "q142",
+  "lessonId": 15,
+  "code": "HO",
+  "stem": "Under the Coverage E insuring agreement, the insurer must defend the insured:",
+  "options": [
+   "Even if the suit is groundless, false or fraudulent",
+   "Only if the suit has merit",
+   "Only after the limits are exhausted",
+   "Only if the insured pays defense costs first"
+  ],
+  "answer": 0,
+  "explanation": "The insurer provides a defense at its expense by counsel of its choice even if the suit is groundless, false or fraudulent.",
+  "source": "Manual p. 2.5 (PDF p. 18).",
+  "difficulty": 3
+ },
+ {
+  "id": "q143",
+  "lessonId": 15,
+  "code": "HO",
+  "stem": "The insurer's duty to settle or defend ends when:",
+  "options": [
+   "The claim is reported",
+   "The insured requests a settlement",
+   "The policy period ends",
+   "Its limit of liability for the occurrence has been exhausted"
+  ],
+  "answer": 3,
+  "explanation": "The duty to settle or defend ends when the insurer's limit of liability for the occurrence has been exhausted by payment of judgment or settlement.",
+  "source": "Manual p. 2.5 (PDF p. 18).",
+  "difficulty": 3
+ },
+ {
+  "id": "q144",
+  "lessonId": 15,
+  "code": "HO",
+  "stem": "Coverage F, medical payments to others, is payable:",
+  "options": [
+   "Only when the insured is legally liable",
+   "Regardless of fault",
+   "Only after a court judgment",
+   "Only for residents of the household"
+  ],
+  "answer": 1,
+  "explanation": "Medical payments to others is designed to pay necessary medical expenses regardless of fault, up to three years from the date of the accident.",
+  "source": "Manual p. 2.5 (PDF p. 18).",
+  "difficulty": 3
+ },
+ {
+  "id": "q145",
+  "lessonId": 15,
+  "code": "HO",
+  "stem": "Coverage F is limited to how long after the accident?",
+  "options": [
+   "One year",
+   "Three years",
+   "Two years",
+   "Five years"
+  ],
+  "answer": 1,
+  "explanation": "Medical payments are payable for expenses incurred or medically ascertained within three years from the date of the accident.",
+  "source": "Manual p. 2.5 (PDF p. 18).",
+  "difficulty": 3
+ },
+ {
+  "id": "q146",
+  "lessonId": 15,
+  "code": "HO",
+  "stem": "Coverage F does NOT apply to:",
+  "options": [
+   "A guest on the insured location with permission",
+   "A neighbor injured off the premises by an insured's activity",
+   "A person injured by a residence employee in the course of employment",
+   "The insured or regular residents of the household, except residence employees"
+  ],
+  "answer": 3,
+  "explanation": "Coverage F does not apply to the insured or regular residents of the household except for residence employees.",
+  "source": "Manual p. 2.5 (PDF p. 18).",
+  "difficulty": 3
+ },
+ {
+  "id": "q147",
+  "lessonId": 15,
+  "code": "HO",
+  "stem": "Which is included in the manual's definition of medical expenses for Coverage F?",
+  "options": [
+   "Prosthetic devices and funeral services",
+   "Lost wages",
+   "Pain and suffering",
+   "Property repair costs"
+  ],
+  "answer": 0,
+  "explanation": "Medical expenses means reasonable charges for medical, surgical, x-ray, dental, ambulance, hospital, professional nursing, prosthetic devices and funeral services.",
+  "source": "Manual p. 2.5 (PDF p. 18).",
+  "difficulty": 3
+ },
+ {
+  "id": "q148",
+  "lessonId": 15,
+  "code": "HO",
+  "stem": "For an injury off the insured location, Coverage F applies if the injury:",
+  "options": [
+   "Occurs while the injured person is trespassing",
+   "Arises from the insured's business",
+   "Is caused by an animal owned by or in the care of the insured",
+   "Results from a motor vehicle accident"
+  ],
+  "answer": 2,
+  "explanation": "Off the insured location, Coverage F applies only if the injury arises out of a condition on the insured location, is caused by the activities of an insured, is caused by a residence employee in the course of employment, or is caused by an animal owned by or in the care of the insured.",
+  "source": "Manual p. 2.5 (PDF p. 18).",
+  "difficulty": 3
+ },
+ {
+  "id": "q149",
+  "lessonId": 15,
+  "code": "HO",
+  "stem": "Supplementary payments under Section II are:",
+  "options": [
+   "Paid in addition to the limits of liability",
+   "Paid from within the limits of liability",
+   "Paid only after the limits are exhausted",
+   "Paid by the claimant"
+  ],
+  "answer": 0,
+  "explanation": "Supplementary payments, also called additional coverages, are found in every liability contract and are paid in addition to the limits of liability.",
+  "source": "Manual p. 2.5 (PDF p. 18).",
+  "difficulty": 3
+ },
+ {
+  "id": "q150",
+  "lessonId": 15,
+  "code": "HO",
+  "stem": "Which of these is a supplementary payment under Section II?",
+  "options": [
+   "The deductible for a property loss",
+   "The cost of repairing the insured's own vehicle",
+   "A $250 premium for bail bonds, when the insurer does not provide the bond",
+   "The insured's ordinary household expenses"
+  ],
+  "answer": 2,
+  "explanation": "Supplementary payments include expenses the insurer incurs and costs taxed against the insured, a $250 premium for bail bonds, premiums on appeal bonds, accrued and prejudgment interest, and reasonable expenses incurred at the insurer's request including loss of earnings up to $250 per day.",
+  "source": "Manual p. 2.5 (PDF p. 18).",
+  "difficulty": 3
+ },
+ {
+  "id": "q151",
+  "lessonId": 16,
+  "code": "HO",
+  "stem": "Bodily injury or property damage that is expected or intended by an insured is:",
+  "options": [
+   "Fully covered like any other occurrence",
+   "Covered up to the Coverage E limit",
+   "Excluded with no exceptions",
+   "Excluded, although property damage up to $1,000 caused by intentional acts of children under 13 is covered"
+  ],
+  "answer": 3,
+  "explanation": "The intentional acts exclusion bars expected or intended injury or damage, but property damage up to $1,000 caused by the intentional acts of children under 13 is covered.",
+  "source": "Manual p. 2.6 (PDF p. 19).",
+  "difficulty": 3
+ },
+ {
+  "id": "q152",
+  "lessonId": 16,
+  "code": "HO",
+  "stem": "Why does the homeowners policy exclude vicarious liability for a minor's use of a motor vehicle, aircraft or watercraft?",
+  "options": [
+   "Minors cannot be legally liable",
+   "Those exposures belong to auto, aviation and boat insurance",
+   "Those exposures are covered by Coverage F",
+   "The exclusion applies only to businesses"
+  ],
+  "answer": 1,
+  "explanation": "The policy excludes vicarious liability for a minor's use of motor vehicles, aircraft and watercraft because those exposures are handled by auto, aviation and boat insurance.",
+  "source": "Manual p. 2.6 (PDF p. 19).",
+  "difficulty": 3
+ },
+ {
+  "id": "q153",
+  "lessonId": 16,
+  "code": "HO",
+  "stem": "The business exclusion in Section II does not apply to:",
+  "options": [
+   "A full time retail business",
+   "A manufacturing operation",
+   "A part time or occasional self-employed business of an insured who is under 21",
+   "Professional services"
+  ],
+  "answer": 2,
+  "explanation": "The business exclusion does not apply to a part time or occasional self-employed business for an insured who is under 21.",
+  "source": "Manual p. 2.6 (PDF p. 19).",
+  "difficulty": 3
+ },
+ {
+  "id": "q154",
+  "lessonId": 16,
+  "code": "HO",
+  "stem": "Which watercraft are covered under Section II?",
+  "options": [
+   "Owned or rented boats with outboard motors of 25 HP or less, and sailboats of 26 feet or less",
+   "All owned boats regardless of size",
+   "Boats with inboard motors of any horsepower",
+   "Sailboats of any length"
+  ],
+  "answer": 0,
+  "explanation": "Watercraft are excluded except owned or rented boats with outboard motors of 25 horsepower or less and sailboats of 26 feet or less; rented boats with inboard or inboard-out drive of 50 horsepower or less are also covered.",
+  "source": "Manual p. 2.6 (PDF p. 19).",
+  "difficulty": 3
+ },
+ {
+  "id": "q155",
+  "lessonId": 16,
+  "code": "HO",
+  "stem": "A rented boat with an inboard-out drive is covered under Section II when its horsepower is:",
+  "options": [
+   "25 HP or less",
+   "100 HP or less",
+   "Any horsepower",
+   "50 HP or less"
+  ],
+  "answer": 3,
+  "explanation": "Rented boats with inboard or inboard-out drive of 50 horsepower or less are also covered.",
+  "source": "Manual p. 2.6 (PDF p. 19).",
+  "difficulty": 3
+ },
+ {
+  "id": "q156",
+  "lessonId": 16,
+  "code": "HO",
+  "stem": "Which motor vehicles are excepted from the motor vehicle exclusion?",
+  "options": [
+   "Any vehicle owned by an insured",
+   "Vehicles used to service an insured's residence, to service the handicapped, a golf cart used to play golf, and a battery toy vehicle for children under 7 with a top speed of 5 mph",
+   "All off-road vehicles",
+   "All vehicles used on the insured location"
+  ],
+  "answer": 1,
+  "explanation": "The motor vehicle exclusion does not apply to vehicles servicing the insured's residence, vehicles servicing the handicapped, a golf cart used to play golf, or a toy vehicle for children under 7 powered by batteries with a top speed of 5 mph.",
+  "source": "Manual p. 2.6 (PDF p. 19).",
+  "difficulty": 3
+ },
+ {
+  "id": "q157",
+  "lessonId": 16,
+  "code": "HO",
+  "stem": "Aircraft and hovercraft are excluded under Section II except:",
+  "options": [
+   "Aircraft rented for more than 30 days",
+   "Models",
+   "Hovercraft used on private property",
+   "Aircraft with fewer than four seats"
+  ],
+  "answer": 1,
+  "explanation": "The aircraft and hovercraft exclusion applies except for models.",
+  "source": "Manual p. 2.6 (PDF p. 19).",
+  "difficulty": 3
+ },
+ {
+  "id": "q158",
+  "lessonId": 16,
+  "code": "HO",
+  "stem": "The care, custody and control exclusion bars coverage for:",
+  "options": [
+   "Bodily injury to a guest",
+   "Damage to a neighbor's property",
+   "Medical payments to a delivery driver",
+   "Property damage to property owned by, rented to or used by an insured"
+  ],
+  "answer": 3,
+  "explanation": "Section II excludes property damage to property owned by, rented to or used by an insured, which is the care, custody and control exclusion.",
+  "source": "Manual p. 2.6 (PDF p. 19).",
+  "difficulty": 3
+ },
+ {
+  "id": "q159",
+  "lessonId": 16,
+  "code": "HO",
+  "stem": "Which of the following claims is barred by Section II's controlled substance exclusion?",
+  "options": [
+   "A claim arising from the use, sale, manufacture, delivery, transfer or possession of a controlled substance",
+   "A claim for a dog bite at the garden gate",
+   "A claim for a fall on an icy walkway",
+   "A claim for a fence damaged by a guest"
+  ],
+  "answer": 0,
+  "explanation": "Section II excludes the use, sale, manufacture, delivery, transfer or possession of a controlled substance.",
+  "source": "Manual p. 2.6 (PDF p. 19).",
+  "difficulty": 3
+ },
+ {
+  "id": "q160",
+  "lessonId": 16,
+  "code": "HO",
+  "stem": "The manual states these supplementary payments are found in:",
+  "options": [
+   "Only homeowners policies",
+   "Only commercial policies",
+   "Every liability contract",
+   "Only auto policies"
+  ],
+  "answer": 2,
+  "explanation": "The manual notes that the Section II additional coverages, also called supplementary payments, are found in every liability contract.",
+  "source": "Manual p. 2.6 (PDF p. 19).",
+  "difficulty": 3
+ },
+ {
+  "id": "q161",
+  "lessonId": 17,
+  "code": "HO",
+  "stem": "The dwelling policy is best described as:",
+  "options": [
+   "A property policy, not a package policy",
+   "A package policy like the homeowners policy",
+   "A liability-only policy",
+   "A commercial package policy"
+  ],
+  "answer": 0,
+  "explanation": "The dwelling policy is a property policy and not a package policy, although personal liability can be added as an option.",
+  "source": "Manual p. 2.8 (PDF p. 21).",
+  "difficulty": 3
+ },
+ {
+  "id": "q162",
+  "lessonId": 17,
+  "code": "HO",
+  "stem": "The dwelling policy is primarily designed for:",
+  "options": [
+   "Owner-occupied homes that qualify for homeowners coverage",
+   "Farms",
+   "Dwellings that are rented to others",
+   "Commercial buildings"
+  ],
+  "answer": 2,
+  "explanation": "The dwelling policy is primarily designed to be used for dwellings rented to others, and it is also used for owner-occupied homes that do not qualify for the homeowners policy.",
+  "source": "Manual p. 2.8 (PDF p. 21).",
+  "difficulty": 3
+ },
+ {
+  "id": "q163",
+  "lessonId": 17,
+  "code": "HO",
+  "stem": "Which dwelling form settles the dwelling on an actual cash value basis with no coinsurance?",
+  "options": [
+   "DP-2",
+   "DP-3",
+   "MH-1",
+   "DP-1"
+  ],
+  "answer": 3,
+  "explanation": "The DP-1 basic form settles the dwelling at actual cash value with no coinsurance, while the DP-2 and DP-3 forms use replacement cost with an eighty percent coinsurance requirement.",
+  "source": "Manual p. 2.8 (PDF p. 21).",
+  "difficulty": 3
+ },
+ {
+  "id": "q164",
+  "lessonId": 17,
+  "code": "HO",
+  "stem": "Which dwelling form does NOT offer additional living expenses?",
+  "options": [
+   "DP-2",
+   "DP-1",
+   "DP-3",
+   "Both DP-2 and DP-3"
+  ],
+  "answer": 1,
+  "explanation": "Additional living expenses are not available on the DP-1 but are provided as a twenty percent additional amount on the DP-2 and DP-3.",
+  "source": "Manual p. 2.8 (PDF p. 21).",
+  "difficulty": 3
+ },
+ {
+  "id": "q165",
+  "lessonId": 17,
+  "code": "HO",
+  "stem": "On the DP-1, Fair Rental Value is provided as a twenty percent extension limited to:",
+  "options": [
+   "The full extension per month",
+   "Half the extension per month",
+   "One twelfth of the extension per month",
+   "Two percent of Coverage A per month"
+  ],
+  "answer": 2,
+  "explanation": "On the DP-1, fair rental value is a twenty percent extension limited to one twelfth of the extension per month, while the DP-2 and DP-3 provide actual loss up to the limit.",
+  "source": "Manual p. 2.8 (PDF p. 21).",
+  "difficulty": 3
+ },
+ {
+  "id": "q166",
+  "lessonId": 17,
+  "code": "HO",
+  "stem": "The standard deductible on all dwelling policy coverages is:",
+  "options": [
+   "$250",
+   "$100",
+   "$500",
+   "$1,000"
+  ],
+  "answer": 0,
+  "explanation": "All coverages on the dwelling policy carry a two hundred fifty dollar standard deductible.",
+  "source": "Manual p. 2.8 (PDF p. 21).",
+  "difficulty": 3
+ },
+ {
+  "id": "q167",
+  "lessonId": 17,
+  "code": "HO",
+  "stem": "All dwelling policies specifically exclude theft coverage for personal property unless:",
+  "options": [
+   "The dwelling is owner occupied",
+   "Coverage A exceeds $100,000",
+   "The insured buys a homeowners policy instead",
+   "The broad theft endorsement is added"
+  ],
+  "answer": 3,
+  "explanation": "All dwelling policies specifically exclude theft coverage for personal property, so the broad theft endorsement should be added when the optional contents coverage is selected.",
+  "source": "Manual p. 2.8 (PDF p. 21).",
+  "difficulty": 3
+ },
+ {
+  "id": "q168",
+  "lessonId": 17,
+  "code": "HO",
+  "stem": "The dwelling under construction endorsement sets the Coverage A limit at the estimated value at completion and charges a premium of:",
+  "options": [
+   "100 percent of the normal premium",
+   "65 percent of the normal premium for that value",
+   "50 percent of the normal premium",
+   "150 percent of the normal premium"
+  ],
+  "answer": 1,
+  "explanation": "For a dwelling under construction, the Coverage A limit is the estimated value at time of completion and the premium is 65 percent of the normal premium charged for the value.",
+  "source": "Manual p. 2.8 (PDF p. 21).",
+  "difficulty": 3
+ },
+ {
+  "id": "q169",
+  "lessonId": 17,
+  "code": "HO",
+  "stem": "The livestock coverage form under a farmowners policy:",
+  "options": [
+   "Covers animals only while in transit",
+   "Covers animals on the premises that stray into a neighbor's field and are injured or cause damage",
+   "Covers livestock diseases specific to breed",
+   "Covers vehicle damage to livestock"
+  ],
+  "answer": 1,
+  "explanation": "The livestock coverage form covers animals on the premises if they stray into a neighbor's field and get injured or cause damage, as both property and liability coverage, and it excludes animals in transit, at sale barns and stock yards, diseases specific to breed, and vehicle damage.",
+  "source": "Manual p. 2.7 (PDF p. 20).",
+  "difficulty": 3
+ },
+ {
+  "id": "q170",
+  "lessonId": 17,
+  "code": "HO",
+  "stem": "The farmowners policy covers liability for custom combining under personal liability when receipts from that activity are:",
+  "options": [
+   "Less than $10,000 per year",
+   "More than $2,000 per year",
+   "Any amount, with no restriction",
+   "Less than $2,000 per year"
+  ],
+  "answer": 3,
+  "explanation": "The farm policy covers liability for custom combining under the personal liability coverage if receipts for such activities are less than $2,000 per year.",
+  "source": "Manual p. 2.7 (PDF p. 20).",
+  "difficulty": 3
+ },
+ {
+  "id": "q171",
+  "lessonId": 18,
+  "code": "HO",
+  "stem": "All mobile homeowners forms settle losses on what basis?",
+  "options": [
+   "Actual cash value only",
+   "Replacement cost only",
+   "Agreed value only",
+   "Market value up to the limit"
+  ],
+  "answer": 0,
+  "explanation": "All mobile homeowners forms provide coverage on an actual cash value basis only.",
+  "source": "Manual p. 2.9 (PDF p. 22).",
+  "difficulty": 3
+ },
+ {
+  "id": "q172",
+  "lessonId": 18,
+  "code": "HO",
+  "stem": "The mobile homeowners program does not cover:",
+  "options": [
+   "Double-wide mobile homes",
+   "Skirted mobile homes",
+   "Camping trailers or motor homes",
+   "Mobile homes with the wheels removed"
+  ],
+  "answer": 2,
+  "explanation": "The mobile homeowners program does not cover camping trailers or motor homes.",
+  "source": "Manual p. 2.9 (PDF p. 22).",
+  "difficulty": 3
+ },
+ {
+  "id": "q173",
+  "lessonId": 18,
+  "code": "HO",
+  "stem": "For an MH policy to apply, the mobile home must be permanently located and:",
+  "options": [
+   "Skirted, tied down, and have the wheels removed",
+   "Mounted on blocks only",
+   "Registered as a vehicle only",
+   "Owned for at least one year"
+  ],
+  "answer": 0,
+  "explanation": "The mobile home must be permanently located, skirted, tied down, and have the wheels removed.",
+  "source": "Manual p. 2.9 (PDF p. 22).",
+  "difficulty": 3
+ },
+ {
+  "id": "q174",
+  "lessonId": 18,
+  "code": "HO",
+  "stem": "The MH policy does not cover the mobile home when:",
+  "options": [
+   "It is vacant for 30 days",
+   "The wheels are removed",
+   "It is transported or moved to a new location",
+   "It is skirted"
+  ],
+  "answer": 2,
+  "explanation": "The policy does not cover the mobile home when it is transported or moved to a new location.",
+  "source": "Manual p. 2.9 (PDF p. 22).",
+  "difficulty": 3
+ },
+ {
+  "id": "q175",
+  "lessonId": 18,
+  "code": "HO",
+  "stem": "A mobile home that cannot qualify for an MH policy could instead be covered by:",
+  "options": [
+   "An HO-5 comprehensive form",
+   "A commercial package policy",
+   "An HO-4 contents broad form",
+   "A DP-1 dwelling policy"
+  ],
+  "answer": 3,
+  "explanation": "The manual notes that a mobile home could be covered by a DP-1 if it cannot qualify for an MH policy.",
+  "source": "Manual p. 2.9 (PDF p. 22).",
+  "difficulty": 3
+ },
+ {
+  "id": "q176",
+  "lessonId": 18,
+  "code": "HO",
+  "stem": "How many mobile homeowners forms does the manual name?",
+  "options": [
+   "Two: MH-1 and MH-2",
+   "Three: MH-1, MH-2 and MH-3",
+   "Four: MH-1 through MH-4",
+   "One: MH-3"
+  ],
+  "answer": 1,
+  "explanation": "The manual names the MH-1, MH-2 and MH-3 forms, all providing coverage on an actual cash value basis only.",
+  "source": "Manual p. 2.9 (PDF p. 22).",
+  "difficulty": 3
+ },
+ {
+  "id": "q177",
+  "lessonId": 18,
+  "code": "HO",
+  "stem": "Which statement about mobile homeowners coverage is correct?",
+  "options": [
+   "It is a replacement cost program like the DP-3",
+   "It is an agreed value program like scheduled property",
+   "It is an actual cash value program, unlike the replacement cost basis used on dwelling forms DP-2 and DP-3",
+   "It settles buildings at replacement cost and contents at agreed value"
+  ],
+  "answer": 2,
+  "explanation": "Mobile homeowners forms settle on an actual cash value basis only, while the DP-2 and DP-3 dwelling forms settle the dwelling at replacement cost with an eighty percent coinsurance requirement.",
+  "source": "Manual p. 2.9 (PDF p. 22).",
+  "difficulty": 4
+ },
+ {
+  "id": "q178",
+  "lessonId": 18,
+  "code": "HO",
+  "stem": "The memory aid printed on the mobile home page describes which pattern?",
+  "options": [
+   "Even numbered forms are broad and odd numbered forms are special, with exceptions for the high 8 and the low 1",
+   "All forms are special except the mobile home forms",
+   "Lower numbers are always broader than higher numbers",
+   "The number refers to the deductible amount"
+  ],
+  "answer": 0,
+  "explanation": "The manual prints the aid that if a form number is even it is broad, if it is odd it is special, except for the high 8 and the low 1, matching the homeowners forms such as HO-2 and HO-5.",
+  "source": "Manual p. 2.9 (PDF p. 22).",
+  "difficulty": 4
+ },
+ {
+  "id": "q179",
+  "lessonId": 18,
+  "code": "HO",
+  "stem": "Which of these is a condition the manual lists for a mobile home under the MH program?",
+  "options": [
+   "The home must be less than five years old",
+   "The home must be on a foundation",
+   "The home must be owner occupied",
+   "The home must be tied down"
+  ],
+  "answer": 3,
+  "explanation": "The manual lists permanent location, skirting, being tied down, and removal of the wheels as conditions for the mobile home.",
+  "source": "Manual p. 2.9 (PDF p. 22).",
+  "difficulty": 3
+ },
+ {
+  "id": "q180",
+  "lessonId": 18,
+  "code": "HO",
+  "stem": "A mobile home covered under a DP-1 would most likely settle its dwelling loss:",
+  "options": [
+   "At replacement cost with 80 percent coinsurance",
+   "At actual cash value, with no coinsurance requirement",
+   "At agreed value with no deductible",
+   "At market value with no depreciation"
+  ],
+  "answer": 1,
+  "explanation": "The DP-1 settles the dwelling at actual cash value with no coinsurance, which is why it can serve as the fallback for a mobile home that cannot qualify for the MH program.",
+  "source": "Manual p. 2.8 (PDF p. 21).",
+  "difficulty": 4
+ },
+ {
+  "id": "q181",
+  "lessonId": 19,
+  "code": "WC",
+  "stem": "The purpose of workers compensation is to pay benefits to injured workers:",
+  "options": [
+   "Only when the employer was negligent",
+   "Regardless of fault or negligence",
+   "Only when the employee was not at fault",
+   "Only after a lawsuit is filed"
+  ],
+  "answer": 1,
+  "explanation": "The purpose of workers compensation is to pay benefits to injured workers regardless of fault or negligence.",
+  "source": "Manual p. 3.1 (PDF p. 23).",
+  "difficulty": 3
+ },
+ {
+  "id": "q182",
+  "lessonId": 19,
+  "code": "WC",
+  "stem": "Workers compensation replaced which three basic legal defenses of an employer?",
+  "options": [
+   "Comparative negligence, strict liability, and absolute liability",
+   "Subrogation, salvage, and liberalization",
+   "Estoppel, waiver, and arbitration",
+   "Assumption of risk, contributory negligence, and the fellow servant rule"
+  ],
+  "answer": 3,
+  "explanation": "Workers compensation is described as a social remedy for assumption of risk, contributory negligence, and the fellow servant rule.",
+  "source": "Manual p. 3.1 (PDF p. 23).",
+  "difficulty": 3
+ },
+ {
+  "id": "q183",
+  "lessonId": 19,
+  "code": "WC",
+  "stem": "Which class of employment is EXEMPT from mandatory workers compensation coverage?",
+  "options": [
+   "Agricultural workers",
+   "Construction workers",
+   "Warehouse employees",
+   "Retail clerks"
+  ],
+  "answer": 0,
+  "explanation": "Coverage is mandatory except for real estate brokers and salespersons, agricultural workers, domestic workers and homemakers, employers with payroll under $20,000, workers covered by federal law, and sole proprietors, partners and self-employed individuals.",
+  "source": "Manual p. 3.1 (PDF p. 23).",
+  "difficulty": 3
+ },
+ {
+  "id": "q184",
+  "lessonId": 19,
+  "code": "WC",
+  "stem": "Coverage is not mandatory for an employer whose payroll is less than:",
+  "options": [
+   "$5,000",
+   "$10,000",
+   "$20,000",
+   "$50,000"
+  ],
+  "answer": 2,
+  "explanation": "Any employer whose payroll is less than twenty thousand dollars is among the exceptions to mandatory coverage.",
+  "source": "Manual p. 3.1 (PDF p. 23).",
+  "difficulty": 3
+ },
+ {
+  "id": "q185",
+  "lessonId": 19,
+  "code": "WC",
+  "stem": "Which part of the workers compensation policy covers employers liability?",
+  "options": [
+   "Part II",
+   "Part I",
+   "Part III",
+   "Part V"
+  ],
+  "answer": 0,
+  "explanation": "Part I is statutory workers compensation benefits, Part II is employers liability, Part III is other state's coverage, Part IV is the insured employer's duties, Part V is premiums, and Part VI is conditions.",
+  "source": "Manual p. 3.1 (PDF p. 23).",
+  "difficulty": 3
+ },
+ {
+  "id": "q186",
+  "lessonId": 19,
+  "code": "WC",
+  "stem": "Which duty belongs to the insured employer under Part IV if an injury occurs?",
+  "options": [
+   "Investigate and deny questionable claims",
+   "Set the benefit schedule",
+   "Provide medical services, report the injury, and cooperate with the insurer",
+   "Pay the state fund directly"
+  ],
+  "answer": 2,
+  "explanation": "Under Part IV the insured employer must provide medical services, report the injury, and cooperate with the insurer.",
+  "source": "Manual p. 3.1 (PDF p. 23).",
+  "difficulty": 3
+ },
+ {
+  "id": "q187",
+  "lessonId": 19,
+  "code": "WC",
+  "stem": "Monopolistic states are those where:",
+  "options": [
+   "Private insurers compete with each other only",
+   "Coverage is optional",
+   "The federal government writes the coverage",
+   "Employers must purchase their workers compensation coverage from the state fund"
+  ],
+  "answer": 3,
+  "explanation": "In monopolistic states employers must purchase their workers compensation coverage from the state fund, while in competitive states employers may choose between the state fund and private insurers.",
+  "source": "Manual p. 3.1 (PDF p. 23).",
+  "difficulty": 3
+ },
+ {
+  "id": "q188",
+  "lessonId": 19,
+  "code": "WC",
+  "stem": "An experience modification of a workers compensation policy:",
+  "options": [
+   "Increases the premium when losses are lower than average",
+   "Reduces the premium when loss history is lower than average",
+   "Has no effect on premium",
+   "Applies only to agricultural risks"
+  ],
+  "answer": 1,
+  "explanation": "An experience modification reduces premium if loss history is lower than average, while a surcharge increases premium if losses are higher than average.",
+  "source": "Manual p. 3.1 (PDF p. 23).",
+  "difficulty": 4
+ },
+ {
+  "id": "q189",
+  "lessonId": 19,
+  "code": "WC",
+  "stem": "Workers compensation rates are based on:",
+  "options": [
+   "A flat premium per employee",
+   "The employer's gross receipts",
+   "A rate per $100 of payroll for each job classification",
+   "The number of vehicles owned"
+  ],
+  "answer": 2,
+  "explanation": "Rates are based per one hundred dollars of payroll of each job classification, and the policy is audited.",
+  "source": "Manual p. 3.1 (PDF p. 23).",
+  "difficulty": 3
+ },
+ {
+  "id": "q190",
+  "lessonId": 19,
+  "code": "WC",
+  "stem": "Which statement about an employer that fails to provide required workers compensation coverage is correct?",
+  "options": [
+   "The employer must pay a benefit equal to what the policy would have paid, is charged with a misdemeanor, and faces increased employee benefits as a penalty",
+   "The employer faces no penalty if the injury was the employee's fault",
+   "The state pays the claim with no consequence to the employer",
+   "The employee loses all benefits"
+  ],
+  "answer": 0,
+  "explanation": "If the employer does not provide required coverage, the employee receives a benefit equal to what the policy would have paid, the employer is charged with a misdemeanor and fined, and the employee's benefits are increased as a further penalty.",
+  "source": "Manual p. 3.1 (PDF p. 23).",
+  "difficulty": 4
+ },
+ {
+  "id": "q191",
+  "lessonId": 20,
+  "code": "WC",
+  "stem": "Under Part One, the loss of time benefit has:",
+  "options": [
+   "A 3 day elimination period with immediate payment",
+   "A 14 day elimination period with no retroactive payment",
+   "No elimination period",
+   "A 7 day elimination period with retroactive payment after 3 weeks"
+  ],
+  "answer": 3,
+  "explanation": "The loss of time benefit has an elimination period of seven days and provides retroactive payment after three weeks.",
+  "source": "Manual p. 3.2 (PDF p. 24).",
+  "difficulty": 3
+ },
+ {
+  "id": "q192",
+  "lessonId": 20,
+  "code": "WC",
+  "stem": "The permanent total disability benefit in the manual is shown as:",
+  "options": [
+   "$130,000",
+   "$155,000",
+   "$100,000",
+   "$300,000"
+  ],
+  "answer": 1,
+  "explanation": "Permanent total disability is subject to state minimum and maximum benefits shown at $155,000, while temporary partial and temporary total disability are shown at $130,000.",
+  "source": "Manual p. 3.2 (PDF p. 24).",
+  "difficulty": 3
+ },
+ {
+  "id": "q193",
+  "lessonId": 20,
+  "code": "WC",
+  "stem": "The permanent partial disability example in the manual states payment of 66 2/3 percent of average weekly wage for 120 weeks for:",
+  "options": [
+   "Loss of one finger",
+   "Loss of one eye",
+   "Loss of hearing in both ears",
+   "Loss of one foot"
+  ],
+  "answer": 1,
+  "explanation": "The manual's permanent partial disability example is 66 2/3 of average weekly wage for 120 weeks for loss of one eye.",
+  "source": "Manual p. 3.2 (PDF p. 24).",
+  "difficulty": 4
+ },
+ {
+  "id": "q194",
+  "lessonId": 20,
+  "code": "WC",
+  "stem": "Survivor's death benefits under Part One include a lump sum and:",
+  "options": [
+   "$100,000 lump sum plus a $1,000 burial allowance",
+   "$130,000 lump sum with no burial allowance",
+   "$500,000 lump sum plus survivor income benefits",
+   "$300,000 lump sum plus survivor income benefits and a $5,000 burial allowance"
+  ],
+  "answer": 3,
+  "explanation": "Survivor's death benefits are a $300,000 lump sum plus survivor income benefits for a widow and children up to age 18, or 23 if still in school, with a $5,000 burial allowance.",
+  "source": "Manual p. 3.2 (PDF p. 24).",
+  "difficulty": 3
+ },
+ {
+  "id": "q195",
+  "lessonId": 20,
+  "code": "WC",
+  "stem": "An employee has how long to notify of an accident, and how long if diagnosed with an illness?",
+  "options": [
+   "10 days for an accident, 90 days for an illness",
+   "30 days for an accident, 60 days for an illness",
+   "7 days for an accident, 30 days for an illness",
+   "90 days for both"
+  ],
+  "answer": 0,
+  "explanation": "An employee has 10 days to notify if there has been an accident or 90 days to notify if diagnosed with an illness.",
+  "source": "Manual p. 3.2 (PDF p. 24).",
+  "difficulty": 4
+ },
+ {
+  "id": "q196",
+  "lessonId": 20,
+  "code": "WC",
+  "stem": "Part Two, employers liability, covers:",
+  "options": [
+   "Statutory claims made against the employer",
+   "Claims made by customers of the employer",
+   "Common law claims made against the employer",
+   "Claims for occupational diseases only"
+  ],
+  "answer": 2,
+  "explanation": "Part One covers statutory claims made against the employer, and Part Two covers common law claims made against the employer.",
+  "source": "Manual p. 3.2 (PDF p. 24).",
+  "difficulty": 4
+ },
+ {
+  "id": "q197",
+  "lessonId": 20,
+  "code": "WC",
+  "stem": "The basic liability limit under Part Two, employers liability, is:",
+  "options": [
+   "$100,000, which may be increased",
+   "$130,000, which may not be increased",
+   "$300,000, which may be increased",
+   "$1,000,000, which may not be increased"
+  ],
+  "answer": 0,
+  "explanation": "The basic employers liability limit is $100,000, which may be increased.",
+  "source": "Manual p. 3.2 (PDF p. 24).",
+  "difficulty": 4
+ },
+ {
+  "id": "q198",
+  "lessonId": 20,
+  "code": "WC",
+  "stem": "Which of the following is excluded under Part Two, employers liability?",
+  "options": [
+   "A third party lawsuit against the insured",
+   "A disease not classified as an occupational disease",
+   "Injury occurring outside the United States and Canada",
+   "A suit by an employee not covered by the Compensation Act"
+  ],
+  "answer": 2,
+  "explanation": "Part Two excludes punitive or exemplary damages, bodily injury to an employee employed in violation of law with the insured's knowledge, intentional bodily injury, injury outside the U.S. and Canada, damages from discrimination, and obligations imposed by workers compensation laws, which are covered under Part One.",
+  "source": "Manual p. 3.2 (PDF p. 24).",
+  "difficulty": 4
+ },
+ {
+  "id": "q199",
+  "lessonId": 20,
+  "code": "WC",
+  "stem": "Exclusive remedy means that, in exchange for covering work-related injury regardless of fault, the injured employee:",
+  "options": [
+   "May still sue the employer in every case",
+   "Must sue the state fund instead",
+   "Keeps the right to sue only for intentional acts",
+   "Gives up the right to sue the employer when the employer's negligence causes the harm"
+  ],
+  "answer": 3,
+  "explanation": "Exclusive remedy means employers are responsible for work-related injury and disease regardless of fault, and in return the injured employee gives up the right to sue when the employer's negligence causes the harm.",
+  "source": "Manual p. 3.2 (PDF p. 24).",
+  "difficulty": 4
+ },
+ {
+  "id": "q200",
+  "lessonId": 20,
+  "code": "WC",
+  "stem": "Areas not covered by primary coverage are covered by an umbrella:",
+  "options": [
+   "With no retention or deductible",
+   "After a self-insured retention, which is a deductible",
+   "Only after the primary limits are exhausted twice",
+   "Only for auto liability"
+  ],
+  "answer": 1,
+  "explanation": "Areas not covered by primary coverage are covered by the umbrella after a self-insured retention, which acts as a deductible.",
+  "source": "Manual p. 3.3 (PDF p. 25).",
+  "difficulty": 3
+ },
+ {
+  "id": "q201",
+  "lessonId": 21,
+  "code": "PRO",
+  "stem": "Professional liability protects the insured for:",
+  "options": [
+   "Accidental damage to a client's property",
+   "Employee injuries on the job",
+   "Failure to perform the services for which they were hired, or performing them below the appropriate standards of conduct",
+   "Damage to the insured's own equipment"
+  ],
+  "answer": 2,
+  "explanation": "Professional liability protects the insured for failure to perform the services for which hired or to perform them in accordance with the appropriate standards of conduct.",
+  "source": "Manual p. 3.4 (PDF p. 26).",
+  "difficulty": 3
+ },
+ {
+  "id": "q202",
+  "lessonId": 21,
+  "code": "PRO",
+  "stem": "Errors and omissions coverage applies to liability exposures arising from:",
+  "options": [
+   "Knowledge, skill or advice",
+   "Ownership of a building",
+   "Operation of a motor vehicle",
+   "Employment of workers"
+  ],
+  "answer": 0,
+  "explanation": "Errors and omissions applies to liability exposures from knowledge, skill or advice.",
+  "source": "Manual p. 3.4 (PDF p. 26).",
+  "difficulty": 4
+ },
+ {
+  "id": "q203",
+  "lessonId": 21,
+  "code": "PRO",
+  "stem": "The lawyers form of errors and omissions automatically covers:",
+  "options": [
+   "Only the senior partner",
+   "Only attorneys listed on the declarations page",
+   "The firm's clients",
+   "All member attorneys of the firm as named insureds without naming them"
+  ],
+  "answer": 3,
+  "explanation": "The lawyers form of errors and omissions automatically covers all member attorneys of the firm as named insureds without naming them.",
+  "source": "Manual p. 3.4 (PDF p. 26).",
+  "difficulty": 4
+ },
+ {
+  "id": "q204",
+  "lessonId": 21,
+  "code": "PRO",
+  "stem": "Directors and officers coverage protects against lawsuits from:",
+  "options": [
+   "Customers, for defective products",
+   "Stockholders, for wrongful acts and decisions that cause them to lose money",
+   "Employees, for workplace injuries",
+   "Regulators, for tax violations"
+  ],
+  "answer": 1,
+  "explanation": "Directors and officers coverage protects the directors and officers from lawsuits from stockholders, covering wrongful acts and decisions that cause stockholders to lose money.",
+  "source": "Manual p. 3.4 (PDF p. 26).",
+  "difficulty": 4
+ },
+ {
+  "id": "q205",
+  "lessonId": 21,
+  "code": "PRO",
+  "stem": "Truth about D&O coverage in the manual: it covers each director and officer:",
+  "options": [
+   "Only as a group, sharing a single limit",
+   "Individually, while they are performing their duties",
+   "Only after they leave the company",
+   "Only if the corporation is insolvent"
+  ],
+  "answer": 1,
+  "explanation": "D&O covers wrongful acts and decisions that cause stockholders to lose money and covers each director and officer individually while they are performing their duties.",
+  "source": "Manual p. 3.4 (PDF p. 26).",
+  "difficulty": 4
+ },
+ {
+  "id": "q206",
+  "lessonId": 21,
+  "code": "PRO",
+  "stem": "Employment practices liability responds to claims such as:",
+  "options": [
+   "Defective products sold to customers",
+   "Vehicle accidents caused by employees",
+   "Property damage to a customer's goods",
+   "Wrongful termination, discrimination, and abuse of an employee based on race, gender or sexual orientation"
+  ],
+  "answer": 3,
+  "explanation": "Employment practices liability provides protection for suits related to wrongful termination, discrimination, and verbal, physical, mental or emotional abuse against an employee.",
+  "source": "Manual p. 3.4 (PDF p. 26).",
+  "difficulty": 4
+ },
+ {
+  "id": "q207",
+  "lessonId": 21,
+  "code": "PRO",
+  "stem": "A consent to settle clause in a medical malpractice policy means the insurer:",
+  "options": [
+   "Must receive the insured's consent to settle a lawsuit",
+   "May settle any claim without telling the insured",
+   "Must consent before the insured can hire a lawyer",
+   "Consents to pay punitive damages"
+  ],
+  "answer": 0,
+  "explanation": "A medical malpractice policy could have a consent to settle clause, meaning the insurance company must receive the insured's consent to settle a lawsuit.",
+  "source": "Manual p. 3.4 (PDF p. 26).",
+  "difficulty": 4
+ },
+ {
+  "id": "q208",
+  "lessonId": 21,
+  "code": "PRO",
+  "stem": "Data breach or cyber liability protects a business when:",
+  "options": [
+   "Its website is slow during peak hours",
+   "An employee loses a company laptop",
+   "Personal information it collected is leaked or hacked and causes a financial loss to its customers",
+   "A supplier delivers late"
+  ],
+  "answer": 2,
+  "explanation": "Cyber liability would protect these businesses if the information is breached and causes a financial loss to their customers.",
+  "source": "Manual p. 3.4 (PDF p. 26).",
+  "difficulty": 4
+ },
+ {
+  "id": "q209",
+  "lessonId": 21,
+  "code": "BON",
+  "stem": "In a bond, the person who collects when the obligor-principal defaults is the:",
+  "options": [
+   "Obligee-insured",
+   "Surety-guarantor",
+   "Obligor-principal",
+   "Claimant"
+  ],
+  "answer": 0,
+  "explanation": "The obligee-insured is the person who collects on the bond when the obligor-principal defaults, and is the person who is insured and protected.",
+  "source": "Manual p. 3.5 (PDF p. 27).",
+  "difficulty": 3
+ },
+ {
+  "id": "q210",
+  "lessonId": 21,
+  "code": "BON",
+  "stem": "Fidelity bonds are arranged and paid by the ____, while surety bonds are arranged and paid by the ____.",
+  "options": [
+   "Obligor-principal; obligee-insured",
+   "Surety-guarantor; obligee-insured",
+   "Obligee-insured; obligor-principal",
+   "Obligee-insured; surety-guarantor"
+  ],
+  "answer": 2,
+  "explanation": "Fidelity bonds are arranged and paid by the obligee-insured, and surety bonds are arranged and paid by the obligor-principal.",
+  "source": "Manual p. 3.5 (PDF p. 27).",
+  "difficulty": 3
+ },
+ {
+  "id": "q211",
+  "lessonId": 22,
+  "code": "AUT",
+  "stem": "Property damage liability pays for:",
+  "options": [
+   "Repairs to the insured's own car",
+   "Injuries to the insured's passengers",
+   "Medical bills of the insured",
+   "Repairs to the other person's car or other property of others the insured hits"
+  ],
+  "answer": 3,
+  "explanation": "Property damage liability pays for repairs to the other person's car or any other property of others that the insured hits with the car.",
+  "source": "Manual p. 4.1 (PDF p. 28).",
+  "difficulty": 3
+ },
+ {
+  "id": "q212",
+  "lessonId": 22,
+  "code": "AUT",
+  "stem": "The rule about driving a non-owned auto is that the insured's liability and physical damage coverage is:",
+  "options": [
+   "Primary, because insurance follows the driver",
+   "Excess, because insurance stays with the car",
+   "Void, because the auto is not scheduled",
+   "Converted to medical payments coverage"
+  ],
+  "answer": 1,
+  "explanation": "The manual states that liability and physical damage coverage is excess when driving a non-owned auto, because insurance stays with the car.",
+  "source": "Manual p. 4.1 (PDF p. 28).",
+  "difficulty": 3
+ },
+ {
+  "id": "q213",
+  "lessonId": 22,
+  "code": "AUT",
+  "stem": "Which vehicle qualifies as a covered auto under the personal auto policy?",
+  "options": [
+   "A vehicle with three wheels",
+   "A commercial truck of 26,000 pounds",
+   "A pick-up or van of less than 10,000 pounds with four wheels or more",
+   "A farm tractor"
+  ],
+  "answer": 2,
+  "explanation": "Covered autos include private passenger autos, pick-ups or vans less than 10,000 lbs with four wheels or more, and farm use is allowed.",
+  "source": "Manual p. 4.1 (PDF p. 28).",
+  "difficulty": 3
+ },
+ {
+  "id": "q214",
+  "lessonId": 22,
+  "code": "AUT",
+  "stem": "An additional vehicle gets how much automatic coverage for collision and other than collision if that coverage is not on at least one vehicle already insured?",
+  "options": [
+   "4 days, subject to a $500 deductible",
+   "14 days with no deductible",
+   "30 days subject to a $250 deductible",
+   "No automatic coverage at all"
+  ],
+  "answer": 0,
+  "explanation": "An additional vehicle gets fourteen days of automatic coverage for coverages the insured currently has, but only four days of coverage for collision and other than collision if that coverage is not provided on at least one vehicle already insured, subject to a $500 deductible.",
+  "source": "Manual p. 4.1 (PDF p. 28).",
+  "difficulty": 4
+ },
+ {
+  "id": "q215",
+  "lessonId": 22,
+  "code": "AUT",
+  "stem": "A replacement vehicle continues Coverage D for how long, and liability continues how?",
+  "options": [
+   "14 days to add or 30 days to continue Coverage D, and liability stops at 30 days",
+   "No days for Coverage D, and liability requires notification",
+   "30 days for both, with notification required",
+   "4 days to add or 14 days to continue Coverage D, and liability continues to the end of the policy period without notification"
+  ],
+  "answer": 3,
+  "explanation": "With a replacement vehicle, there are four days to add or fourteen days to continue Coverage D, and liability continues to the end of the policy period without notification.",
+  "source": "Manual p. 4.1 (PDF p. 28).",
+  "difficulty": 4
+ },
+ {
+  "id": "q216",
+  "lessonId": 22,
+  "code": "AUT",
+  "stem": "A temporary substitute is:",
+  "options": [
+   "A vehicle rented for a vacation",
+   "The vehicle the insured drives while the regular car is being repaired",
+   "A car owned by a relative in another state",
+   "A newly purchased vehicle"
+  ],
+  "answer": 1,
+  "explanation": "A temporary substitute is the vehicle the insured is driving while the regular car is being repaired, and vehicles leased for more than six months are insured as if owned.",
+  "source": "Manual p. 4.1 (PDF p. 28).",
+  "difficulty": 4
+ },
+ {
+  "id": "q217",
+  "lessonId": 22,
+  "code": "AUT",
+  "stem": "The named insured on a personal auto policy includes the spouse:",
+  "options": [
+   "Only if the spouse is listed on the declarations page",
+   "If living together and for 90 days after a separation or a divorce",
+   "For one year after a divorce",
+   "Never"
+  ],
+  "answer": 1,
+  "explanation": "The named insured includes the spouse if living together and for ninety days after a separation or a divorce.",
+  "source": "Manual p. 4.1 (PDF p. 28).",
+  "difficulty": 4
+ },
+ {
+  "id": "q218",
+  "lessonId": 22,
+  "code": "AUT",
+  "stem": "Which of these is an exclusion under the personal auto policy?",
+  "options": [
+   "Family members who are resident relatives",
+   "A temporary substitute vehicle",
+   "Trailers owned by the insured",
+   "Non-owned autos provided for the regular use of the insured"
+  ],
+  "answer": 3,
+  "explanation": "Exclusions include intentional acts, damage to property being transported, prearranged racing, and non-owned autos provided for the regular use of the insured.",
+  "source": "Manual p. 4.1 (PDF p. 28).",
+  "difficulty": 4
+ },
+ {
+  "id": "q219",
+  "lessonId": 22,
+  "code": "AUT",
+  "stem": "The personal auto policy territory includes Canada and Puerto Rico, but:",
+  "options": [
+   "There is no coverage in Mexico",
+   "Coverage in Mexico requires only a phone call",
+   "Coverage in Mexico is automatic for 30 days",
+   "There is no coverage in Canada"
+  ],
+  "answer": 0,
+  "explanation": "The policy territory is the U.S., its territories, possessions, Puerto Rico and Canada, and there is no coverage in Mexico.",
+  "source": "Manual p. 4.1 (PDF p. 28).",
+  "difficulty": 4
+ },
+ {
+  "id": "q220",
+  "lessonId": 22,
+  "code": "AUT",
+  "stem": "Which factors does the manual list as personal auto rating factors?",
+  "options": [
+   "Only age and gender",
+   "Only territory and vehicle value",
+   "Age, gender, territory, driving record, primary use, and marital status",
+   "Credit score and home ownership only"
+  ],
+  "answer": 2,
+  "explanation": "The manual lists age, gender, territory, driving record, primary use and marital status as rating factors.",
+  "source": "Manual p. 4.1 (PDF p. 28).",
+  "difficulty": 4
+ },
+ {
+  "id": "q221",
+  "lessonId": 23,
+  "code": "AUT",
+  "stem": "Kansas requires which split limits on an auto liability policy?",
+  "options": [
+   "25/50/25",
+   "20/40/15",
+   "50/100/50",
+   "25/25/50"
+  ],
+  "answer": 0,
+  "explanation": "Kansas requires split limits of 25/50/25, meaning $25,000 per person and $50,000 per occurrence for bodily injury and $25,000 for property damage.",
+  "source": "Manual p. 4.2 (PDF p. 29).",
+  "difficulty": 4
+ },
+ {
+  "id": "q222",
+  "lessonId": 23,
+  "code": "AUT",
+  "stem": "Which supplementary payment is listed under the personal auto liability coverage?",
+  "options": [
+   "$600 per day for lost earnings",
+   "The insured's deductible",
+   "$250 premium on bail bonds",
+   "The cost of repairing the insured's own car"
+  ],
+  "answer": 2,
+  "explanation": "Supplementary payments include a $250 premium on bail bonds, premiums on appeal bonds, accrued interest after judgment, $200 per day for lost earnings while attending trials or hearings at the company's request, and other reasonable expenses incurred at the company's request.",
+  "source": "Manual p. 4.2 (PDF p. 29).",
+  "difficulty": 4
+ },
+ {
+  "id": "q223",
+  "lessonId": 23,
+  "code": "AUT",
+  "stem": "PIP is described as:",
+  "options": [
+   "Fault-based liability coverage",
+   "Coverage that pays only for the other driver's injuries",
+   "Coverage that replaces physical damage coverage",
+   "No fault insurance"
+  ],
+  "answer": 3,
+  "explanation": "Personal injury protection is described as no fault insurance.",
+  "source": "Manual p. 4.2 (PDF p. 29).",
+  "difficulty": 4
+ },
+ {
+  "id": "q224",
+  "lessonId": 23,
+  "code": "AUT",
+  "stem": "Under PIP, medical bills and rehabilitation are each covered up to:",
+  "options": [
+   "$2,000",
+   "$4,500",
+   "$25,000",
+   "$900"
+  ],
+  "answer": 1,
+  "explanation": "PIP provides $4,500 for medical bills and $4,500 for rehabilitation, along with $2,000 for funeral expenses.",
+  "source": "Manual p. 4.2 (PDF p. 29).",
+  "difficulty": 4
+ },
+ {
+  "id": "q225",
+  "lessonId": 23,
+  "code": "AUT",
+  "stem": "The PIP disability income benefit pays:",
+  "options": [
+   "80 percent of income up to $500 per month for 6 months",
+   "100 percent of income up to $2,000 per month for 12 months",
+   "100 percent of income up to $900 per month for up to 12 months",
+   "$25 per day for 365 days"
+  ],
+  "answer": 2,
+  "explanation": "PIP pays 100 percent of income up to $900 per month in disability income for up to 12 months, paid bi-monthly, and a $900 per month survivor benefit up to 12 months for a spouse and children under 18.",
+  "source": "Manual p. 4.2 (PDF p. 29).",
+  "difficulty": 4
+ },
+ {
+  "id": "q226",
+  "lessonId": 23,
+  "code": "AUT",
+  "stem": "Who may NOT collect from the insured's PIP?",
+  "options": [
+   "A family member or other passenger who owns a car themselves",
+   "A passenger who does not own a car",
+   "The insured",
+   "A family member who does not own a car"
+  ],
+  "answer": 0,
+  "explanation": "No family member nor any other passenger can collect from the insured's PIP if they own a car too.",
+  "source": "Manual p. 4.2 (PDF p. 29).",
+  "difficulty": 4
+ },
+ {
+  "id": "q227",
+  "lessonId": 23,
+  "code": "AUT",
+  "stem": "In PIP, occupying a car includes being:",
+  "options": [
+   "Seated inside the car only",
+   "Inside the car with a seat belt fastened only",
+   "Within 10 feet of the car only while it is parked",
+   "In, upon, in the act of getting in or out, near, under or around the car"
+  ],
+  "answer": 3,
+  "explanation": "Occupying is defined as in, upon, in the act of getting in or out, near, under or around the car.",
+  "source": "Manual p. 4.2 (PDF p. 29).",
+  "difficulty": 4
+ },
+ {
+  "id": "q228",
+  "lessonId": 23,
+  "code": "AUT",
+  "stem": "Uninsured motorist coverage pays:",
+  "options": [
+   "Repairs to the insured's damaged car",
+   "The insured's own injuries if hit by an uninsured car, a car insured with an insolvent company, or a hit and run car",
+   "The other driver's medical bills",
+   "The insured's deductible on a collision claim"
+  ],
+  "answer": 1,
+  "explanation": "Uninsured motorist pays the insured's own injuries if hit by an uninsured car, a car insured with a company declared insolvent, or a hit and run car, and it does not cover physical damage.",
+  "source": "Manual p. 4.2 (PDF p. 29).",
+  "difficulty": 4
+ },
+ {
+  "id": "q229",
+  "lessonId": 23,
+  "code": "AUT",
+  "stem": "Kansas law allows an individual to sue another party for non-pecuniary injuries only when the threshold is met, meaning:",
+  "options": [
+   "Any medical bill of any amount",
+   "Over $2,000 in medical bills, damage to a weight bearing bone, or permanent disfigurement or disability",
+   "Only after a fatality occurs",
+   "Only if the other driver is uninsured"
+  ],
+  "answer": 1,
+  "explanation": "In Kansas an individual cannot sue another party for non-pecuniary injuries unless the threshold limit is met: over $2,000 in medical bills, damage to a weight bearing bone, or permanent disfigurement or disability.",
+  "source": "Manual p. 4.2 (PDF p. 29).",
+  "difficulty": 4
+ },
+ {
+  "id": "q230",
+  "lessonId": 23,
+  "code": "AUT",
+  "stem": "Physical damage coverage on the personal auto policy:",
+  "options": [
+   "Pays replacement cost with no deductible",
+   "Pays agreed value only",
+   "Is required by Kansas law",
+   "Pays actual cash value and will have a deductible"
+  ],
+  "answer": 3,
+  "explanation": "Physical damage is optional, pays actual cash value, and will have a deductible.",
+  "source": "Manual p. 4.2 (PDF p. 29).",
+  "difficulty": 4
+ },
+ {
+  "id": "q231",
+  "lessonId": 24,
+  "code": "AUT",
+  "stem": "Which business auto coverage symbol is the broadest?",
+  "options": [
+   "Symbol 1, any auto",
+   "Symbol 7, specifically described autos only",
+   "Symbol 9, non-owned autos only",
+   "Symbol 3, owned private passenger autos only"
+  ],
+  "answer": 0,
+  "explanation": "Symbol 1 is any auto, the broadest coverage, while symbol 7, specifically described autos only, is the most narrow.",
+  "source": "Manual p. 4.5 (PDF p. 32).",
+  "difficulty": 4
+ },
+ {
+  "id": "q232",
+  "lessonId": 24,
+  "code": "AUT",
+  "stem": "Which business auto symbol is the most narrow?",
+  "options": [
+   "Symbol 1, any auto",
+   "Symbol 8, hired autos only",
+   "Symbol 7, specifically described autos only",
+   "Symbol 5, owned autos subject to no fault benefits"
+  ],
+  "answer": 2,
+  "explanation": "Symbol 7, specifically described autos only, is the most narrow coverage symbol.",
+  "source": "Manual p. 4.5 (PDF p. 32).",
+  "difficulty": 4
+ },
+ {
+  "id": "q233",
+  "lessonId": 24,
+  "code": "AUT",
+  "stem": "If symbol 7 is used, how much automatic coverage does a newly acquired auto have?",
+  "options": [
+   "30 days",
+   "Until the end of the policy term",
+   "14 days",
+   "No automatic coverage"
+  ],
+  "answer": 0,
+  "explanation": "Newly acquired autos are automatically covered until the end of the policy term under symbols 1 through 6, but if symbol 7 is used, a newly acquired auto has only 30 days of automatic coverage.",
+  "source": "Manual p. 4.5 (PDF p. 32).",
+  "difficulty": 4
+ },
+ {
+  "id": "q234",
+  "lessonId": 24,
+  "code": "AUT",
+  "stem": "Which two symbols are required in Kansas?",
+  "options": [
+   "Symbol 1 and symbol 2",
+   "Symbol 8 and symbol 9",
+   "Symbol 5, owned autos subject to no fault benefits, and symbol 6, owned autos subject to the compulsory uninsured motorists law",
+   "Symbol 3 and symbol 4"
+  ],
+  "answer": 2,
+  "explanation": "Symbol 5, owned autos subject to no fault benefits, and symbol 6, owned autos subject to compulsory uninsured motorists law, are required in Kansas.",
+  "source": "Manual p. 4.5 (PDF p. 32).",
+  "difficulty": 4
+ },
+ {
+  "id": "q235",
+  "lessonId": 24,
+  "code": "AUT",
+  "stem": "Mobile equipment is covered under the business auto policy:",
+  "options": [
+   "For physical damage at all times",
+   "Only while it is on a public road",
+   "Never",
+   "While it is being carried or towed by a covered auto, for liability only"
+  ],
+  "answer": 3,
+  "explanation": "Mobile equipment is covered while it is being carried or towed by a covered auto, for liability only.",
+  "source": "Manual p. 4.6 (PDF p. 33).",
+  "difficulty": 4
+ },
+ {
+  "id": "q236",
+  "lessonId": 24,
+  "code": "AUT",
+  "stem": "Under the business auto policy, cleanup of pollutants that are being carried by a vehicle and are not used in its operation is:",
+  "options": [
+   "Covered as a supplementary payment",
+   "Not covered",
+   "Covered up to $25,000",
+   "Covered by the towing coverage"
+  ],
+  "answer": 1,
+  "explanation": "Covered pollution cost or expense covers cleanup of fluids used in the operation of a vehicle that spill in a covered accident, but pollutants being carried by a vehicle and not used in its operation are not covered.",
+  "source": "Manual p. 4.6 (PDF p. 33).",
+  "difficulty": 4
+ },
+ {
+  "id": "q237",
+  "lessonId": 24,
+  "code": "AUT",
+  "stem": "Towing coverage under the business auto physical damage section has a basic limit of:",
+  "options": [
+   "$20 per day",
+   "$600",
+   "$25",
+   "$250"
+  ],
+  "answer": 2,
+  "explanation": "Towing coverage pays towing and labor costs incurred each time a covered auto of the private passenger class is disabled, with a basic limit of $25.",
+  "source": "Manual p. 4.6 (PDF p. 33).",
+  "difficulty": 4
+ },
+ {
+  "id": "q238",
+  "lessonId": 24,
+  "code": "AUT",
+  "stem": "Business auto coverage extensions for transportation expenses provide:",
+  "options": [
+   "$20 per day up to $600, beginning 48 hours after theft",
+   "$25 per day up to $250, beginning 24 hours after theft",
+   "$20 per day with no maximum, beginning immediately",
+   "$600 per day for the first week"
+  ],
+  "answer": 0,
+  "explanation": "Transportation expense coverage extensions provide $20 per day up to a $600 maximum for expenses incurred because of a loss to a covered auto of the private passenger class, and coverage begins 48 hours after theft.",
+  "source": "Manual p. 4.6 (PDF p. 33).",
+  "difficulty": 4
+ },
+ {
+  "id": "q239",
+  "lessonId": 24,
+  "code": "AUT",
+  "stem": "Garagekeepers coverage is described as:",
+  "options": [
+   "Required coverage for any business that owns vehicles",
+   "Liability coverage for injuries at a garage",
+   "Coverage for the garage building itself",
+   "Optional bailee coverage for damage to vehicles left in the custody of the business for repair or service"
+  ],
+  "answer": 3,
+  "explanation": "Garagekeepers is optional bailee coverage for damage to vehicles left in the custody of the business for repair or service, and it can provide coverage on a primary or excess basis over the customer's coverage.",
+  "source": "Manual p. 4.7 (PDF p. 34).",
+  "difficulty": 4
+ },
+ {
+  "id": "q240",
+  "lessonId": 24,
+  "code": "AUT",
+  "stem": "The garage liability service form is designed for service stations, repair shops and parking garages and covers:",
+  "options": [
+   "Owned autos only",
+   "Non-owned autos on a primary basis",
+   "Non-owned autos on an excess basis only",
+   "Customer vehicles for physical damage"
+  ],
+  "answer": 1,
+  "explanation": "The service form is designed for service stations, repair shops and parking garages and covers non-owned autos on a primary basis, while the dealers form covers both owned and non-owned autos on a primary basis.",
+  "source": "Manual p. 4.7 (PDF p. 34).",
+  "difficulty": 4
+ },
+ {
+  "id": "q241",
+  "lessonId": 25,
+  "code": "BOP",
+  "stem": "The businessowners policy is described as:",
+  "options": [
+   "A monoline property policy for large businesses",
+   "A complete package policy with few optional coverages for certain small and medium sized businesses",
+   "A liability-only policy",
+   "A policy for financial institutions"
+  ],
+  "answer": 1,
+  "explanation": "The BOP is a complete package policy with few optional coverages, meant for certain small and medium sized businesses, with one property coverage form written on a special or open peril basis.",
+  "source": "Manual p. 5.1 (PDF p. 35).",
+  "difficulty": 4
+ },
+ {
+  "id": "q242",
+  "lessonId": 25,
+  "code": "BOP",
+  "stem": "Which business is INELIGIBLE for a businessowners policy?",
+  "options": [
+   "An apartment building",
+   "A retail establishment",
+   "An office condominium",
+   "A restaurant"
+  ],
+  "answer": 3,
+  "explanation": "Ineligible businesses include bars, grills and restaurants, condo associations other than office or residential, contractors, places of amusement, wholesalers, financial institutions, and auto dealers or auto repair and servicing.",
+  "source": "Manual p. 5.1 (PDF p. 35).",
+  "difficulty": 4
+ },
+ {
+  "id": "q243",
+  "lessonId": 25,
+  "code": "BOP",
+  "stem": "The maximum gross receipts allowed for a businessowners policy is:",
+  "options": [
+   "$3,000,000",
+   "$1,000,000",
+   "$5,000,000",
+   "$10,000,000"
+  ],
+  "answer": 0,
+  "explanation": "The maximums allowable are 6 stories, 100,000 square feet with not more than 25,000 square feet in any one business, and $3,000,000 in gross receipts.",
+  "source": "Manual p. 5.1 (PDF p. 35).",
+  "difficulty": 5
+ },
+ {
+  "id": "q244",
+  "lessonId": 25,
+  "code": "BOP",
+  "stem": "The building height and area maximums for a businessowners policy are:",
+  "options": [
+   "3 stories and 50,000 square feet in any one business",
+   "10 stories and 250,000 square feet with no per business limit",
+   "6 stories and 100,000 square feet, with no more than 25,000 square feet in any one business",
+   "6 stories and 25,000 square feet total"
+  ],
+  "answer": 2,
+  "explanation": "The maximums allowable are six stories, one hundred thousand square feet, not more than twenty-five thousand square feet in any one business, and three million dollars in gross receipts.",
+  "source": "Manual p. 5.1 (PDF p. 35).",
+  "difficulty": 5
+ },
+ {
+  "id": "q245",
+  "lessonId": 25,
+  "code": "BOP",
+  "stem": "Peak season coverage under the BOP provides:",
+  "options": [
+   "A 25 percent automatic increase during seasonal periods at no additional charge",
+   "A 10 percent increase requiring an additional premium",
+   "Unlimited coverage during holidays",
+   "Coverage only for outdoor signs"
+  ],
+  "answer": 0,
+  "explanation": "Peak season coverage provides a twenty-five percent automatic increase during seasonal periods at no additional charge.",
+  "source": "Manual p. 5.3 (PDF p. 37).",
+  "difficulty": 4
+ },
+ {
+  "id": "q246",
+  "lessonId": 25,
+  "code": "BOP",
+  "stem": "Business income coverage under the BOP is written as:",
+  "options": [
+   "A limit equal to 12 months of gross receipts",
+   "A limit of $1,000,000",
+   "An unlimited dollar amount that expires at the expected business continuation date but no more than 12 months",
+   "A limit of 30 percent of the building limit"
+  ],
+  "answer": 2,
+  "explanation": "Business income coverage is an unlimited dollar amount that expires at the expected business continuation date but no more than 12 months.",
+  "source": "Manual p. 5.3 (PDF p. 37).",
+  "difficulty": 5
+ },
+ {
+  "id": "q247",
+  "lessonId": 25,
+  "code": "BOP",
+  "stem": "If a BOP-covered building is vacant over 60 days, what happens?",
+  "options": [
+   "All coverage is cancelled",
+   "Only wind and hail remain covered",
+   "The deductible doubles",
+   "There is no coverage for theft, vandalism or sprinkler leakage, and all other losses are reduced by 15 percent"
+  ],
+  "answer": 3,
+  "explanation": "If the building is vacant over 60 days, there is no coverage for theft, vandalism or sprinkler leakage, and all other losses are reduced by 15 percent.",
+  "source": "Manual p. 5.3 (PDF p. 37).",
+  "difficulty": 4
+ },
+ {
+  "id": "q248",
+  "lessonId": 25,
+  "code": "BOP",
+  "stem": "The honesty clause in a BOP reporting form:",
+  "options": [
+   "Rewards accurate reporting with a premium credit",
+   "Penalizes those who under report, reducing the claim payment by the percentage of under report",
+   "Requires monthly audits",
+   "Removes the aggregate limit"
+  ],
+  "answer": 1,
+  "explanation": "The honesty clause will penalize those who under report, and in the event of a loss the claim payment will be reduced by the percentage of under report.",
+  "source": "Manual p. 5.2 (PDF p. 36).",
+  "difficulty": 4
+ },
+ {
+  "id": "q249",
+  "lessonId": 25,
+  "code": "BOP",
+  "stem": "Extra expense insurance indemnifies the insured for:",
+  "options": [
+   "The cost to rebuild the building",
+   "Lost sales for the full restoration period",
+   "Expenses incurred when the business temporarily relocates to prevent loss of income because the building was damaged by a covered peril",
+   "Employee wages during a slowdown"
+  ],
+  "answer": 2,
+  "explanation": "Extra expense insurance indemnifies the insured for expenses incurred when the business temporarily relocates to another location to prevent loss of income because the building has been damaged by a covered peril.",
+  "source": "Manual p. 5.2 (PDF p. 36).",
+  "difficulty": 4
+ },
+ {
+  "id": "q250",
+  "lessonId": 25,
+  "code": "BOP",
+  "stem": "Fire legal liability under BOP Section II is written at:",
+  "options": [
+   "$300,000 per occurrence as lawsuit protection",
+   "$100,000 per occurrence",
+   "$1,000,000 per occurrence",
+   "$25,000 per occurrence"
+  ],
+  "answer": 0,
+  "explanation": "Section II business liability includes fire legal liability at three hundred thousand dollars per occurrence, described as lawsuit protection.",
+  "source": "Manual p. 5.3 (PDF p. 37).",
+  "difficulty": 4
+ },
+ {
+  "id": "q251",
+  "lessonId": 26,
+  "code": "CGL",
+  "stem": "Premises and operations coverage responds to injury or damage:",
+  "options": [
+   "Only on the business premises",
+   "Only from products sold by the business",
+   "Only after the work is completed",
+   "Occurring at the place of business or arising from the type of business conducted"
+  ],
+  "answer": 3,
+  "explanation": "Premises and operations covers bodily injury or property damage occurring at the place of business or from the type of business conducted, and the operations exposure can be on or off the premises but primarily off.",
+  "source": "Manual p. 5.4 (PDF p. 38).",
+  "difficulty": 4
+ },
+ {
+  "id": "q252",
+  "lessonId": 26,
+  "code": "CGL",
+  "stem": "Advertising injury and personal injury coverage:",
+  "options": [
+   "Cover bodily injury but not property damage",
+   "Do not cover bodily injury or property damage",
+   "Cover property damage but not bodily injury",
+   "Cover both bodily injury and property damage"
+  ],
+  "answer": 1,
+  "explanation": "Advertising injury and personal injury do not cover bodily injury or property damage; they respond to offense-type exposures such as defamation.",
+  "source": "Manual p. 5.4 (PDF p. 38).",
+  "difficulty": 4
+ },
+ {
+  "id": "q253",
+  "lessonId": 26,
+  "code": "CGL",
+  "stem": "Which offense belongs to advertising injury rather than personal injury?",
+  "options": [
+   "False arrest and imprisonment",
+   "Infringement of title or slogan",
+   "Wrongful eviction from a room or dwelling",
+   "Malicious prosecution"
+  ],
+  "answer": 1,
+  "explanation": "Advertising injury includes misappropriation of advertising ideas or style and infringement of title or slogan, while personal injury adds wrongful entry or eviction and false arrest, detention, imprisonment and malicious prosecution.",
+  "source": "Manual p. 5.4 (PDF p. 38).",
+  "difficulty": 4
+ },
+ {
+  "id": "q254",
+  "lessonId": 26,
+  "code": "CGL",
+  "stem": "Fire legal liability covers:",
+  "options": [
+   "All damage to the entire building",
+   "Damage to the insured's own building",
+   "Damage caused by a fire that starts off the premises",
+   "Damage caused by an insured to that part of a building leased or rented, if it should burn or explode"
+  ],
+  "answer": 3,
+  "explanation": "Fire legal, or tenant liability, covers damage caused by an insured to that part of any building leased or rented if it should burn, explode or suffer other stated perils, with the rest of the building covered by the premises liability coverage.",
+  "source": "Manual p. 5.4 (PDF p. 38).",
+  "difficulty": 4
+ },
+ {
+  "id": "q255",
+  "lessonId": 26,
+  "code": "CGL",
+  "stem": "Medical payments to others under the CGL:",
+  "options": [
+   "Pays medical bills of others regardless of negligence to discourage lawsuits, for up to 1 year from the occurrence",
+   "Pays only after the insured is found negligent",
+   "Applies to employees injured on the job",
+   "Is payable for 3 years after the occurrence"
+  ],
+  "answer": 0,
+  "explanation": "Medical payments to others pays medical bills of others regardless of negligence to discourage lawsuits, with a per person basic minimum limit payable for up to 1 year from the occurrence.",
+  "source": "Manual p. 5.4 (PDF p. 38).",
+  "difficulty": 4
+ },
+ {
+  "id": "q256",
+  "lessonId": 26,
+  "code": "CGL",
+  "stem": "Product liability does NOT cover:",
+  "options": [
+   "Bodily injury caused by a defective product",
+   "Property damage caused by a defective product",
+   "Damage to the product itself or the cost to recall the defective product",
+   "Injury occurring off the business premises"
+  ],
+  "answer": 2,
+  "explanation": "Product liability covers BI/PD caused by a defective product but does not cover damage to the product itself or the cost to recall the defective product.",
+  "source": "Manual p. 5.4 (PDF p. 38).",
+  "difficulty": 5
+ },
+ {
+  "id": "q257",
+  "lessonId": 26,
+  "code": "CGL",
+  "stem": "For product liability to apply, the injury or damage must occur off the business premises, with an exception for:",
+  "options": [
+   "Restaurants",
+   "Contractors",
+   "Wholesalers",
+   "Financial institutions"
+  ],
+  "answer": 0,
+  "explanation": "To be covered under product liability, the injury or damage must occur off the business premises except for restaurants, and the product must be under the total control of the customer.",
+  "source": "Manual p. 5.4 (PDF p. 38).",
+  "difficulty": 5
+ },
+ {
+  "id": "q258",
+  "lessonId": 26,
+  "code": "CGL",
+  "stem": "Completed operations coverage applies when:",
+  "options": [
+   "The work is still in progress at the time of the occurrence",
+   "The injury occurs on the insured's premises",
+   "The insured has completed the project and left before the occurrence, and it is always an off-premises exposure",
+   "The product is still under the insured's control"
+  ],
+  "answer": 2,
+  "explanation": "Completed operations covers defective workmanship and designs causing injury or damages in the future, and the insured must have completed the project and left before the occurrence; completed operations are always an off-premises exposure.",
+  "source": "Manual p. 5.4 (PDF p. 38).",
+  "difficulty": 4
+ },
+ {
+  "id": "q259",
+  "lessonId": 26,
+  "code": "CGL",
+  "stem": "On a claims made form:",
+  "options": [
+   "The occurrence may occur at any time and the claim during the policy period",
+   "The occurrence must occur during the policy period and the claim may be made at any time in the future",
+   "Both the occurrence and the claim may occur at any time",
+   "The occurrence must occur during the policy period and the claim must be made during the policy period"
+  ],
+  "answer": 3,
+  "explanation": "On a claims made form the occurrence must occur during the policy period and the claim must be made during the policy period, while an occurrence form allows the claim to be made at any time in the future.",
+  "source": "Manual p. 5.5 (PDF p. 39).",
+  "difficulty": 4
+ },
+ {
+  "id": "q260",
+  "lessonId": 26,
+  "code": "CGL",
+  "stem": "On the claims made form, if the insured reports occurrences that took place during the policy period within the basic 60-day reporting period, there is an extended reporting period of:",
+  "options": [
+   "5 years for all claims of any kind",
+   "5 years for claims resulting from those reported occurrences only",
+   "60 days for those occurrences only",
+   "Unlimited time for those occurrences only"
+  ],
+  "answer": 1,
+  "explanation": "If the insured reports occurrences that took place during the policy period within the 60-day period, there will be an extended reporting period of 5 years for claims resulting from those reported occurrences only.",
+  "source": "Manual p. 5.5 (PDF p. 39).",
+  "difficulty": 5
+ },
+ {
+  "id": "q261",
+  "lessonId": 27,
+  "code": "CM",
+  "stem": "The commercial package policy is described as:",
+  "options": [
+   "An identical form to the businessowners policy",
+   "A monoline liability policy",
+   "A customizable package policy for larger businesses",
+   "A policy restricted to financial institutions"
+  ],
+  "answer": 2,
+  "explanation": "The commercial package policy is a customizable package policy, not a package policy in the BOP sense, and it is designed for larger businesses.",
+  "source": "Manual p. 5.7 (PDF p. 41).",
+  "difficulty": 4
+ },
+ {
+  "id": "q262",
+  "lessonId": 27,
+  "code": "CM",
+  "stem": "Under the commercial policy declarations, the first name listed has:",
+  "options": [
+   "The first named insured duties",
+   "No special duties",
+   "A reduced premium",
+   "Exclusive rights to cancel"
+  ],
+  "answer": 0,
+  "explanation": "The declarations note that the first name listed has the first named insured duties, and the first named insured may cancel, make changes, and receives the bill and premium refund.",
+  "source": "Manual p. 5.7 (PDF p. 41).",
+  "difficulty": 4
+ },
+ {
+  "id": "q263",
+  "lessonId": 27,
+  "code": "CM",
+  "stem": "Which coverage part provides coverage for valuable papers and records?",
+  "options": [
+   "Commercial general liability",
+   "Commercial crime",
+   "Commercial property builders risk",
+   "Commercial inland marine"
+  ],
+  "answer": 3,
+  "explanation": "The commercial inland marine coverage part lists accounts receivable, commercial articles, contractors equipment floater, electronic data processing, installation floater, signs, and valuable papers and records.",
+  "source": "Manual p. 5.7 (PDF p. 41).",
+  "difficulty": 4
+ },
+ {
+  "id": "q264",
+  "lessonId": 27,
+  "code": "CM",
+  "stem": "Inland marine insurance is almost always written on what basis?",
+  "options": [
+   "A basic named peril basis",
+   "A special form basis",
+   "An actual cash value only basis",
+   "A claims made basis"
+  ],
+  "answer": 1,
+  "explanation": "Inland marine is property insurance on certain kinds of property and is almost always written on a special form basis.",
+  "source": "Manual p. 5.8 (PDF p. 42).",
+  "difficulty": 4
+ },
+ {
+  "id": "q265",
+  "lessonId": 27,
+  "code": "CM",
+  "stem": "Which property cannot be insured using inland marine policies and forms?",
+  "options": [
+   "Contractors equipment",
+   "Real property and the contents of the building",
+   "Accounts receivable",
+   "Valuable papers"
+  ],
+  "answer": 1,
+  "explanation": "Real property and contents of the building cannot be insured using inland marine policies and forms, and businesses personal property is not covered when it is more than 100 feet from the premises whether in a truck or not.",
+  "source": "Manual p. 5.8 (PDF p. 42).",
+  "difficulty": 4
+ },
+ {
+  "id": "q266",
+  "lessonId": 27,
+  "code": "CM",
+  "stem": "Bailee's customer coverage under inland marine is designed for:",
+  "options": [
+   "The business's own inventory",
+   "Real property owned by the business",
+   "Money and securities in a vault",
+   "Items in the care, custody and control of the business, such as a dry cleaner's customers' clothing"
+  ],
+  "answer": 3,
+  "explanation": "Bailee's customer coverage is for items in the care, custody and control of the business, such as dry cleaners.",
+  "source": "Manual p. 5.8 (PDF p. 42).",
+  "difficulty": 4
+ },
+ {
+  "id": "q267",
+  "lessonId": 27,
+  "code": "CM",
+  "stem": "Burglary is defined as the taking of property:",
+  "options": [
+   "With evidence of forced entry into or out of a premises or safe, after hours with no people present",
+   "By causing or threatening bodily harm during business hours",
+   "Without any evidence that a crime occurred",
+   "By an employee acting dishonestly"
+  ],
+  "answer": 0,
+  "explanation": "Burglary is the taking of property with evidence of forced entry into or out of a premises or safe, after hours with no people present.",
+  "source": "Manual p. 5.9 (PDF p. 43).",
+  "difficulty": 5
+ },
+ {
+  "id": "q268",
+  "lessonId": 27,
+  "code": "CM",
+  "stem": "Robbery is defined as the taking of property:",
+  "options": [
+   "With evidence of forced entry after hours",
+   "By a messenger outside the premises",
+   "By causing or threatening bodily harm, during hours with people present",
+   "Without evidence that a crime occurred"
+  ],
+  "answer": 2,
+  "explanation": "Robbery is the taking of property by causing or threatening bodily harm, during hours with people present.",
+  "source": "Manual p. 5.9 (PDF p. 43).",
+  "difficulty": 4
+ },
+ {
+  "id": "q269",
+  "lessonId": 27,
+  "code": "CM",
+  "stem": "The manual calls which coverage the best crime coverage?",
+  "options": [
+   "Theft",
+   "Burglary",
+   "Robbery",
+   "Pilferage"
+  ],
+  "answer": 0,
+  "explanation": "Theft, defined as any act of stealing, is described in the manual as the best crime coverage.",
+  "source": "Manual p. 5.9 (PDF p. 43).",
+  "difficulty": 5
+ },
+ {
+  "id": "q270",
+  "lessonId": 27,
+  "code": "CM",
+  "stem": "A watchperson is excluded from the definition of custodian, and mysterious disappearance means:",
+  "options": [
+   "Property was taken by force during business hours",
+   "Property was taken by an employee",
+   "Property is missing but there is no evidence that a crime has occurred",
+   "Property was destroyed by fire"
+  ],
+  "answer": 2,
+  "explanation": "A custodian excludes any person acting as watchperson or janitor, while mysterious disappearance means property is missing but there is no evidence that a crime has occurred.",
+  "source": "Manual p. 5.9 (PDF p. 43).",
+  "difficulty": 5
+ }
+]

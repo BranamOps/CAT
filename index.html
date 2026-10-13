@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0d0d16" />
+  <meta name="description" content="CAT's Insurance Journey - a harder Property &amp; Casualty adventure for Kansas. Nine levels, 27 lessons, ATTACK TIME, and a 156-question final exam." />
+  <title>CAT's Insurance Journey</title>
+  <link rel="icon" href="assets/cat.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+  <a class="skip-link" href="#app">Skip to content</a>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="#map" aria-label="CAT's Insurance Journey home">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="assets/cat.svg" alt="" />
+        </span>
+        <span class="brand-text">
+          <strong>CAT'S INSURANCE JOURNEY</strong>
+          <small>Property &amp; Casualty &middot; Kansas &middot; a BAT sequel</small>
+        </span>
+      </a>
+      <nav class="topnav" aria-label="Main navigation">
+        <button class="nav-button" data-nav="story" type="button">CAT's story</button>
+        <button class="nav-button" data-nav="map" type="button">Journey map</button>
+        <button class="nav-button" data-nav="manual" type="button">The manual</button>
+      </nav>
+      <div class="progress-chip">
+        <span class="progress-dot" aria-hidden="true"></span>
+        <span id="topProgress">0 / 27 lessons</span>
+      </div>
+    </header>
+
+    <main id="app" tabindex="-1">
+      <section class="hero hero-fallback">
+        <div class="hero-art">
+          <img src="assets/cat.svg" alt="CAT, a stray cat with bright amber eyes." />
+        </div>
+        <div class="hero-copy">
+          <span class="eyebrow">A harder sequel to BAT</span>
+          <h1>CAT's Insurance Journey</h1>
+          <p class="hero-lede">
+            Nine levels. Twenty-seven lessons. Harmless intellectual battles against a rival at every
+            stop, a ten-minute clock that an opponent can attack, and one final exam of 156 questions.
+          </p>
+          <p class="hero-note">Loading the journey&hellip; if this page stays put, serve the folder over
+            HTTP rather than opening the file directly.</p>
+          <button class="button" id="startAdventure" type="button">Begin the journey &rarr;</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Learn the rule. Hold the line. Find the door.</span>
+      <div class="footer-actions">
+        <button id="aboutButton" class="text-button" type="button">About</button>
+        <span id="testerNotice" class="tester-notice" role="status" aria-live="polite" hidden></span>
+        <button id="resetProgress" class="text-button" type="button">Reset progress</button>
+      </div>
+    </footer>
+  </div>
+
+  <dialog id="testerDialog" class="tester-dialog" aria-labelledby="testerTitle">
+    <form id="testerForm">
+      <h2 id="testerTitle">About &amp; tester access</h2>
+      <p>
+        CAT is a study game built only from the supplied Norris Property &amp; Casualty Training Manual,
+        Book #2. Every question cites the printed manual page and the PDF page it came from.
+      </p>
+      <p class="muted">A tester password unlocks every level so the timers and the exam can be checked.</p>
+      <label for="testerPassword">Password</label>
+      <input id="testerPassword" name="password" type="password" autocomplete="off" aria-label="Tester password" />
+      <div class="tester-dialog-actions">
+        <button id="cancelTester" class="button secondary" type="button">Close</button>
+        <button class="button" type="submit">Unlock</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
