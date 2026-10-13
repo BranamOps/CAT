@@ -479,6 +479,46 @@ async function main() {
     ok(!ex.document.querySelector('#contestantSlot'), 'the final exam has no contestant');
   }
 
+  /* ---------- 17. the red car on the map opens the final exam ---------- */
+  console.log('\n17. The red car opens the final exam without finishing the trail');
+  {
+    const { w } = await makeDom(); // fresh profile: nothing mastered yet
+    ok(w.__CAT__.progress.completed.length === 0, 'a fresh profile has mastered no lessons');
+    ok(/assets\/world\.svg/.test(w.document.querySelector('#app').innerHTML), 'the landing map is present');
+
+    const hotspot = w.document.querySelector('[data-goal]');
+    ok(!!hotspot, 'the map carries a hotspot on the red car');
+    ok(hotspot && hotspot.style.left === '93%' && hotspot.style.top === '30%',
+      'the hotspot sits on the car at the goal point',
+      hotspot ? `${hotspot.style.left},${hotspot.style.top}` : 'missing');
+    ok(hotspot && /156 questions in 150 minutes/.test(hotspot.getAttribute('aria-label')),
+      'the hotspot announces the exam size and length');
+
+    hotspot.click();
+    const intro = w.document.querySelector('#app');
+    ok(!!intro.querySelector('#beginExam'), 'clicking the car opens the SHADOW CAT intro with no lessons done');
+    ok(/assets\/SHADOW-1\.jpg/.test(intro.innerHTML), 'the intro shows SHADOW-1');
+    ok(/156/.test(intro.textContent) && /150/.test(intro.textContent),
+      'the intro states 156 questions in 150 minutes');
+
+    intro.querySelector('#beginExam').click();
+    const run = w.__CAT__.run;
+    ok(run.kind === 'exam', 'the Begin button starts a full exam');
+    ok(run.questions.length === 156, 'the early exam still holds 156 questions', String(run.questions.length));
+    ok(Math.round((run.examDeadline - Date.now()) / 60000) === 150,
+      'the early exam clock is 150 minutes',
+      String(Math.round((run.examDeadline - Date.now()) / 60000)));
+    ok(!!w.document.querySelector('#examClockLarge'), 'the exam view renders its total clock');
+
+    // the journey map still sends a finished trail to the shadow too
+    const { w: done } = await makeDom({}, completeSeed(lessons));
+    done.__CAT__.renderMap();
+    ok(!!done.document.querySelector('[data-goal]'), 'the journey page also carries the car hotspot');
+    done.document.querySelector('#continueButton').click();
+    ok(/The Shadow at the End of Level Nine/.test(done.document.querySelector('#app').textContent),
+      'a completed map still leads to the shadow');
+  }
+
   console.log(`\n${checks - failures}/${checks} checks passed.`);
   if (failures) {
     console.log(`${failures} FAILED.`);

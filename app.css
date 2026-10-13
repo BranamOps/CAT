@@ -255,6 +255,38 @@ a { color: var(--lamp); }
 .stop.available { background: var(--lamp); color: #17130a; }
 .stop.current { outline: 3px solid var(--lamp); outline-offset: 3px; }
 .stop.locked { opacity: .55; cursor: not-allowed; }
+/* The red car painted into the map: a direct door into the final exam. */
+.goal-stop {
+  position: absolute; transform: translate(-50%, -50%); pointer-events: auto; z-index: 3;
+  width: clamp(46px, 6.4vw, 92px); height: clamp(40px, 5.6vw, 78px); min-width: 0; padding: 0;
+  display: grid; place-items: center; cursor: pointer; background: transparent;
+  border: 2px solid transparent; border-radius: 16px;
+  transition: border-color .18s, background .18s;
+}
+.goal-stop:hover, .goal-stop:focus-visible {
+  border-color: var(--lamp); background: rgba(246, 200, 94, 0.14); outline: none;
+}
+.goal-stop-ring {
+  position: absolute; inset: -5px; border-radius: 20px; border: 2px solid var(--lamp);
+  opacity: .5; animation: goalPulse 2.8s ease-in-out infinite; pointer-events: none;
+}
+.goal-stop:hover .goal-stop-ring, .goal-stop:focus-visible .goal-stop-ring {
+  opacity: 1; animation-play-state: paused;
+}
+.goal-stop-tag {
+  position: absolute; top: calc(100% + 6px); right: 0; left: auto;
+  white-space: nowrap; padding: 5px 9px; border-radius: 999px; pointer-events: none;
+  font: 700 11px/1 var(--font-display, sans-serif); letter-spacing: .06em; text-transform: uppercase;
+  color: #17130a; background: var(--lamp); opacity: 0; transition: opacity .18s;
+}
+.goal-stop:hover .goal-stop-tag, .goal-stop:focus-visible .goal-stop-tag { opacity: 1; }
+@keyframes goalPulse {
+  0%, 100% { transform: scale(1); opacity: .42; }
+  50% { transform: scale(1.05); opacity: .8; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .goal-stop-ring { animation: none; opacity: .6; }
+}
 .map-caption {
   display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; justify-content: space-between;
   padding: 12px 6px 2px; color: var(--ink-soft); font-size: 12.5px;

@@ -248,6 +248,9 @@
     document.querySelectorAll('[data-lesson]').forEach((btn) => {
       btn.addEventListener('click', () => renderLesson(Number(btn.dataset.lesson)));
     });
+    document.querySelectorAll('[data-goal]').forEach((btn) => {
+      btn.addEventListener('click', renderExamIntro);
+    });
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
@@ -284,10 +287,17 @@
               <img src="${catArt()}" alt="" />
             </div>
             ${nodes}
+            <button class="goal-stop" data-goal="1"
+              style="left:${goalPoint[0]}%;top:${goalPoint[1]}%"
+              title="Final exam: SHADOW CAT - ${curriculum.exam.questionCount} questions in ${curriculum.exam.minutes} minutes"
+              aria-label="Begin the final exam against SHADOW CAT now: ${curriculum.exam.questionCount} questions in ${curriculum.exam.minutes} minutes. No lessons need to be finished first.">
+              <span class="goal-stop-ring" aria-hidden="true"></span>
+              <span class="goal-stop-tag">Final exam</span>
+            </button>
           </div>
         </div>
         <div class="map-caption">
-          <span>Tap an open stone to study. Locked stones open as CAT masters the path.</span>
+          <span>Tap an open stone to study. Tap the red car to face SHADOW CAT whenever you are ready.</span>
           <div class="map-legend">
             <span class="legend-item"><i class="legend-swab swab-done"></i> Mastered</span>
             <span class="legend-item"><i class="legend-swab swab-current"></i> Current</span>
@@ -359,6 +369,9 @@
 
     document.querySelectorAll('[data-lesson]').forEach((btn) => {
       btn.addEventListener('click', () => renderLesson(Number(btn.dataset.lesson)));
+    });
+    document.querySelectorAll('[data-goal]').forEach((btn) => {
+      btn.addEventListener('click', renderExamIntro);
     });
     document.querySelector('#continueButton').addEventListener('click', () => {
       if (testerUnlocked) { renderExamIntro(); return; }
@@ -943,7 +956,6 @@
   function renderExamIntro() {
     stopTicker();
     navActive('map');
-    if (progress.completed.length < 27 && !testerUnlocked) { renderMap(); return; }
 
     app.className = 'view-animate';
     app.innerHTML = `
